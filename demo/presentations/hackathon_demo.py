@@ -16,7 +16,10 @@ from pathlib import Path
 from typing import Dict, Any, List
 
 # Add parent directory to path
-sys.path.append(str(Path(__file__).parent.parent))
+presentations_dir = Path(__file__).parent
+demo_dir = presentations_dir.parent
+lamassu_root = demo_dir.parent
+sys.path.append(str(lamassu_root))
 
 # Import our TrustWrapper
 from src.core.trust_wrapper import ZKTrustWrapper, VerifiedResult
@@ -171,12 +174,12 @@ transition verify_execution(
     private execution_time: u32,
     private success: bool,
     public agent_hash: field
-) -> ExecutionProof {
+) -> ExecutionProof {{
     // Verify without revealing details
-    return ExecutionProof { 
+    return ExecutionProof {{ 
         // Proof details here
-    };
-}
+    }};
+}}
 ```
 """
     await show_slide("🔗 POWERED BY ALEO", content, 5.0)
