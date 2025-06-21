@@ -1,36 +1,55 @@
-# Lamassu Labs - ZK-Powered AI Agent Marketplace
+# 🏛️ Lamassu Labs - ZK-Powered AI Agent Marketplace
 
 **Hackathon Project**: ZK-Berlin Hackathon (June 20-22, 2025)  
-**Project Name**: Lamassu Labs (Alternative: Ziggurat Forge)  
-**Target Prizes**: Aleo ($10,000) + Grand Prize ($2,500)
+**Target Prizes**: Aleo ($10,000) + Grand Prize ($2,500)  
+**Status**: 🚀 Active Development
+
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Leo](https://img.shields.io/badge/Leo-Aleo-purple.svg)](https://leo-lang.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ## 🏛️ Project Overview
 
 Lamassu Labs is a privacy-preserving AI agent marketplace that extends Agent Forge with zero-knowledge proofs. Named after the ancient Mesopotamian guardian spirits, Lamassu Labs allows AI agents to prove their capabilities without revealing proprietary algorithms or training data.
 
-## 📁 Repository Contents
+## 📁 Repository Structure
 
-### Core Documentation
-- `WEB3_AGENT_ARCHITECTURE.md` - Web3 AI agent platform architecture
-- `STEEL_BROWSER_INTEGRATION.md` - Browser automation capabilities
-- `sprint9-hackathon-zk-verified-ai-marketplace.md` - Hackathon sprint plan
-- `zk-berlin-hackathon-sponsors-research.md` - Sponsor analysis and strategy
+Following enterprise standards for optimal organization:
 
-### Research Documents
-- `research/web3_ai_agents_strategic_analysis.md` - Market analysis and opportunity
-- `research/web3_ai_agent_technical_feasibility_analysis.md` - Technical requirements
+```
+src/                          # Source code
+├── core/                    # Core implementations
+│   └── agents/             # AI agents with browser automation
+├── zk/                     # Zero-knowledge components
+│   └── contracts/          # Leo smart contracts
+├── marketplace/            # Marketplace logic
+└── shared/                # Shared utilities
 
-### Agent Implementation (`agents/`)
-- `base_agent.py` - Foundation class for all AI agents with rotation capabilities
-- `link_finder_agent.py` - Browser control agent for event discovery
-- `region_manager.py` - Regional session and rotation management
-- `anti_bot_evasion_manager.py` - Anti-detection patterns and strategies
-- `__init__.py` - Package initialization and exports
+docs/                       # Documentation
+├── architecture/          # System architecture
+├── guides/               # Implementation guides
+├── reports/              # Hackathon reports
+└── adrs/                # Architectural decisions
 
-### Examples & Setup
-- `example_usage.py` - Demonstration of agent capabilities
-- `setup.py` - Package installation script
-- `requirements.txt` - Python dependencies
+memory-bank/              # Project knowledge
+├── 00-LAMASSU_LABS_KNOWLEDGE_SYSTEM.md
+├── sprint9-*.md         # Hackathon sprints
+└── archive/            # Historical docs
+
+tests/                   # Test suite
+├── unit/               # Unit tests
+└── integration/        # Integration tests
+
+examples/               # Usage examples
+research/              # Research documents
+tools/                # Development tools
+```
+
+### Key Files
+- `CLAUDE.md` - Project instructions and context
+- `memory-bank/` - Sprint plans and research
+- `src/core/agents/` - AI agent implementations
+- `examples/example_usage.py` - Demo code
 
 ## 🎯 Hackathon Strategy
 
