@@ -14,15 +14,15 @@ Lamassu Labs is a privacy-preserving AI agent marketplace that extends Agent For
 
 ## 📁 Repository Structure
 
-Clean, standard structure with everything in `src/`:
+Clean, standard structure:
 
 ```
 lamassu-labs/
 ├── src/
 │   ├── agents/          # AI agent implementations
 │   ├── contracts/       # Leo smart contracts
-│   ├── marketplace/     # React UI components
-│   └── examples/        # Usage examples
+│   └── marketplace/     # React UI components
+├── demo/               # Demonstration scripts
 ├── docs/               # Documentation
 ├── tests/              # Test suite
 └── research/           # Background research
@@ -32,7 +32,7 @@ lamassu-labs/
 - `src/agents/` - Browser automation agents with ZK capabilities
 - `src/contracts/agent_registry.leo` - Core smart contract
 - `src/marketplace/` - User interface (coming soon)
-- `src/examples/example_usage.py` - Quick start demo
+- `demo/demo.py` - Quick start demonstration
 
 ## 🎯 Hackathon Strategy
 
@@ -83,9 +83,9 @@ curl -sSf https://raw.githubusercontent.com/AleoHQ/leo/main/install.sh | sh
 npm install -g @aleohq/sdk
 ```
 
-3. **Run the example**:
+3. **Run the demo**:
 ```bash
-python -m src.examples.example_usage
+python demo/demo.py
 ```
 
 ### Development Plan
