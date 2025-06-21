@@ -1,27 +1,35 @@
 # 📚 Lamassu Labs Market Research Index
 
 **Date Compiled**: June 21, 2025  
-**Total Research Documents**: 10  
+**Total Research Documents**: 13  
 **Purpose**: Comprehensive market intelligence for ZK-powered AI agent marketplace
 
 ## 📊 Quick Navigation
 
-### Core Market Research
-1. [**AI Agent Verification & Trust**](01_ai_agents_verification_and_trust.md) - $52.62B market with 74% struggling with trust
-2. [**Browser Automation Market Size**](02_browser_automation_market_size.md) - $211B RPA market by 2034
-3. [**Web3 AI Agents Current State**](03_web3_ai_agents_current_state.md) - Existing players and opportunities
-4. [**Enterprise AI Security Requirements**](04_ai_agent_adoption_requirements.md) - Compliance and security needs
-5. [**AI Performance Standards**](05_ai_agent_performance_standards.md) - Metrics and benchmarking
+### 📈 Market Research
+1. [**AI Agent Verification & Trust**](market_research/01_ai_agents_verification_and_trust.md) - $52.62B market with 74% struggling with trust
+2. [**Browser Automation Market Size**](market_research/02_browser_automation_market_size.md) - $211B RPA market by 2034
+3. [**Web3 AI Agents Current State**](market_research/03_web3_ai_agents_current_state.md) - Existing players and opportunities
+4. [**Enterprise AI Security Requirements**](market_research/04_ai_agent_adoption_requirements.md) - Compliance and security needs
+7. [**AI Marketplace Business Models**](market_research/07_ai_agent_marketplaces_business_models.md) - Revenue strategies
+9. [**AI Agent Competitive Dynamics**](market_research/09_ai_agents_competitive_dynamics.md) - IP protection landscape
+10. [**Autonomous AI Future**](market_research/10_autonomous_ai_agents_future.md) - $19.9T economic impact
+11. [**Web3 AI Agents Strategic Analysis**](market_research/web3_ai_agents_strategic_analysis.md) - TokenHunter expansion opportunities
+- [**Executive Summary**](market_research/EXECUTIVE_SUMMARY_MARKET_RESEARCH.md) - High-level insights and opportunities
 
-### Technical & Business Research
-6. [**ZK Proof Enterprise Readiness**](06_zk_proof_enterprise_readiness.md) - $2B market by 2028
-7. [**AI Marketplace Business Models**](07_ai_agent_marketplaces_business_models.md) - Revenue strategies
-8. [**Browser Automation Compliance**](08_browser_automation_compliance_landscape.md) - Legal considerations
-9. [**AI Agent Competitive Dynamics**](09_ai_agents_competitive_dynamics.md) - IP protection landscape
-10. [**Autonomous AI Future**](10_autonomous_ai_agents_future.md) - $19.9T economic impact
+### 🔧 Implementation Research
+5. [**AI Performance Standards**](implementation_research/05_ai_agent_performance_standards.md) - Metrics and benchmarking
+6. [**ZK Proof Enterprise Readiness**](implementation_research/06_zk_proof_enterprise_readiness.md) - $2B market by 2028
+8. [**Browser Automation Compliance**](implementation_research/08_browser_automation_compliance_landscape.md) - Legal considerations
+12. [**Web3 AI Agent Technical Feasibility**](implementation_research/web3_ai_agent_technical_feasibility_analysis.md) - Technical analysis
 
-### Synthesis Documents
-- [**Executive Summary**](EXECUTIVE_SUMMARY_MARKET_RESEARCH.md) - High-level insights and opportunities
+### 🎨 Branding Research
+13. [**Sumerian Names & Concepts**](branding_research/sumarien_names.md) - Ancient Mesopotamian naming inspiration for ZK marketplace
+
+### 🧑‍💻 UX Research
+*Currently empty - future user experience research will be added here*
+
+### 📄 Additional Resources
 - [**Research Prompts**](../internal_docs/strategy/LAMASSU_LABS_RESEARCH_PROMPTS.md) - Original research questions
 
 ## 🎯 Key Findings Summary
