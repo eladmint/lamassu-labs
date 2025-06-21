@@ -1,7 +1,7 @@
 # 🏛️ Lamassu Labs - ZK-Powered AI Agent Marketplace
 
 **Hackathon Project**: ZK-Berlin Hackathon (June 20-22, 2025)  
-**Target Prizes**: Aleo ($10,000) + Grand Prize ($2,500)  
+**Target Prizes**: Aleo DeFi Track ($5,000) + Aleo Gaming Track ($5,000) + Grand Prize ($2,500)  
 **Status**: 🚀 Active Development
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
@@ -53,10 +53,11 @@ tools/                # Development tools
 
 ## 🎯 Hackathon Strategy
 
-### Primary Track: Aleo DeFi/Gaming ($10,000)
-- Privacy-preserving AI agent verification using Leo
-- Combines gaming elements (agent battles) with DeFi (staking/rewards)
-- Target both tracks for maximum prize potential
+### Primary Strategy: Target Both Aleo Tracks
+- **DeFi Track ($5,000)**: Privacy-preserving agent staking and rewards
+- **Gaming Track ($5,000)**: AI agent battles with hidden strategies
+- Combined approach: Gaming marketplace with DeFi mechanics
+- Maximum potential: $10,000 (if winning both tracks)
 
 ### Secondary: Grand Prize ($2,500)
 - Most innovative overall project

@@ -49,9 +49,13 @@ tools/             # Development tools
 
 ## 🎯 Hackathon Goals
 
-### Primary Track: Aleo DeFi/Gaming ($10,000)
-- Privacy-preserving AI agent verification using Leo
-- Combines gaming elements (agent battles) with DeFi (staking/rewards)
+### Primary Tracks: Aleo (2x $5,000 prizes)
+1. **Best Privacy-Preserving DeFi App**: $5,000
+   - Agent staking and rewards system
+   - Private performance metrics
+2. **Best Anonymous Game**: $5,000
+   - AI agent battles with hidden strategies
+   - Verifiable performance without revealing code
 
 ### Key Components
 1. **Leo Smart Contracts** - Agent verification on Aleo blockchain
