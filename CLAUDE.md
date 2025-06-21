@@ -83,4 +83,4 @@ See memory-bank/ for detailed sprint documentation.
 - Achieve verifiable agent performance metrics with ZK proofs
 - Create video demo showing privacy-preserving agent verification
 - Complete GitHub repo with comprehensive README
-- Target $9,000+ in combined prizes
+- Target one or both Aleo tracks strategically
