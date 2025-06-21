@@ -14,10 +14,12 @@
 - [x] Reorganize according to enterprise standards
 
 ### 🔄 Phase 2: Architecture Design (In Progress)
-- [ ] Design ZK verification architecture
-- [ ] Plan Leo contract structure
-- [ ] Define proof schemas
-- [ ] Create marketplace integration plan
+- [x] Design ZK verification architecture
+- [x] Plan Leo contract structure  
+- [x] Define proof schemas
+- [x] Create marketplace integration plan
+- [x] Develop modular prize strategy
+- [x] Write initial Leo smart contract
 
 ### ⏳ Phase 3: Implementation (Pending)
 - [ ] Implement Leo smart contracts
