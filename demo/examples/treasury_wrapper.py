@@ -6,8 +6,11 @@ Shows how TrustWrapper adds verification to DeFi monitoring agents
 import sys
 import os
 
-# Add parent directory to path
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Add parent directories to path
+current_dir = os.path.dirname(os.path.abspath(__file__))
+demo_dir = os.path.dirname(current_dir)
+project_root = os.path.dirname(demo_dir)
+sys.path.insert(0, project_root)
 
 from src.core.trust_wrapper import ZKTrustWrapper
 from typing import Dict, List, Any

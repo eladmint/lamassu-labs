@@ -7,8 +7,11 @@ import sys
 import os
 import time
 
-# Add parent directory to path
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Add parent directories to path
+current_dir = os.path.dirname(os.path.abspath(__file__))
+demo_dir = os.path.dirname(current_dir)
+project_root = os.path.dirname(demo_dir)
+sys.path.insert(0, project_root)
 
 from src.core.trust_wrapper import ZKTrustWrapper
 
@@ -39,11 +42,11 @@ def run_demo_with_timing(demo_name: str, demo_module: str):
     
     try:
         if demo_module == "event":
-            from demo_event_wrapper import main
+            from event_wrapper import main
         elif demo_module == "scraper":
-            from demo_scraper_wrapper import main
+            from scraper_wrapper import main
         elif demo_module == "treasury":
-            from demo_treasury_wrapper import main
+            from treasury_wrapper import main
         
         main()
         
@@ -65,18 +68,18 @@ def main():
     print("3. Treasury Monitor - DeFi protocol monitoring")
     print("\nEach demo shows the SAME wrapper working with DIFFERENT agents!")
     
-    input("\nPress Enter to start the demos...")
+    print("\nStarting demos...\n")
     
     # Run all demos
     total_time = 0
     
     # Demo 1: Event Discovery
     total_time += run_demo_with_timing("Demo 1: Event Discovery", "event")
-    input("\nPress Enter for next demo...")
+    print("\nContinuing to next demo...\n")
     
     # Demo 2: Web Scraper
     total_time += run_demo_with_timing("Demo 2: Web Scraping", "scraper")
-    input("\nPress Enter for next demo...")
+    print("\nContinuing to next demo...\n")
     
     # Demo 3: Treasury Monitor
     total_time += run_demo_with_timing("Demo 3: Treasury Monitor", "treasury")

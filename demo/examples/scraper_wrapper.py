@@ -6,24 +6,25 @@ Shows how TrustWrapper adds verification to browser automation agents
 import sys
 import os
 
-# Add parent directory to path
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Add parent directories to path
+current_dir = os.path.dirname(os.path.abspath(__file__))
+demo_dir = os.path.dirname(current_dir)
+project_root = os.path.dirname(demo_dir)
+sys.path.insert(0, project_root)
 
-from src.agents.base_agent import BaseAgent
 from src.core.trust_wrapper import ZKTrustWrapper
-from typing import Dict, Any
+from typing import Dict, Any, Optional
 import random
 import time
 
 
-class MockScraperAgent(BaseAgent):
+class MockScraperAgent:
     """Mock scraper for demo (simulates real scraping)"""
     
     def __init__(self):
-        super().__init__()
         self.name = "WebScraperAgent"
     
-    def scrape(self, target: str, options: Dict[str, Any] = None) -> Dict[str, Any]:
+    def scrape(self, target: str, options: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
         """Simulate web scraping"""
         # Simulate processing time
         time.sleep(random.uniform(0.5, 2.0))

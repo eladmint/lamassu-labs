@@ -1,51 +1,83 @@
-# 🎮 Lamassu Labs Demos
+# 🦁 Lamassu Labs - TrustWrapper Demos
 
-This directory contains demonstration scripts showing how to use Lamassu Labs components.
-
-## 📋 Available Demos
-
-### `demo.py` - Basic Agent Usage
-Demonstrates:
-- How to initialize AI agents
-- Browser automation with anti-bot evasion
-- Performance metrics for ZK verification
-- Basic agent marketplace concepts
-
-## 🚀 Running Demos
+## Quick Start
 
 ```bash
-# From project root
-python demo/demo.py
+# Main hackathon presentation (with gaming effects)
+cd /path/to/lamassu-labs
+python demo/presentations/hackathon_demo.py
 
-# Or if you've installed the package
-cd demo
-python demo.py
+# Show all 3 agent examples
+python demo/examples/run_all_examples.py
 ```
 
-## 📝 Demo Structure
+## Demo Structure
 
-Each demo follows this pattern:
-1. Import required components from `src/`
-2. Initialize agents with appropriate settings
-3. Demonstrate key functionality
-4. Show how results would be used for ZK proofs
+```
+demo/
+├── presentations/          # 🎯 Main hackathon presentations
+│   ├── hackathon_demo.py      # Main demo with gaming effects (8 min)
+│   ├── simple_story_demo.py   # Story-based explanation (7 min)
+│   └── visual_architecture.py # Technical deep-dive (6 min)
+│
+├── examples/              # 📦 Agent examples showing universality
+│   ├── event_wrapper.py       # Event discovery agent
+│   ├── scraper_wrapper.py     # Web scraping agent
+│   └── treasury_wrapper.py    # Treasury monitoring agent
+│
+└── run_all_demos.py      # 🚀 Run all 3 examples automatically
+```
 
-## 💡 Creating New Demos
+## Which Demo to Use?
 
-When adding new demos:
-1. Create descriptive function names (e.g., `demo_agent_verification()`)
-2. Add clear comments explaining each step
-3. Include expected output in docstrings
-4. Keep demos focused on single concepts
+### For Hackathon Judges
+```bash
+python demo/presentations/hackathon_demo.py
+```
+- Complete explanation of zero-knowledge proofs
+- Aleo technology integration
+- Gaming-style transitions
+- Live demonstrations
 
-## 🎯 Hackathon Demos
+### For Technical Audience
+```bash
+python demo/presentations/visual_architecture_demo.py
+```
+- Architecture diagrams
+- Leo contract details
+- Technical implementation
 
-For the ZK-Berlin hackathon, we'll need demos showing:
-- [ ] Agent registration with Leo contract
-- [ ] Proof generation for performance metrics
-- [ ] Marketplace UI interaction
-- [ ] Multi-agent comparison
+### For Non-Technical Audience
+```bash
+python demo/presentations/simple_story_demo.py
+```
+- Story of Alice and Bob
+- Simple analogies
+- No technical jargon
 
----
+### To Show It Works
+```bash
+python demo/examples/run_all_examples.py
+```
+- Runs all 3 agent examples
+- Shows universal wrapper concept
+- Quick demonstration
 
-**Note**: These are demonstrations only. For production usage, see the main documentation.
+## Key Message
+
+**"TrustWrapper makes AI agents trustworthy without revealing their secrets.
+It's like SSL certificates for AI - simple, universal, and necessary."**
+
+Add trust to ANY agent in just 3 lines:
+```python
+agent = YourAIAgent()
+trusted_agent = ZKTrustWrapper(agent)
+result = trusted_agent.verified_execute()
+```
+
+## Tips
+
+1. All demos auto-loop - press Ctrl+C to stop
+2. Demos work offline (no blockchain required for hackathon)
+3. Each presentation is standalone
+4. Examples show different agent types to prove universality
