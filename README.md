@@ -14,38 +14,25 @@ Lamassu Labs is a privacy-preserving AI agent marketplace that extends Agent For
 
 ## 📁 Repository Structure
 
-Following enterprise standards for optimal organization:
+Clean, standard structure with everything in `src/`:
 
 ```
-src/                          # Source code
-├── core/                    # Core implementations
-│   └── agents/             # AI agents with browser automation
-├── zk/                     # Zero-knowledge components
-│   └── contracts/          # Leo smart contracts
-├── marketplace/            # Marketplace logic
-└── shared/                # Shared utilities
-
-docs/                       # Documentation
-├── architecture/          # System architecture
-├── guides/               # Implementation guides
-├── reports/              # Hackathon reports
-└── adrs/                # Architectural decisions
-
-
-tests/                   # Test suite
-├── unit/               # Unit tests
-└── integration/        # Integration tests
-
-examples/               # Usage examples
-research/              # Research documents
-tools/                # Development tools
+lamassu-labs/
+├── src/
+│   ├── agents/          # AI agent implementations
+│   ├── contracts/       # Leo smart contracts
+│   ├── marketplace/     # React UI components
+│   └── examples/        # Usage examples
+├── docs/               # Documentation
+├── tests/              # Test suite
+└── research/           # Background research
 ```
 
-### Key Files
-- `src/core/agents/` - AI agent implementations
-- `src/zk/contracts/` - Leo smart contracts
-- `docs/architecture/` - System architecture
-- `examples/` - Usage examples
+### Key Components
+- `src/agents/` - Browser automation agents with ZK capabilities
+- `src/contracts/agent_registry.leo` - Core smart contract
+- `src/marketplace/` - User interface (coming soon)
+- `src/examples/example_usage.py` - Quick start demo
 
 ## 🎯 Hackathon Strategy
 
@@ -98,7 +85,7 @@ npm install -g @aleohq/sdk
 
 3. **Run the example**:
 ```bash
-python example_usage.py
+python -m src.examples.example_usage
 ```
 
 ### Development Plan

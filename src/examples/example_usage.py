@@ -7,7 +7,7 @@ that could be verified using zero-knowledge proofs in the marketplace.
 
 import asyncio
 import logging
-from agents import LinkFinderAgent, EvasionLevel
+from ..agents import LinkFinderAgent, EvasionLevel
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
