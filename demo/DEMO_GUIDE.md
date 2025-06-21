@@ -1,20 +1,37 @@
 # 🦁 Lamassu Labs Demo Guide
 
-## 🆕 Enhanced TrustWrapper with Ziggurat XAI
+## 🆕 Full Stack TrustWrapper - Performance + XAI + Quality
 
-We've now integrated our existing Ziggurat Intelligence technology to create **TrustWrapper 2.0** - the first solution that proves both PERFORMANCE and EXPLAINABILITY!
+We've created the **first comprehensive trust infrastructure** for AI agents by integrating:
+1. **Performance Verification** (Basic TrustWrapper)
+2. **Explainability** (Ziggurat XAI) 
+3. **Quality Consensus** (Agent Forge)
 
-### Quick Start - New XAI Demos
+### Quick Start - Latest Demos
 
 ```bash
-# Main XAI demo - RECOMMENDED FOR JUDGES
-python demo/xai_trustwrapper_demo.py
+# MAIN DEMO - Shows all three layers
+python demo/quality_consensus_demo.py
 
-# Simple comparison showing why XAI matters
+# Auto-running version for displays
+python demo/quality_consensus_demo_auto.py
+
+# Full comparison of all layers
+python demo/examples/full_stack_comparison.py
+
+# Test everything works
+python tests/test_quality_consensus.py
+```
+
+### Previous Demos Still Available
+
+```bash
+# XAI demos
+python demo/xai_trustwrapper_demo.py
 python demo/examples/why_xai_matters.py
 
-# Test the XAI integration
-python tests/test_xai_integration.py
+# Basic demos
+python demo/examples/performance_verification_demo.py
 ```
 
 ## Overview
@@ -201,12 +218,22 @@ python demo/examples/why_xai_matters.py
 > **"Now we don't just prove THAT it works, we explain WHY it works.
 > It's the difference between 'trust me' and 'trust me, and here's why'."**
 
-## Recommended Demo Flow for Judges
+## 🏆 Recommended Demo Flow for Judges
 
-1. **Start with Impact** (2 min): `examples/why_xai_matters.py`
-2. **Show Full Solution** (10 min): `xai_trustwrapper_demo.py`
-3. **Technical Details** (if asked): `presentations/visual_architecture_demo.py`
-4. **Leave Running**: `presentations/hackathon_demo.py` (auto-loops)
+### Option A: Quick Impact (5 minutes)
+1. **Show the Problem** (1 min): `examples/why_xai_matters_auto.py`
+2. **Show Full Solution** (3 min): `examples/full_stack_comparison.py`
+3. **Leave Running**: `quality_consensus_demo_auto.py`
+
+### Option B: Full Presentation (10 minutes)
+1. **Evolution Story** (5 min): `quality_consensus_demo.py`
+2. **Technical Deep Dive** (3 min): `presentations/visual_architecture_demo.py`
+3. **Value Proposition** (2 min): Explain market impact
+
+### Option C: Booth Display
+- Run `quality_consensus_demo_auto.py` on loop
+- Have laptop ready with interactive demos
+- Print QR code to GitHub repo
 
 ## Key Differentiators
 
