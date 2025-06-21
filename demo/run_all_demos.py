@@ -4,8 +4,11 @@ TrustWrapper Demo Suite - Run all three demos
 Shows how ANY AI agent can be enhanced with ZK verification
 """
 import sys
+import os
 import time
-sys.path.append('..')
+
+# Add parent directory to path
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from src.core.trust_wrapper import ZKTrustWrapper
 

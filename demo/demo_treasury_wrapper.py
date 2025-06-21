@@ -4,7 +4,10 @@ Demo 3: Treasury Monitor Agent with ZK Trust
 Shows how TrustWrapper adds verification to DeFi monitoring agents
 """
 import sys
-sys.path.append('..')
+import os
+
+# Add parent directory to path
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from src.core.trust_wrapper import ZKTrustWrapper
 from typing import Dict, List, Any

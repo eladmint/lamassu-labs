@@ -4,7 +4,10 @@ Demo 1: Event Discovery Agent with ZK Trust
 Shows how TrustWrapper adds verification to the LinkFinderAgent
 """
 import sys
-sys.path.append('..')
+import os
+
+# Add parent directory to path
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from src.agents.link_finder_agent import LinkFinderAgent
 from src.core.trust_wrapper import ZKTrustWrapper

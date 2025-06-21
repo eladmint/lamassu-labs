@@ -4,7 +4,10 @@ Demo 2: Web Scraper Agent with ZK Trust
 Shows how TrustWrapper adds verification to browser automation agents
 """
 import sys
-sys.path.append('..')
+import os
+
+# Add parent directory to path
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from src.agents.base_agent import BaseAgent
 from src.core.trust_wrapper import ZKTrustWrapper
