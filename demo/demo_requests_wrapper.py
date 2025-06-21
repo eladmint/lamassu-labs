@@ -6,6 +6,7 @@ Shows how ANY Python library becomes a trusted agent
 import sys
 import os
 import json
+from typing import Optional
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from src.core.trust_wrapper import ZKTrustWrapper
@@ -21,7 +22,7 @@ class RequestsAgent:
         self.name = "HTTPRequestAgent"
         self.session = None
     
-    def fetch(self, url: str, headers: dict = None) -> dict:
+    def fetch(self, url: str, headers: Optional[dict] = None) -> dict:
         """
         Fetch a URL and return structured data.
         In production, this would use the actual requests library.
