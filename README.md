@@ -31,10 +31,6 @@ docs/                       # Documentation
 ├── reports/              # Hackathon reports
 └── adrs/                # Architectural decisions
 
-memory-bank/              # Project knowledge
-├── 00-LAMASSU_LABS_KNOWLEDGE_SYSTEM.md
-├── sprint9-*.md         # Hackathon sprints
-└── archive/            # Historical docs
 
 tests/                   # Test suite
 ├── unit/               # Unit tests
@@ -46,10 +42,10 @@ tools/                # Development tools
 ```
 
 ### Key Files
-- `CLAUDE.md` - Project instructions and context
-- `memory-bank/` - Sprint plans and research
 - `src/core/agents/` - AI agent implementations
-- `examples/example_usage.py` - Demo code
+- `src/zk/contracts/` - Leo smart contracts
+- `docs/architecture/` - System architecture
+- `examples/` - Usage examples
 
 ## 🎯 Hackathon Strategy
 

@@ -60,3 +60,7 @@ outputs/
 *.aleo
 *.prover
 *.verifier
+
+# Internal documentation
+internal_docs/
+CLAUDE.md
