@@ -1,0 +1,11 @@
+# Lamassu Labs - ZK-Powered AI Agent Marketplace
+# Requirements for running the AI web agents independently
+
+# Core async and HTTP dependencies
+aiohttp>=3.8.0
+
+# Browser automation
+playwright>=1.40.0
+
+# Additional dependencies for the hackathon project
+# (to be added based on Leo/Aleo SDK requirements)
