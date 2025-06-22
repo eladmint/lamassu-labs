@@ -68,6 +68,7 @@ CLAUDE.md
 # Archive and internal data
 archive/
 memory-bank/
+internal_docs/
 
 # Private components
 *.enterprise
