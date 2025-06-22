@@ -141,109 +141,215 @@ The financial risks associated with unverified AI agents, from direct liability 
 Zero-knowledge proof systems could address many of these challenges by enabling AI agents to prove their capabilities without revealing proprietary algorithms, providing the transparency enterprises need while protecting intellectual property. This approach could help bridge the current gap between AI agent potential and enterprise adoption, facilitating the secure and trustworthy deployment of AI agents at scale.
 
 <a name="ref1"></a>[1] https://www.biometricupdate.com/202505/ai-agents-are-a-digital-identity-headache-despite-explosive-growth
+
 <a name="ref2"></a>[2] https://www.bcg.com/press/24october2024-ai-adoption-in-2024-74-of-companies-struggle-to-achieve-and-scale-value
+
 <a name="ref3"></a>[3] https://www.helpnetsecurity.com/2025/05/30/ai-agents-organizations-risk/
+
 <a name="ref4"></a>[4] https://www.linkedin.com/pulse/choke-points-enterprise-ai-adoption-ashish-bhatia-txsve
+
 <a name="ref5"></a>[5] https://www.architectureandgovernance.com/artificial-intelligence/new-research-uncovers-top-challenges-in-enterprise-ai-agent-adoption/
+
 <a name="ref6"></a>[6] https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai
+
 <a name="ref7"></a>[7] https://link.springer.com/10.1007/s10278-024-01147-1
+
 <a name="ref8"></a>[8] https://www.bankofengland.co.uk/financial-stability-in-focus/2025/april-2025
+
 <a name="ref9"></a>[9] https://madison-technologies.com/challenges-of-agentic-ai-can-businesses-trust-autonomous-ai/
+
 <a name="ref10"></a>[10] https://www.semanticscholar.org/paper/1a536b4f5bafbf6f46d474bdc971fc83c5e93544
+
 <a name="ref11"></a>[11] https://huggingface.co/blog/ethics-soc-7
+
 <a name="ref12"></a>[12] https://arxiv.org/abs/2409.11411
+
 <a name="ref13"></a>[13] https://arxiv.org/abs/2412.07822
+
 <a name="ref14"></a>[14] https://www.pointguardai.com/blog/hugging-face-has-become-a-malware-magnet
+
 <a name="ref15"></a>[15] https://community.openai.com/t/verification-issue-on-second-attempt/1231256
+
 <a name="ref16"></a>[16] https://www.identity.com/why-ai-agents-need-verified-digital-identities/
+
 <a name="ref17"></a>[17] https://ieeexplore.ieee.org/document/10401714/
+
 <a name="ref18"></a>[18] https://www.deloitte.com/uk/en/Industries/technology/blogs/intellectual-property-and-generative-ai.html
+
 <a name="ref19"></a>[19] https://arxiv.org/abs/2405.14767
+
 <a name="ref20"></a>[20] https://www.mdpi.com/2076-3417/14/23/10899
+
 <a name="ref21"></a>[21] https://global-us.mellbaou.com/index.php/global/article/view/237
+
 <a name="ref22"></a>[22] https://arxiv.org/abs/2407.20447
+
 <a name="ref23"></a>[23] https://sciresjournals.com/ijstra/node/589
+
 <a name="ref24"></a>[24] https://www.forbes.com/sites/marisagarcia/2024/02/19/what-air-canada-lost-in-remarkable-lying-ai-chatbot-case/
+
 <a name="ref25"></a>[25] https://www.mccarthy.ca/en/insights/blogs/techlex/moffatt-v-air-canada-misrepresentation-ai-chatbot
+
 <a name="ref26"></a>[26] https://www.ayadata.ai/everything-you-need-to-know-about-ai-hallucinations/
+
 <a name="ref27"></a>[27] https://fairnow.ai/workday-lawsuit-resume-screening/
+
 <a name="ref28"></a>[28] https://setyanlaw.com/discriminated-against-by-artificial-intelligence-ai-algorithmic-bias/
+
 <a name="ref29"></a>[29] https://hiddenlayer.com/innovation-hub/hiddenlayer-ai-threat-landscape-report-reveals-ai-breaches-on-the-rise/
+
 <a name="ref30"></a>[30] https://www.pragmaticcoders.com/resources/ai-agent-statistics
+
 <a name="ref31"></a>[31] https://www.ciodive.com/news/AI-project-fail-data-SPGlobal/742590/
+
 <a name="ref32"></a>[32] https://www.semanticscholar.org/paper/1fe69e3fea28bc4468d8947c6df66ba37ba332ec
+
 <a name="ref33"></a>[33] https://francis-press.com/papers/16906
+
 <a name="ref34"></a>[34] https://ieeexplore.ieee.org/document/10645547/
+
 <a name="ref35"></a>[35] https://ieeexplore.ieee.org/document/10773821/
+
 <a name="ref36"></a>[36] https://finance.yahoo.com/news/artificial-intelligence-market-size-worth-154100049.html
+
 <a name="ref37"></a>[37] https://www.ibm.com/think/insights/ai-agent-governance
+
 <a name="ref38"></a>[38] https://www.langchain.com/stateofaiagents
+
 <a name="ref39"></a>[39] https://www.rapidinnovation.io/post/ai-agents-for-kyc-verification
+
 <a name="ref40"></a>[40] https://www.biometricupdate.com/202411/ai-agents-privacy-and-authentication-examined-in-new-report
+
 <a name="ref41"></a>[41] https://www.salesforce.com/blog/unified-trust-security-governance-for-agentic-solutions/
+
 <a name="ref42"></a>[42] https://www.youtube.com/watch?v=vn3eIvrxlUc
+
 <a name="ref43"></a>[43] https://arxiv.org/abs/2408.05354
+
 <a name="ref44"></a>[44] https://www.tandfonline.com/doi/full/10.1080/1553118X.2025.2462087
+
 <a name="ref45"></a>[45] https://ieeexplore.ieee.org/document/10697454/
+
 <a name="ref46"></a>[46] https://ieeexplore.ieee.org/document/9766399/
+
 <a name="ref47"></a>[47] https://ieeexplore.ieee.org/document/10466733/
+
 <a name="ref48"></a>[48] https://openaccess.cms-conferences.org/publications/book/978-1-964867-14-4/article/978-1-964867-14-4_11
+
 <a name="ref49"></a>[49] https://huggingface.co/papers/2502.02649
+
 <a name="ref50"></a>[50] https://www.reddit.com/r/LocalLLaMA/comments/1im7un9/hugging_face_ai_agents_course_is_live/
+
 <a name="ref51"></a>[51] https://huggingface.co/blog/Kseniase/a2a
+
 <a name="ref52"></a>[52] https://www.biometricupdate.com/202406/authenticid-develops-proprietary-algorithms-to-mitigate-biometric-injection-attacks
+
 <a name="ref53"></a>[53] https://www.reddit.com/r/OpenAI/comments/145rolz/openai_suddenly_wants_me_to_verify_my_identity/
+
 <a name="ref54"></a>[54] https://wjarr.com/node/14868
+
 <a name="ref55"></a>[55] https://www.nature.com/articles/s41598-024-79177-6
+
 <a name="ref56"></a>[56] https://www.mdpi.com/2673-2688/5/4/123
+
 <a name="ref57"></a>[57] http://medrxiv.org/lookup/doi/10.1101/2024.12.16.24318586
+
 <a name="ref58"></a>[58] https://www.forumvc.com/2024-the-rise-of-agentic-ai-in-the-enterprise
+
 <a name="ref59"></a>[59] https://www.galaksiya.com/articles/the-ai-agent-revolution-4-barriers-enterprises-must-overcome
+
 <a name="ref60"></a>[60] https://guptadeepak.com/the-future-of-ai-agent-authentication-ensuring-security-and-privacy-in-autonomous-systems/
+
 <a name="ref61"></a>[61] https://www.lumenova.ai/blog/ai-agents-potential-risks/
+
 <a name="ref62"></a>[62] https://journalwjaets.com/node/1090
+
 <a name="ref63"></a>[63] https://jisis.org/wp-content/uploads/2024/10/2024.I4.002.pdf
+
 <a name="ref64"></a>[64] https://dl.acm.org/doi/10.1145/3711129.3711261
+
 <a name="ref65"></a>[65] https://ieeexplore.ieee.org/document/11024927/
+
 <a name="ref66"></a>[66] https://arxiv.org/abs/2412.17149
+
 <a name="ref67"></a>[67] https://www.semanticscholar.org/paper/d1cb95374abc156f08c609a950f1c07f1a568cdf
+
 <a name="ref68"></a>[68] https://eajournals.org/ejcsit/vol13-issue20-2025/designing-enterprise-systems-for-the-future-of-financial-services-the-intersection-of-ai-cloud-native-microservices-and-intelligent-data-processing/
+
 <a name="ref69"></a>[69] https://al-kindipublisher.com/index.php/jcsts/article/view/9465
+
 <a name="ref70"></a>[70] https://generativeaienterprise.ai/p/20-must-read-ai-agents-case-studies-bb2cf6f29ed87b92
+
 <a name="ref71"></a>[71] https://www.creolestudios.com/real-world-ai-agent-case-studies/
+
 <a name="ref72"></a>[72] https://www.multimodal.dev/post/useful-ai-agent-case-studies
+
 <a name="ref73"></a>[73] https://www.searchunify.com/blog/ai-agents-useful-case-studies-from-around-the-world/
+
 <a name="ref74"></a>[74] https://www.trustpath.ai/blog/spotting-red-flags-how-to-evaluate-ai-vendors-and-avoid-costly-mistakes
+
 <a name="ref75"></a>[75] https://cointelegraph.com/news/how-zero-knowledge-proofs-can-make-ai-fairer
+
 <a name="ref76"></a>[76] https://www.alvarezandmarsal.com/insights/artificial-intelligence-and-machine-learning-model-forensics
+
 <a name="ref77"></a>[77] https://academic.oup.com/bjrai/article/doi/10.1093/bjrai/ubae009/7687959
+
 <a name="ref78"></a>[78] https://www.tandfonline.com/doi/full/10.1080/1553118X.2024.2436542
+
 <a name="ref79"></a>[79] https://journal.aimintlllc.com/index.php/ITEJ/article/view/12
+
 <a name="ref80"></a>[80] https://ijccd.umsida.ac.id/index.php/ijccd/article/view/1179
+
 <a name="ref81"></a>[81] https://seejph.com/index.php/seejph/article/view/2254
+
 <a name="ref82"></a>[82] https://www.informingscience.org/Publications/5260
+
 <a name="ref83"></a>[83] https://www.statista.com/statistics/1605541/barriers-to-developing-genai-worldwide/
+
 <a name="ref84"></a>[84] https://menlovc.com/2024-the-state-of-generative-ai-in-the-enterprise/
+
 <a name="ref85"></a>[85] https://www.prnewswire.com/news-releases/identity-verification-market-to-grow-by-usd-16-92-billion-2024-2028-driven-by-eid-cards-smart-infrastructure-and-ai-redefining-market-landscape---technavio-302331124.html
+
 <a name="ref86"></a>[86] https://www.reuters.com/business/emerging-economies-lead-way-ai-trust-survey-shows-2025-04-28/
+
 <a name="ref87"></a>[87] https://doi.library.ubc.ca/10.14288/1.0078651
+
 <a name="ref88"></a>[88] https://www.bbc.com/travel/article/20240222-air-canada-chatbot-misinformation-what-travellers-should-know
+
 <a name="ref89"></a>[89] https://www.cbc.ca/news/canada/british-columbia/air-canada-chatbot-lawsuit-1.7116416
+
 <a name="ref90"></a>[90] https://www.americanbar.org/groups/business_law/resources/business-law-today/2024-february/bc-tribunal-confirms-companies-remain-liable-information-provided-ai-chatbot/
+
 <a name="ref91"></a>[91] https://arxiv.org/abs/2405.04294
+
 <a name="ref92"></a>[92] https://arxiv.org/abs/2410.07561
+
 <a name="ref93"></a>[93] https://mmidentity.fmk.sk/wp-content/uploads/2025/01/MI_2024_ENG.pdf#page=569
+
 <a name="ref94"></a>[94] https://arxiv.org/abs/2405.08944
+
 <a name="ref95"></a>[95] https://link.springer.com/10.1007/s12369-022-00951-5
+
 <a name="ref96"></a>[96] https://ieeexplore.ieee.org/document/9025575/
+
 <a name="ref97"></a>[97] https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/why-agents-are-the-next-frontier-of-generative-ai
+
 <a name="ref98"></a>[98] https://jsmc.pk/index.php/jsmc/article/view/957
+
 <a name="ref99"></a>[99] https://www2.deloitte.com/us/en/pages/consulting/articles/state-of-generative-ai-in-enterprise.html
+
 <a name="ref100"></a>[100] https://jurnal.uns.ac.id/bestuur/article/view/61326
+
 <a name="ref101"></a>[101] https://journalijsra.com/node/580
+
 <a name="ref102"></a>[102] https://www.ai21.com/blog/ai-agent-use-cases/
+
 <a name="ref103"></a>[103] https://botpress.com/blog/ai-agent-case-study
+
 <a name="ref104"></a>[104] https://onepetro.org/SPEHSE/proceedings/24HSE/24HSE/D021S019R002/555492
+
 <a name="ref105"></a>[105] https://link.springer.com/10.1007/s00146-024-02096-7
+
 <a name="ref106"></a>[106] https://tobaccocontrol.bmj.com/lookup/doi/10.1136/tc.1.1.37
+
 <a name="ref107"></a>[107] https://www.pinsentmasons.com/out-law/news/air-canada-chatbot-case-highlights-ai-liability-risks

@@ -12,10 +12,21 @@ This guide covers deployment of TrustWrapper smart contracts to Aleo blockchain.
 ### ✅ Successfully Deployed Contracts
 
 #### hallucination_verifier.aleo
-- **Deployment TX**: `at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt`
+- **Live Contract**: [View on AleoScan →](https://testnet.aleoscan.io/program?id=hallucination_verifier.aleo)
+- **Deployment TX**: [`at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt`](https://testnet.aleoscan.io/transaction?id=at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt)
 - **Cost**: 8.633225 credits
 - **Date**: June 22, 2025
-- **Status**: ✅ Live and verified
+- **Status**: ✅ Live and verified on testnet3
+
+### 📋 Pending Deployment
+
+#### agent_registry.aleo
+- **Status**: ⏳ Contract source archived, ready for deployment
+- **Purpose**: AI agent registration and capabilities
+
+#### trust_verifier.aleo
+- **Status**: ⏳ Contract source archived, ready for deployment
+- **Purpose**: Trust score verification
 
 ## 🚀 Deployment Process
 

@@ -205,82 +205,161 @@ Looking ahead, several key trends are likely to shape the future of Web3 AI agen
 For Lamassu Labs, building on Aleo for privacy-preserving proofs represents a strategic approach to addressing one of the key challenges in the Web3 AI space<sup>[30](#ref30)</sup><sup>[31](#ref31)</sup>. By focusing on practical applications of privacy-preserving AI using ZK proofs, Lamassu Labs has the opportunity to contribute to solving real-world problems while advancing the state of the art in decentralized AI<sup>[30](#ref30)</sup><sup>[32](#ref32)</sup>.
 
 <a name="ref1"></a>[1] https://crypto.news/fetch-ai-floats-50m-fet-token-buyback-plan-as-ai-agents-gain-steam/
+
 <a name="ref2"></a>[2] https://nftevening.com/top-10-ai-agent-tokens/
+
 <a name="ref3"></a>[3] https://fetch.ai/blog/fetch-ai-2024
+
 <a name="ref4"></a>[4] https://www.bitget.com/news/detail/12560604700401
+
 <a name="ref5"></a>[5] https://fetch.ai/blog/multiagent-systems-at-fetch-ai-unlocking-autonomous-value-in-a-decentralized-world
+
 <a name="ref6"></a>[6] https://followin.io/en/feed/15641561
+
 <a name="ref7"></a>[7] https://www.binance.com/en/square/post/19766532395986
+
 <a name="ref8"></a>[8] https://www.lbank.com/questions/ar9pg01745309029
+
 <a name="ref9"></a>[9] https://philosopherinvestor.substack.com/p/why-fetchai-is-the-hidden-gem-every
+
 <a name="ref10"></a>[10] https://coincub.com/agix-price-prediction/
+
 <a name="ref11"></a>[11] https://coinbureau.com/review/singularitynet-agix/
+
 <a name="ref12"></a>[12] https://www.coingecko.com/en/coins/singularitynet
+
 <a name="ref13"></a>[13] https://www.similarweb.com/company/singularitynet.io/
+
 <a name="ref14"></a>[14] https://www.linkedin.com/pulse/exploring-singularitynets-real-world-applications-tobias-darlington-jvppf
+
 <a name="ref15"></a>[15] https://phemex.com/academy/what-is-ocean-protocol
+
 <a name="ref16"></a>[16] https://www.coinbase.com/price/ocean-protocol
+
 <a name="ref17"></a>[17] https://cryptoslate.com/ocean-protocol-jumps-27-in-past-day-whats-behind-the-rise/
+
 <a name="ref18"></a>[18] https://bestdapps.com/blogs/news/unlocking-data-ocean-protocols-real-world-applications
+
 <a name="ref19"></a>[19] https://www.gate.com/learn/articles/what-is-ocean-protocol/551
+
 <a name="ref20"></a>[20] https://fetch.ai/blog/artificial_superintelligence_alliance_update_ASI_token_merger
+
 <a name="ref21"></a>[21] https://fetch.ai/blog/navigating-the-asi-token-merger-a-comprehensive-guide
+
 <a name="ref22"></a>[22] https://fetch.ai/blog/june-13-merger
+
 <a name="ref23"></a>[23] https://www.coinjar.com/global/learn/fet-asi-merger-fetch-ai
+
 <a name="ref24"></a>[24] https://www.aicoin.com/en/article/438727
+
 <a name="ref25"></a>[25] https://www.byteplus.com/en/topic/403926
+
 <a name="ref26"></a>[26] https://www.forbes.com/sites/digital-assets/2025/04/17/we-arent-ready-for-ai-agent-computing-demands/
+
 <a name="ref27"></a>[27] https://canvasbusinessmodel.com/products/ocean-protocol-bcg-matrix
+
 <a name="ref28"></a>[28] https://www.cryptonews.net/news/analytics/30434994/
+
 <a name="ref29"></a>[29] https://www.linkedin.com/pulse/riding-wrecking-ai-agent-hype-web3-buidly-7scnf
+
 <a name="ref30"></a>[30] https://www.linkedin.com/pulse/zero-knowledge-proofs-unlocking-power-privacy-web3-kody-king-lu5cc
+
 <a name="ref31"></a>[31] https://www.toolify.ai/ai-news/unlocking-privacy-and-scalability-with-zk-technology-in-web3-2153130
+
 <a name="ref32"></a>[32] https://dialzara.com/blog/zero-knowledge-proofs-shaping-ai-privacy-and-security/
+
 <a name="ref33"></a>[33] https://www.youtube.com/watch?v=5bwJAmaBTY8
+
 <a name="ref34"></a>[34] https://www.ijsrp.org/research-paper-0524.php?rp=P14913376
+
 <a name="ref35"></a>[35] https://www.mdpi.com/2075-5309/7/3/80
+
 <a name="ref36"></a>[36] https://journals.rta.lv/index.php/ETR/article/view/7953
+
 <a name="ref37"></a>[37] https://link.springer.com/10.1007/s12351-023-00745-1
+
 <a name="ref38"></a>[38] https://www.nature.com/articles/s41599-023-01686-y
+
 <a name="ref39"></a>[39] https://ieeexplore.ieee.org/document/10101296/
+
 <a name="ref40"></a>[40] https://jicrcr.com/index.php/jicrcr/article/view/2219
+
 <a name="ref41"></a>[41] https://www.businessperspectives.org/index.php/journals/investment-management-and-financial-innovations/issue-436/nexus-between-foreign-exchange-rate-and-stock-market-evidence-from-india
+
 <a name="ref42"></a>[42] https://www.coinbase.com/en-gb/price/singularitynet
+
 <a name="ref43"></a>[43] https://bingx.com/en-sa/price/singularitynet/
+
 <a name="ref44"></a>[44] https://blockchainmagazine.net/ai-and-blockchain-to-uplift-web3/
+
 <a name="ref45"></a>[45] https://ijcttjournal.org/2024/Volume-72%20Issue-4/IJCTT-V72I4P104.pdf
+
 <a name="ref46"></a>[46] https://arxiv.org/abs/2405.14209
+
 <a name="ref47"></a>[47] https://ieeexplore.ieee.org/document/9703493/
+
 <a name="ref48"></a>[48] https://arxiv.org/abs/2303.14742
+
 <a name="ref49"></a>[49] https://www.mdpi.com/2504-446X/7/1/11
+
 <a name="ref50"></a>[50] https://arxiv.org/abs/2411.07763
+
 <a name="ref51"></a>[51] https://dl.acm.org/doi/10.1145/3442381.3450138
+
 <a name="ref52"></a>[52] https://arxiv.org/abs/2403.05525
+
 <a name="ref53"></a>[53] https://ieeexplore.ieee.org/document/8493157/
+
 <a name="ref54"></a>[54] https://www.reddit.com/r/FetchAI_Community/comments/1b8mt8u/what_does_fetch_ai_actually_do_and_whats_its_use/
+
 <a name="ref55"></a>[55] https://fetch.ai/blog/fetch-ai-sqd
+
 <a name="ref56"></a>[56] https://public.singularitynet.io/whitepaper.pdf
+
 <a name="ref57"></a>[57] http://www.uhu.es/publicaciones/ojs/index.php/REM/article/view/3849
+
 <a name="ref58"></a>[58] https://support.bittime.com/hc/en-us/articles/9875280480783-The-Birth-of-an-AI-Giant-Fetch-ai-Ocean-Protocol-and-SingularityNET-Join-Forces-to-Create-ASI-Artificial-Superintelligence-Alliance
+
 <a name="ref59"></a>[59] https://www.jmir.org/2025/1/e67485
+
 <a name="ref60"></a>[60] https://wjarr.com/node/11901
+
 <a name="ref61"></a>[61] https://link.springer.com/10.1007/s00464-024-11174-2
+
 <a name="ref62"></a>[62] https://arxiv.org/abs/2504.13873
+
 <a name="ref63"></a>[63] https://diabetesjournals.org/diabetes/article/73/Supplement_1/137-OR/155621/137-OR-Outcomes-of-Real-World-Deployment-of-the
+
 <a name="ref64"></a>[64] https://ieeexplore.ieee.org/document/10825307/
+
 <a name="ref65"></a>[65] https://www.mdpi.com/1424-8220/24/11/3595
+
 <a name="ref66"></a>[66] https://ieeexplore.ieee.org/document/10825600/
+
 <a name="ref67"></a>[67] https://www.bitget.com/wiki/will-fetch-ai-reach-$10
+
 <a name="ref68"></a>[68] https://business.fetch.com/newsroom/fetch-rewards-app-surpasses-5-million-daily-active-users
+
 <a name="ref69"></a>[69] https://business.fetch.com/trends-and-insights/fetch-app-stickiness-user-engagement
+
 <a name="ref70"></a>[70] https://www.allcryptowhitepapers.com/wp-content/uploads/2018/05/SingularityNET.pdf
+
 <a name="ref71"></a>[71] https://cointelegraph.com/press-releases/protocol-ai-captures-16b-market-with-platform-to-turn-anyone-into-web3-dev
+
 <a name="ref72"></a>[72] https://dx.plos.org/10.1371/journal.pone.0291130
+
 <a name="ref73"></a>[73] https://www.mdpi.com/2071-1050/13/21/12232
+
 <a name="ref74"></a>[74] https://www.thebigwhale.io/tokens/singularitynet
+
 <a name="ref75"></a>[75] http://link.springer.com/10.1007/978-3-030-62579-5_4
+
 <a name="ref76"></a>[76] https://ojs.aaai.org/index.php/AAAI/article/view/17817
+
 <a name="ref77"></a>[77] https://www.youtube.com/watch?v=NWxl6AbZRx4
+
 <a name="ref78"></a>[78] https://fetch.ai/blog/superintelligence-alliance-token-merge-asi
+
 <a name="ref79"></a>[79] https://www.tandfonline.com/doi/full/10.1080/03007995.2024.2433245
+
 <a name="ref80"></a>[80] https://bmcpediatr.biomedcentral.com/articles/10.1186/s12887-023-04047-5

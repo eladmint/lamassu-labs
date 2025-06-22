@@ -183,46 +183,89 @@ For companies developing AI agents, a thoughtful IP strategy that aligns with th
 ## References
 
 <a name="ref1"></a>[1] https://ieeexplore.ieee.org/document/10622972/
+
 <a name="ref2"></a>[2] https://ieeexplore.ieee.org/document/10826124/
+
 <a name="ref3"></a>[3] https://ieeexplore.ieee.org/document/10874064/
+
 <a name="ref4"></a>[4] https://arxiv.org/abs/2402.06609
+
 <a name="ref5"></a>[5] http://services.igi-global.com/resolvedoi/resolve.aspx?doi=10.4018/IJSSSP.2021010104
+
 <a name="ref6"></a>[6] https://arxiv.org/abs/2411.00548
+
 <a name="ref7"></a>[7] https://perception-point.io/guides/ai-security/ai-security-risks-frameworks-and-best-practices/
+
 <a name="ref8"></a>[8] https://www.leewayhertz.com/ai-model-security/
+
 <a name="ref9"></a>[9] https://ijsrcseit.com/index.php/home/article/view/CSEIT251112153
+
 <a name="ref10"></a>[10] https://www.microsoft.com/en-us/research/publication/model-watermarking-for-image-processing-networks/
+
 <a name="ref11"></a>[11] https://www.techtarget.com/searchenterpriseai/definition/AI-watermarking
+
 <a name="ref12"></a>[12] https://www.semanticscholar.org/paper/2c6771aeeea55adb0dfb8b4792d14e0dd1fe0ec5
+
 <a name="ref13"></a>[13] https://research.aber.ac.uk/en/publications/federated-learning-with-privacy-preserving-and-model-ip-right-pro
+
 <a name="ref14"></a>[14] https://milvus.io/ai-quick-reference/how-does-federated-learning-differ-from-centralized-learning
+
 <a name="ref15"></a>[15] https://arapackelaw.com/patents/ai-training-data-acquisition-ip/
+
 <a name="ref16"></a>[16] https://www.jdsupra.com/legalnews/intellectual-property-considerations-3756795/
+
 <a name="ref17"></a>[17] https://blog.ai-laws.org/reverse-engineering-in-ai-balancing-innovation-and-ip-protection/
+
 <a name="ref18"></a>[18] https://www.pointguardai.com/blog/one-explanation-for-deepseeks-dramatic-savings-ip-theft
+
 <a name="ref19"></a>[19] https://evrimagaci.org/tpg/openai-accuses-deepseek-of-intellectual-property-theft-177429
+
 <a name="ref20"></a>[20] https://www.mithrilsecurity.io/content-hub/ai-privacy-and-security-risks-hub/model-theft-in-ai
+
 <a name="ref21"></a>[21] https://noma.security/blog/how-an-ai-agent-vulnerability-in-langsmith-could-lead-to-stolen-api-keys-and-hijacked-llm-responses/
+
 <a name="ref22"></a>[22] https://steemit.com/ai/@annabelledarcie/how-to-leverage-ai-agent-development-solutions-for-competitive-advantage
+
 <a name="ref23"></a>[23] https://scaleupally.io/blog/ai-agent-development-cost/
+
 <a name="ref24"></a>[24] https://www.aalpha.net/blog/ai-agent-development-cost/
+
 <a name="ref25"></a>[25] https://dl.acm.org/doi/10.1145/3610661.3617514
+
 <a name="ref26"></a>[26] https://www.mdpi.com/2624-6511/8/1/34
+
 <a name="ref27"></a>[27] https://github.com/rahilshah105/AI-Agent-Marketplace
+
 <a name="ref28"></a>[28] https://olas.network
+
 <a name="ref29"></a>[29] https://arxiv.org/abs/2501.02132
+
 <a name="ref30"></a>[30] https://agent.ai
+
 <a name="ref31"></a>[31] https://appinventiv.com/blog/ai-agent-development-cost/
+
 <a name="ref32"></a>[32] https://arxiv.org/abs/2504.04808
+
 <a name="ref33"></a>[33] https://www.patentnext.com/2024/11/ai-based-inventions-patenting-vs-trade-secret-considerations/
+
 <a name="ref34"></a>[34] https://www.patlytics.ai/blog/ai-powered-innovations-patent-vs-trade-secret-protection
+
 <a name="ref35"></a>[35] https://www.quinnemanuel.com/media/wi2pks2s/the-rising-importance-of-trade-secret-protection-for-ai-related-intellec.pdf
+
 <a name="ref36"></a>[36] https://www.linkedin.com/pulse/protecting-solutions-incorporate-ai-patents-vs-trade-secrets-iampc
+
 <a name="ref37"></a>[37] https://dl.acm.org/doi/10.1145/3716554.3716597
+
 <a name="ref38"></a>[38] https://www.nccgroup.com/us/research-blog/analyzing-secure-ai-architectures/
+
 <a name="ref39"></a>[39] https://www.ssrn.com/abstract=3393510
+
 <a name="ref40"></a>[40] https://olas.network/blog/olas-launches-the-mech-marketplace-the-ai-agent-bazaar
+
 <a name="ref41"></a>[41] https://www.morningstar.co.uk/uk/news/AN_1748939567248929200/ai-agent-marketplace-sundae-bar-quoted-up-25-on-aim-debut.aspx
+
 <a name="ref42"></a>[42] https://www.reddit.com/r/AutoGPT/comments/1eiqdpc/ai_agent_marketplace_validaterefute_this_idea/
+
 <a name="ref43"></a>[43] https://www.pumpitupmagazine.com/the-hidden-costs-of-intellectual-property-leakage-in-the-ai-industry/
+
 <a name="ref44"></a>[44] https://sanalabs.com/agent-platform-ai-agents

@@ -5,15 +5,32 @@
 **Network**: Aleo testnet  
 **Status**: ✅ DEPLOYED
 
-## 📋 Deployed Contracts
+## 📋 Contract Deployment Status
 
-### hallucination_verifier.aleo ✅ LIVE
+### ✅ Deployed Contracts
+
+#### hallucination_verifier.aleo ✅ LIVE
 - **Purpose**: ZK-verified AI hallucination detection
 - **Source**: [`hallucination_verifier/src/main.leo`](hallucination_verifier/src/main.leo)
-- **Deployment TX**: `at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt`
+- **Live Contract**: [View on AleoScan →](https://testnet.aleoscan.io/program?id=hallucination_verifier.aleo)
+- **Deployment TX**: [`at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt`](https://testnet.aleoscan.io/transaction?id=at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt)
 - **Cost**: 8.633225 credits
-- **Status**: ✅ Deployed and verified
-- **Network**: Aleo testnet
+- **Status**: ✅ Deployed and verified on Aleo testnet3
+- **Deployment Date**: June 22, 2025
+
+### 📋 Pending Deployment
+
+#### agent_registry.aleo
+- **Purpose**: AI agent registration and capability management
+- **Source**: Contract source archived, needs restoration
+- **Status**: ⏳ Ready for deployment
+- **Location**: `agent_registry/` (program.json exists)
+
+#### trust_verifier.aleo
+- **Purpose**: Trust score verification for AI agents
+- **Source**: Contract source archived, needs restoration
+- **Status**: ⏳ Ready for deployment
+- **Location**: `trust_verifier/` (program.json exists)
 
 ## 🚀 Contract Functions
 
@@ -128,15 +145,20 @@ lamassu-labs/
 - **Network**: Aleo testnet3
 
 ### **Blockchain Explorers**
-- **[aleo.tools](https://aleo.tools/)** - Search for transaction ID or contract name
+- **[AleoScan](https://testnet.aleoscan.io/)** - Primary Aleo testnet explorer
+- **[aleo.tools](https://aleo.tools/)** - Alternative explorer
 - **[explorer.aleo.org](https://explorer.aleo.org/)** - Official Aleo explorer
-- **Contract Name**: `hallucination_verifier.aleo`
 
-### **How to Verify**
-1. Visit any blockchain explorer above
+### **Direct Links**
+- **Live Contract**: [hallucination_verifier.aleo on AleoScan](https://testnet.aleoscan.io/program?id=hallucination_verifier.aleo)
+- **Deployment Transaction**: [View on AleoScan](https://testnet.aleoscan.io/transaction?id=at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt)
+
+### **Manual Verification**
+1. Visit [AleoScan](https://testnet.aleoscan.io/)
 2. Search for transaction ID: `at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt`
-3. Or search for contract: `hallucination_verifier.aleo`
+3. Or search for program ID: `hallucination_verifier.aleo`
 4. Verify deployment cost: 8.633225 credits
+5. Verify deployer: `aleo176m09rv6qslzx0r7uyuerz3keq346lkdqhwtk2w8ffsk4rdsxyrqj9xx5m`
 
 ## 🏆 ZK-Berlin Hackathon 2025
 

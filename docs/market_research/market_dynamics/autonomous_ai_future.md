@@ -259,75 +259,147 @@ Enterprises should assess their readiness for autonomous AI agents across data a
 ## References
 
 <a name="ref1"></a>[1] https://arxiv.org/abs/2504.19678
+
 <a name="ref2"></a>[2] https://www.gartner.com/en/newsroom/press-releases/2025-03-05-gartner-predicts-agentic-ai-will-autonomously-resolve-80-percent-of-common-customer-service-issues-without-human-intervention-by-20290
+
 <a name="ref3"></a>[3] https://www.productiveedge.com/blog/gartners-top-10-tech-trends-of-2025-agentic-ai-and-beyond
+
 <a name="ref4"></a>[4] https://campustechnology.com/articles/2024/10/23/agentic-ai-named-top-tech-trend-for-2025.aspx
+
 <a name="ref5"></a>[5] https://thejournal.com/articles/2024/10/23/gartner-names-agentic-ai-top-tech-trend-for-2025.aspx
+
 <a name="ref6"></a>[6] https://www.functionize.com/blog/gartner-top-strategic-trends-2025
+
 <a name="ref7"></a>[7] https://www.gartner.com/en/newsroom/press-releases/2025-06-17-gartner-announces-top-data-and-analytics-predictions
+
 <a name="ref8"></a>[8] https://www.gartner.com/en/newsroom/press-releases/2025-06-11-gartner-predicts-that-guardian-agents-will-capture-10-15-percent-of-the-agentic-ai-market-by-2030
+
 <a name="ref9"></a>[9] https://al-kindipublisher.com/index.php/jcsts/article/view/8907
+
 <a name="ref10"></a>[10] https://www.alvarezandmarsal.com/thought-leadership/demystifying-ai-agents-in-2025-separating-hype-from-reality-and-navigating-market-outlook
+
 <a name="ref11"></a>[11] https://itbrief.com.au/story/forrester-s-2025-predictions-reveal-mixed-trends-in-ai-tech
+
 <a name="ref12"></a>[12] https://superagi.com/the-future-of-work-how-autonomous-ai-agents-will-transform-industries-by-2030/
+
 <a name="ref13"></a>[13] https://www.converse360.co.uk/post/what-is-agentic-ai-and-why-is-it-important
+
 <a name="ref14"></a>[14] https://cdotimes.com/2025/03/26/2025-and-beyond-agentic-ai-revolution-autonomous-teams-of-ai-humans-transforming-business/
+
 <a name="ref15"></a>[15] https://collabnix.com/agentic-ai-trends-2025-the-complete-guide-to-autonomous-intelligence-revolution/
+
 <a name="ref16"></a>[16] https://www.weforum.org/stories/2025/05/ai-agents-select-the-right-agent/
+
 <a name="ref17"></a>[17] https://onereach.ai/2025-trends-to-watch-agentic-ai/
+
 <a name="ref18"></a>[18] https://dl.acm.org/doi/10.1145/3698038.3698525
+
 <a name="ref19"></a>[19] https://guptadeepak.com/the-rise-of-autonomous-ai-agents-a-comprehensive-guide-to-their-architecture-applications-and-impact/
+
 <a name="ref20"></a>[20] https://medium.com/building-the-open-data-stack/behind-ai-agents-the-infrastructure-that-supports-autonomy-4c4657d7d720
+
 <a name="ref21"></a>[21] https://dev.to/routeclouds/the-rise-of-autonomous-ai-agents-in-business-operations-14gg
+
 <a name="ref22"></a>[22] https://www.ijcttjournal.org/2024/Volume-72%20Issue-11/IJCTT-V72I11P112.pdf
+
 <a name="ref23"></a>[23] https://www.computerweekly.com/news/366624332/Agentic-AI-to-drive-heavy-infrastructure-demands
+
 <a name="ref24"></a>[24] http://www.scitepress.org/DigitalLibrary/Link.aspx?doi=10.5220/0006782204810487
+
 <a name="ref25"></a>[25] https://ieeexplore.ieee.org/document/9951039/
+
 <a name="ref26"></a>[26] https://ijsra.net/node/5859
+
 <a name="ref27"></a>[27] https://arxiv.org/abs/2412.16325
+
 <a name="ref28"></a>[28] https://arxiv.org/abs/2404.01023
+
 <a name="ref29"></a>[29] https://sindri.app/blog/2025/01/24/agents-zk/
+
 <a name="ref30"></a>[30] https://outposts.io/article/zk-proofs-emerge-as-key-technology-for-trustworthy-ai-agents-0b8bfc6d-eeef-4a41-8a2b-ac58e729d922
+
 <a name="ref31"></a>[31] https://coinsbench.com/zero-knowledge-ai-the-future-of-private-trustless-ai-ae80c99f7fb5
+
 <a name="ref32"></a>[32] https://oasis.net/blog/verification-methods-ai-agents
+
 <a name="ref33"></a>[33] https://outposts.io/article/ai-and-zero-knowledge-proofs-merge-to-create-trust-layer-c1524584-3b78-49a5-b95c-2709b889f5bd
+
 <a name="ref34"></a>[34] https://blog.inferencelabs.com/fraudslaying-ai-agents-with-zero-knowledge-cryptography-db4fc0b6b0fd
+
 <a name="ref35"></a>[35] https://www.nature.com/articles/s41599-024-04044-8
+
 <a name="ref36"></a>[36] https://pmc.ncbi.nlm.nih.gov/articles/PMC11631875/
+
 <a name="ref37"></a>[37] https://cacm.acm.org/blogcacm/auditing-ai-and-autonomous-systems-building-an-infrastructure-of-trust/
+
 <a name="ref38"></a>[38] https://arxiv.org/pdf/2206.11981.pdf
+
 <a name="ref39"></a>[39] https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai
+
 <a name="ref40"></a>[40] https://www.dglr.de/publikationen/2023/610347.pdf
+
 <a name="ref41"></a>[41] https://cset.georgetown.edu/wp-content/uploads/CSET-Governing-AI-with-Existing-Authorities.pdf
+
 <a name="ref42"></a>[42] https://eacpm.gov.in/wp-content/uploads/2024/01/EACPM_AI_WP-1.pdf
+
 <a name="ref43"></a>[43] https://www.ewadirect.com/proceedings/ace/article/view/10758
+
 <a name="ref44"></a>[44] https://link.springer.com/10.1007/s13437-021-00237-z
+
 <a name="ref45"></a>[45] http://www.transnav.eu/Article_VerifAI_Framework_for_Functional_Stach,71,1432.html
+
 <a name="ref46"></a>[46] https://www.sciendo.com/article/10.2478/bjes-2022-0016
+
 <a name="ref47"></a>[47] https://zenodo.org/uploads/14063680
+
 <a name="ref48"></a>[48] https://academic.oup.com/ijlit/article/8129620
+
 <a name="ref49"></a>[49] https://ijsrem.com/download/securing-the-autonomous-future-a-comprehensive-analysis-of-security-challenges-and-mitigation-strategies-for-ai-agents/
+
 <a name="ref50"></a>[50] https://www.gsdcouncil.org/blogs/are-autonomous-ai-agents-ready-for-real-world-enterprise-demands
+
 <a name="ref51"></a>[51] https://www.linkedin.com/pulse/your-enterprise-ready-ai-agents-understanding-agent-readiness-rao-dcc5c
+
 <a name="ref52"></a>[52] https://ijsrcseit.com/index.php/home/article/view/CSEIT2410612395
+
 <a name="ref53"></a>[53] https://saxon.ai/ebook/the-go-to-ai-agents-readiness-checklist-for-enterprise-leaders/
+
 <a name="ref54"></a>[54] https://www.automationanywhere.com/company/blog/automation-ai/ai-agents-enterprise-task-automation-autonomy
+
 <a name="ref55"></a>[55] https://journalwjarr.com/node/1723
+
 <a name="ref56"></a>[56] https://www.mdpi.com/2076-3417/15/9/4986
+
 <a name="ref57"></a>[57] https://www.cisco.com/c/dam/en_us/solutions/artificial-intelligence/ai-infrastructure.pdf?dtid=osscdc000283&linkclickid=srch
+
 <a name="ref58"></a>[58] https://arxiv.org/abs/2504.16108
+
 <a name="ref59"></a>[59] https://www.lazard.com/research-insights/venture-growth-banking-insights-lazard-vgb-ai-infra-40/
+
 <a name="ref60"></a>[60] https://arxiv.org/abs/2501.06706
+
 <a name="ref61"></a>[61] https://ieeexplore.ieee.org/document/10605324/
+
 <a name="ref62"></a>[62] https://www.semanticscholar.org/paper/e5eb5dba43456febeda6dcc4eaee35e37b48c55f
+
 <a name="ref63"></a>[63] https://agilayer.com/cutting%E2%80%91edge-trends-in-agi-ai-agents-june-2025/
+
 <a name="ref64"></a>[64] https://www.zdnet.com/article/25-of-enterprises-using-ai-will-deploy-ai-agents-by-2025
+
 <a name="ref65"></a>[65] https://superagi.com/mastering-autonomous-ai-agents-a-beginners-guide-to-getting-started-in-2025/
+
 <a name="ref66"></a>[66] https://www.crn.com/news/ai/2024/gartner-s-top-10-tech-trends-of-2025-agentic-ai-robots-and-disinformation-security
+
 <a name="ref67"></a>[67] https://ijaem.net/issue_dcp/The%20Rise%20of%20AI%20Agents%20Transforming%20Enterprise%20Automation.pdf
+
 <a name="ref68"></a>[68] https://aws.amazon.com/blogs/aws-insights/the-rise-of-autonomous-agents-what-enterprise-leaders-need-to-know-about-the-next-wave-of-ai/
+
 <a name="ref69"></a>[69] https://arxiv.org/abs/2504.05862
+
 <a name="ref70"></a>[70] https://metall-mater-eng.com/index.php/home/article/view/1488
+
 <a name="ref71"></a>[71] https://dl.acm.org/doi/10.1145/3676536.3698390
+
 <a name="ref72"></a>[72] https://www.semanticscholar.org/paper/f440cdce41c4d9994112d7c73c87a2cb715655e8
+
 <a name="ref73"></a>[73] https://www.mdpi.com/2078-2489/16/6/469

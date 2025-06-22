@@ -96,16 +96,17 @@
 
 | **Deployment Detail** | **Value** | **Verification** |
 |:---|:---|:---|
-| **🔗 Transaction ID** | `at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt` | [Search on Aleo.tools →](https://aleo.tools/) |
+| **🔗 Transaction ID** | `at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt` | [View on AleoScan →](https://testnet.aleoscan.io/transaction?id=at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt) |
 | **💰 Credits Spent** | 8.633 credits | Real deployment cost |
 | **📅 Deployment Date** | June 22, 2025 | Live and verified |
-| **🏛️ Contract Name** | `hallucination_verifier.aleo` | [View Source Code →](src/contracts/hallucination_verifier/src/main.leo) |
+| **🏛️ Contract Name** | `hallucination_verifier.aleo` | [View on AleoScan →](https://testnet.aleoscan.io/program?id=hallucination_verifier.aleo) |
 | **⚡ Status** | ✅ Live on Testnet3 | Fully operational |
 
 > **🔍 How to Verify Deployment**: 
-> - **Smart Contracts**: [View all contracts & documentation →](src/contracts/README.md)
-> - **Blockchain Explorer**: Search `at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt` on [aleo.tools](https://aleo.tools/) or [explorer.aleo.org](https://explorer.aleo.org/)
-> - **Contract Name**: `hallucination_verifier.aleo`
+> - **Live Transaction**: [View on AleoScan →](https://testnet.aleoscan.io/transaction?id=at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt)
+> - **Live Contract**: [View on AleoScan →](https://testnet.aleoscan.io/program?id=hallucination_verifier.aleo)
+> - **Source Code**: [View on GitHub →](src/contracts/hallucination_verifier/src/main.leo)
+> - **All Contracts**: [Documentation & Status →](src/contracts/README.md)
 
 ### **🔧 Smart Contract Functions** 
 ```leo
@@ -522,9 +523,10 @@ print(f"ZK Proof: {result.zk_proof.proof_id}")
 ### **Ready to Unlock the $100B DeFi AI Market?**
 
 > **🔍 For Judges**: 
-> - **📝 Smart Contracts Overview**: [View all contracts & deployment info →](src/contracts/README.md)
-> - **🔗 On-Chain Verification**: Search transaction `at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt` on [aleo.tools](https://aleo.tools/)  
-> - **📊 Deployment Guide**: [Complete deployment documentation →](docs/guides/deployment/ALEO_CONTRACT_DEPLOYMENT.md)
+> - **🔗 Live Transaction**: [View on AleoScan →](https://testnet.aleoscan.io/transaction?id=at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt)
+> - **📋 Live Contract**: [View on AleoScan →](https://testnet.aleoscan.io/program?id=hallucination_verifier.aleo)
+> - **📝 All Contracts**: [Overview & deployment status →](src/contracts/README.md)
+> - **📊 Deployment Guide**: [Complete documentation →](docs/guides/deployment/ALEO_CONTRACT_DEPLOYMENT.md)
 
 </div>
 
@@ -565,7 +567,7 @@ Join the AI trust revolution backed by zero-knowledge proofs.
 
 *TrustWrapper: Because trust shouldn't require faith.*
 
-[![Live Contract](https://img.shields.io/badge/🔗_LIVE_CONTRACT-at1f29je4764...sep8zrt-brightgreen?style=for-the-badge)](src/contracts/README.md)
+[![Live Contract](https://img.shields.io/badge/🔗_LIVE_CONTRACT-View_on_AleoScan-brightgreen?style=for-the-badge)](https://testnet.aleoscan.io/program?id=hallucination_verifier.aleo)
 
 **📧 Contact**: [GitHub Issues](https://github.com/eladmint/lamassu-labs/issues) • **🔗 Repository**: [eladmint/lamassu-labs](https://github.com/eladmint/lamassu-labs) • **📚 Docs**: [Research Index](docs/market_research/README.md)
 

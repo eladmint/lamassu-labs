@@ -178,98 +178,193 @@ The future of browser automation and web scraping will be shaped by advancements
 ## References
 
 <a name="ref1"></a>[1] https://www.precedenceresearch.com/robotic-process-automation-market
+
 <a name="ref2"></a>[2] https://www.technavio.com/report/robotic-process-automation-market-industry-analysis
+
 <a name="ref3"></a>[3] https://www.blueprintsys.com/blog/6-trends-shaping-rpa-in-2025
+
 <a name="ref4"></a>[4] https://iconnect007.com/article/116915/rpa-market-size-worth-397-billion-by-2025/116918/ein
+
 <a name="ref5"></a>[5] https://flobotics.io/blog/rpa-statistics/
+
 <a name="ref6"></a>[6] https://ray.run/blog/comparing-automated-testing-tools-cypress-selenium-playwright-and-puppeteer
+
 <a name="ref7"></a>[7] https://www.6sense.com/tech/testing-and-qa/selenium-vs-playwright
+
 <a name="ref8"></a>[8] https://www.wappalyzer.com/technologies/web-frameworks/
+
 <a name="ref9"></a>[9] https://scrapeops.io/web-scraping-playbook/web-scraping-market-report-2025/
+
 <a name="ref10"></a>[10] https://prowebscraper.com/blog/6-reasons-to-choose-a-web-scraping-service-over-in-house-efforts/
+
 <a name="ref11"></a>[11] https://www.scrapehero.com/web-scraping-service-cost/
+
 <a name="ref12"></a>[12] https://www.abdulazizahwan.com/2025/06/unlocking-the-future-of-automation-steel-browser-infrastructure-for-ai-agents.html
+
 <a name="ref13"></a>[13] https://www.58jingpai.com/en/steel-browser/
+
 <a name="ref14"></a>[14] https://sourceforge.net/projects/steel-browser.mirror/
+
 <a name="ref15"></a>[15] https://github.com/steel-dev/steel-browser
+
 <a name="ref16"></a>[16] https://my.idc.com/getdoc.jsp?containerId=prUS52103024
+
 <a name="ref17"></a>[17] https://geekflare.com/proxy/bright-data-review/
+
 <a name="ref18"></a>[18] https://tekpon.com/software/bright-data/pricing/
+
 <a name="ref19"></a>[19] https://dev.to/spalladino/a-beginners-intro-to-coding-zero-knowledge-proofs-c56
+
 <a name="ref20"></a>[20] https://plus.parsehub.com/blog/increasing-cost-web-scraping-datasourcing/
+
 <a name="ref21"></a>[21] https://www.saasworthy.com/product/browserless-io/pricing
+
 <a name="ref22"></a>[22] https://www.browserless.io/blog/unit-based-pricing
+
 <a name="ref23"></a>[23] https://www.octoparse.com/blog/how-does-web-scraping-cost
+
 <a name="ref24"></a>[24] https://brightdata.com/pricing/scraping-browser
+
 <a name="ref25"></a>[25] https://www.gartner.com/en/webinar/569270/1281346
-[26] https://azbuki.bg/wp-content/uploads/2025/02/strategies_1s_25_hristin-strijlev.pdf
-[27] http://learning-gate.com/index.php/2576-8484/article/view/7133
-[28] https://www.federalreserve.gov/econres/notes/feds-notes/bank-lending-to-private-credit-size-characteristics-and-financial-stability-implications-20250523.html
-[29] https://ijournalse.org/index.php/ESJ/article/view/2685
-[30] https://www.richtmann.org/journal/index.php/jesr/article/view/14136
-[31] http://pev.kpu.zp.ua/journals/2025/2_42_ukr/6.pdf
-[32] https://scielo.org.za/scielo.php?script=sci_arttext&pid=S2225-62532025000300005&lng=en&nrm=iso&tlng=en
-[33] https://atripress.org/index.php/jcac/article/view/324
-[34] https://ieeexplore.ieee.org/document/10989110/
-[35] https://www.fortunebusinessinsights.com/robotic-process-automation-rpa-market-102042
-[36] https://www.thebusinessresearchcompany.com/report/robotic-process-automation-rpa-global-market-report
-[37] https://www.linkedin.com/pulse/robotic-process-automation-rpa-market-2025-intelligent-ywzre/
-[38] https://www.linkedin.com/pulse/browsers-market-size-share-trends-outlook-investment-71g1c/
-[39] https://gs.statcounter.com/browser-version-market-share
-[40] http://africajournal.ru/en/2025/04/01/the-social-mission-of-religious-organizations-in-africa-new-challenges-and-potential-limitations/
-[41] https://www.chndoi.org/Resolution/Handler?doi=10.13227/j.hjkx.202404068
-[42] https://bulecon.enu.kz/index.php/main/article/view/1104
-[43] http://business-navigator.ks.ua/journals/2025/80_2025/33.pdf
-[44] https://journals.iium.edu.my/ktn/index.php/jp/article/view/380
-[45] https://brightdata.com/blog/brightdata-in-practice/scraping-browser-vs-headless-browsers
-[46] https://dl.acm.org/doi/10.1145/3286978.3287013
-[47] https://ieeexplore.ieee.org/document/10270213/
-[48] http://www.psae-jrnl.nau.in.ua/journal/2_99_2025_ukr/13.pdf
-[49] https://ieeexplore.ieee.org/document/10509007/
-[50] https://www.reddit.com/r/webscraping/comments/1aosgks/enterprise_web_scraping_what_to_look_out_for/
-[51] https://outsourcebigdata.com/10-benefits-of-free-web-scraping-services-over-paid-web-scraping-services/
-[52] https://www.shoal.gg/p/zktls-verifiable-data-composability
-[53] https://www.gartner.com/reviews/market/robotic-process-automation
-[54] https://www.gartner.com/en/documents/5614191
-[55] https://colaninfotech.com/blog/rpa-hyperautomation-market-report-2025/
-[56] https://www.browserless.io/pricing
-[57] https://onlinelibrary.wiley.com/doi/10.1155/2017/1048081
-[58] https://journals.sagepub.com/doi/10.1177/03019233241254891
-[59] https://journals.sagepub.com/doi/10.1177/03019233241249361
-[60] https://ieeexplore.ieee.org/document/10189079/
-[61] https://www.mdpi.com/2071-1050/16/14/6030
-[62] https://www.nature.com/articles/s41467-023-38123-2
-[63] https://onlinelibrary.wiley.com/doi/10.1002/cb.2514
-[64] https://docs.steel.dev/overview/pricinglimits
-[65] https://steel.dev
-[66] https://proxyway.com/news/bright-data-scraper-prices-unlocker-api
-[67] https://slashdot.org/software/comparison/Steel.dev-vs-browserless/
-[68] https://www.ijraset.com/best-journal/dynamic-price-monitoring-in-ecommerce-leveraging-web-scraping-data-analysis-and-email-automation-for-dynamic-pricing-insights
-[69] https://ieeexplore.ieee.org/document/10574547/
-[70] http://ejournal.urindo.ac.id/index.php/TI/article/view/1321
-[71] https://brill.com/view/journals/ifam/27/3/article-p566_9.xml
-[72] https://www.ijraset.com/best-journal/web-scraping-application
-[73] https://www.ijisrt.com/online-shopping-item-cost-analysis-through-web-scraping-and-nodejs
-[74] https://dielektrika.unram.ac.id/index.php/dielektrika/article/view/397
-[75] https://ejurnal.ung.ac.id/index.php/jjom/article/view/26568
-[76] https://brightdata.com/pricing/web-scraper
-[77] https://brightdata.com/pricing/web-scraper/functions
-[78] https://brightdata.com/pricing
-[79] https://linkinghub.elsevier.com/retrieve/pii/S1351418025001771
-[80] https://www.grandviewresearch.com/industry-analysis/robotic-process-automation-rpa-market
-[81] https://www.semanticscholar.org/paper/95f25c95da86f7b17174f1d22bb619c014227f97
-[82] https://www.semanticscholar.org/paper/d6b314bdf4eaf2d49072a6432d14ab3e47323d21
-[83] http://link.springer.com/10.1007/978-3-030-16660-1_66
-[84] http://ieeexplore.ieee.org/document/5410449/
-[85] https://www.semanticscholar.org/paper/85c556cd2bce3c7ed93816d10ecdfa85a1bd8967
-[86] https://www.semanticscholar.org/paper/039ec7ac39ac37c9b633ffc21ab62a78b859affa
-[87] https://www.semanticscholar.org/paper/06d77a5598ddc249cd28150f99660b88e32578c1
-[88] http://ieeexplore.ieee.org/document/8117827/
-[89] https://www.scraperapi.com/web-scraping/tools/
-[90] https://linkinghub.elsevier.com/retrieve/pii/S0306261917302623
-[91] https://www.semanticscholar.org/paper/eabd7b7f478145f67e37d064a3d98cd6910caf40
-[92] https://link.springer.com/10.1007/s11227-023-05207-1
-[93] https://www.aisharenet.com/en/steel-browser/
-[94] https://stec.univ-ovidius.ro/html/anale/ENG/wp-content/uploads/2024/02/24.pdf
-[95] https://ieeexplore.ieee.org/document/10816741/
-[96] https://brightdata.com/pricing/web-scraper/custom
+
+<a name="ref26"></a>[26] https://azbuki.bg/wp-content/uploads/2025/02/strategies_1s_25_hristin-strijlev.pdf
+
+<a name="ref27"></a>[27] http://learning-gate.com/index.php/2576-8484/article/view/7133
+
+<a name="ref28"></a>[28] https://www.federalreserve.gov/econres/notes/feds-notes/bank-lending-to-private-credit-size-characteristics-and-financial-stability-implications-20250523.html
+
+<a name="ref29"></a>[29] https://ijournalse.org/index.php/ESJ/article/view/2685
+
+<a name="ref30"></a>[30] https://www.richtmann.org/journal/index.php/jesr/article/view/14136
+
+<a name="ref31"></a>[31] http://pev.kpu.zp.ua/journals/2025/2_42_ukr/6.pdf
+
+<a name="ref32"></a>[32] https://scielo.org.za/scielo.php?script=sci_arttext&pid=S2225-62532025000300005&lng=en&nrm=iso&tlng=en
+
+<a name="ref33"></a>[33] https://atripress.org/index.php/jcac/article/view/324
+
+<a name="ref34"></a>[34] https://ieeexplore.ieee.org/document/10989110/
+
+<a name="ref35"></a>[35] https://www.fortunebusinessinsights.com/robotic-process-automation-rpa-market-102042
+
+<a name="ref36"></a>[36] https://www.thebusinessresearchcompany.com/report/robotic-process-automation-rpa-global-market-report
+
+<a name="ref37"></a>[37] https://www.linkedin.com/pulse/robotic-process-automation-rpa-market-2025-intelligent-ywzre/
+
+<a name="ref38"></a>[38] https://www.linkedin.com/pulse/browsers-market-size-share-trends-outlook-investment-71g1c/
+
+<a name="ref39"></a>[39] https://gs.statcounter.com/browser-version-market-share
+
+<a name="ref40"></a>[40] http://africajournal.ru/en/2025/04/01/the-social-mission-of-religious-organizations-in-africa-new-challenges-and-potential-limitations/
+
+<a name="ref41"></a>[41] https://www.chndoi.org/Resolution/Handler?doi=10.13227/j.hjkx.202404068
+
+<a name="ref42"></a>[42] https://bulecon.enu.kz/index.php/main/article/view/1104
+
+<a name="ref43"></a>[43] http://business-navigator.ks.ua/journals/2025/80_2025/33.pdf
+
+<a name="ref44"></a>[44] https://journals.iium.edu.my/ktn/index.php/jp/article/view/380
+
+<a name="ref45"></a>[45] https://brightdata.com/blog/brightdata-in-practice/scraping-browser-vs-headless-browsers
+
+<a name="ref46"></a>[46] https://dl.acm.org/doi/10.1145/3286978.3287013
+
+<a name="ref47"></a>[47] https://ieeexplore.ieee.org/document/10270213/
+
+<a name="ref48"></a>[48] http://www.psae-jrnl.nau.in.ua/journal/2_99_2025_ukr/13.pdf
+
+<a name="ref49"></a>[49] https://ieeexplore.ieee.org/document/10509007/
+
+<a name="ref50"></a>[50] https://www.reddit.com/r/webscraping/comments/1aosgks/enterprise_web_scraping_what_to_look_out_for/
+
+<a name="ref51"></a>[51] https://outsourcebigdata.com/10-benefits-of-free-web-scraping-services-over-paid-web-scraping-services/
+
+<a name="ref52"></a>[52] https://www.shoal.gg/p/zktls-verifiable-data-composability
+
+<a name="ref53"></a>[53] https://www.gartner.com/reviews/market/robotic-process-automation
+
+<a name="ref54"></a>[54] https://www.gartner.com/en/documents/5614191
+
+<a name="ref55"></a>[55] https://colaninfotech.com/blog/rpa-hyperautomation-market-report-2025/
+
+<a name="ref56"></a>[56] https://www.browserless.io/pricing
+
+<a name="ref57"></a>[57] https://onlinelibrary.wiley.com/doi/10.1155/2017/1048081
+
+<a name="ref58"></a>[58] https://journals.sagepub.com/doi/10.1177/03019233241254891
+
+<a name="ref59"></a>[59] https://journals.sagepub.com/doi/10.1177/03019233241249361
+
+<a name="ref60"></a>[60] https://ieeexplore.ieee.org/document/10189079/
+
+<a name="ref61"></a>[61] https://www.mdpi.com/2071-1050/16/14/6030
+
+<a name="ref62"></a>[62] https://www.nature.com/articles/s41467-023-38123-2
+
+<a name="ref63"></a>[63] https://onlinelibrary.wiley.com/doi/10.1002/cb.2514
+
+<a name="ref64"></a>[64] https://docs.steel.dev/overview/pricinglimits
+
+<a name="ref65"></a>[65] https://steel.dev
+
+<a name="ref66"></a>[66] https://proxyway.com/news/bright-data-scraper-prices-unlocker-api
+
+<a name="ref67"></a>[67] https://slashdot.org/software/comparison/Steel.dev-vs-browserless/
+
+<a name="ref68"></a>[68] https://www.ijraset.com/best-journal/dynamic-price-monitoring-in-ecommerce-leveraging-web-scraping-data-analysis-and-email-automation-for-dynamic-pricing-insights
+
+<a name="ref69"></a>[69] https://ieeexplore.ieee.org/document/10574547/
+
+<a name="ref70"></a>[70] http://ejournal.urindo.ac.id/index.php/TI/article/view/1321
+
+<a name="ref71"></a>[71] https://brill.com/view/journals/ifam/27/3/article-p566_9.xml
+
+<a name="ref72"></a>[72] https://www.ijraset.com/best-journal/web-scraping-application
+
+<a name="ref73"></a>[73] https://www.ijisrt.com/online-shopping-item-cost-analysis-through-web-scraping-and-nodejs
+
+<a name="ref74"></a>[74] https://dielektrika.unram.ac.id/index.php/dielektrika/article/view/397
+
+<a name="ref75"></a>[75] https://ejurnal.ung.ac.id/index.php/jjom/article/view/26568
+
+<a name="ref76"></a>[76] https://brightdata.com/pricing/web-scraper
+
+<a name="ref77"></a>[77] https://brightdata.com/pricing/web-scraper/functions
+
+<a name="ref78"></a>[78] https://brightdata.com/pricing
+
+<a name="ref79"></a>[79] https://linkinghub.elsevier.com/retrieve/pii/S1351418025001771
+
+<a name="ref80"></a>[80] https://www.grandviewresearch.com/industry-analysis/robotic-process-automation-rpa-market
+
+<a name="ref81"></a>[81] https://www.semanticscholar.org/paper/95f25c95da86f7b17174f1d22bb619c014227f97
+
+<a name="ref82"></a>[82] https://www.semanticscholar.org/paper/d6b314bdf4eaf2d49072a6432d14ab3e47323d21
+
+<a name="ref83"></a>[83] http://link.springer.com/10.1007/978-3-030-16660-1_66
+
+<a name="ref84"></a>[84] http://ieeexplore.ieee.org/document/5410449/
+
+<a name="ref85"></a>[85] https://www.semanticscholar.org/paper/85c556cd2bce3c7ed93816d10ecdfa85a1bd8967
+
+<a name="ref86"></a>[86] https://www.semanticscholar.org/paper/039ec7ac39ac37c9b633ffc21ab62a78b859affa
+
+<a name="ref87"></a>[87] https://www.semanticscholar.org/paper/06d77a5598ddc249cd28150f99660b88e32578c1
+
+<a name="ref88"></a>[88] http://ieeexplore.ieee.org/document/8117827/
+
+<a name="ref89"></a>[89] https://www.scraperapi.com/web-scraping/tools/
+
+<a name="ref90"></a>[90] https://linkinghub.elsevier.com/retrieve/pii/S0306261917302623
+
+<a name="ref91"></a>[91] https://www.semanticscholar.org/paper/eabd7b7f478145f67e37d064a3d98cd6910caf40
+
+<a name="ref92"></a>[92] https://link.springer.com/10.1007/s11227-023-05207-1
+
+<a name="ref93"></a>[93] https://www.aisharenet.com/en/steel-browser/
+
+<a name="ref94"></a>[94] https://stec.univ-ovidius.ro/html/anale/ENG/wp-content/uploads/2024/02/24.pdf
+
+<a name="ref95"></a>[95] https://ieeexplore.ieee.org/document/10816741/
+
+<a name="ref96"></a>[96] https://brightdata.com/pricing/web-scraper/custom
