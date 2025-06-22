@@ -45,7 +45,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2025-06-21
 
 ### Added
-- Initial release for ZK Berlin Hackathon
+- Initial release of TrustWrapper
 - TrustWrapper core implementation with three layers:
   - Layer 1: ZK Performance Verification (Aleo)
   - Layer 2: Explainable AI (Ziggurat)

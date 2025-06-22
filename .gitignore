@@ -64,8 +64,22 @@ outputs/
 # Project instructions
 CLAUDE.md
 
-# Internal documentation (keep locally only)
-internal_docs/
+# Internal documentation (keep locally only - now archived)
+archive/internal_docs/
+
+# Enterprise components (private)
+trustwrapper-enterprise/
+*.enterprise
 
 # Node modules in tools
 tools/monitoring/node_modules/
+
+# Archive data
+archive/data/
+
+# Memory bank (project-specific context)
+memory-bank/
+
+# Temporary files
+*.tmp
+*.bak

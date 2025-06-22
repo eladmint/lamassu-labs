@@ -1,6 +1,21 @@
 """
-Core components for Lamassu Labs ZK Trust Layer
+TrustWrapper Core - Open Source Components
 """
-from .trust_wrapper import ZKTrustWrapper, VerifiedResult, ExecutionMetrics
 
-__all__ = ['ZKTrustWrapper', 'VerifiedResult', 'ExecutionMetrics']
+from .basic_verifier import BasicTrustWrapper, BasicHallucinationDetector
+from .interfaces import (
+    AIVerifier, HallucinationDetector, TrustScorer, ProofGenerator,
+    VerificationResult, HallucinationIssue, VerificationLevel
+)
+
+__all__ = [
+    "BasicTrustWrapper",
+    "BasicHallucinationDetector", 
+    "AIVerifier",
+    "HallucinationDetector",
+    "TrustScorer",
+    "ProofGenerator",
+    "VerificationResult",
+    "HallucinationIssue", 
+    "VerificationLevel"
+]
