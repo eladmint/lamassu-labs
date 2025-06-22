@@ -11,7 +11,7 @@
 
 *The first ZK-verified AI trust infrastructure - Solving DeFi's $13B trust problem with Aleo*
 
-[🚀 **View Contract Source**](src/contracts/hallucination_verifier/src/main.leo) • [📊 **See Research**](docs/market_research/README.md) • [⚡ **Quick Demo**](#quick-demo)
+[🚀 **View Smart Contracts**](src/contracts/README.md) • [📊 **See Research**](docs/market_research/README.md) • [⚡ **Quick Demo**](#quick-demo)
 
 </div>
 
@@ -103,7 +103,7 @@
 | **⚡ Status** | ✅ Live on Testnet3 | Fully operational |
 
 > **🔍 How to Verify Deployment**: 
-> - **Contract Source**: [View Leo code →](src/contracts/hallucination_verifier/src/main.leo)
+> - **Smart Contracts**: [View all contracts & documentation →](src/contracts/README.md)
 > - **Blockchain Explorer**: Search `at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt` on [aleo.tools](https://aleo.tools/) or [explorer.aleo.org](https://explorer.aleo.org/)
 > - **Contract Name**: `hallucination_verifier.aleo`
 
@@ -522,7 +522,7 @@ print(f"ZK Proof: {result.zk_proof.proof_id}")
 ### **Ready to Unlock the $100B DeFi AI Market?**
 
 > **🔍 For Judges**: 
-> - **📝 Contract Source**: [View Leo smart contract →](src/contracts/hallucination_verifier/src/main.leo)
+> - **📝 Smart Contracts Overview**: [View all contracts & deployment info →](src/contracts/README.md)
 > - **🔗 On-Chain Verification**: Search transaction `at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt` on [aleo.tools](https://aleo.tools/)  
 > - **📊 Deployment Guide**: [Complete deployment documentation →](docs/guides/deployment/ALEO_CONTRACT_DEPLOYMENT.md)
 
@@ -535,7 +535,7 @@ print(f"ZK Proof: {result.zk_proof.proof_id}")
 #### **🏛️ Hackathon Judges**
 See the future of privacy-preserving AI verification in action.
 
-**[📋 View Contract Source →](src/contracts/hallucination_verifier/src/main.leo)**
+**[📋 View Smart Contracts →](src/contracts/README.md)**
 
 </td>
 <td width="33%">
@@ -565,7 +565,7 @@ Join the AI trust revolution backed by zero-knowledge proofs.
 
 *TrustWrapper: Because trust shouldn't require faith.*
 
-[![Live Contract](https://img.shields.io/badge/🔗_LIVE_CONTRACT-at1f29je4764...sep8zrt-brightgreen?style=for-the-badge)](src/contracts/hallucination_verifier/src/main.leo)
+[![Live Contract](https://img.shields.io/badge/🔗_LIVE_CONTRACT-at1f29je4764...sep8zrt-brightgreen?style=for-the-badge)](src/contracts/README.md)
 
 **📧 Contact**: [GitHub Issues](https://github.com/eladmint/lamassu-labs/issues) • **🔗 Repository**: [eladmint/lamassu-labs](https://github.com/eladmint/lamassu-labs) • **📚 Docs**: [Research Index](docs/market_research/README.md)
 
