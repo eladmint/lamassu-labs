@@ -3,15 +3,15 @@
 
 <div align="center">
 
-**🏆 ZK-Berlin Hackathon 2025 - Aleo Prize Track**
+**🏆 ZK-Berlin Hackathon 2025**
 
-[![Live on Aleo](https://img.shields.io/badge/🔗_LIVE_ON_ALEO-Testnet3-brightgreen?style=for-the-badge)](https://aleoscan.io/transaction/at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt)
+[![Live on Aleo](https://img.shields.io/badge/🔗_LIVE_ON_ALEO-Testnet3-brightgreen?style=for-the-badge)](https://aleo.tools/)
 [![Smart Contract](https://img.shields.io/badge/Leo_Contract-Deployed-blue?style=for-the-badge)](https://github.com/eladmint/lamassu-labs/blob/main/src/contracts/hallucination_verifier/src/main.leo)
 [![Credits Spent](https://img.shields.io/badge/Credits_Spent-8.633-orange?style=for-the-badge)](#live-aleo-deployment)
 
 *The first ZK-verified AI trust infrastructure - Solving DeFi's $13B trust problem with Aleo*
 
-[🚀 **View Live Contract**](https://aleoscan.io/transaction/at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt) • [📊 **See Research**](#research--validation) • [⚡ **Quick Demo**](#quick-demo)
+[🚀 **View Live Contract**](https://aleo.tools/) • [📊 **See Research**](docs/market_research/README.md) • [⚡ **Quick Demo**](#quick-demo)
 
 </div>
 
@@ -29,7 +29,7 @@
 - **0% can prove performance** without exposing strategies
 - **74% of organizations** can't achieve AI value due to trust issues
 
-*Sources: [Comprehensive Market Research](#research--validation) (203+ citations)*
+*Sources: [Comprehensive Market Research](docs/market_research/README.md) (203+ citations)*
 
 </td>
 <td width="50%">
@@ -50,7 +50,7 @@
 
 ---
 
-## 🔐 Why Aleo is Essential (For Judges)
+## 🔐 Why Aleo is Essential (For Hackathon Judges)
 
 <div align="center">
 
@@ -96,11 +96,13 @@
 
 | **Deployment Detail** | **Value** | **Verification** |
 |:---|:---|:---|
-| **🔗 Transaction ID** | `at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt` | [View on AleoScan →](https://aleoscan.io/transaction/at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt) |
+| **🔗 Transaction ID** | `at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt` | [Search on Aleo.tools →](https://aleo.tools/) |
 | **💰 Credits Spent** | 8.633 credits | Real deployment cost |
 | **📅 Deployment Date** | June 22, 2025 | Live and verified |
 | **🏛️ Contract Name** | `hallucination_verifier.aleo` | [View Source Code →](src/contracts/hallucination_verifier/src/main.leo) |
 | **⚡ Status** | ✅ Live on Testnet3 | Fully operational |
+
+> **🔍 How to Verify**: Visit [aleo.tools](https://aleo.tools/) and search for transaction ID `at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt` or contract name `hallucination_verifier.aleo`
 
 ### **🔧 Smart Contract Functions** 
 ```leo
@@ -276,7 +278,7 @@ graph TB
 </tr>
 </table>
 
-*Source: [203+ Citations in Research Documentation](#research--validation)*
+*Source: [203+ Citations in Research Documentation](docs/market_research/README.md)*
 
 ---
 
@@ -301,11 +303,11 @@ graph TB
 <details>
 <summary><strong>👥 Value Propositions by Audience</strong></summary>
 
-#### **🏛️ For Aleo Judges**
+#### **🏛️ For Hackathon Judges**
 - **Technical Innovation**: First practical application of ZK for AI trust at scale  
 - **Market Impact**: Unlocks $100B+ market currently locked by trust issues
-- **Ecosystem Growth**: Drives enterprise adoption of Aleo for real-world use cases
-- **Competitive Advantage**: Positions Aleo as leader in privacy-preserving AI
+- **Real Deployment**: Live smart contract with actual credits spent (8.633)
+- **Ecosystem Impact**: Demonstrates real-world utility of zero-knowledge proofs
 
 #### **💰 For DeFi Investors**  
 - **Risk Reduction**: Stake only on cryptographically verified AI performance
@@ -426,7 +428,7 @@ print(f"ZK Proof: {result.zk_proof.proof_id}")
 
 ---
 
-## 📊 Research & Validation
+## 📊 Research & Validation {#research--validation}
 
 <div align="center">
 
@@ -516,16 +518,18 @@ print(f"ZK Proof: {result.zk_proof.proof_id}")
 
 ### **Ready to Unlock the $100B DeFi AI Market?**
 
+> **🔍 For Judges**: To verify our deployment, visit [aleo.tools](https://aleo.tools/) and search for `at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt` or view the [contract source code](src/contracts/hallucination_verifier/src/main.leo) directly.
+
 </div>
 
 <table>
 <tr>
 <td width="33%">
 
-#### **🏛️ Aleo Judges**
+#### **🏛️ Hackathon Judges**
 See the future of privacy-preserving AI verification in action.
 
-**[📋 View Live Contract →](https://aleoscan.io/transaction/at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt)**
+**[📋 View Live Contract →](https://aleo.tools/)**
 
 </td>
 <td width="33%">
@@ -541,7 +545,7 @@ Build with the universal AI trust infrastructure.
 #### **💰 Investors**
 Join the AI trust revolution backed by zero-knowledge proofs.
 
-**[📊 See Research →](#research--validation)**
+**[📊 See Research →](docs/market_research/README.md)**
 
 </td>
 </tr>
@@ -551,11 +555,11 @@ Join the AI trust revolution backed by zero-knowledge proofs.
 
 <div align="center">
 
-**🏗️ Built for ZK-Berlin 2025** • **🔐 Powered by Aleo** • **🤖 Securing AI's Future**
+**🏗️ Built for ZK-Berlin Hackathon 2025** • **🔐 Powered by Aleo ZK** • **🤖 Securing AI's Future**
 
 *TrustWrapper: Because trust shouldn't require faith.*
 
-[![Live Contract](https://img.shields.io/badge/🔗_LIVE_CONTRACT-at1f29je4764...sep8zrt-brightgreen?style=for-the-badge)](https://aleoscan.io/transaction/at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt)
+[![Live Contract](https://img.shields.io/badge/🔗_LIVE_CONTRACT-at1f29je4764...sep8zrt-brightgreen?style=for-the-badge)](https://aleo.tools/)
 
 **📧 Contact**: [GitHub Issues](https://github.com/eladmint/lamassu-labs/issues) • **🔗 Repository**: [eladmint/lamassu-labs](https://github.com/eladmint/lamassu-labs) • **📚 Docs**: [Research Index](docs/market_research/README.md)
 
