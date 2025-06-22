@@ -22,6 +22,41 @@ TrustWrapper is a revolutionary AI safety system that combines **real AI models*
 - **Privacy-Preserving**: ZK proofs verify without revealing sensitive data
 - **Enterprise Ready**: <2s processing time with comprehensive metrics
 
+## 🏗️ Three-Layer Trust Architecture
+
+TrustWrapper provides comprehensive trust through three integrated layers:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                     Your AI Agent                           │
+│                  (No changes needed)                        │
+└─────────────────────┬───────────────────────────────────────┘
+                      │
+┌─────────────────────┴───────────────────────────────────────┐
+│       Layer 1: Performance Verification (ZK Proofs)        │
+│  • Execution metrics (time, success, accuracy)             │
+│  • Zero-knowledge proof generation                          │
+│  • Aleo blockchain verification                            │
+└─────────────────────┬───────────────────────────────────────┘
+                      │
+┌─────────────────────┴───────────────────────────────────────┐
+│      Layer 2: AI Consensus (Multi-Model Validation)        │
+│  • Google Gemini for semantic analysis                     │
+│  • Anthropic Claude for cross-validation                   │
+│  • Wikipedia API for fact checking                         │
+└─────────────────────┬───────────────────────────────────────┘
+                      │
+┌─────────────────────┴───────────────────────────────────────┐
+│       Layer 3: Quality Verification (Hallucination Detection)│
+│  • Pattern recognition for false claims                     │
+│  • Temporal consistency checking                            │
+│  • Statistical anomaly detection                           │
+└─────────────────────┴───────────────────────────────────────┘
+                      │
+                      ▼
+              ✅ 100% Trusted AI Output!
+```
+
 ## 📊 Proven Results
 
 | Metric | Performance |
@@ -165,10 +200,28 @@ lamassu-labs/
 
 ## 🏛️ ZK Proof Integration
 
-The `src/contracts/hallucination_verifier/` contract provides:
-- **Response Verification**: Cryptographic proof of hallucination detection
-- **Evidence Recording**: Private storage of detection evidence  
-- **Batch Processing**: Efficient verification of multiple responses
+### Leo Smart Contracts
+
+The project includes real Aleo blockchain smart contracts:
+
+#### **Hallucination Verifier Contract**
+- **Location**: [`src/contracts/hallucination_verifier/src/main.leo`](https://github.com/eladmint/lamassu-labs/blob/main/src/contracts/hallucination_verifier/src/main.leo)
+- **Purpose**: ZK-verified AI hallucination detection
+- **Features**:
+  - **Response Verification**: Cryptographic proof of hallucination detection
+  - **Evidence Recording**: Private storage of detection evidence  
+  - **Batch Processing**: Efficient verification of multiple responses
+  - **Trust Scoring**: 0-100 scale for AI response trustworthiness
+
+#### **Additional Contracts** (in archive)
+- **Trust Verifier**: Proves agent execution metrics without revealing implementation
+- **Agent Registry**: Private performance tracking with staking mechanism
+
+### Blockchain Integration
+- **Network**: Aleo testnet3
+- **Explorer**: [https://explorer.aleo.org/testnet3](https://explorer.aleo.org/testnet3)
+- **Transaction Format**: `at1[58 alphanumeric characters]`
+- **See**: [`docs/hackathon/ALEO_BLOCKCHAIN_INTEGRATION.md`](https://github.com/eladmint/lamassu-labs/blob/main/docs/hackathon/ALEO_BLOCKCHAIN_INTEGRATION.md) for details
 
 ## 📈 Performance Benchmarks
 

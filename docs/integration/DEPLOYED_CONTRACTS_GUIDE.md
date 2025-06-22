@@ -8,15 +8,23 @@
 
 ### agent_registry_simple.aleo
 - **Purpose**: Register and verify AI agents with hidden performance metrics
+- **Source**: Archive contains the Leo source code
 - **Deployment Cost**: 4.689950 credits
 - **Network**: Aleo Testnet (testnet3)
 - **Account**: `aleo176m09rv6qslzx0r7uyuerz3keq346lkdqhwtk2w8ffsk4rdsxyrqj9xx5m`
 
 ### trust_verifier_test.aleo
 - **Purpose**: Verify AI execution results with zero-knowledge proofs
+- **Source**: Archive contains the Leo source code
 - **Deployment Cost**: 7.412275 credits  
 - **Network**: Aleo Testnet (testnet3)
 - **Account**: Same as above
+
+### hallucination_verifier.aleo (Main Contract)
+- **Purpose**: ZK-verified AI hallucination detection
+- **Source**: [`src/contracts/hallucination_verifier/src/main.leo`](https://github.com/eladmint/lamassu-labs/blob/main/src/contracts/hallucination_verifier/src/main.leo)
+- **Status**: Compiled and ready for deployment
+- **Network**: Aleo Testnet (testnet3)
 
 ## 🚀 Quick Start Integration
 
