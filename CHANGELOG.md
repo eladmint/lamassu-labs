@@ -10,9 +10,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.1.0] - 2025-06-22
 
 ### Added
-- 🚀 **DEPLOYED TO ALEO TESTNET** - Both contracts live!
-  - `agent_registry_simple.aleo` - AI agent verification
-  - `trust_verifier_test.aleo` - Execution verification
+- 🚀 **DEPLOYED TO ALEO TESTNET** - All three contracts live!
+  - `hallucination_verifier.aleo` - AI hallucination detection with ZK proofs
+    - Transaction: [`at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt`](https://testnet.aleoscan.io/transaction?id=at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt)
+    - Cost: 8.633225 credits
+  - `agent_registry_v2.aleo` - AI agent registration and performance tracking
+    - Transaction: [`at1hyqa37uskww30l4trcwf6kmzfdhhszjv982cmtdsszy8ml7h959qgfq8h9`](https://testnet.aleoscan.io/transaction?id=at1hyqa37uskww30l4trcwf6kmzfdhhszjv982cmtdsszy8ml7h959qgfq8h9)
+    - Cost: 16.723925 credits
+  - `trust_verifier_v2.aleo` - AI execution verification and trust scoring
+    - Transaction: [`at1d3ukp45tuvkp0khq8tdt4qtd3y40lx5qz65kdg0yre3rq726k5xqvrc4dz`](https://testnet.aleoscan.io/transaction?id=at1d3ukp45tuvkp0khq8tdt4qtd3y40lx5qz65kdg0yre3rq726k5xqvrc4dz)
+    - Cost: 9.629775 credits
 - Aleo smart contract deployment infrastructure
 - Python integration modules for Leo/Aleo
 - Comprehensive security audit and v2 contracts
@@ -26,12 +33,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Leo syntax issues (owner field, finalize blocks)
 - Contract simplification for testnet compatibility
 - Network endpoint configuration
+- Updated all contracts to v2 with enhanced security features
 
 ### Technical Details
-- Total deployment cost: 12.1 testnet credits
+- Total deployment cost: 34.986925 testnet credits
 - Account: `aleo176m09rv6qslzx0r7uyuerz3keq346lkdqhwtk2w8ffsk4rdsxyrqj9xx5m`
 - Leo version: 2.7.1
 - Network: Aleo Testnet (testnet3)
+- All contracts verified on AleoScan
 
 ## [1.0.0] - 2025-06-21
 

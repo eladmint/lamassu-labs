@@ -14,30 +14,39 @@ TrustWrapper is the **first comprehensive trust infrastructure for AI agents**, 
 3. **Explainable AI** integration with Ziggurat Intelligence  
 4. **Quality consensus** using multiple Agent Forge validators
 
-**Key Achievement**: Successfully deployed two smart contracts on Aleo testnet that enable zero-knowledge verification of AI agent performance without revealing proprietary algorithms.
+**Key Achievement**: Successfully deployed three comprehensive smart contracts on Aleo testnet that enable zero-knowledge verification of AI agent performance without revealing proprietary algorithms.
 
 ## 🚀 Live Deployment
 
 ### Deployed Contracts
-- **`agent_registry_simple.aleo`** - AI agent registration and performance verification
-  - Cost: 4.689950 credits
-  - Functions: register_agent, verify_agent
-  
-- **`trust_verifier_test.aleo`** - AI execution verification  
-  - Cost: 7.412275 credits
-  - Functions: verify_execution, prove_execution, batch_verify
+
+#### 1. **`hallucination_verifier.aleo`** - AI hallucination detection with ZK proofs
+- **Transaction**: [`at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt`](https://testnet.aleoscan.io/transaction?id=at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt)
+- **Contract**: [View on AleoScan](https://testnet.aleoscan.io/program?id=hallucination_verifier.aleo)
+- **Cost**: 8.633225 credits
+- **Functions**: verify_response, record_hallucination_evidence, batch_verify_responses
+
+#### 2. **`agent_registry_v2.aleo`** - AI agent registration and performance tracking
+- **Transaction**: [`at1hyqa37uskww30l4trcwf6kmzfdhhszjv982cmtdsszy8ml7h959qgfq8h9`](https://testnet.aleoscan.io/transaction?id=at1hyqa37uskww30l4trcwf6kmzfdhhszjv982cmtdsszy8ml7h959qgfq8h9)
+- **Contract**: [View on AleoScan](https://testnet.aleoscan.io/program?id=agent_registry_v2.aleo)
+- **Cost**: 16.723925 credits
+- **Functions**: register_agent, verify_agent, update_stake, transfer_agent
+
+#### 3. **`trust_verifier_v2.aleo`** - AI execution verification and trust scoring
+- **Transaction**: [`at1d3ukp45tuvkp0khq8tdt4qtd3y40lx5qz65kdg0yre3rq726k5xqvrc4dz`](https://testnet.aleoscan.io/transaction?id=at1d3ukp45tuvkp0khq8tdt4qtd3y40lx5qz65kdg0yre3rq726k5xqvrc4dz)
+- **Contract**: [View on AleoScan](https://testnet.aleoscan.io/program?id=trust_verifier_v2.aleo)
+- **Cost**: 9.629775 credits
+- **Functions**: verify_execution, batch_verify, prove_execution
 
 ### Deployment Details
 - **Network**: Aleo Testnet (testnet3)
 - **Account**: `aleo176m09rv6qslzx0r7uyuerz3keq346lkdqhwtk2w8ffsk4rdsxyrqj9xx5m`
-- **Total Cost**: 12.102225 testnet credits
+- **Total Cost**: 34.986925 testnet credits
 - **Date**: June 22, 2025
-- **Explorer**: https://explorer.aleo.org/
+- **Explorer**: [AleoScan](https://testnet.aleoscan.io/)
 
-### 🎆 Live On-Chain Executions
-- **register_agent TX**: `at1er2w65mshfc4qsrqyrugcwtwzmmyky5vemd58vg77vv7zlmq05rql6lkp9`
-- **verify_execution TX**: `at1q3zwac0p33e4799te4c8fx9njnpvd2mfut62xq4u5nc6uvctmggsj3rq0j`
-- **Status**: ✅ Successfully executing on testnet!
+### 🎆 All Contracts Live and Verified
+- **Status**: ✅ All 3 contracts successfully deployed and verified on testnet!
 
 ## 🏗️ Technical Architecture
 
@@ -64,26 +73,35 @@ TrustWrapper is the **first comprehensive trust infrastructure for AI agents**, 
 
 ### Aleo Smart Contracts
 
-#### agent_registry_simple.aleo
+#### hallucination_verifier.aleo
 ```leo
-transition register_agent(
-    public agent_id: field,
-    public stake_amount: u64,
-    private accuracy: u32,        // Hidden
-    private tasks_completed: u32, // Hidden
-    public current_height: u32
-) -> VerificationResult
+transition verify_response(
+    response_text: field,           // Hash of AI output
+    ai_model_hash: field,          // Model identifier  
+    trust_score: u8,               // Performance score (0-100)
+    verification_method: u8,        // Verification technique used
+    evidence_count: u8,            // Supporting evidence pieces
+    public verifier_address: address  // Verifier identity
+) -> (VerifiedResponse, field)
 ```
 
-#### trust_verifier_test.aleo
+#### agent_registry_v2.aleo
+```leo
+transition register_agent(
+    agent_id: field,
+    stake_amount: u64,
+    initial_metrics: AgentMetrics,
+    registration_height: u32,
+) -> AgentRecord  // Private record for agent ownership
+```
+
+#### trust_verifier_v2.aleo
 ```leo
 transition verify_execution(
-    public execution_id: field,
-    public agent_id: field,
-    private expected_output: field, // Hidden
-    private actual_output: field,   // Hidden
-    public timestamp: u32
-) -> VerificationResult
+    execution: ExecutionData,
+    proof_data: field,
+    verifier: address,
+) -> VerifiedExecution  // Private verification proof
 ```
 
 ### TrustWrapper Performance Module
