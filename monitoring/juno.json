@@ -1,0 +1,63 @@
+{
+  "satellite": {
+    "satelliteId": "bvxuo-uaaaa-aaaal-asgua-cai",
+    "source": "./dist"
+  },
+  "hosting": {
+    "headers": [
+      {
+        "source": "**/*",
+        "headers": [
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          },
+          {
+            "key": "Access-Control-Allow-Methods",
+            "value": "GET, POST, OPTIONS"
+          },
+          {
+            "key": "Access-Control-Allow-Headers",
+            "value": "Content-Type, Authorization"
+          }
+        ]
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "ignore": [
+      "**/.*",
+      "**/node_modules/**",
+      "**/*.md"
+    ]
+  },
+  "datastore": {
+    "collections": [
+      {
+        "collection": "monitoring_data",
+        "read": "public",
+        "write": "managed",
+        "memory": "stable",
+        "mutablePermissions": true
+      },
+      {
+        "collection": "contract_metrics",
+        "read": "public",
+        "write": "managed",
+        "memory": "stable",
+        "mutablePermissions": true
+      },
+      {
+        "collection": "alerts",
+        "read": "public",
+        "write": "managed",
+        "memory": "stable",
+        "mutablePermissions": true
+      }
+    ]
+  }
+}

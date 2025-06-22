@@ -1,0 +1,25 @@
+{
+  "name": "lamassu-labs-monitoring",
+  "version": "1.0.0",
+  "description": "Monitoring dashboard for Lamassu Labs contracts on ICP",
+  "type": "module",
+  "scripts": {
+    "build": "./build-juno.sh",
+    "deploy": "./deploy-to-juno.sh",
+    "update-data": "node update-monitoring-data.js"
+  },
+  "dependencies": {
+    "@junobuild/cli": "^0.0.48",
+    "@junobuild/core": "^0.0.26"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "lamassu",
+    "monitoring",
+    "icp",
+    "juno",
+    "blockchain"
+  ],
+  "author": "Lamassu Labs",
+  "license": "MIT"
+}
