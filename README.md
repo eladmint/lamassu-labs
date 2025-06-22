@@ -373,4 +373,4 @@ lamassu-labs/
 ## References
 
 <a name="references"></a>
-[1] Market research on AI agent verification and trust issues compiled from industry reports. See [market research document](docs/market_research/MR01_ai_agents_verification_and_trust.md) for detailed analysis and sources.
+[1] Market research on AI agent verification and trust issues compiled from industry reports. See [market research document](docs/market_research/ai_agent_verification_trust.md) for detailed analysis and sources.
