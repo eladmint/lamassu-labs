@@ -90,7 +90,7 @@
 > **🔍 Verification**: 
 > - **Full Documentation**: [Contract Details →](src/contracts/README.md)
 > - **Source Code**: [Browse contracts →](src/contracts/)
-> - **Deployment Report**: [Technical details →](DEPLOYMENT_STATUS.md)
+> - **Deployment Report**: [Technical details →](docs/reports/deployment/DEPLOYMENT_STATUS.md)
 
 ---
 
@@ -285,9 +285,9 @@ print(f"Issues: {result.issues}")
 ## 📚 Documentation
 
 - **[Technical Architecture](docs/architecture/TECHNICAL_ARCHITECTURE.md)**: System design and implementation
-- **[API Reference](docs/api/README.md)**: Complete API documentation
-- **[Integration Guide](docs/integration/README.md)**: Step-by-step integration
-- **[Security Model](docs/technical/SECURITY_MODEL.md)**: Security architecture
+- **[API Reference](docs/api/TRUSTWRAPPER_API_REFERENCE.md)**: Complete API documentation
+- **[Integration Guide](docs/integration/DEPLOYED_CONTRACTS_GUIDE.md)**: Contract integration guide
+- **[Technical Overview](docs/technical/implementation/TRUSTWRAPPER_TECHNICAL_OVERVIEW.md)**: Technical architecture overview
 
 ---
 
@@ -301,7 +301,7 @@ Enable the safe deployment of AI at scale by providing cryptographic proof of AI
 ### **Contact**
 - **Email**: contact@lamassulabs.ai
 - **GitHub**: [github.com/lamassu-labs](https://github.com/lamassu-labs)
-- **Website**: Coming soon
+- **Documentation**: [Complete guide](docs/README.md)
 
 ---
 

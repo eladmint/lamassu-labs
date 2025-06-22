@@ -5,8 +5,10 @@
 ## 📦 Installation
 
 ```bash
-pip install trustwrapper  # Coming soon
-# For now: Copy src/core/ to your project
+# Clone the repository and use locally
+git clone https://github.com/eladmint/lamassu-labs.git
+cd lamassu-labs
+pip install -r requirements.txt
 ```
 
 ## 🎯 Basic Usage
