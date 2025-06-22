@@ -1,0 +1,5 @@
+numpy>=1.21.0
+python-dotenv>=0.19.0
+# For production:
+# trustwrapper>=1.0.0
+# aleo-python>=0.1.0

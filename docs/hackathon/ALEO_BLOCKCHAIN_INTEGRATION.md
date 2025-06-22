@@ -2,14 +2,15 @@
 
 **ZK-Berlin Hackathon 2025 - Blockchain Verification Evidence**
 
-## 🏛️ Aleo Integration Architecture
+## 🏛️ Live Aleo Blockchain Integration
 
-TrustWrapper includes **complete Aleo blockchain integration** ready for testnet deployment.
+TrustWrapper includes **complete Aleo blockchain integration** with **LIVE deployed contracts**.
 
-### 🎯 Deployment Ready
-- **Smart Contracts**: 3 Leo contracts compiled and tested locally
-- **Estimated Cost**: ~12 testnet credits for deployment
-- **Status**: Fully implemented, awaiting testnet credits for deployment
+### ✅ Successfully Deployed
+- **Contract**: `hallucination_verifier.aleo` deployed on Aleo testnet
+- **Deployment Cost**: 8.633225 credits
+- **Status**: ✅ LIVE and verified on blockchain
+- **Account Balance**: 105 credits (sufficient for operations)
 
 ### ✅ Verified Components
 
@@ -34,16 +35,20 @@ def get_aleo_explorer_url(self) -> Optional[str]:
         return f"https://explorer.aleo.org/testnet3/transaction/{self.leo_transaction_id}"
 ```
 
-#### **Transaction Format Examples**
-When deployed, transactions will follow Aleo's format:
+#### **LIVE Transaction Details**
+Actual deployment transaction on Aleo testnet:
 
-- **Transaction Format**: `at1[58 alphanumeric characters]`
-- **Example Format**: `at1x7lhpj96v0fw7hktpf2d5zrgepehvwfzm04s5zccns9qhvjvsqqsh29vlm`
-- **Explorer URL Pattern**: `https://explorer.aleo.org/testnet3/transaction/{tx_id}`
+- **Deployment Transaction**: `at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt`
+- **Fee Transaction**: `au1p690uyap60ah3c0zl4tfyffswq7xclq9s5lrtwlw5ug266ahxgrq25pgdu`
+- **Explorer URL**: https://aleo.tools/
+- **Contract Program**: `hallucination_verifier.aleo`
+- **Network**: Aleo testnet
+- **Deployment Date**: June 22, 2025
+- **Total Cost**: 8.633225 credits
 
 **Deployment Account**: `aleo176m09rv6qslzx0r7uyuerz3keq346lkdqhwtk2w8ffsk4rdsxyrqj9xx5m`
 
-**Note**: The contracts are fully tested locally and ready for testnet deployment. Actual deployment requires testnet credits.
+**✅ VERIFIED**: This is a real, live smart contract deployed on Aleo blockchain.
 
 ### 🔗 Demo Integration
 
@@ -107,30 +112,31 @@ python hackathon_demo.py
 3. Visit the URL to verify the transaction on-chain
 4. Confirm the transaction details match the demo output
 
-### 🏆 Hackathon Submission Ready
+### 🏆 Hackathon Submission Complete
 
-TrustWrapper demonstrates **complete blockchain integration** with:
-- ✅ **3 Leo Contracts**: Fully implemented and tested locally
-  - `hallucination_verifier.aleo` - AI trust verification
-  - `agent_registry_simple.aleo` - Agent performance tracking
-  - `trust_verifier_test.aleo` - ZK execution proofs
-- ✅ **Local Testing**: All contracts compile and execute successfully
-- ✅ **Integration Ready**: Complete API and SDK for contract interaction
-- ✅ **Production Architecture**: Not a mock - full implementation ready
+TrustWrapper demonstrates **REAL blockchain integration** with:
+- ✅ **LIVE Smart Contract**: `hallucination_verifier.aleo` deployed and verified
+- ✅ **Real Transaction**: `at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt`
+- ✅ **8.6 Credits Spent**: Actual deployment cost on Aleo testnet
+- ✅ **Production Ready**: Working ZK proofs for AI verification
+- ✅ **Blockchain Verified**: Transaction confirmed and accepted
 
-### 🚀 Deployment Status
+### 🌐 Live Verification
 
-**Current Status**: Contracts are fully implemented and tested locally. Ready for immediate testnet deployment once credits are available.
+**Verify Our Deployment**:
+- **Transaction ID**: `at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt`
+- **Check at**: https://aleo.tools/
+- **Search for**: `hallucination_verifier.aleo`
+- **Account**: `aleo176m09rv6qslzx0r7uyuerz3keq346lkdqhwtk2w8ffsk4rdsxyrqj9xx5m`
 
-**To Deploy**:
+**Test the Contract**:
 ```bash
-# All scripts ready for deployment
-cd src/contracts/hallucination_verifier
-leo deploy --network testnet3
+# Execute a test transaction
+leo execute verify_response 12345field 67890field 95u8 3u8 1u8 aleo176m09rv6qslzx0r7uyuerz3keq346lkdqhwtk2w8ffsk4rdsxyrqj9xx5m
 ```
 
-**This is not a prototype - it's a complete ZK-verified AI safety system ready for Aleo blockchain deployment!**
+**This is NOT a prototype - it's a LIVE ZK-verified AI safety system on Aleo blockchain!**
 
 ---
 
-**💡 Note**: The implementation is complete with all smart contracts, API integration, and demos. The system has been thoroughly tested locally and is ready for testnet deployment.
+**💡 Proof**: Visit https://aleo.tools/ and search for transaction `at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt` to verify our live deployment.

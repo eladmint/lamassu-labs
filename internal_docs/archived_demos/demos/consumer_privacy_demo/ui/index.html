@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrivacyGuard - Zero-Knowledge Identity Verification</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .scenario {
+            border-left: 4px solid #667eea;
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .scenario h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .verification-request {
+            background: #f8f9ff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .required-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .info-chip {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid #bbdefb;
+        }
+        
+        .verify-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.2s;
+            width: 100%;
+            margin: 20px 0;
+        }
+        
+        .verify-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .privacy-indicator {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #2e7d32;
+            font-weight: 500;
+        }
+        
+        .status {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            animation: fadeIn 0.5s;
+        }
+        
+        .status.success {
+            background: #e8f5e8;
+            color: #2e7d32;
+            border: 1px solid #81c784;
+        }
+        
+        .status.processing {
+            background: #fff3e0;
+            color: #f57c00;
+            border: 1px solid #ffcc02;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #f0f0f0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛡️ PrivacyGuard</h1>
+            <p>Zero-Knowledge Identity Verification</p>
+            <p style="font-size: 1rem; margin-top: 10px;">Verify your identity without revealing personal information</p>
+        </div>
+
+        <div class="card">
+            <h2>How It Works</h2>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <h4>Complete Privacy</h4>
+                    <p>Your data never leaves your device. Only proofs are shared.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h4>Instant Verification</h4>
+                    <p>Sub-second verification powered by AI and zero-knowledge proofs.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎯</div>
+                    <h4>Precise Control</h4>
+                    <p>Choose exactly what to verify. Nothing more, nothing less.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scenario 1: Streaming Service -->
+        <div class="card scenario">
+            <h3>📺 Streaming Service Verification</h3>
+            <p>StreamFlix wants to verify you're old enough for age-restricted content.</p>
+            
+            <div class="verification-request">
+                <strong>What they're requesting:</strong>
+                <div class="required-info">
+                    <span class="info-chip">Age 18+</span>
+                </div>
+                
+                <div class="privacy-indicator">
+                    🔒 <strong>Privacy Protected:</strong> Your exact age, name, and address remain hidden
+                </div>
+                
+                <button class="verify-btn" onclick="verifyIdentity('streaming', this)">
+                    Verify Age Privately
+                </button>
+                
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-streaming"></div>
+                </div>
+                
+                <div class="status" id="status-streaming"></div>
+            </div>
+        </div>
+
+        <!-- Scenario 2: Travel Booking -->
+        <div class="card scenario">
+            <h3>✈️ Travel Booking Verification</h3>
+            <p>TravelSecure needs to verify your nationality for international flight booking.</p>
+            
+            <div class="verification-request">
+                <strong>What they're requesting:</strong>
+                <div class="required-info">
+                    <span class="info-chip">Valid Passport</span>
+                    <span class="info-chip">Nationality Match</span>
+                </div>
+                
+                <div class="privacy-indicator">
+                    🔒 <strong>Privacy Protected:</strong> Passport number and personal details stay private
+                </div>
+                
+                <button class="verify-btn" onclick="verifyIdentity('travel', this)">
+                    Verify Travel Eligibility
+                </button>
+                
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-travel"></div>
+                </div>
+                
+                <div class="status" id="status-travel"></div>
+            </div>
+        </div>
+
+        <!-- Scenario 3: Professional Platform -->
+        <div class="card scenario">
+            <h3>💼 Professional Platform Access</h3>
+            <p>TechPro Platform requires professional license verification.</p>
+            
+            <div class="verification-request">
+                <strong>What they're requesting:</strong>
+                <div class="required-info">
+                    <span class="info-chip">Professional License</span>
+                    <span class="info-chip">Age 21+</span>
+                </div>
+                
+                <div class="privacy-indicator">
+                    🔒 <strong>Privacy Protected:</strong> License details and employer information hidden
+                </div>
+                
+                <button class="verify-btn" onclick="verifyIdentity('professional', this)">
+                    Verify Professional Status
+                </button>
+                
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-professional"></div>
+                </div>
+                
+                <div class="status" id="status-professional"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🏆 Hackathon Integration</h2>
+            <p><strong>Xion Consumer ZK Apps:</strong> User-friendly privacy verification with intuitive interface</p>
+            <p><strong>ZKPassport:</strong> Private passport verification for travel and identity use cases</p>
+            <p><strong>TrustWrapper AI:</strong> AI-powered fraud detection without compromising privacy</p>
+        </div>
+    </div>
+
+    <script>
+        function verifyIdentity(scenario, button) {
+            const statusEl = document.getElementById(`status-${scenario}`);
+            const progressEl = document.getElementById(`progress-${scenario}`);
+            
+            // Show processing state
+            button.disabled = true;
+            button.textContent = 'Verifying...';
+            statusEl.className = 'status processing';
+            statusEl.style.display = 'block';
+            statusEl.innerHTML = '🔄 Generating zero-knowledge proof...';
+            
+            // Animate progress bar
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.random() * 20;
+                if (progress > 100) progress = 100;
+                progressEl.style.width = progress + '%';
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    completeVerification(scenario, button, statusEl);
+                }
+            }, 100);
+        }
+        
+        function completeVerification(scenario, button, statusEl) {
+            // Success state
+            button.disabled = false;
+            button.textContent = '✓ Verified';
+            button.style.background = '#2e7d32';
+            
+            statusEl.className = 'status success';
+            
+            const messages = {
+                streaming: '✅ Age verification complete! StreamFlix can now provide age-appropriate content without knowing your exact age.',
+                travel: '✅ Travel eligibility confirmed! TravelSecure can process your booking without seeing passport details.',
+                professional: '✅ Professional status verified! TechPro Platform grants access without revealing license specifics.'
+            };
+            
+            statusEl.innerHTML = `
+                ${messages[scenario]}
+                <br><br>
+                <strong>Privacy Summary:</strong>
+                <br>• Your personal data never left your device
+                <br>• Only the required proof was generated
+                <br>• AI verification completed in 0.234 seconds
+                <br>• Trust score: 94% with consensus validation
+            `;
+        }
+        
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover effects and animations
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

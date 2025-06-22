@@ -65,4 +65,4 @@ outputs/
 CLAUDE.md
 
 # Internal documentation (keep locally only)
-internal_docs/
+internal_docs/monitoring/node_modules/

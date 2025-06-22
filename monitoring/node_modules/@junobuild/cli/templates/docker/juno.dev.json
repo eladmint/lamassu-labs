@@ -1,0 +1,9 @@
+{
+  "satellite": {
+    "collections": {
+      "db": [],
+      "storage": []
+    },
+    "controllers": []
+  }
+}

@@ -3,7 +3,7 @@
 // Example script to update monitoring data in Juno satellite
 // This can be run from a backend service or scheduled as a cron job
 
-import { initJuno, setDoc, setManyDocs } from '@junobuild/core';
+import { initJuno, setDoc } from '@junobuild/core';
 
 const SATELLITE_ID = 'bvxuo-uaaaa-aaaal-asgua-cai';
 
@@ -128,24 +128,28 @@ async function updateMonitoringData() {
 
         // Update contract metrics
         console.log('Updating contract metrics...');
-        await setManyDocs({
-            collection: 'contract_metrics',
-            docs: contractMetrics.map(metric => ({
-                key: metric.key,
-                data: metric.data
-            }))
-        });
+        for (const metric of contractMetrics) {
+            await setDoc({
+                collection: 'contract_metrics',
+                doc: {
+                    key: metric.key,
+                    data: metric.data
+                }
+            });
+        }
 
         // Update alerts
         if (alerts.length > 0) {
             console.log(`Updating ${alerts.length} alerts...`);
-            await setManyDocs({
-                collection: 'alerts',
-                docs: alerts.map(alert => ({
-                    key: alert.key,
-                    data: alert.data
-                }))
-            });
+            for (const alert of alerts) {
+                await setDoc({
+                    collection: 'alerts',
+                    doc: {
+                        key: alert.key,
+                        data: alert.data
+                    }
+                });
+            }
         }
 
         console.log('✅ Monitoring data updated successfully!');
