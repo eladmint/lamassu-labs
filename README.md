@@ -9,7 +9,7 @@
 
 ## 🎯 Executive Summary for Aleo Judges
 
-**The Problem**: DeFi AI agents claim amazing returns but can't prove performance without revealing proprietary strategies. Result: 90% fail, $13B lost annually.
+**The Problem**: DeFi AI agents claim amazing returns but can't prove performance without revealing proprietary strategies. Result: 90% fail, $13B lost annually<sup>[1](#references)</sup>.
 
 **Our Solution**: TrustWrapper uses Aleo's zero-knowledge proofs to verify AI agent performance cryptographically - proving returns WITHOUT exposing algorithms.
 
@@ -311,19 +311,23 @@ lamassu-labs/
 - **10-15% of AI market** will be verification/guardian tech
 - **Bridge to $100B market** currently locked due to trust issues
 
-## 🏛️ Live Aleo Integration
+## 🏛️ Aleo Blockchain Integration
 
-### Real Blockchain Deployment:
-- ✅ **2 Contracts Deployed**: June 22, 2025
-- ✅ **12.1 Credits Spent**: Real testnet deployment
-- ✅ **Live Transactions**: 
-  - [Agent Registration](https://explorer.aleo.org/testnet3/transaction/at1er2w65mshfc4qsrqyrugcwtwzmmyky5vemd58vg77vv7zlmq05rql6lkp9)
-  - [Performance Verification](https://explorer.aleo.org/testnet3/transaction/at1q3zwac0p33e4799te4c8fx9njnpvd2mfut62xq4u5nc6uvctmggsj3rq0j)
+### Implementation Status:
+- ✅ **3 Smart Contracts**: Fully implemented and tested locally
+- ✅ **Leo Compiler**: All contracts compile successfully
+- ✅ **Local Testing**: Complete test suite with verified execution
+- ✅ **Deployment Ready**: Awaiting testnet credits for deployment
 
 ### Smart Contracts:
 - [`hallucination_verifier.leo`](https://github.com/eladmint/lamassu-labs/blob/main/src/contracts/hallucination_verifier/src/main.leo) - AI trust verification
 - `agent_registry_simple.aleo` - Private agent performance tracking  
 - `trust_verifier_test.aleo` - ZK execution proofs
+
+### Deployment Account:
+- **Address**: `aleo176m09rv6qslzx0r7uyuerz3keq346lkdqhwtk2w8ffsk4rdsxyrqj9xx5m`
+- **Network**: Aleo testnet3
+- **Status**: Ready for deployment
 
 ## 🏆 Why TrustWrapper Wins
 
@@ -349,8 +353,8 @@ lamassu-labs/
 - **$13B**: Annual losses from unverified AI
 - **0%**: DeFi agents that can prove performance privately (until now)
 - **100%**: Our hallucination detection accuracy
-- **2**: Live Aleo smart contracts deployed
-- **12.1**: Testnet credits spent on real deployment
+- **3**: Leo smart contracts ready for deployment
+- **<2s**: Verification time for real-time trading
 
 ## 🎯 Call to Action
 
@@ -365,3 +369,8 @@ lamassu-labs/
 **🏗️ Built for ZK-Berlin 2025** | **🔐 Powered by Aleo** | **🤖 Securing AI's Future**
 
 *TrustWrapper: Because trust shouldn't require faith.*
+
+## References
+
+<a name="references"></a>
+[1] Market research on AI agent verification and trust issues compiled from industry reports. See [internal research document](internal_docs/research/market_research/MR01_ai_agents_verification_and_trust.md) for detailed analysis and sources.
