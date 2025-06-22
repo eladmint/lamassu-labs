@@ -65,8 +65,8 @@ outputs/
 .claude/
 
 # Archive and internal data
-archive/data/
-archive/internal_docs/
+archive/
+memory-bank/
 
 # Private components
 *.enterprise
@@ -75,9 +75,6 @@ trustwrapper-enterprise/
 # Node modules
 node_modules/
 tools/monitoring/node_modules/
-
-# Sensitive documentation
-memory-bank/operational_guides/sensitive/
 
 # Temporary files
 *.tmp
