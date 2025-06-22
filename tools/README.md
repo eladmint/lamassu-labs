@@ -1,39 +1,54 @@
-# Lamassu Labs Development Tools
+# Lamassu Labs Scripts
 
-Internal development tools for TrustWrapper ZK-verified AI hallucination detection system.
+Shell scripts for TrustWrapper development and deployment automation.
 
-## Directory Structure
+## Available Scripts
 
-- **testing/** - Test utilities and development test scripts
-- **analysis/** - Data analysis and research tools
-- **debugging/** - System debugging utilities  
-- **deployment/** - Deployment verification tools
-- **development/** - Development environment setup
+### Test Scripts
+- `run_hallucination_tests.sh` - Execute comprehensive hallucination detection tests
+- `test_local.sh` - Local environment testing
 
-## Testing Tools
+### Setup Scripts
+- `setup_environment.sh` - Environment configuration and dependency setup
 
-Located in `testing/` directory:
-- `test_enhanced_detector.py` - Enhanced hallucination detector tests
-- `test_gemini_access.py` - Google Gemini API integration tests
-- `test_hallucination_detection.py` - Core detection system tests
-- `prove_trustwrapper_works.py` - Complete system validation
-- `simple_hallucination_test.py` - Basic functionality tests
+### Contract Scripts
+Located in `scripts/` subdirectory from root:
+- `compile_leo.sh` - Compile Leo/Aleo smart contracts
+- `deploy_contracts.sh` - Deploy contracts to Aleo testnet
+- `test_contracts.sh` - Test contract functionality
+- `test_deployed_contracts.sh` - Validate deployed contracts
+
+### Development Scripts
+- `install_leo_aleo.sh` - Install Leo compiler and Aleo CLI
+- `install_leo_manual.sh` - Manual Leo installation
+- `organize_files.sh` - Project file organization
+- `find_docs_to_update.sh` - Documentation maintenance
 
 ## Usage
 
-All tools should be run from the Lamassu Labs root directory:
+Run scripts from the Lamassu Labs root directory:
 
 ```bash
-# Run enhanced detector tests
-python tools/testing/test_enhanced_detector.py
+# Setup environment
+./scripts/setup_environment.sh
 
-# Validate complete system
-python tools/testing/prove_trustwrapper_works.py
+# Run tests
+./scripts/run_hallucination_tests.sh
 
-# Run simple functionality test
-python tools/testing/simple_hallucination_test.py
+# Compile contracts
+./scripts/compile_leo.sh
+
+# Deploy to testnet
+./scripts/deploy_contracts.sh
 ```
+
+## Prerequisites
+
+- Leo compiler installed
+- Aleo CLI configured
+- Environment variables set in `.env`
+- Python virtual environment activated
 
 ## Security Note
 
-These are internal development tools. Do not expose to end users or include in public distributions.
+Deployment scripts use testnet by default. Production deployments require additional configuration.

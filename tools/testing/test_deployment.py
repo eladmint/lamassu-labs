@@ -13,8 +13,8 @@ from typing import Dict, Any, List, Optional
 import logging
 from datetime import datetime
 
-# Add parent directory to path
-sys.path.append(str(Path(__file__).parent.parent))
+# Add project root to path
+sys.path.append(str(Path(__file__).parent.parent.parent))
 
 from src.zk.leo_integration import LeoProofGenerator
 from src.zk.aleo_client import AleoClient

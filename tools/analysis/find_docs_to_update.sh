@@ -1,6 +1,10 @@
 #!/bin/bash
 
 # Script to find documentation files that need updates after Aleo deployment
+# Note: This script should be run from the project root or will cd to project root
+
+# Change to project root directory
+cd "$(dirname "$0")/../.." || exit 1
 
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
