@@ -77,8 +77,9 @@ tools/monitoring/node_modules/
 # Archive data
 archive/data/
 
-# Memory bank (project-specific context)
-memory-bank/
+# Memory bank ADRs and learnings should be tracked
+# Only exclude sensitive operational guides if needed
+memory-bank/operational_guides/sensitive/
 
 # Temporary files
 *.tmp
