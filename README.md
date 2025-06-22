@@ -11,7 +11,7 @@
 
 *The first ZK-verified AI trust infrastructure - Solving DeFi's $13B trust problem with Aleo*
 
-[🚀 **View Live Contract**](https://aleo.tools/) • [📊 **See Research**](docs/market_research/README.md) • [⚡ **Quick Demo**](#quick-demo)
+[🚀 **View Contract Source**](src/contracts/hallucination_verifier/src/main.leo) • [📊 **See Research**](docs/market_research/README.md) • [⚡ **Quick Demo**](#quick-demo)
 
 </div>
 
@@ -102,7 +102,10 @@
 | **🏛️ Contract Name** | `hallucination_verifier.aleo` | [View Source Code →](src/contracts/hallucination_verifier/src/main.leo) |
 | **⚡ Status** | ✅ Live on Testnet3 | Fully operational |
 
-> **🔍 How to Verify**: Visit [aleo.tools](https://aleo.tools/) and search for transaction ID `at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt` or contract name `hallucination_verifier.aleo`
+> **🔍 How to Verify Deployment**: 
+> - **Contract Source**: [View Leo code →](src/contracts/hallucination_verifier/src/main.leo)
+> - **Blockchain Explorer**: Search `at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt` on [aleo.tools](https://aleo.tools/) or [explorer.aleo.org](https://explorer.aleo.org/)
+> - **Contract Name**: `hallucination_verifier.aleo`
 
 ### **🔧 Smart Contract Functions** 
 ```leo
@@ -518,7 +521,10 @@ print(f"ZK Proof: {result.zk_proof.proof_id}")
 
 ### **Ready to Unlock the $100B DeFi AI Market?**
 
-> **🔍 For Judges**: To verify our deployment, visit [aleo.tools](https://aleo.tools/) and search for `at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt` or view the [contract source code](src/contracts/hallucination_verifier/src/main.leo) directly.
+> **🔍 For Judges**: 
+> - **📝 Contract Source**: [View Leo smart contract →](src/contracts/hallucination_verifier/src/main.leo)
+> - **🔗 On-Chain Verification**: Search transaction `at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt` on [aleo.tools](https://aleo.tools/)  
+> - **📊 Deployment Guide**: [Complete deployment documentation →](docs/guides/deployment/ALEO_CONTRACT_DEPLOYMENT.md)
 
 </div>
 
@@ -529,7 +535,7 @@ print(f"ZK Proof: {result.zk_proof.proof_id}")
 #### **🏛️ Hackathon Judges**
 See the future of privacy-preserving AI verification in action.
 
-**[📋 View Live Contract →](https://aleo.tools/)**
+**[📋 View Contract Source →](src/contracts/hallucination_verifier/src/main.leo)**
 
 </td>
 <td width="33%">
@@ -559,7 +565,7 @@ Join the AI trust revolution backed by zero-knowledge proofs.
 
 *TrustWrapper: Because trust shouldn't require faith.*
 
-[![Live Contract](https://img.shields.io/badge/🔗_LIVE_CONTRACT-at1f29je4764...sep8zrt-brightgreen?style=for-the-badge)](https://aleo.tools/)
+[![Live Contract](https://img.shields.io/badge/🔗_LIVE_CONTRACT-at1f29je4764...sep8zrt-brightgreen?style=for-the-badge)](src/contracts/hallucination_verifier/src/main.leo)
 
 **📧 Contact**: [GitHub Issues](https://github.com/eladmint/lamassu-labs/issues) • **🔗 Repository**: [eladmint/lamassu-labs](https://github.com/eladmint/lamassu-labs) • **📚 Docs**: [Research Index](docs/market_research/README.md)
 
