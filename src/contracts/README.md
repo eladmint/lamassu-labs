@@ -3,7 +3,7 @@
 **Directory**: `src/contracts/`  
 **Language**: Leo (Aleo blockchain)  
 **Network**: Aleo testnet  
-**Status**: ✅ DEPLOYED
+**Status**: ✅ ALL CONTRACTS DEPLOYED (3/3)
 
 ## 📋 Contract Deployment Status
 
@@ -18,19 +18,23 @@
 - **Status**: ✅ Deployed and verified on Aleo testnet3
 - **Deployment Date**: June 22, 2025
 
-### 📋 Pending Deployment
+#### agent_registry_v2.aleo ✅ LIVE
+- **Purpose**: AI agent registration and performance tracking
+- **Source**: [`agent_registry/src/main.leo`](agent_registry/src/main.leo)
+- **Live Contract**: [View on AleoScan →](https://testnet.aleoscan.io/program?id=agent_registry_v2.aleo)
+- **Deployment TX**: [`at1hyqa37uskww30l4trcwf6kmzfdhhszjv982cmtdsszy8ml7h959qgfq8h9`](https://testnet.aleoscan.io/transaction?id=at1hyqa37uskww30l4trcwf6kmzfdhhszjv982cmtdsszy8ml7h959qgfq8h9)
+- **Cost**: 16.723925 credits
+- **Status**: ✅ Deployed and verified on Aleo testnet3
+- **Deployment Date**: June 22, 2025
 
-#### agent_registry.aleo
-- **Purpose**: AI agent registration and capability management
-- **Source**: Contract source archived, needs restoration
-- **Status**: ⏳ Ready for deployment
-- **Location**: `agent_registry/` (program.json exists)
-
-#### trust_verifier.aleo
-- **Purpose**: Trust score verification for AI agents
-- **Source**: Contract source archived, needs restoration
-- **Status**: ⏳ Ready for deployment
-- **Location**: `trust_verifier/` (program.json exists)
+#### trust_verifier_v2.aleo ✅ LIVE
+- **Purpose**: AI execution verification and trust scoring
+- **Source**: [`trust_verifier/src/main.leo`](trust_verifier/src/main.leo)
+- **Live Contract**: [View on AleoScan →](https://testnet.aleoscan.io/program?id=trust_verifier_v2.aleo)
+- **Deployment TX**: [`at1d3ukp45tuvkp0khq8tdt4qtd3y40lx5qz65kdg0yre3rq726k5xqvrc4dz`](https://testnet.aleoscan.io/transaction?id=at1d3ukp45tuvkp0khq8tdt4qtd3y40lx5qz65kdg0yre3rq726k5xqvrc4dz)
+- **Cost**: 9.629775 credits
+- **Status**: ✅ Deployed and verified on Aleo testnet3
+- **Deployment Date**: June 22, 2025
 
 ## 🚀 Contract Functions
 

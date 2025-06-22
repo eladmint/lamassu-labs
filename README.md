@@ -90,23 +90,24 @@
 
 <div align="center">
 
-### **🎉 REAL CONTRACT • REAL TRANSACTION • REAL ALEO**
+### **🎉 ALL 3 CONTRACTS DEPLOYED • REAL TRANSACTIONS • REAL ALEO**
 
 </div>
 
-| **Deployment Detail** | **Value** | **Verification** |
-|:---|:---|:---|
-| **🔗 Transaction ID** | `at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt` | [View on AleoScan →](https://testnet.aleoscan.io/transaction?id=at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt) |
-| **💰 Credits Spent** | 8.633 credits | Real deployment cost |
-| **📅 Deployment Date** | June 22, 2025 | Live and verified |
-| **🏛️ Contract Name** | `hallucination_verifier.aleo` | [View on AleoScan →](https://testnet.aleoscan.io/program?id=hallucination_verifier.aleo) |
-| **⚡ Status** | ✅ Live on Testnet3 | Fully operational |
+### ✅ Deployed Smart Contracts
 
-> **🔍 How to Verify Deployment**: 
-> - **Live Transaction**: [View on AleoScan →](https://testnet.aleoscan.io/transaction?id=at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt)
-> - **Live Contract**: [View on AleoScan →](https://testnet.aleoscan.io/program?id=hallucination_verifier.aleo)
-> - **Source Code**: [View on GitHub →](src/contracts/hallucination_verifier/src/main.leo)
-> - **All Contracts**: [Documentation & Status →](src/contracts/README.md)
+| **Contract** | **Transaction ID** | **Cost** | **Live Contract** |
+|:---|:---|:---:|:---|
+| **hallucination_verifier.aleo** | [`at1f29je4764ldx2fc0934h...`](https://testnet.aleoscan.io/transaction?id=at1f29je4764ldx2fc0934hgarugvr0874pkd3aenhuqzyq92x3p59sep8zrt) | 8.63 | [View →](https://testnet.aleoscan.io/program?id=hallucination_verifier.aleo) |
+| **agent_registry_v2.aleo** | [`at1hyqa37uskww30l4trcw...`](https://testnet.aleoscan.io/transaction?id=at1hyqa37uskww30l4trcwf6kmzfdhhszjv982cmtdsszy8ml7h959qgfq8h9) | 16.72 | [View →](https://testnet.aleoscan.io/program?id=agent_registry_v2.aleo) |
+| **trust_verifier_v2.aleo** | [`at1d3ukp45tuvkp0khq8td...`](https://testnet.aleoscan.io/transaction?id=at1d3ukp45tuvkp0khq8tdt4qtd3y40lx5qz65kdg0yre3rq726k5xqvrc4dz) | 9.63 | [View →](https://testnet.aleoscan.io/program?id=trust_verifier_v2.aleo) |
+
+**Total Deployment Cost**: 34.98 credits | **Status**: ✅ All contracts live on Testnet3
+
+> **🔍 How to Verify All Deployments**: 
+> - **Full Documentation**: [Contract Status & Details →](src/contracts/README.md)
+> - **Source Code**: [Browse all contracts →](src/contracts/)
+> - **Deployment Status**: [Complete deployment report →](DEPLOYMENT_STATUS.md)
 
 ### **🔧 Smart Contract Functions** 
 ```leo
