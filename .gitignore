@@ -63,6 +63,7 @@ outputs/
 
 # Development tools and configurations
 .claude/
+CLAUDE.md
 
 # Archive and internal data
 archive/
