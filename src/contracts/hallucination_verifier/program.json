@@ -1,0 +1,6 @@
+{
+    "program": "hallucination_verifier.aleo",
+    "version": "0.0.0",
+    "description": "ZK-verified AI hallucination detection system",
+    "license": "MIT"
+}

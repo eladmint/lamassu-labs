@@ -1,0 +1,47 @@
+{
+  "timestamp": "2025-06-22T11:48:29.458329",
+  "tests": {
+    "Core TrustWrapper Tests": {
+      "passed": false,
+      "duration": 1.4480578899383545,
+      "file": "unit/test_trust_wrapper.py",
+      "summary": "22 failed, 4 passed in 0.43s",
+      "output": null
+    },
+    "Leo Integration Tests": {
+      "passed": false,
+      "duration": 0.6488020420074463,
+      "file": "integration/test_leo_integration.py",
+      "summary": "4 failed, 8 passed, 6 errors in 0.10s",
+      "output": null
+    },
+    "XAI Integration Tests": {
+      "passed": true,
+      "duration": 0.7103071212768555,
+      "file": "integration/test_xai_integration.py",
+      "summary": "",
+      "output": null
+    },
+    "Demo Tests": {
+      "passed": false,
+      "duration": 0.6871027946472168,
+      "file": "demos/test_demos.py",
+      "summary": "1 failed, 1 passed in 0.04s",
+      "output": null
+    },
+    "Performance Tests": {
+      "passed": true,
+      "duration": 0.615490198135376,
+      "file": "performance/test_performance.py",
+      "summary": "",
+      "output": null
+    }
+  },
+  "summary": {
+    "total_suites": 5,
+    "passed_suites": 2,
+    "failed_suites": 3,
+    "total_duration": 4.109760046005249,
+    "success_rate": 40.0
+  }
+}

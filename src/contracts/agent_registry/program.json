@@ -1,0 +1,10 @@
+{
+  "program": "agent_registry_v2.aleo",
+  "version": "2.0.0",
+  "description": "AI Agent Registry with ZK performance verification",
+  "license": "MIT",
+  "dependencies": [],
+  "proving_system": "marlin",
+  "curve": "bls12_377",
+  "network": "testnet3"
+}

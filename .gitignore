@@ -63,3 +63,6 @@ outputs/
 
 # Project instructions
 CLAUDE.md
+
+# Internal documentation (keep locally only)
+internal_docs/

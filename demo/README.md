@@ -1,83 +1,67 @@
-# 🦁 Lamassu Labs - TrustWrapper Demos
+# 🛡️ TrustWrapper Demos
 
-## Quick Start
+## Three Essential Demos
+
+### 1. 🏆 **Hackathon Presentation** (10-15 minutes)
+Complete presentation for judges covering all aspects of TrustWrapper.
 
 ```bash
-# Main hackathon presentation (with gaming effects)
-cd /path/to/lamassu-labs
-python demo/presentations/hackathon_demo.py
-
-# Show all 3 agent examples
-python demo/examples/run_all_examples.py
+python demo/hackathon_presentation.py
 ```
 
-## Demo Structure
+**Covers:**
+- The three trust problems (performance, explainability, quality)
+- Our three-layer solution architecture
+- Live XAI demonstrations with feature importance
+- Quality consensus with validator results
+- Complete integration showing all layers working together
+- Market impact and use cases
+- Why we win (technical innovation + real market need)
 
+### 2. ⚡ **Technical Demo** (3-5 minutes)
+Quick technical validation showing the progression from basic agent to fully trusted.
+
+```bash
+python demo/technical_demo.py
 ```
-demo/
-├── presentations/          # 🎯 Main hackathon presentations
-│   ├── hackathon_demo.py      # Main demo with gaming effects (8 min)
-│   ├── simple_story_demo.py   # Story-based explanation (7 min)
-│   └── visual_architecture.py # Technical deep-dive (6 min)
-│
-├── examples/              # 📦 Agent examples showing universality
-│   ├── event_wrapper.py       # Event discovery agent
-│   ├── scraper_wrapper.py     # Web scraping agent
-│   └── treasury_wrapper.py    # Treasury monitoring agent
-│
-└── run_all_demos.py      # 🚀 Run all 3 examples automatically
+
+**Shows:**
+- Step 1: Basic agent (no trust)
+- Step 2: + Performance verification (ZK proofs)
+- Step 3: + Explainable AI (decision transparency)
+- Step 4: + Quality consensus (independent validation)
+- Complete trust transformation summary
+
+### 3. 📖 **Usage Example** (1-2 minutes)
+Simple code examples showing how developers can integrate TrustWrapper.
+
+```bash
+python demo/usage_example.py
 ```
+
+**Demonstrates:**
+- Basic TrustWrapper usage (3 lines of code)
+- Adding explainable AI
+- Complete trust infrastructure
+- Integration patterns
+- Production deployment tips
 
 ## Which Demo to Use?
 
-### For Hackathon Judges
-```bash
-python demo/presentations/hackathon_demo.py
-```
-- Complete explanation of zero-knowledge proofs
-- Aleo technology integration
-- Gaming-style transitions
-- Live demonstrations
-
-### For Technical Audience
-```bash
-python demo/presentations/visual_architecture_demo.py
-```
-- Architecture diagrams
-- Leo contract details
-- Technical implementation
-
-### For Non-Technical Audience
-```bash
-python demo/presentations/simple_story_demo.py
-```
-- Story of Alice and Bob
-- Simple analogies
-- No technical jargon
-
-### To Show It Works
-```bash
-python demo/examples/run_all_examples.py
-```
-- Runs all 3 agent examples
-- Shows universal wrapper concept
-- Quick demonstration
+- **For Hackathon Judges**: `hackathon_presentation.py` (comprehensive)
+- **For Technical Validation**: `technical_demo.py` (quick proof)
+- **For Developers**: `usage_example.py` (how to integrate)
 
 ## Key Message
 
-**"TrustWrapper makes AI agents trustworthy without revealing their secrets.
-It's like SSL certificates for AI - simple, universal, and necessary."**
+**TrustWrapper is the first comprehensive trust infrastructure for AI agents**, solving all three trust problems:
 
-Add trust to ANY agent in just 3 lines:
-```python
-agent = YourAIAgent()
-trusted_agent = ZKTrustWrapper(agent)
-result = trusted_agent.verified_execute()
-```
+1. **Performance Trust** → ZK proofs on Aleo
+2. **Explainability Trust** → Ziggurat XAI integration  
+3. **Quality Trust** → Agent Forge consensus validation
 
-## Tips
+Universal wrapper that works with ANY existing agent - no code changes needed!
 
-1. All demos auto-loop - press Ctrl+C to stop
-2. Demos work offline (no blockchain required for hackathon)
-3. Each presentation is standalone
-4. Examples show different agent types to prove universality
+## Old Demos
+
+All previous demos have been moved to `demo/archive/` for reference, but these three demos cover everything you need.
