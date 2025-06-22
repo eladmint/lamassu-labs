@@ -61,24 +61,22 @@ outputs/
 *.prover
 *.verifier
 
-# Project instructions
-CLAUDE.md
+# Development tools and configurations
+.claude/
 
-# Internal documentation (keep locally only - now archived)
+# Archive and internal data
+archive/data/
 archive/internal_docs/
 
-# Enterprise components (private)
-trustwrapper-enterprise/
+# Private components
 *.enterprise
+trustwrapper-enterprise/
 
-# Node modules in tools
+# Node modules
+node_modules/
 tools/monitoring/node_modules/
 
-# Archive data
-archive/data/
-
-# Memory bank ADRs and learnings should be tracked
-# Only exclude sensitive operational guides if needed
+# Sensitive documentation
 memory-bank/operational_guides/sensitive/
 
 # Temporary files
