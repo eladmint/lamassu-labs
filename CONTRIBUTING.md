@@ -61,6 +61,8 @@ See `CLAUDE.md` for detailed project structure and standards.
 - Architecture docs: `docs/architecture/`
 - Guides: `docs/guides/`
 - ADRs: `docs/adrs/`
+- **Public reports**: Only technical guides in `docs/` (if needed)
+- **Internal reports**: Use `internal_docs/reports/` (not tracked in git)
 
 ## 🤝 Code of Conduct
 

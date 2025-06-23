@@ -70,6 +70,22 @@ archive/
 memory-bank/
 internal_docs/
 
+# Business strategy and sensitive docs (extra protection)
+docs/business/strategy/
+docs/reports/analysis/
+docs/reports/deployment/
+docs/reports/implementation/
+docs/getting-started/PRICING_TIERS.md
+*STRATEGIC_ROADMAP*
+*STRATEGY*
+*IP_PROTECTION*
+*CODE_SEPARATION*
+*PRICING_TIERS*
+*COST_ANALYSIS*
+*DEPLOYMENT_SUCCESS*
+tools/monitoring/*COST*
+tools/monitoring/*DEPLOYMENT_SUCCESS*
+
 # Private components
 *.enterprise
 trustwrapper-enterprise/

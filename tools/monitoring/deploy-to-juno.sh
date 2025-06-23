@@ -3,7 +3,7 @@
 # Deployment script for Juno satellite on ICP
 
 echo "🚀 Deploying Lamassu Labs monitoring dashboard to Juno satellite..."
-echo "Satellite ID: bvxuo-uaaaa-aaaal-asgua-cai"
+echo "Satellite ID: cmhvu-6iaaa-aaaal-asg5q-cai"
 echo ""
 
 # Check if Juno CLI is installed

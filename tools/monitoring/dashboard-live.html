@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamassu Labs Contract Monitor - Live Aleo Data</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #00ff88, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            color: #888;
+            font-size: 1.1em;
+        }
+        
+        .network-badge {
+            display: inline-block;
+            background: #ff6600;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        
+        .connection-status {
+            display: inline-block;
+            margin-left: 20px;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+        
+        .status-connected {
+            background: #00ff8833;
+            color: #00ff88;
+        }
+        
+        .status-error {
+            background: #ff444433;
+            color: #ff4444;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: #1a1a2e;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .stat-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: #888;
+            font-size: 0.9em;
+        }
+        
+        .stat-healthy { color: #00ff88; }
+        .stat-degraded { color: #ffaa00; }
+        .stat-unhealthy { color: #ff4444; }
+        
+        .section {
+            background: #1a1a2e;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .section-title {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #00d4ff;
+        }
+        
+        .contract-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+        
+        .contract-card {
+            background: #0f0f1f;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #2a2a4a;
+        }
+        
+        .contract-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contract-name {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        
+        .status-healthy {
+            background: #00ff8833;
+            color: #00ff88;
+        }
+        
+        .status-degraded {
+            background: #ffaa0033;
+            color: #ffaa00;
+        }
+        
+        .status-unhealthy {
+            background: #ff444433;
+            color: #ff4444;
+        }
+        
+        .status-inactive {
+            background: #66666633;
+            color: #666666;
+        }
+        
+        .status-error {
+            background: #ff444433;
+            color: #ff4444;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        
+        .metric {
+            text-align: center;
+            padding: 10px 0;
+        }
+        
+        .metric-value {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #00d4ff;
+        }
+        
+        .metric-label {
+            font-size: 0.8em;
+            color: #888;
+            margin-top: 2px;
+        }
+        
+        .alerts-container {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .alert {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            background: #0f0f1f;
+            border-left: 4px solid;
+        }
+        
+        .alert-warning {
+            border-left-color: #ffaa00;
+        }
+        
+        .alert-critical {
+            border-left-color: #ff4444;
+        }
+        
+        .alert-icon {
+            font-size: 1.5em;
+            margin-right: 15px;
+        }
+        
+        .alert-content {
+            flex: 1;
+        }
+        
+        .alert-message {
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+        
+        .alert-time {
+            font-size: 0.8em;
+            color: #888;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 100px 20px;
+            font-size: 1.2em;
+            color: #888;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid #333;
+            border-top-color: #00d4ff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .error {
+            background: #ff444433;
+            color: #ff4444;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .refresh-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #333;
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        .endpoint-info {
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .contract-link {
+            font-size: 0.8em;
+            margin-top: 10px;
+        }
+        
+        .contract-link a {
+            color: #00d4ff;
+            text-decoration: none;
+        }
+        
+        .contract-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Lamassu Labs Contract Monitor</h1>
+            <p class="subtitle">Real-time monitoring of smart contracts on Aleo blockchain</p>
+            <span class="network-badge">Aleo Testnet3</span>
+            <span class="connection-status" id="connection-status">Connecting...</span>
+            <div class="endpoint-info" id="endpoint-info"></div>
+        </header>
+        
+        <div id="loading" class="loading">
+            <div class="loading-spinner"></div>
+            <p>Connecting to Aleo blockchain...</p>
+        </div>
+        
+        <div id="error" class="error" style="display: none;">
+            <p id="error-message"></p>
+            <button onclick="location.reload()">Retry</button>
+        </div>
+        
+        <div id="dashboard" style="display: none;">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="total-contracts">0</div>
+                    <div class="stat-label">Total Contracts</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value stat-healthy" id="healthy-contracts">0</div>
+                    <div class="stat-label">Healthy</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value stat-degraded" id="degraded-contracts">0</div>
+                    <div class="stat-label">Degraded</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value stat-unhealthy" id="unhealthy-contracts">0</div>
+                    <div class="stat-label">Unhealthy</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Smart Contracts</h2>
+                <div class="contract-grid" id="contracts-list">
+                    <!-- Contracts will be inserted here -->
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Recent Alerts</h2>
+                <div class="alerts-container" id="alerts-list">
+                    <!-- Alerts will be inserted here -->
+                </div>
+                <div class="refresh-info">
+                    <span>Last update: <span id="last-update"></span></span>
+                    <span>Next refresh: <span id="next-refresh"></span></span>
+                </div>
+            </div>
+        </div>
+        
+        <footer class="footer">
+            <p>Powered by Lamassu Labs TrustWrapper • Live Aleo Blockchain Data</p>
+        </footer>
+    </div>
+    
+    <script src="aleo-live-data.js"></script>
+    <script>
+        // Initialize live data connection
+        const aleoData = new AleoLiveData();
+        let refreshInterval;
+        let countdownInterval;
+        let nextRefreshTime;
+        
+        // Contract display names
+        const contractNames = {
+            'hallucination_verifier.aleo': 'Hallucination Verifier',
+            'agent_registry_v2.aleo': 'Agent Registry v2',
+            'trust_verifier_v2.aleo': 'Trust Verifier v2'
+        };
+        
+        async function loadDashboard() {
+            try {
+                // Show loading state
+                document.getElementById('loading').style.display = 'block';
+                document.getElementById('error').style.display = 'none';
+                document.getElementById('dashboard').style.display = 'none';
+                
+                // Fetch live data
+                const data = await aleoData.getDashboardData();
+                
+                // Update connection status
+                document.getElementById('connection-status').textContent = 'Connected';
+                document.getElementById('connection-status').className = 'connection-status status-connected';
+                document.getElementById('endpoint-info').textContent = `Endpoint: ${data.endpoint}`;
+                
+                // Update dashboard
+                updateDashboard(data);
+                
+                // Show dashboard
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('dashboard').style.display = 'block';
+                
+                // Set next refresh time
+                nextRefreshTime = Date.now() + 60000; // 60 seconds
+                updateCountdown();
+                
+            } catch (error) {
+                console.error('Failed to load dashboard:', error);
+                showError('Failed to connect to Aleo blockchain. Please check your connection and try again.');
+            }
+        }
+        
+        function updateDashboard(data) {
+            // Update stats
+            document.getElementById('total-contracts').textContent = data.summary.total_contracts;
+            document.getElementById('healthy-contracts').textContent = data.summary.healthy_contracts;
+            document.getElementById('degraded-contracts').textContent = data.summary.degraded_contracts;
+            document.getElementById('unhealthy-contracts').textContent = data.summary.unhealthy_contracts;
+            
+            // Update last update time
+            document.getElementById('last-update').textContent = formatTime(data.timestamp);
+            
+            // Update contracts
+            const contractsList = document.getElementById('contracts-list');
+            contractsList.innerHTML = '';
+            
+            for (const [contractId, metrics] of Object.entries(data.contracts)) {
+                contractsList.appendChild(createContractCard(contractId, metrics));
+            }
+            
+            // Update alerts
+            const alertsList = document.getElementById('alerts-list');
+            alertsList.innerHTML = '';
+            
+            if (data.alerts.length === 0) {
+                alertsList.innerHTML = '<p style="text-align: center; color: #888;">No active alerts</p>';
+            } else {
+                data.alerts.forEach(alert => {
+                    alertsList.appendChild(createAlertCard(alert));
+                });
+            }
+        }
+        
+        function createContractCard(contractId, metrics) {
+            const card = document.createElement('div');
+            card.className = 'contract-card';
+            
+            const successRate = metrics.total_transactions > 0 
+                ? metrics.success_rate.toFixed(1)
+                : 100;
+                
+            const lastActivityTime = metrics.last_activity 
+                ? formatRelativeTime(new Date(metrics.last_activity))
+                : 'Never';
+            
+            const displayName = contractNames[contractId] || contractId;
+            
+            card.innerHTML = `
+                <div class="contract-header">
+                    <div class="contract-name">${displayName}</div>
+                    <div class="status-badge status-${metrics.health_status}">${metrics.health_status.toUpperCase()}</div>
+                </div>
+                <div class="metrics-grid">
+                    <div class="metric">
+                        <div class="metric-value">${metrics.total_transactions}</div>
+                        <div class="metric-label">Total Transactions</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">${successRate}%</div>
+                        <div class="metric-label">Success Rate</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">${metrics.average_execution_time}ms</div>
+                        <div class="metric-label">Avg Execution Time</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">${metrics.active_agents}</div>
+                        <div class="metric-label">Active Agents</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">${(metrics.gas_used_24h / 1000000).toFixed(1)}M</div>
+                        <div class="metric-label">Gas (24h)</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">${lastActivityTime}</div>
+                        <div class="metric-label">Last Activity</div>
+                    </div>
+                </div>
+                <div class="contract-link">
+                    <a href="https://testnet.aleoscan.io/program?id=${contractId}" target="_blank">View on AleoScan →</a>
+                </div>
+            `;
+            
+            return card;
+        }
+        
+        function createAlertCard(alert) {
+            const card = document.createElement('div');
+            card.className = `alert alert-${alert.severity}`;
+            
+            const icon = alert.severity === 'critical' ? '🔴' : '🟡';
+            const displayName = contractNames[alert.contract] || alert.contract;
+            
+            card.innerHTML = `
+                <div class="alert-icon">${icon}</div>
+                <div class="alert-content">
+                    <div class="alert-message">${displayName}: ${alert.message}</div>
+                    <div class="alert-time">${formatTime(alert.timestamp)}</div>
+                </div>
+            `;
+            
+            return card;
+        }
+        
+        function formatTime(timestamp) {
+            return new Date(timestamp).toLocaleString();
+        }
+        
+        function formatRelativeTime(date) {
+            const now = new Date();
+            const diff = now - date;
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            
+            if (hours > 24) {
+                const days = Math.floor(hours / 24);
+                return `${days}d ago`;
+            } else if (hours > 0) {
+                return `${hours}h ${minutes}m ago`;
+            } else {
+                return `${minutes}m ago`;
+            }
+        }
+        
+        function updateCountdown() {
+            if (!nextRefreshTime) return;
+            
+            const remaining = Math.max(0, nextRefreshTime - Date.now());
+            const seconds = Math.floor(remaining / 1000);
+            
+            document.getElementById('next-refresh').textContent = `${seconds}s`;
+            
+            if (seconds <= 0) {
+                loadDashboard();
+            }
+        }
+        
+        function showError(message) {
+            document.getElementById('error-message').textContent = message;
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('dashboard').style.display = 'none';
+            document.getElementById('error').style.display = 'block';
+            document.getElementById('connection-status').textContent = 'Error';
+            document.getElementById('connection-status').className = 'connection-status status-error';
+        }
+        
+        // Initial load
+        loadDashboard();
+        
+        // Set up auto-refresh every 60 seconds
+        refreshInterval = setInterval(loadDashboard, 60000);
+        
+        // Update countdown every second
+        countdownInterval = setInterval(updateCountdown, 1000);
+        
+        // Clean up on page unload
+        window.addEventListener('beforeunload', () => {
+            if (refreshInterval) clearInterval(refreshInterval);
+            if (countdownInterval) clearInterval(countdownInterval);
+        });
+    </script>
+</body>
+</html>

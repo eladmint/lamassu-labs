@@ -35,9 +35,9 @@ async function updateMonitoringData() {
         // Contract metrics
         const contractMetrics = [
             {
-                key: 'lamassu_registry',
+                key: 'hallucination_verifier.aleo',
                 data: {
-                    program_id: 'lamassu_registry',
+                    program_id: 'hallucination_verifier.aleo',
                     total_transactions: Math.floor(Math.random() * 100) + 200,
                     successful_transactions: Math.floor(Math.random() * 10) + 240,
                     failed_transactions: Math.floor(Math.random() * 5) + 5,
@@ -50,24 +50,9 @@ async function updateMonitoringData() {
                 }
             },
             {
-                key: 'trust_verifier',
+                key: 'agent_registry_v2.aleo',
                 data: {
-                    program_id: 'trust_verifier',
-                    total_transactions: Math.floor(Math.random() * 50) + 150,
-                    successful_transactions: Math.floor(Math.random() * 10) + 170,
-                    failed_transactions: Math.floor(Math.random() * 5) + 5,
-                    average_execution_time: Math.floor(Math.random() * 50) + 200,
-                    last_activity: new Date(Date.now() - 8 * 3600 * 1000).toISOString(),
-                    current_stake: 200000,
-                    active_agents: Math.floor(Math.random() * 5) + 35,
-                    gas_used_24h: Math.floor(Math.random() * 3000000) + 15000000,
-                    health_status: 'degraded'
-                }
-            },
-            {
-                key: 'xai_processor',
-                data: {
-                    program_id: 'xai_processor',
+                    program_id: 'agent_registry_v2.aleo',
                     total_transactions: Math.floor(Math.random() * 100) + 400,
                     successful_transactions: Math.floor(Math.random() * 20) + 400,
                     failed_transactions: Math.floor(Math.random() * 3) + 2,
@@ -77,6 +62,21 @@ async function updateMonitoringData() {
                     active_agents: Math.floor(Math.random() * 10) + 60,
                     gas_used_24h: Math.floor(Math.random() * 8000000) + 40000000,
                     health_status: 'healthy'
+                }
+            },
+            {
+                key: 'trust_verifier_v2.aleo',
+                data: {
+                    program_id: 'trust_verifier_v2.aleo',
+                    total_transactions: Math.floor(Math.random() * 50) + 150,
+                    successful_transactions: Math.floor(Math.random() * 10) + 170,
+                    failed_transactions: Math.floor(Math.random() * 5) + 5,
+                    average_execution_time: Math.floor(Math.random() * 50) + 200,
+                    last_activity: new Date(Date.now() - 8 * 3600 * 1000).toISOString(),
+                    current_stake: 200000,
+                    active_agents: Math.floor(Math.random() * 5) + 35,
+                    gas_used_24h: Math.floor(Math.random() * 3000000) + 15000000,
+                    health_status: 'degraded'
                 }
             }
         ];

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Deploy monitoring dashboard to Ziggurat Intelligence satellite
+Deploy monitoring dashboard to TrustWrapper satellite
 Uses the custom ICP client to deploy monitoring data and dashboard
 """
 
@@ -19,12 +19,12 @@ from integrations.icp_client import ICPClient
 async def deploy_monitoring_dashboard():
     """Deploy the monitoring dashboard to Ziggurat satellite."""
     
-    print("🚀 Deploying Lamassu Labs monitoring dashboard to Ziggurat satellite...")
-    print(f"Satellite ID: bvxuo-uaaaa-aaaal-asgua-cai")
+    print("🚀 Deploying Lamassu Labs monitoring dashboard to TrustWrapper satellite...")
+    print(f"Satellite ID: cmhvu-6iaaa-aaaal-asg5q-cai")
     
     try:
-        # Initialize Ziggurat ICP client
-        async with ICPClient(satellite_id="bvxuo-uaaaa-aaaal-asgua-cai") as client:
+        # Initialize TrustWrapper ICP client
+        async with ICPClient(satellite_id="cmhvu-6iaaa-aaaal-asg5q-cai") as client:
             
             # Test connectivity first
             print("🔍 Testing satellite connectivity...")
@@ -135,9 +135,9 @@ async def deploy_monitoring_dashboard():
             print(f"   Average response time: {stats['average_response_time']:.3f}s")
             
             print(f"\n🎉 Deployment completed successfully!")
-            print(f"🌐 Dashboard accessible via Ziggurat satellite interface")
+            print(f"🌐 Dashboard accessible via TrustWrapper satellite interface")
             print(f"📊 Monitoring data stored on ICP blockchain")
-            print(f"🔗 Satellite URL: https://bvxuo-uaaaa-aaaal-asgua-cai.icp0.io")
+            print(f"🔗 Satellite URL: https://cmhvu-6iaaa-aaaal-asg5q-cai.icp0.io")
             
             return True
             
@@ -152,7 +152,7 @@ async def test_ziggurat_access():
     print("\n🔍 Testing access to deployed monitoring data...")
     
     try:
-        async with ICPClient(satellite_id="bvxuo-uaaaa-aaaal-asgua-cai") as client:
+        async with ICPClient(satellite_id="cmhvu-6iaaa-aaaal-asg5q-cai") as client:
             
             # Query recent storage
             print("📊 Attempting to retrieve monitoring data...")
