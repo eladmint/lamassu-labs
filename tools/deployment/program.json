@@ -1,0 +1,7 @@
+{
+  "program": "lamassu_labs.aleo",
+  "version": "0.0.0",
+  "description": "TrustWrapper - Universal ZK verification layer for AI agents",
+  "license": "MIT",
+  "author": "Lamassu Labs"
+}

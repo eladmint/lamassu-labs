@@ -1,0 +1,5 @@
+[register_agent]
+agent_id = 7777field
+stake_amount = 1000000u64
+initial_metrics = { accuracy_rate: 9000u32, success_rate: 8500u32, avg_latency_ms: 250u32, total_executions: 1000u32 }
+registration_height = 150u32

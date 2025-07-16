@@ -1,0 +1,23 @@
+{
+  "name": "trustwrapper-senpi-integration",
+  "version": "1.0.0",
+  "description": "TrustWrapper-Senpi AI Integration",
+  "type": "module",
+  "scripts": {
+    "test:real-data": "tsx test-real-data.ts",
+    "demo": "cd demo && npm run demo",
+    "backend:dev": "cd backend && npm run dev",
+    "build": "tsc",
+    "install:all": "npm install && cd plugin-trustwrapper-verification && npm install && cd ../demo && npm install && cd ../backend && npm install"
+  },
+  "dependencies": {
+    "@ai16z/eliza": "^0.1.4-alpha.3",
+    "axios": "^1.6.2",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "tsx": "^4.6.2",
+    "typescript": "^5.3.3"
+  }
+}

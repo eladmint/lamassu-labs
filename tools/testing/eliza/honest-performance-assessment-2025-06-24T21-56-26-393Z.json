@@ -1,0 +1,122 @@
+{
+  "test_start": "2025-06-24T21:55:25.539Z",
+  "test_config": {
+    "simulated_network_latency_ms": 50,
+    "blockchain_api_latency_range": "100-500ms",
+    "includes_real_conditions": true
+  },
+  "results": {
+    "current_engine": {
+      "engine": "Current Engine",
+      "total_tests": 90,
+      "successful_tests": 83,
+      "failed_tests": 7,
+      "success_rate": 92.22222222222223,
+      "performance": {
+        "mean_ms": 331.86964550602426,
+        "median_ms": 325.47841700000004,
+        "p95_ms": 506.3793340000011,
+        "p99_ms": 527.2764169999973,
+        "min_ms": 131.26879199999985,
+        "max_ms": 527.2764169999973
+      },
+      "api_performance": {
+        "mean_ms": 302.84941867469865,
+        "median_ms": 296.1339169999992,
+        "p95_ms": 473.7271249999976
+      },
+      "breakdown": {
+        "processing_time_ms": 29.0202268313256,
+        "api_time_ms": 302.84941867469865,
+        "network_overhead_ms": 50
+      }
+    },
+    "optimized_engine": {
+      "engine": "Optimized Engine",
+      "total_tests": 90,
+      "successful_tests": 86,
+      "failed_tests": 4,
+      "success_rate": 95.55555555555556,
+      "performance": {
+        "mean_ms": 305.8063017906981,
+        "median_ms": 308.28979199999594,
+        "p95_ms": 489.1879170000029,
+        "p99_ms": 507.5451249999969,
+        "min_ms": 113.15816600000107,
+        "max_ms": 507.5451249999969
+      },
+      "api_performance": {
+        "mean_ms": 296.05476649999997,
+        "median_ms": 299.1180000000022,
+        "p95_ms": 479.3827500000043
+      },
+      "breakdown": {
+        "processing_time_ms": 9.751535290698143,
+        "api_time_ms": 296.05476649999997,
+        "network_overhead_ms": 50
+      }
+    },
+    "improvement_analysis": {
+      "current_mean_latency_ms": 331.86964550602426,
+      "optimized_mean_latency_ms": 305.8063017906981,
+      "improvement_percentage": 7.8534882801907315,
+      "speedup_ratio": 1.0852282754237177,
+      "realistic_assessment": "Modest improvement"
+    },
+    "current_concurrent_5": {
+      "engine": "Current Engine (5 concurrent)",
+      "concurrency": 5,
+      "total_time_ms": 464.22379199999705,
+      "requests_per_second": 10.770667264723114,
+      "average_latency_ms": 372.5774081999989,
+      "successful_requests": 5,
+      "failed_requests": 0
+    },
+    "optimized_concurrent_5": {
+      "engine": "Optimized Engine (5 concurrent)",
+      "concurrency": 5,
+      "total_time_ms": 453.7272499999963,
+      "requests_per_second": 11.019836256253159,
+      "average_latency_ms": 338.40800880000023,
+      "successful_requests": 5,
+      "failed_requests": 0
+    },
+    "current_concurrent_10": {
+      "engine": "Current Engine (10 concurrent)",
+      "concurrency": 10,
+      "total_time_ms": 494.80491600000096,
+      "requests_per_second": 20.209985140891327,
+      "average_latency_ms": 357.44374559999994,
+      "successful_requests": 10,
+      "failed_requests": 0
+    },
+    "optimized_concurrent_10": {
+      "engine": "Optimized Engine (10 concurrent)",
+      "concurrency": 10,
+      "total_time_ms": 408.3755420000016,
+      "requests_per_second": 24.487264714790292,
+      "average_latency_ms": 226.1184917000006,
+      "successful_requests": 10,
+      "failed_requests": 0
+    },
+    "current_concurrent_20": {
+      "engine": "Current Engine (20 concurrent)",
+      "concurrency": 20,
+      "total_time_ms": 494.4722079999992,
+      "requests_per_second": 40.4471670529156,
+      "average_latency_ms": 292.536548210527,
+      "successful_requests": 19,
+      "failed_requests": 1
+    },
+    "optimized_concurrent_20": {
+      "engine": "Optimized Engine (20 concurrent)",
+      "concurrency": 20,
+      "total_time_ms": 494.2465420000008,
+      "requests_per_second": 40.465634658906666,
+      "average_latency_ms": 333.2657171578949,
+      "successful_requests": 19,
+      "failed_requests": 1
+    }
+  },
+  "test_end": "2025-06-24T21:56:26.392Z"
+}

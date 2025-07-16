@@ -1,0 +1,137 @@
+{
+  "oauth_config": {
+    "endpoints": {
+      "https://chatbot-api-service-v2-oo6mrfxexq-uc.a.run.app/auth/connect/google": {
+        "accessible": true,
+        "status_code": 422,
+        "response_time_ms": 656.66,
+        "expected_behavior": true
+      },
+      "https://chatbot-api-service-v2-oo6mrfxexq-uc.a.run.app/auth/callback/google": {
+        "accessible": true,
+        "status_code": 200,
+        "response_time_ms": 554.701,
+        "expected_behavior": true
+      },
+      "https://chatbot-api-service-v2-oo6mrfxexq-uc.a.run.app/auth/status/12345": {
+        "accessible": true,
+        "status_code": 200,
+        "response_time_ms": 566.9,
+        "expected_behavior": true
+      }
+    },
+    "registration": {
+      "https://chatbot-api-service-v2-oo6mrfxexq-uc.a.run.app/v2/registration/platforms/auth": {
+        "status_code": 405,
+        "response_time_ms": 551.5459999999999,
+        "oauth_integrated": false
+      },
+      "https://chatbot-api-service-v2-oo6mrfxexq-uc.a.run.app/v2/registration/status/12345": {
+        "status_code": 200,
+        "response_time_ms": 561.791,
+        "oauth_integrated": true
+      }
+    },
+    "system_health": {
+      "api_healthy": true,
+      "oauth_ready": false,
+      "response_time_ms": 532.0559999999999
+    },
+    "success_rate": 100.0,
+    "status": "PASS"
+  },
+  "search_functionality": {
+    "chat_api_search": {
+      "Find blockchain events": {
+        "status_code": 422,
+        "response_time_ms": 575.456,
+        "search_handled": true,
+        "response_contains_data": false
+      },
+      "Search for ethereum conferences": {
+        "status_code": 422,
+        "response_time_ms": 560.975,
+        "search_handled": true,
+        "response_contains_data": false
+      },
+      "Show me hackathons": {
+        "status_code": 422,
+        "response_time_ms": 569.881,
+        "search_handled": true,
+        "response_contains_data": false
+      },
+      "What events are happening in crypto?": {
+        "status_code": 422,
+        "response_time_ms": 561.84,
+        "search_handled": true,
+        "response_contains_data": false
+      },
+      "List Web3 workshops": {
+        "status_code": 422,
+        "response_time_ms": 559.53,
+        "search_handled": true,
+        "response_contains_data": false
+      }
+    },
+    "bot_capability": {
+      "bot_responsive": true,
+      "search_ready": true,
+      "response_time_ms": 210.00900000000001
+    },
+    "performance": {
+      "avg_response_time": 565.5364,
+      "successful_searches": 5,
+      "total_searches": 5,
+      "success_rate": 100.0,
+      "fast_responses": 5
+    },
+    "status": "PASS"
+  },
+  "silent_oauth": {
+    "oauth_flow": {
+      "google_connect": {
+        "status_code": 422,
+        "expected_behavior": true,
+        "response_time_ms": 566.841,
+        "oauth_functional": true
+      },
+      "google_callback": {
+        "status_code": 200,
+        "expected_behavior": false,
+        "response_time_ms": 605.169,
+        "oauth_functional": true
+      },
+      "auth_status": {
+        "status_code": 200,
+        "expected_behavior": true,
+        "response_time_ms": 344.036,
+        "oauth_functional": true
+      }
+    },
+    "registration_integration": {
+      "platform_auth_endpoint": {
+        "status_code": 405,
+        "oauth_integrated": false,
+        "response_time_ms": 344.843
+      },
+      "registration_status": {
+        "status_code": 200,
+        "oauth_integrated": true,
+        "response_time_ms": 557.6320000000001
+      }
+    },
+    "system_readiness": {
+      "admin_accessible": true,
+      "system_operational": true,
+      "oauth_system_ready": true
+    },
+    "success_rates": {
+      "oauth_flow": 100.0,
+      "registration_oauth": 50.0,
+      "overall": 75.0
+    },
+    "status": "PASS"
+  },
+  "timestamp": "2025-06-09T00:14:25.792592",
+  "overall_status": "PASS"
+}

@@ -1,0 +1,96 @@
+{
+  "satellite": {
+    "satelliteId": "j3smw-tiaaa-aaaal-ashdq-cai",
+    "source": "dist"
+  },
+  "hosting": {
+    "headers": [
+      {
+        "source": "**/*.css",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "text/css"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000"
+          }
+        ]
+      },
+      {
+        "source": "**/*.js",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/javascript"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000"
+          }
+        ]
+      },
+      {
+        "source": "**/*",
+        "headers": [
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          },
+          {
+            "key": "Access-Control-Allow-Methods",
+            "value": "GET, POST, OPTIONS"
+          },
+          {
+            "key": "Access-Control-Allow-Headers",
+            "value": "Content-Type, Authorization"
+          }
+        ]
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "!(assets/**|*.js|*.css|*.json|*.ico|*.png|*.jpg|*.gif|*.svg|*.html)",
+        "destination": "/index.html"
+      }
+    ],
+    "ignore": [
+      "**/.*",
+      "**/node_modules/**",
+      "**/*.md"
+    ]
+  },
+  "datastore": {
+    "collections": [
+      {
+        "collection": "ml_oracle_metrics",
+        "read": "public",
+        "write": "managed",
+        "memory": "stable",
+        "mutablePermissions": true
+      },
+      {
+        "collection": "prediction_data",
+        "read": "public",
+        "write": "managed",
+        "memory": "stable",
+        "mutablePermissions": true
+      },
+      {
+        "collection": "consensus_monitoring",
+        "read": "public",
+        "write": "managed",
+        "memory": "stable",
+        "mutablePermissions": true
+      },
+      {
+        "collection": "oracle_marketplace",
+        "read": "public",
+        "write": "managed",
+        "memory": "stable",
+        "mutablePermissions": true
+      }
+    ]
+  }
+}

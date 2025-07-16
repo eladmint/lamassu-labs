@@ -1,0 +1,61 @@
+{
+  "satellite": {
+    "satelliteId": "cmhvu-6iaaa-aaaal-asg5q-cai",
+    "source": "dist"
+  },
+  "hosting": {
+    "headers": [
+      {
+        "source": "**/*",
+        "headers": [
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          },
+          {
+            "key": "Access-Control-Allow-Methods",
+            "value": "GET, POST, OPTIONS"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "no-cache, no-store, must-revalidate"
+          },
+          {
+            "key": "Pragma",
+            "value": "no-cache"
+          }
+        ]
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "!(assets/**|*.js|*.css|*.json|*.ico|*.png|*.jpg|*.gif|*.svg)",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "datastore": {
+    "collections": [
+      {
+        "collection": "mento_protocol_data",
+        "read": "public",
+        "write": "managed"
+      },
+      {
+        "collection": "stablecoin_metrics",
+        "read": "public",
+        "write": "managed"
+      },
+      {
+        "collection": "reserve_holdings",
+        "read": "public",
+        "write": "managed"
+      },
+      {
+        "collection": "monitoring_alerts",
+        "read": "public",
+        "write": "managed"
+      }
+    ]
+  }
+}

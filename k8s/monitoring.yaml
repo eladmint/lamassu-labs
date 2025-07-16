@@ -1,0 +1,151 @@
+# TrustWrapper v3.0 Monitoring Configuration
+# Prometheus ServiceMonitor and Grafana Dashboard
+
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: trustwrapper-metrics
+  namespace: trustwrapper
+  labels:
+    app: trustwrapper
+    version: v3.0
+spec:
+  selector:
+    matchLabels:
+      app: trustwrapper
+      version: v3.0
+  endpoints:
+  - port: http
+    path: /metrics
+    interval: 30s
+    scrapeTimeout: 10s
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: trustwrapper-grafana-dashboard
+  namespace: monitoring
+  labels:
+    grafana_dashboard: "1"
+data:
+  trustwrapper-v3.json: |
+    {
+      "dashboard": {
+        "id": null,
+        "title": "TrustWrapper v3.0 Universal Multi-Chain AI Verification",
+        "tags": ["trustwrapper", "blockchain", "ai", "verification"],
+        "timezone": "browser",
+        "panels": [
+          {
+            "id": 1,
+            "title": "Request Rate (RPS)",
+            "type": "stat",
+            "targets": [
+              {
+                "expr": "rate(trustwrapper_requests_total[1m])",
+                "legendFormat": "{{method}} {{endpoint}}"
+              }
+            ],
+            "fieldConfig": {
+              "defaults": {
+                "unit": "reqps",
+                "min": 0,
+                "thresholds": {
+                  "steps": [
+                    {"color": "green", "value": 0},
+                    {"color": "yellow", "value": 1000},
+                    {"color": "red", "value": 5000}
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "id": 2,
+            "title": "Response Time (p95)",
+            "type": "stat",
+            "targets": [
+              {
+                "expr": "histogram_quantile(0.95, rate(trustwrapper_request_duration_seconds_bucket[5m]))",
+                "legendFormat": "95th percentile"
+              }
+            ],
+            "fieldConfig": {
+              "defaults": {
+                "unit": "s",
+                "min": 0,
+                "thresholds": {
+                  "steps": [
+                    {"color": "green", "value": 0},
+                    {"color": "yellow", "value": 0.1},
+                    {"color": "red", "value": 0.5}
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "id": 3,
+            "title": "Blockchain Network Status",
+            "type": "table",
+            "targets": [
+              {
+                "expr": "trustwrapper_blockchain_health",
+                "legendFormat": "{{network}}"
+              }
+            ]
+          },
+          {
+            "id": 4,
+            "title": "Error Rate",
+            "type": "stat",
+            "targets": [
+              {
+                "expr": "rate(trustwrapper_errors_total[5m]) / rate(trustwrapper_requests_total[5m]) * 100",
+                "legendFormat": "Error Rate %"
+              }
+            ],
+            "fieldConfig": {
+              "defaults": {
+                "unit": "percent",
+                "min": 0,
+                "max": 100,
+                "thresholds": {
+                  "steps": [
+                    {"color": "green", "value": 0},
+                    {"color": "yellow", "value": 1},
+                    {"color": "red", "value": 5}
+                  ]
+                }
+              }
+            }
+          }
+        ],
+        "time": {
+          "from": "now-1h",
+          "to": "now"
+        },
+        "refresh": "5s"
+      }
+    }
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: trustwrapper-metrics
+  namespace: trustwrapper
+  labels:
+    app: trustwrapper
+    version: v3.0
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8000
+    targetPort: 8000
+    protocol: TCP
+    name: metrics
+  selector:
+    app: trustwrapper
+    version: v3.0

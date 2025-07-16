@@ -1,0 +1,10 @@
+{
+  "program": "trust_verifier_v2.aleo",
+  "version": "2.0.0",
+  "description": "Simple execution verification for AI agents",
+  "license": "MIT",
+  "dependencies": [],
+  "proving_system": "marlin",
+  "curve": "bls12_377",
+  "network": "testnet3"
+}

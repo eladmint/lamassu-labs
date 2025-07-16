@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "name": "mento-monitor-dashboard",
+  "alias": ["mento-monitor.vercel.app"],
+  "regions": ["iad1", "sfo1", "fra1"],
+  "env": {
+    "CELO_RPC_URL": "https://forno.celo.org",
+    "NEXT_PUBLIC_APP_NAME": "Mento Protocol Monitor",
+    "NEXT_PUBLIC_POWERED_BY": "Nuru AI"
+  },
+  "build": {
+    "env": {
+      "NODE_VERSION": "18.x"
+    }
+  },
+  "functions": {
+    "app/**/*.tsx": {
+      "maxDuration": 30
+    }
+  }
+}

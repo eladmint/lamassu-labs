@@ -1,0 +1,34 @@
+{
+  "name": "@elizaos/plugin-trustwrapper",
+  "version": "0.1.0",
+  "description": "TrustWrapper universal AI verification plugin for Eliza",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -w",
+    "clean": "rm -rf dist",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@elizaos/core": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "5.8.2"
+  },
+  "keywords": [
+    "eliza",
+    "ai",
+    "verification",
+    "trustwrapper",
+    "trading",
+    "defi",
+    "compliance"
+  ],
+  "author": "TrustWrapper",
+  "license": "MIT"
+}

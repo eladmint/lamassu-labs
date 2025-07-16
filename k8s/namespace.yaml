@@ -1,0 +1,12 @@
+# TrustWrapper v3.0 Kubernetes Namespace Configuration
+# Creates isolated namespace for TrustWrapper deployment
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: trustwrapper
+  labels:
+    name: trustwrapper
+    version: v3.0
+    environment: production
+    project: lamassu-labs

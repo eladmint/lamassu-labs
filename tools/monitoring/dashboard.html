@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aleo Contract Monitor Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #00ff88, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: #888;
+            font-size: 1.1em;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: #1a1a2e;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #2a2a3e;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 255, 136, 0.1);
+        }
+
+        .stat-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .stat-label {
+            color: #888;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+
+        .contracts-section {
+            margin-bottom: 30px;
+        }
+
+        .contract-card {
+            background: #1a1a2e;
+            border: 1px solid #2a2a3e;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .contract-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contract-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #00ff88;
+        }
+
+        .status-badge {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .status-healthy {
+            background: #00ff8833;
+            color: #00ff88;
+            border: 1px solid #00ff88;
+        }
+
+        .status-degraded {
+            background: #ffaa0033;
+            color: #ffaa00;
+            border: 1px solid #ffaa00;
+        }
+
+        .status-unhealthy {
+            background: #ff445533;
+            color: #ff4455;
+            border: 1px solid #ff4455;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .metric {
+            background: #16213e;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #00d4ff;
+        }
+
+        .metric-label {
+            color: #888;
+            font-size: 0.85em;
+            margin-top: 5px;
+        }
+
+        .alerts-section {
+            background: #1a1a2e;
+            border: 1px solid #2a2a3e;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .alert {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            background: #16213e;
+            border-left: 4px solid;
+        }
+
+        .alert-critical {
+            border-color: #ff4455;
+        }
+
+        .alert-warning {
+            border-color: #ffaa00;
+        }
+
+        .alert-icon {
+            font-size: 1.5em;
+            margin-right: 15px;
+        }
+
+        .alert-content {
+            flex: 1;
+        }
+
+        .alert-message {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .alert-time {
+            color: #888;
+            font-size: 0.85em;
+        }
+
+        .refresh-info {
+            text-align: center;
+            color: #888;
+            margin-top: 30px;
+            font-size: 0.9em;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 50px;
+            color: #888;
+        }
+
+        .spinner {
+            border: 3px solid #2a2a3e;
+            border-radius: 50%;
+            border-top: 3px solid #00ff88;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Aleo Contract Monitor</h1>
+            <div class="subtitle">
+                <span id="network">Testnet3</span> •
+                <span id="last-update">Loading...</span>
+            </div>
+        </header>
+
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Loading contract data...</p>
+        </div>
+
+        <div id="dashboard" style="display: none;">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Total Contracts</div>
+                    <div class="stat-value" id="total-contracts">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Healthy</div>
+                    <div class="stat-value" id="healthy-contracts" style="color: #00ff88;">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Degraded</div>
+                    <div class="stat-value" id="degraded-contracts" style="color: #ffaa00;">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Unhealthy</div>
+                    <div class="stat-value" id="unhealthy-contracts" style="color: #ff4455;">0</div>
+                </div>
+            </div>
+
+            <div class="contracts-section">
+                <h2>Contract Status</h2>
+                <div id="contracts-list"></div>
+            </div>
+
+            <div class="alerts-section">
+                <h2>Active Alerts</h2>
+                <div id="alerts-list"></div>
+            </div>
+
+            <div class="refresh-info">
+                Auto-refreshes every 60 seconds • Last update: <span id="refresh-time"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let monitoring_data = null;
+
+        async function loadMonitoringData() {
+            try {
+                // In production, this would fetch from the monitoring API
+                // For demo, we'll use mock data
+                const mockData = {
+                    timestamp: new Date().toISOString(),
+                    network: 'testnet3',
+                    summary: {
+                        total_contracts: 2,
+                        healthy_contracts: 1,
+                        degraded_contracts: 1,
+                        unhealthy_contracts: 0,
+                        total_alerts: 2,
+                        critical_alerts: 0
+                    },
+                    contracts: {
+                        'agent_registry_v2.aleo': {
+                            program_id: 'agent_registry_v2.aleo',
+                            total_transactions: 156,
+                            successful_transactions: 148,
+                            failed_transactions: 8,
+                            average_execution_time: 1845,
+                            last_activity: new Date(Date.now() - 2 * 3600 * 1000).toISOString(),
+                            current_stake: 250000,
+                            active_agents: 42,
+                            gas_used_24h: 15680000,
+                            health_status: 'healthy'
+                        },
+                        'trust_verifier_v2.aleo': {
+                            program_id: 'trust_verifier_v2.aleo',
+                            total_transactions: 89,
+                            successful_transactions: 82,
+                            failed_transactions: 7,
+                            average_execution_time: 2150,
+                            last_activity: new Date(Date.now() - 8 * 3600 * 1000).toISOString(),
+                            current_stake: 100000,
+                            active_agents: 28,
+                            gas_used_24h: 8900000,
+                            health_status: 'degraded'
+                        }
+                    },
+                    alerts: [
+                        {
+                            severity: 'warning',
+                            contract: 'trust_verifier_v2.aleo',
+                            message: 'No activity for 8.0 hours',
+                            timestamp: new Date().toISOString()
+                        },
+                        {
+                            severity: 'warning',
+                            contract: 'trust_verifier_v2.aleo',
+                            message: 'Average execution time above threshold',
+                            timestamp: new Date().toISOString()
+                        }
+                    ]
+                };
+
+                monitoring_data = mockData;
+                updateDashboard();
+
+            } catch (error) {
+                console.error('Failed to load monitoring data:', error);
+            }
+        }
+
+        function updateDashboard() {
+            if (!monitoring_data) return;
+
+            // Hide loading, show dashboard
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('dashboard').style.display = 'block';
+
+            // Update header
+            document.getElementById('network').textContent = monitoring_data.network.toUpperCase();
+            document.getElementById('last-update').textContent = formatTime(monitoring_data.timestamp);
+
+            // Update stats
+            const summary = monitoring_data.summary;
+            document.getElementById('total-contracts').textContent = summary.total_contracts;
+            document.getElementById('healthy-contracts').textContent = summary.healthy_contracts;
+            document.getElementById('degraded-contracts').textContent = summary.degraded_contracts;
+            document.getElementById('unhealthy-contracts').textContent = summary.unhealthy_contracts;
+
+            // Update contracts
+            const contractsList = document.getElementById('contracts-list');
+            contractsList.innerHTML = '';
+
+            for (const [contractId, metrics] of Object.entries(monitoring_data.contracts)) {
+                contractsList.appendChild(createContractCard(contractId, metrics));
+            }
+
+            // Update alerts
+            const alertsList = document.getElementById('alerts-list');
+            alertsList.innerHTML = '';
+
+            if (monitoring_data.alerts.length === 0) {
+                alertsList.innerHTML = '<p style="text-align: center; color: #888;">No active alerts</p>';
+            } else {
+                monitoring_data.alerts.forEach(alert => {
+                    alertsList.appendChild(createAlertCard(alert));
+                });
+            }
+
+            // Update refresh time
+            document.getElementById('refresh-time').textContent = new Date().toLocaleTimeString();
+        }
+
+        function createContractCard(contractId, metrics) {
+            const card = document.createElement('div');
+            card.className = 'contract-card';
+
+            const successRate = metrics.total_transactions > 0
+                ? (metrics.successful_transactions / metrics.total_transactions * 100).toFixed(1)
+                : 100;
+
+            const lastActivityTime = metrics.last_activity
+                ? formatRelativeTime(new Date(metrics.last_activity))
+                : 'Never';
+
+            card.innerHTML = `
+                <div class="contract-header">
+                    <div class="contract-name">${contractId}</div>
+                    <div class="status-badge status-${metrics.health_status}">${metrics.health_status.toUpperCase()}</div>
+                </div>
+                <div class="metrics-grid">
+                    <div class="metric">
+                        <div class="metric-value">${metrics.total_transactions}</div>
+                        <div class="metric-label">Total Transactions</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">${successRate}%</div>
+                        <div class="metric-label">Success Rate</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">${metrics.average_execution_time.toFixed(0)}ms</div>
+                        <div class="metric-label">Avg Execution Time</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">${metrics.active_agents}</div>
+                        <div class="metric-label">Active Agents</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">${(metrics.gas_used_24h / 1000000).toFixed(1)}M</div>
+                        <div class="metric-label">Gas (24h)</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">${lastActivityTime}</div>
+                        <div class="metric-label">Last Activity</div>
+                    </div>
+                </div>
+            `;
+
+            return card;
+        }
+
+        function createAlertCard(alert) {
+            const card = document.createElement('div');
+            card.className = `alert alert-${alert.severity}`;
+
+            const icon = alert.severity === 'critical' ? '🔴' : '🟡';
+
+            card.innerHTML = `
+                <div class="alert-icon">${icon}</div>
+                <div class="alert-content">
+                    <div class="alert-message">${alert.contract}: ${alert.message}</div>
+                    <div class="alert-time">${formatTime(alert.timestamp)}</div>
+                </div>
+            `;
+
+            return card;
+        }
+
+        function formatTime(timestamp) {
+            return new Date(timestamp).toLocaleString();
+        }
+
+        function formatRelativeTime(date) {
+            const now = new Date();
+            const diff = now - date;
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+            if (hours > 0) {
+                return `${hours}h ${minutes}m ago`;
+            } else {
+                return `${minutes}m ago`;
+            }
+        }
+
+        // Initial load
+        loadMonitoringData();
+
+        // Auto-refresh every 60 seconds
+        setInterval(loadMonitoringData, 60000);
+    </script>
+</body>
+</html>

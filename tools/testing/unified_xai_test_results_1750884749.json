@@ -1,0 +1,234 @@
+{
+  "test_summary": {
+    "total_tests": 4,
+    "passed": 4,
+    "failed": 0,
+    "errors": 0,
+    "success_rate": 1.0,
+    "overall_status": "PASSED"
+  },
+  "test_results": [
+    {
+      "test_name": "unified_explanation_generation",
+      "status": "passed",
+      "details": {
+        "shap": {
+          "completed": true,
+          "confidence": 0.9512670016290996,
+          "features_count": 12,
+          "computation_time": 3.3850669860839844
+        },
+        "lime": {
+          "completed": true,
+          "model_score": 0.0,
+          "features_count": 0,
+          "computation_time": 0.010013580322265625
+        },
+        "counterfactual": {
+          "completed": true,
+          "counterfactuals_count": 0,
+          "computation_time": 0.0059604644775390625
+        },
+        "attention": {
+          "completed": true,
+          "global_attention": 2.5159999999999996,
+          "computation_time": 0.21195411682128906
+        }
+      },
+      "performance": {
+        "total_computation_time_ms": 4.153966903686523,
+        "methods_completed": 4,
+        "completion_rate": 1.0,
+        "overall_confidence": 0.9918167504072748,
+        "consensus_score": 1.0,
+        "explanation_completeness": 1.0
+      },
+      "errors": [],
+      "explanation_sample": {
+        "recommendation": "PROCEED: High confidence AI decision with reliable oracle data and no risk factors detected.",
+        "top_factors": [],
+        "risk_assessment": {
+          "risk_indicators": [],
+          "method_agreement": 1.0
+        }
+      }
+    },
+    {
+      "test_name": "individual_explainers",
+      "status": "passed",
+      "details": {
+        "explainer_results": [
+          {
+            "method": "shap",
+            "success": true,
+            "time_ms": 4.624843597412109,
+            "confidence": 0.9500607630633575
+          },
+          {
+            "method": "lime",
+            "success": true,
+            "time_ms": 0.2932548522949219,
+            "model_score": 0.0
+          },
+          {
+            "method": "counterfactual",
+            "success": true,
+            "time_ms": 0.3070831298828125,
+            "counterfactuals_count": 0
+          },
+          {
+            "method": "attention",
+            "success": true,
+            "time_ms": 0.6449222564697266,
+            "global_attention": 2.5519999999999996
+          }
+        ],
+        "success_count": 4,
+        "total_count": 4,
+        "success_rate": 1.0
+      },
+      "performance": {
+        "average_time_ms": 1.4675259590148926,
+        "fastest_method": "lime",
+        "slowest_method": "shap"
+      },
+      "errors": []
+    },
+    {
+      "test_name": "real_oracle_integration",
+      "status": "passed",
+      "details": {
+        "oracle_results": [
+          {
+            "symbol": "BTC/USD",
+            "success": true,
+            "price": 50000,
+            "confidence": 0.85,
+            "source_count": 3,
+            "deviation": 0.02,
+            "xai_success": "True",
+            "xai_confidence": 0.47556454766072714
+          },
+          {
+            "symbol": "ETH/USD",
+            "success": true,
+            "price": 2500,
+            "confidence": 0.85,
+            "source_count": 3,
+            "deviation": 0.02,
+            "xai_success": "True",
+            "xai_confidence": 0.47556454766072714
+          },
+          {
+            "symbol": "SOL/USD",
+            "success": true,
+            "price": 2500,
+            "confidence": 0.85,
+            "source_count": 3,
+            "deviation": 0.02,
+            "xai_success": "True",
+            "xai_confidence": 0.47556454766072714
+          }
+        ],
+        "oracle_success_rate": 1.0,
+        "xai_success_rate": 1.0,
+        "symbols_tested": 3
+      },
+      "performance": {
+        "average_oracle_confidence": 0.85,
+        "average_xai_confidence": 0.47556454766072714,
+        "oracle_source_coverage": 3.0
+      },
+      "errors": []
+    },
+    {
+      "test_name": "performance_benchmarks",
+      "status": "passed",
+      "details": {
+        "benchmark_results": [
+          {
+            "methods": [
+              "shap"
+            ],
+            "target_time_ms": 5000,
+            "actual_time_ms": 4.535198211669922,
+            "performance_ratio": 0.0009070396423339844,
+            "success": true,
+            "confidence": 0.9512670016290996
+          },
+          {
+            "methods": [
+              "lime"
+            ],
+            "target_time_ms": 8000,
+            "actual_time_ms": 0.2181529998779297,
+            "performance_ratio": 2.726912498474121e-05,
+            "success": true,
+            "confidence": 0.0
+          },
+          {
+            "methods": [
+              "counterfactual"
+            ],
+            "target_time_ms": 10000,
+            "actual_time_ms": 0.202178955078125,
+            "performance_ratio": 2.02178955078125e-05,
+            "success": true,
+            "confidence": 0.5
+          },
+          {
+            "methods": [
+              "attention"
+            ],
+            "target_time_ms": 3000,
+            "actual_time_ms": 0.6198883056640625,
+            "performance_ratio": 0.00020662943522135416,
+            "success": true,
+            "confidence": 2.4759999999999995
+          },
+          {
+            "methods": [
+              "shap",
+              "lime"
+            ],
+            "target_time_ms": 12000,
+            "actual_time_ms": 4.678964614868164,
+            "performance_ratio": 0.00038991371790568036,
+            "success": true,
+            "confidence": 0.4756335008145498
+          },
+          {
+            "methods": [
+              "shap",
+              "lime",
+              "counterfactual",
+              "attention"
+            ],
+            "target_time_ms": 20000,
+            "actual_time_ms": 5.033969879150391,
+            "performance_ratio": 0.00025169849395751954,
+            "success": true,
+            "confidence": 0.9818167504072748
+          }
+        ],
+        "success_count": 6,
+        "total_count": 6,
+        "performance_success_rate": 1.0
+      },
+      "performance": {
+        "average_performance_ratio": 0.00030046138498518205,
+        "fastest_combination": [
+          "counterfactual"
+        ],
+        "slowest_combination": [
+          "shap",
+          "lime",
+          "counterfactual",
+          "attention"
+        ]
+      },
+      "errors": []
+    }
+  ],
+  "recommendations": []
+}

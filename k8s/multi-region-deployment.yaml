@@ -1,0 +1,306 @@
+# TrustWrapper v3.0 Multi-Region Deployment Configuration
+# Geographic distribution for high availability and low latency
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: region-config
+  namespace: trustwrapper
+data:
+  regions.yaml: |
+    regions:
+      us-east-1:
+        name: "US East (Virginia)"
+        priority: 1
+        blockchain_endpoints:
+          ethereum: "https://eth-mainnet.alchemyapi.io/v2/us-east-key"
+          polygon: "https://polygon-mainnet.alchemyapi.io/v2/us-east-key"
+          bitcoin: "https://api.blockcypher.com/v1/btc/main"
+        latency_target: 50
+      us-west-2:
+        name: "US West (Oregon)"
+        priority: 2
+        blockchain_endpoints:
+          ethereum: "https://eth-mainnet.alchemyapi.io/v2/us-west-key"
+          solana: "https://api.mainnet-beta.solana.com"
+          cardano: "https://cardano-mainnet.blockfrost.io/api/v0"
+        latency_target: 75
+      eu-west-1:
+        name: "Europe (Ireland)"
+        priority: 2
+        blockchain_endpoints:
+          ethereum: "https://eth-mainnet.alchemyapi.io/v2/eu-key"
+          polygon: "https://polygon-mainnet.alchemyapi.io/v2/eu-key"
+        latency_target: 60
+      ap-southeast-1:
+        name: "Asia Pacific (Singapore)"
+        priority: 3
+        blockchain_endpoints:
+          ethereum: "https://eth-mainnet.alchemyapi.io/v2/ap-key"
+          solana: "https://api.mainnet-beta.solana.com"
+        latency_target: 80
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: trustwrapper-multi-region
+  namespace: trustwrapper
+  labels:
+    app: trustwrapper
+    deployment-strategy: multi-region
+spec:
+  replicas: 12
+  strategy:
+    blueGreen:
+      activeService: trustwrapper-active
+      previewService: trustwrapper-preview
+      autoPromotionEnabled: false
+      scaleDownDelaySeconds: 30
+      prePromotionAnalysis:
+        templates:
+        - templateName: success-rate
+        args:
+        - name: service-name
+          value: trustwrapper-preview
+      postPromotionAnalysis:
+        templates:
+        - templateName: success-rate
+        args:
+        - name: service-name
+          value: trustwrapper-active
+  selector:
+    matchLabels:
+      app: trustwrapper
+  template:
+    metadata:
+      labels:
+        app: trustwrapper
+        version: v3.0
+    spec:
+      topologySpreadConstraints:
+      - maxSkew: 1
+        topologyKey: topology.kubernetes.io/zone
+        whenUnsatisfiable: DoNotSchedule
+        labelSelector:
+          matchLabels:
+            app: trustwrapper
+      - maxSkew: 1
+        topologyKey: topology.kubernetes.io/region
+        whenUnsatisfiable: ScheduleAnyway
+        labelSelector:
+          matchLabels:
+            app: trustwrapper
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - trustwrapper
+              topologyKey: kubernetes.io/hostname
+      containers:
+      - name: trustwrapper-api
+        image: trustwrapper/v3:latest
+        ports:
+        - containerPort: 8000
+          name: http
+        env:
+        - name: TRUSTWRAPPER_REGION
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.annotations['topology.kubernetes.io/region']
+        - name: TRUSTWRAPPER_ZONE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.annotations['topology.kubernetes.io/zone']
+        - name: DATABASE_URL
+          valueFrom:
+            secretKeyRef:
+              name: trustwrapper-secrets
+              key: database-url
+        - name: REDIS_URL
+          valueFrom:
+            secretKeyRef:
+              name: trustwrapper-secrets
+              key: redis-url
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8000
+          initialDelaySeconds: 15
+          periodSeconds: 5
+        volumeMounts:
+        - name: region-config
+          mountPath: /app/config/regions
+          readOnly: true
+      volumes:
+      - name: region-config
+        configMap:
+          name: region-config
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: trustwrapper-active
+  namespace: trustwrapper
+  labels:
+    app: trustwrapper
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 8000
+    protocol: TCP
+  selector:
+    app: trustwrapper
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: trustwrapper-preview
+  namespace: trustwrapper
+  labels:
+    app: trustwrapper
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 8000
+    protocol: TCP
+  selector:
+    app: trustwrapper
+
+---
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  name: trustwrapper-destination
+  namespace: trustwrapper
+spec:
+  host: trustwrapper-active.trustwrapper.svc.cluster.local
+  trafficPolicy:
+    loadBalancer:
+      localityLbSetting:
+        enabled: true
+        distribute:
+        - from: "region1/*"
+          to:
+            "region1/*": 80
+            "region2/*": 20
+        - from: "region2/*"
+          to:
+            "region1/*": 20
+            "region2/*": 80
+        failover:
+        - from: region1
+          to: region2
+        - from: region2
+          to: region1
+    connectionPool:
+      tcp:
+        maxConnections: 100
+      http:
+        http1MaxPendingRequests: 50
+        maxRequestsPerConnection: 10
+    circuitBreaker:
+      consecutiveGatewayErrors: 5
+      interval: 30s
+      baseEjectionTime: 30s
+      maxEjectionPercent: 50
+
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: trustwrapper-routing
+  namespace: trustwrapper
+spec:
+  hosts:
+  - api.trustwrapper.com
+  gateways:
+  - trustwrapper-gateway
+  http:
+  - match:
+    - headers:
+        region:
+          exact: us-east-1
+    route:
+    - destination:
+        host: trustwrapper-active.trustwrapper.svc.cluster.local
+        subset: us-east
+      weight: 100
+  - match:
+    - headers:
+        region:
+          exact: eu-west-1
+    route:
+    - destination:
+        host: trustwrapper-active.trustwrapper.svc.cluster.local
+        subset: eu-west
+      weight: 100
+  - route:
+    - destination:
+        host: trustwrapper-active.trustwrapper.svc.cluster.local
+      weight: 100
+    fault:
+      delay:
+        percentage:
+          value: 0.1
+        fixedDelay: 5s
+    timeout: 30s
+    retries:
+      attempts: 3
+      perTryTimeout: 10s
+      retryOn: gateway-error,connect-failure,refused-stream
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisTemplate
+metadata:
+  name: success-rate
+  namespace: trustwrapper
+spec:
+  args:
+  - name: service-name
+  metrics:
+  - name: success-rate
+    interval: 60s
+    count: 5
+    successCondition: result[0] >= 0.95
+    provider:
+      prometheus:
+        address: http://prometheus.monitoring.svc.cluster.local:9090
+        query: |
+          sum(rate(trustwrapper_requests_total{service="{{args.service-name}}",status!~"5.."}[2m])) /
+          sum(rate(trustwrapper_requests_total{service="{{args.service-name}}"}[2m]))
+  - name: avg-response-time
+    interval: 60s
+    count: 5
+    successCondition: result[0] <= 0.2
+    provider:
+      prometheus:
+        address: http://prometheus.monitoring.svc.cluster.local:9090
+        query: |
+          histogram_quantile(0.95,
+            sum(rate(trustwrapper_request_duration_seconds_bucket{service="{{args.service-name}}"}[2m])) by (le)
+          )

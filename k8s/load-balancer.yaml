@@ -1,0 +1,292 @@
+# TrustWrapper v3.0 Load Balancer Configuration
+# Global load balancing with health checks and failover
+
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: trustwrapper-gateway
+  namespace: trustwrapper
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - api.trustwrapper.com
+    - api-v3.trustwrapper.com
+    tls:
+      httpsRedirect: true
+  - port:
+      number: 443
+      name: https
+      protocol: HTTPS
+    tls:
+      mode: SIMPLE
+      credentialName: trustwrapper-tls-cert
+    hosts:
+    - api.trustwrapper.com
+    - api-v3.trustwrapper.com
+
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: trustwrapper-vs
+  namespace: trustwrapper
+spec:
+  hosts:
+  - api.trustwrapper.com
+  - api-v3.trustwrapper.com
+  gateways:
+  - trustwrapper-gateway
+  http:
+  # Health check endpoint - always available
+  - match:
+    - uri:
+        exact: /health
+    route:
+    - destination:
+        host: trustwrapper-service.trustwrapper.svc.cluster.local
+        port:
+          number: 80
+    timeout: 5s
+
+  # API versioning routes
+  - match:
+    - headers:
+        api-version:
+          exact: "v3"
+    route:
+    - destination:
+        host: trustwrapper-service.trustwrapper.svc.cluster.local
+        port:
+          number: 80
+    timeout: 30s
+    retries:
+      attempts: 3
+      perTryTimeout: 10s
+      retryOn: 5xx,reset,connect-failure,refused-stream
+      retryRemoteLocalities: true
+
+  # Rate limiting for different endpoints
+  - match:
+    - uri:
+        prefix: "/verify"
+    route:
+    - destination:
+        host: trustwrapper-service.trustwrapper.svc.cluster.local
+        port:
+          number: 80
+    timeout: 60s
+    retries:
+      attempts: 2
+      perTryTimeout: 30s
+      retryOn: 5xx,reset,connect-failure
+
+  # Default route
+  - route:
+    - destination:
+        host: trustwrapper-service.trustwrapper.svc.cluster.local
+        port:
+          number: 80
+    timeout: 30s
+    retries:
+      attempts: 3
+      perTryTimeout: 10s
+      retryOn: 5xx,reset,connect-failure
+
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: EnvoyFilter
+metadata:
+  name: trustwrapper-rate-limit
+  namespace: trustwrapper
+spec:
+  workloadSelector:
+    labels:
+      app: istio-proxy
+  configPatches:
+  - applyTo: HTTP_FILTER
+    match:
+      context: SIDECAR_INBOUND
+      listener:
+        filterChain:
+          filter:
+            name: "envoy.filters.network.http_connection_manager"
+    patch:
+      operation: INSERT_BEFORE
+      value:
+        name: envoy.filters.http.local_ratelimit
+        typed_config:
+          "@type": type.googleapis.com/udpa.type.v1.TypedStruct
+          type_url: type.googleapis.com/envoy.extensions.filters.http.local_ratelimit.v3.LocalRateLimit
+          value:
+            stat_prefix: local_rate_limiter
+            token_bucket:
+              max_tokens: 1000
+              tokens_per_fill: 1000
+              fill_interval: 60s
+            filter_enabled:
+              runtime_key: local_rate_limit_enabled
+              default_value:
+                numerator: 100
+                denominator: HUNDRED
+            filter_enforced:
+              runtime_key: local_rate_limit_enforced
+              default_value:
+                numerator: 100
+                denominator: HUNDRED
+            response_headers_to_add:
+            - append: false
+              header:
+                key: x-local-rate-limit
+                value: 'true'
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: trustwrapper-global-lb
+  namespace: trustwrapper
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
+    service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: "true"
+    service.beta.kubernetes.io/aws-load-balancer-backend-protocol: "tcp"
+    service.beta.kubernetes.io/aws-load-balancer-healthcheck-healthy-threshold: "2"
+    service.beta.kubernetes.io/aws-load-balancer-healthcheck-unhealthy-threshold: "2"
+    service.beta.kubernetes.io/aws-load-balancer-healthcheck-timeout: "5"
+    service.beta.kubernetes.io/aws-load-balancer-healthcheck-interval: "10"
+    service.beta.kubernetes.io/aws-load-balancer-healthcheck-protocol: "tcp"
+spec:
+  type: LoadBalancer
+  externalTrafficPolicy: Local
+  ports:
+  - name: https
+    port: 443
+    targetPort: 8443
+    protocol: TCP
+  - name: http
+    port: 80
+    targetPort: 8080
+    protocol: TCP
+  selector:
+    istio: ingressgateway
+
+---
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  name: trustwrapper-lb-policy
+  namespace: trustwrapper
+spec:
+  host: trustwrapper-service.trustwrapper.svc.cluster.local
+  trafficPolicy:
+    loadBalancer:
+      simple: LEAST_CONN
+    connectionPool:
+      tcp:
+        maxConnections: 100
+        connectTimeout: 30s
+        tcpKeepalive:
+          time: 7200s
+          interval: 75s
+      http:
+        http1MaxPendingRequests: 50
+        http2MaxRequests: 100
+        maxRequestsPerConnection: 10
+        maxRetries: 3
+        idleTimeout: 90s
+        h2UpgradePolicy: UPGRADE
+    circuitBreaker:
+      consecutiveGatewayErrors: 5
+      consecutive5xxErrors: 5
+      interval: 30s
+      baseEjectionTime: 30s
+      maxEjectionPercent: 50
+      minHealthPercent: 50
+    outlierDetection:
+      consecutiveGatewayErrors: 5
+      consecutive5xxErrors: 5
+      interval: 30s
+      baseEjectionTime: 30s
+      maxEjectionPercent: 50
+      minHealthPercent: 50
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-custom-config
+  namespace: trustwrapper
+data:
+  nginx.conf: |
+    upstream trustwrapper_backend {
+        least_conn;
+
+        # Primary region servers
+        server trustwrapper-service.trustwrapper.svc.cluster.local:80 weight=3 max_fails=3 fail_timeout=30s;
+
+        # Secondary region servers (backup)
+        server trustwrapper-backup-service.trustwrapper.svc.cluster.local:80 weight=1 backup;
+
+        # Health check
+        keepalive 32;
+        keepalive_requests 100;
+        keepalive_timeout 60s;
+    }
+
+    # Rate limiting zones
+    limit_req_zone $binary_remote_addr zone=api:10m rate=100r/m;
+    limit_req_zone $binary_remote_addr zone=verify:10m rate=10r/m;
+
+    server {
+        listen 80;
+        server_name api.trustwrapper.com api-v3.trustwrapper.com;
+
+        # Security headers
+        add_header X-Frame-Options DENY;
+        add_header X-Content-Type-Options nosniff;
+        add_header X-XSS-Protection "1; mode=block";
+        add_header Strict-Transport-Security "max-age=31536000; includeSubDomains";
+
+        # Rate limiting
+        location /verify {
+            limit_req zone=verify burst=5 nodelay;
+            proxy_pass http://trustwrapper_backend;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+
+            # Timeouts for verification endpoint
+            proxy_connect_timeout 10s;
+            proxy_send_timeout 60s;
+            proxy_read_timeout 60s;
+        }
+
+        location / {
+            limit_req zone=api burst=20 nodelay;
+            proxy_pass http://trustwrapper_backend;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+
+            # Standard timeouts
+            proxy_connect_timeout 5s;
+            proxy_send_timeout 30s;
+            proxy_read_timeout 30s;
+        }
+
+        # Health check endpoint
+        location /health {
+            access_log off;
+            proxy_pass http://trustwrapper_backend;
+            proxy_connect_timeout 2s;
+            proxy_send_timeout 2s;
+            proxy_read_timeout 2s;
+        }
+    }

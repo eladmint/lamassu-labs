@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustWrapper v2.0 - Institutional Demo</title>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #7C3AED, #5B21B6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            color: #888;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+        .demo-section {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid #2a2a2a;
+        }
+        .metric {
+            display: inline-block;
+            margin-right: 30px;
+            margin-bottom: 20px;
+        }
+        .metric-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #7C3AED;
+        }
+        .metric-label {
+            color: #888;
+            font-size: 0.9em;
+        }
+        button {
+            background: #7C3AED;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        button:hover {
+            background: #5B21B6;
+            transform: translateY(-2px);
+        }
+        .result {
+            background: #0f0f0f;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid #2a2a2a;
+            font-family: 'Fira Code', monospace;
+            font-size: 14px;
+        }
+        .success {
+            color: #10B981;
+        }
+        .warning {
+            color: #F59E0B;
+        }
+        .error {
+            color: #EF4444;
+        }
+        .latency-indicator {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .fast {
+            background: #10B981;
+            color: white;
+        }
+        .slow {
+            background: #F59E0B;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TrustWrapper v2.0</h1>
+        <div class="subtitle">Institutional DeFi Trust Infrastructure</div>
+
+        <div class="demo-section">
+            <h2>🚀 Real-Time Performance</h2>
+            <div id="metrics">
+                <div class="metric">
+                    <div class="metric-value" id="avgLatency">-</div>
+                    <div class="metric-label">Avg Latency (ms)</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value" id="sub10ms">-</div>
+                    <div class="metric-label">Sub-10ms Rate</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value" id="totalVerifications">-</div>
+                    <div class="metric-label">Total Verifications</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value" id="uptime">99.99%</div>
+                    <div class="metric-label">Uptime</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>⚡ Trade Verification Demo</h2>
+            <button onclick="verifyTrade()">Verify Sample Trade</button>
+            <div id="tradeResult" class="result" style="display:none;"></div>
+        </div>
+
+        <div class="demo-section">
+            <h2>📊 Performance Verification Demo</h2>
+            <button onclick="verifyPerformance()">Verify Bot Performance</button>
+            <div id="performanceResult" class="result" style="display:none;"></div>
+        </div>
+
+        <div class="demo-section">
+            <h2>🔮 Oracle Network Status</h2>
+            <button onclick="checkOracles()">Check Oracle Health</button>
+            <div id="oracleResult" class="result" style="display:none;"></div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = window.location.protocol + '//' + window.location.hostname + ':8091';
+
+        // Update metrics every 2 seconds
+        async function updateMetrics() {
+            try {
+                const response = await fetch(API_URL + '/demo/metrics');
+                const data = await response.json();
+
+                document.getElementById('avgLatency').textContent =
+                    data.local_verification.average_latency_ms.toFixed(2);
+                document.getElementById('sub10ms').textContent =
+                    data.local_verification.sub_10ms_rate.toFixed(1) + '%';
+                document.getElementById('totalVerifications').textContent =
+                    data.verification_engine.total_verifications.toLocaleString();
+            } catch (error) {
+                console.error('Failed to update metrics:', error);
+            }
+        }
+
+        async function verifyTrade() {
+            const trade = {
+                pair: 'BTC/USDT',
+                action: 'buy',
+                amount: 2.5,
+                price: 67500
+            };
+
+            try {
+                const response = await fetch(API_URL + '/demo/verify/trade', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(trade)
+                });
+                const data = await response.json();
+
+                const latencyClass = data.sub_10ms ? 'fast' : 'slow';
+                const resultDiv = document.getElementById('tradeResult');
+                resultDiv.style.display = 'block';
+                resultDiv.innerHTML = `
+                    <div class="${data.verified ? 'success' : 'error'}">
+                        Trade Verification: ${data.verified ? '✅ APPROVED' : '❌ REJECTED'}
+                    </div>
+                    <div>Confidence: ${(data.confidence * 100).toFixed(1)}%</div>
+                    <div>Risk Score: ${(data.risk_score * 100).toFixed(1)}%</div>
+                    <div>Latency: ${data.latency_ms}ms
+                        <span class="latency-indicator ${latencyClass}">
+                            ${data.sub_10ms ? '⚡ FAST' : 'SLOW'}
+                        </span>
+                    </div>
+                    <div>Violations: ${data.violations.length > 0 ? data.violations.join(', ') : 'None'}</div>
+                `;
+            } catch (error) {
+                document.getElementById('tradeResult').innerHTML =
+                    '<div class="error">Error: ' + error.message + '</div>';
+            }
+        }
+
+        async function verifyPerformance() {
+            const performance = {
+                roi: 0.35,
+                win_rate: 0.75,
+                sharpe_ratio: 2.8,
+                max_drawdown: 0.018
+            };
+
+            try {
+                const response = await fetch(API_URL + '/demo/verify/performance', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(performance)
+                });
+                const data = await response.json();
+
+                const resultDiv = document.getElementById('performanceResult');
+                resultDiv.style.display = 'block';
+                resultDiv.innerHTML = `
+                    <div class="${data.verified ? 'success' : 'warning'}">
+                        Performance Verification: ${data.verified ? '✅ VERIFIED' : '⚠️ DEVIATION DETECTED'}
+                    </div>
+                    <div>Confidence: ${(data.confidence * 100).toFixed(1)}%</div>
+                    <div>Deviation: ${(data.deviation * 100).toFixed(2)}%</div>
+                    <div>ZK Proof: ${data.zk_proof ? '🔐 ' + data.zk_proof.substring(0, 32) + '...' : 'None'}</div>
+                    <div>Privacy: ${data.privacy_preserved ? '✅ Protected' : '❌ Exposed'}</div>
+                    <div>Latency: ${data.latency_ms}ms</div>
+                `;
+            } catch (error) {
+                document.getElementById('performanceResult').innerHTML =
+                    '<div class="error">Error: ' + error.message + '</div>';
+            }
+        }
+
+        async function checkOracles() {
+            try {
+                const response = await fetch(API_URL + '/demo/oracle/status');
+                const data = await response.json();
+
+                const oracleList = data.oracles.map(oracle =>
+                    `<div class="${oracle.status === 'healthy' ? 'success' : 'warning'}">
+                        ${oracle.name}: ${oracle.status} (weight: ${(oracle.weight * 100).toFixed(0)}%)
+                    </div>`
+                ).join('');
+
+                const resultDiv = document.getElementById('oracleResult');
+                resultDiv.style.display = 'block';
+                resultDiv.innerHTML = `
+                    <div class="${data.overall_health === 'healthy' ? 'success' : 'error'}">
+                        Oracle Network: ${data.overall_health.toUpperCase()}
+                    </div>
+                    <div>Active Oracles: ${data.oracle_count}</div>
+                    <div>Consensus Threshold: ${(data.consensus_threshold * 100).toFixed(0)}%</div>
+                    <hr style="border-color: #2a2a2a; margin: 15px 0;">
+                    ${oracleList}
+                `;
+            } catch (error) {
+                document.getElementById('oracleResult').innerHTML =
+                    '<div class="error">Error: ' + error.message + '</div>';
+            }
+        }
+
+        // Start metrics updates
+        setInterval(updateMetrics, 2000);
+        updateMetrics();
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+{
+  "test_start_time": "2025-06-08T23:01:18.312692",
+  "api_base_url": "https://chatbot-api-service-v2-867263134607.us-central1.run.app",
+  "test_telegram_id": "test_oauth_1749416478",
+  "tests": {
+    "api_health_check": {
+      "success": true,
+      "status_code": 200,
+      "response": "{\"status\":\"ok\",\"message\":\"SECURITY-FIX-FINAL-WORKING-20250605-1430 - Service is healthy and core clients are initialized.\"}",
+      "timestamp": "2025-06-08T23:01:19.059690"
+    },
+    "oauth_url_generation": {
+      "success": true,
+      "status_code": 302,
+      "redirect_url": "https://accounts.google.com/o/oauth2/v2/auth?client_id=867263134607-vkkd9avs6a75gmjpzja17a9a0bbdle1.apps.googleusercontent.com%0A&redirect_uri=https%3A%2F%2Fchatbot-api-service-v2-oo6mrfxexq-uc.a.run.app%2Fauth%2Fcallback%2Fgoogle&scope=openid+email+profile&response_type=code&state=test_oauth_1749416478_1749416479&access_type=offline&prompt=consent",
+      "is_google_oauth": true,
+      "timestamp": "2025-06-08T23:01:19.649776"
+    },
+    "auth_status_endpoint": {
+      "success": true,
+      "status_code": 200,
+      "auth_data": {
+        "telegram_user_id": "test_oauth_1749416478",
+        "platforms": {
+          "google": {
+            "connected": false
+          },
+          "meetup": {
+            "connected": false
+          },
+          "eventbrite": {
+            "connected": false
+          }
+        },
+        "total_connected": 0,
+        "message": "OAuth integration coming soon! \ud83d\udea7"
+      },
+      "timestamp": "2025-06-08T23:01:20.366066"
+    },
+    "oauth_popup_flow": {
+      "success": false,
+      "google_oauth_detected": true,
+      "oauth_elements_found": [],
+      "page_title": "Anmelden \u2013 Google Konten",
+      "current_url": "https://accounts.google.com/signin/oauth/error/v2?authError=Cg5pbnZhbGlkX2NsaWVudBIfVGhlIE9BdXRoIGNsaWVudCB3YXMgbm90IGZvdW5kLiCRAw%3D%3D&client_id=867263134607-vkkd9avs6a75gmjpzja17a9a0bbdle1.apps.googleusercontent.com%0A&flowName=GeneralOAuthFlow",
+      "screenshot_path": "/tmp/oauth_popup_test_1749416483.png",
+      "timestamp": "2025-06-08T23:01:23.192908"
+    }
+  },
+  "test_end_time": "2025-06-08T23:01:23.192980",
+  "summary": {
+    "total_tests": 4,
+    "passed_tests": 3,
+    "failed_tests": 1,
+    "success_rate": 75.0
+  }
+}

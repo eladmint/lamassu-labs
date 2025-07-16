@@ -1,0 +1,1668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mento Protocol Monitor - Enhanced with 62-Component Design System</title>
+    <meta name="description" content="Enterprise-grade Mento Protocol monitoring with Nuru AI's complete 62-component design system">
+
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- Chart.js for advanced visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Scripts moved to bottom for proper loading -->
+
+    <style>
+        /* Enhanced CSS Variables following 62-Component Design System */
+        :root {
+            /* Primary Brand Colors - Nuru Purple */
+            --primary-50: #f3f1ff;
+            --primary-100: #e5e1ff;
+            --primary-200: #c7b8ff;
+            --primary-300: #a78bfa;
+            --primary-400: #8b5cf6;
+            --primary-500: #7C3AED;
+            --primary-600: #6D28D9;
+            --primary-700: #5b21b6;
+            --primary-800: #4c1d95;
+            --primary-950: #2e1065;
+
+            /* Secondary Colors - Ancient Terracotta */
+            --secondary-50: #fef7f0;
+            --secondary-100: #feecdc;
+            --secondary-200: #fcd9bd;
+            --secondary-300: #fdba8c;
+            --secondary-400: #ff8a4c;
+            --secondary-500: #C65D3C;
+            --secondary-600: #ea580c;
+            --secondary-700: #c2410c;
+            --secondary-800: #9a3412;
+            --secondary-950: #431407;
+
+            /* Semantic Colors */
+            --success-50: #ecfdf5;
+            --success-100: #d1fae5;
+            --success-500: #059669;
+            --success-600: #047857;
+            --success-700: #065f46;
+
+            --warning-50: #fffbeb;
+            --warning-100: #fef3c7;
+            --warning-500: #D97706;
+            --warning-600: #d97706;
+            --warning-700: #b45309;
+
+            --error-50: #fef2f2;
+            --error-100: #fee2e2;
+            --error-500: #DC2626;
+            --error-600: #dc2626;
+            --error-700: #b91c1c;
+
+            --info-50: #eff6ff;
+            --info-100: #dbeafe;
+            --info-500: #2563EB;
+            --info-600: #2563eb;
+            --info-700: #1d4ed8;
+
+            /* Neutral Colors */
+            --neutral-50: #f9fafb;
+            --neutral-100: #f3f4f6;
+            --neutral-200: #e5e7eb;
+            --neutral-300: #d1d5db;
+            --neutral-400: #9ca3af;
+            --neutral-500: #6b7280;
+            --neutral-600: #4b5563;
+            --neutral-700: #374151;
+            --neutral-800: #1f2937;
+            --neutral-900: #111827;
+            --neutral-950: #030712;
+
+            /* Typography Scale */
+            --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+            --font-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+            --text-xs: 0.75rem;      /* 12px */
+            --text-sm: 0.875rem;     /* 14px */
+            --text-base: 1rem;       /* 16px */
+            --text-lg: 1.125rem;     /* 18px */
+            --text-xl: 1.25rem;      /* 20px */
+            --text-2xl: 1.5rem;      /* 24px */
+            --text-3xl: 1.875rem;    /* 30px */
+            --text-4xl: 2.25rem;     /* 36px */
+            --text-5xl: 3rem;        /* 48px */
+
+            /* Spacing Scale */
+            --space-0: 0;
+            --space-1: 0.25rem;      /* 4px */
+            --space-2: 0.5rem;       /* 8px */
+            --space-3: 0.75rem;      /* 12px */
+            --space-4: 1rem;         /* 16px */
+            --space-5: 1.25rem;      /* 20px */
+            --space-6: 1.5rem;       /* 24px */
+            --space-8: 2rem;         /* 32px */
+            --space-10: 2.5rem;      /* 40px */
+            --space-12: 3rem;        /* 48px */
+            --space-16: 4rem;        /* 64px */
+            --space-20: 5rem;        /* 80px */
+            --space-24: 6rem;        /* 96px */
+
+            /* Border Radius */
+            --radius-none: 0;
+            --radius-sm: 0.125rem;   /* 2px */
+            --radius-md: 0.375rem;   /* 6px */
+            --radius-lg: 0.5rem;     /* 8px */
+            --radius-xl: 0.75rem;    /* 12px */
+            --radius-2xl: 1rem;      /* 16px */
+            --radius-full: 9999px;
+
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family-sans);
+            background-color: var(--neutral-50);
+            color: var(--neutral-900);
+            line-height: 1.6;
+        }
+
+        /* Layout Components */
+        .dashboard-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 256px;
+            background-color: white;
+            border-right: 1px solid var(--neutral-200);
+            padding: var(--space-6);
+            flex-shrink: 0;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: var(--space-6);
+            overflow-x: auto;
+        }
+
+        /* Logo and Branding */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            margin-bottom: var(--space-8);
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .logo-text {
+            font-size: var(--text-lg);
+            font-weight: 600;
+            color: var(--neutral-900);
+        }
+
+        .logo-subtitle {
+            font-size: var(--text-xs);
+            color: var(--neutral-500);
+            margin-top: -2px;
+        }
+
+        /* Navigation */
+        .nav-section {
+            margin-bottom: var(--space-6);
+        }
+
+        .nav-section-title {
+            font-size: var(--text-xs);
+            font-weight: 600;
+            color: var(--neutral-500);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-3);
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            padding: var(--space-2) var(--space-3);
+            border-radius: var(--radius-md);
+            color: var(--neutral-600);
+            text-decoration: none;
+            font-size: var(--text-sm);
+            margin-bottom: var(--space-1);
+            transition: all 0.2s;
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            background-color: var(--primary-50);
+            color: var(--primary-700);
+        }
+
+        .nav-item.active {
+            font-weight: 500;
+        }
+
+        .nav-item .icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        .nav-badge {
+            background-color: var(--primary-100);
+            color: var(--primary-700);
+            padding: 2px 6px;
+            border-radius: var(--radius-full);
+            font-size: 10px;
+            font-weight: 500;
+            margin-left: auto;
+        }
+
+        /* Feature Status Badges */
+        .badge-live {
+            background-color: var(--success-100);
+            color: var(--success-700);
+        }
+
+        .badge-beta {
+            background-color: var(--warning-100);
+            color: var(--warning-700);
+        }
+
+        .badge-demo {
+            background-color: var(--primary-100);
+            color: var(--primary-700);
+        }
+
+        .badge-future {
+            background-color: var(--neutral-200);
+            color: var(--neutral-600);
+            opacity: 0.8;
+        }
+
+        /* Roadmap Indicator */
+        .roadmap-indicator {
+            opacity: 0.6;
+            margin-left: var(--space-2);
+            cursor: help;
+        }
+
+        .roadmap-indicator:hover {
+            opacity: 1;
+        }
+
+        /* Partnership Progress */
+        .partnership-progress {
+            margin-top: var(--space-4);
+            padding: var(--space-3);
+            background-color: var(--neutral-50);
+            border-radius: var(--radius-md);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background-color: var(--neutral-200);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+            margin-bottom: var(--space-2);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-500), var(--primary-400));
+            border-radius: var(--radius-full);
+            transition: width 0.5s ease;
+        }
+
+        .progress-text {
+            font-size: var(--text-xs);
+            color: var(--neutral-600);
+            text-align: center;
+        }
+
+        /* Feature Status Styling */
+        .nav-item[data-feature-status="future"] {
+            opacity: 0.7;
+        }
+
+        .nav-item[data-feature-status="future"]:hover {
+            opacity: 1;
+        }
+
+        /* Tooltip System */
+        [data-tooltip] {
+            position: relative;
+            cursor: help;
+        }
+
+        [data-tooltip]:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            z-index: 1000;
+            padding: var(--space-2) var(--space-3);
+            background-color: var(--neutral-900);
+            color: white;
+            font-size: var(--text-xs);
+            border-radius: var(--radius-md);
+            white-space: nowrap;
+            max-width: 250px;
+            white-space: normal;
+            word-wrap: break-word;
+            left: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            margin-left: var(--space-2);
+            box-shadow: var(--shadow-lg);
+        }
+
+        [data-tooltip]:hover::before {
+            content: '';
+            position: absolute;
+            z-index: 1000;
+            left: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 4px solid transparent;
+            border-right-color: var(--neutral-900);
+        }
+
+        /* Page Header */
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-6);
+        }
+
+        .page-title {
+            font-size: var(--text-3xl);
+            font-weight: 700;
+            color: var(--neutral-900);
+        }
+
+        .page-subtitle {
+            font-size: var(--text-base);
+            color: var(--neutral-600);
+            margin-top: var(--space-1);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: var(--space-3);
+            align-items: center;
+        }
+
+        /* Button Components */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: var(--space-2) var(--space-4);
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: var(--text-sm);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-500);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-600);
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: var(--neutral-700);
+            border: 1px solid var(--neutral-300);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--neutral-50);
+        }
+
+        .btn-icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Badge Components */
+        .badge {
+            padding: 2px 8px;
+            border-radius: var(--radius-full);
+            font-size: var(--text-xs);
+            font-weight: 500;
+        }
+
+        .badge-success {
+            background-color: var(--success-100);
+            color: var(--success-700);
+        }
+
+        .badge-warning {
+            background-color: var(--warning-100);
+            color: var(--warning-700);
+        }
+
+        .badge-error {
+            background-color: var(--error-100);
+            color: var(--error-700);
+        }
+
+        .badge-info {
+            background-color: var(--info-100);
+            color: var(--info-700);
+        }
+
+        /* Card Components */
+        .card {
+            background-color: white;
+            border: 1px solid var(--neutral-200);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-4);
+        }
+
+        .card-title {
+            font-size: var(--text-lg);
+            font-weight: 600;
+            color: var(--neutral-900);
+        }
+
+        .card-subtitle {
+            font-size: var(--text-sm);
+            color: var(--neutral-600);
+            margin-top: var(--space-1);
+        }
+
+        /* Metrics Grid */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-6);
+            margin-bottom: var(--space-8);
+        }
+
+        .metric-card {
+            background-color: white;
+            border: 1px solid var(--neutral-200);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .metric-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: var(--space-4);
+        }
+
+        .metric-label {
+            font-size: var(--text-sm);
+            color: var(--neutral-600);
+            font-weight: 500;
+        }
+
+        .metric-icon {
+            width: 20px;
+            height: 20px;
+            color: var(--neutral-400);
+        }
+
+        .metric-value {
+            font-size: var(--text-3xl);
+            font-weight: 700;
+            color: var(--neutral-900);
+            margin-bottom: var(--space-2);
+        }
+
+        .metric-change {
+            display: flex;
+            align-items: center;
+            gap: var(--space-1);
+            font-size: var(--text-sm);
+        }
+
+        .metric-change.positive {
+            color: var(--success-600);
+        }
+
+        .metric-change.negative {
+            color: var(--error-600);
+        }
+
+        .metric-change .icon {
+            width: 12px;
+            height: 12px;
+        }
+
+        /* Table Components */
+        .table-container {
+            background-color: white;
+            border: 1px solid var(--neutral-200);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table th {
+            background-color: var(--neutral-50);
+            padding: var(--space-4);
+            text-align: left;
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--neutral-900);
+            border-bottom: 1px solid var(--neutral-200);
+        }
+
+        .table td {
+            padding: var(--space-4);
+            border-bottom: 1px solid var(--neutral-200);
+            font-size: var(--text-sm);
+            color: var(--neutral-700);
+        }
+
+        .table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .table tbody tr:hover {
+            background-color: var(--neutral-50);
+        }
+
+        /* Chart Container - FIXED SIZING */
+        .chart-container {
+            background-color: white;
+            border: 1px solid var(--neutral-200);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: var(--space-6);
+        }
+
+        .chart-wrapper {
+            position: relative;
+            height: 300px; /* FIXED HEIGHT */
+            width: 100%;
+            margin-top: var(--space-4);
+        }
+
+        .chart-wrapper canvas {
+            max-height: 300px !important; /* FORCE MAX HEIGHT */
+            width: 100% !important;
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            gap: var(--space-6);
+        }
+
+        .grid-cols-1 {
+            grid-template-columns: 1fr;
+        }
+
+        .grid-cols-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid-cols-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .grid-cols-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-bottom: var(--space-8);
+        }
+
+        .section-title {
+            font-size: var(--text-xl);
+            font-weight: 600;
+            color: var(--neutral-900);
+            margin-bottom: var(--space-4);
+        }
+
+        /* Loading States */
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-8);
+            color: var(--neutral-500);
+        }
+
+        .loading-spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--neutral-200);
+            border-top: 2px solid var(--primary-500);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: var(--space-2);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Alert Components */
+        .alert {
+            padding: var(--space-4);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-4);
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+        }
+
+        .alert-success {
+            background-color: var(--success-50);
+            border: 1px solid var(--success-200);
+            color: var(--success-800);
+        }
+
+        .alert-warning {
+            background-color: var(--warning-50);
+            border: 1px solid var(--warning-200);
+            color: var(--warning-800);
+        }
+
+        .alert-error {
+            background-color: var(--error-50);
+            border: 1px solid var(--error-200);
+            color: var(--error-800);
+        }
+
+        .alert-info {
+            background-color: var(--info-50);
+            border: 1px solid var(--info-200);
+            color: var(--info-800);
+        }
+
+        /* Status Indicators */
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            font-size: var(--text-sm);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .status-healthy .status-dot {
+            background-color: var(--success-500);
+        }
+
+        .status-warning .status-dot {
+            background-color: var(--warning-500);
+        }
+
+        .status-error .status-dot {
+            background-color: var(--error-500);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .dashboard-container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                padding: var(--space-4);
+            }
+
+            .main-content {
+                padding: var(--space-4);
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-cols-2,
+            .grid-cols-3,
+            .grid-cols-4 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Authentication Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: var(--space-6);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            width: 100%;
+            max-width: 400px;
+            margin: var(--space-4);
+        }
+
+        .form-group {
+            margin-bottom: var(--space-4);
+        }
+
+        .form-label {
+            display: block;
+            font-size: var(--text-sm);
+            font-weight: 500;
+            color: var(--neutral-700);
+            margin-bottom: var(--space-2);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: var(--space-3);
+            border: 1px solid var(--neutral-300);
+            border-radius: var(--radius-md);
+            font-size: var(--text-sm);
+            transition: border-color 0.2s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-500);
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+        }
+
+        /* Hidden by default */
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Mento Partnership Banner -->
+    <div style="position: fixed; top: 0; left: 0; right: 0; background: linear-gradient(135deg, #7C3AED 0%, #5b21b6 100%); color: white; padding: 16px 20px; z-index: 99999; box-shadow: 0 4px 16px rgba(124, 58, 237, 0.4); display: flex; align-items: center; justify-content: center; gap: 16px; font-family: 'Inter', sans-serif; border-bottom: 1px solid rgba(255,255,255,0.2);">
+        <div style="display: flex; align-items: center; gap: 16px;">
+            <span style="font-size: 24px;">🤝</span>
+            <div style="text-align: center;">
+                <div style="font-weight: 700; font-size: 16px; margin-bottom: 2px;">Mento Protocol Partnership Demo</div>
+                <div style="font-size: 13px; opacity: 0.95;">
+                    Real-time monitoring with TrustWrapper • Updated with reserve.mento.org data
+                </div>
+            </div>
+            <div style="display: flex; gap: 8px;">
+                <a href="http://74.50.113.152:8086/api/docs" target="_blank"
+                   style="color: white; text-decoration: none; background: rgba(255,255,255,0.25); padding: 8px 12px; border-radius: 8px; font-size: 12px; border: 1px solid rgba(255,255,255,0.3); font-weight: 500;">
+                   📚 API Docs
+                </a>
+                <a href="https://reserve.mento.org" target="_blank"
+                   style="color: white; text-decoration: none; background: rgba(255,255,255,0.15); padding: 8px 12px; border-radius: 8px; font-size: 12px; border: 1px solid rgba(255,255,255,0.3); font-weight: 500;">
+                   🔗 Live Mento
+                </a>
+            </div>
+        </div>
+    </div>
+    <div style="margin-top: 80px;"></div>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <!-- Logo -->
+            <div class="logo">
+                <div class="logo-icon">
+                    <i data-lucide="activity"></i>
+                </div>
+                <div>
+                    <div class="logo-text">Mento Monitor</div>
+                    <div class="logo-subtitle">Powered by Nuru AI</div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav>
+                <!-- Core Monitoring -->
+                <div class="nav-section">
+                    <div class="nav-section-title">Core Monitoring</div>
+                    <a href="#" class="nav-item active" data-section="overview">
+                        <i data-lucide="home" class="icon"></i>
+                        Overview
+                        <span class="nav-badge">LIVE</span>
+                    </a>
+                    <a href="#" class="nav-item" data-section="stablecoins">
+                        <i data-lucide="coins" class="icon"></i>
+                        Stablecoins
+                        <span class="nav-badge">5</span>
+                    </a>
+                    <a href="#" class="nav-item" data-section="reserves">
+                        <i data-lucide="vault" class="icon"></i>
+                        Reserves
+                        <span class="nav-badge">$294M</span>
+                    </a>
+                </div>
+
+                <!-- Analytics & Alerts -->
+                <div class="nav-section">
+                    <div class="nav-section-title">Analytics & Alerts</div>
+                    <a href="#" class="nav-item" data-section="analytics">
+                        <i data-lucide="trending-up" class="icon"></i>
+                        Analytics
+                    </a>
+                    <a href="#" class="nav-item" data-section="alerts">
+                        <i data-lucide="bell" class="icon"></i>
+                        Alerts
+                        <span class="nav-badge">3</span>
+                    </a>
+                    <a href="#" class="nav-item" data-section="reports">
+                        <i data-lucide="file-text" class="icon"></i>
+                        Reports
+                    </a>
+                </div>
+
+                <!-- Nuru AI Partnership -->
+                <div class="nav-section">
+                    <div class="nav-section-title">
+                        Nuru AI Partnership
+                        <span class="roadmap-indicator" data-tooltip="Partnership roadmap and feature availability">
+                            <i data-lucide="info" style="width: 12px; height: 12px;"></i>
+                        </span>
+                    </div>
+                    <a href="agent_forge_integration.html" class="nav-item" data-feature-status="demo">
+                        <i data-lucide="cpu" class="icon"></i>
+                        Agent Forge
+                        <span class="nav-badge badge-demo" data-tooltip="Demo Available - Partnership integration in development">DEMO</span>
+                    </a>
+                    <a href="trustwrapper_verification.html" class="nav-item" data-feature-status="beta">
+                        <i data-lucide="shield-check" class="icon"></i>
+                        TrustWrapper
+                        <span class="nav-badge badge-beta" data-tooltip="Beta Available - ZK verification ready for testing">BETA</span>
+                    </a>
+                    <a href="eliza_senpi_marketplace.html" class="nav-item" data-feature-status="future">
+                        <i data-lucide="brain" class="icon"></i>
+                        AI Marketplace
+                        <span class="nav-badge badge-future" data-tooltip="Coming Q3 2025 - AI skills marketplace integration">Q3 2025</span>
+                    </a>
+                    <a href="ziggurat_explainable_ai.html" class="nav-item" data-feature-status="future">
+                        <i data-lucide="eye" class="icon"></i>
+                        Explainable AI
+                        <span class="nav-badge badge-future" data-tooltip="Coming Q4 2025 - Full explainable AI integration">Q4 2025</span>
+                    </a>
+                    <a href="nuru_events_intelligence.html" class="nav-item" data-feature-status="live">
+                        <i data-lucide="radar" class="icon"></i>
+                        Events Intel
+                        <span class="nav-badge badge-live" data-tooltip="Live System - 15K+ events tracked daily">LIVE</span>
+                    </a>
+                    <div class="partnership-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 35%"></div>
+                        </div>
+                        <div class="progress-text">Partnership Integration: 35% Complete</div>
+                    </div>
+                </div>
+
+                <!-- Configuration -->
+                <div class="nav-section">
+                    <div class="nav-section-title">Configuration</div>
+                    <a href="#" class="nav-item" data-section="settings">
+                        <i data-lucide="settings" class="icon"></i>
+                        Settings
+                    </a>
+                    <a href="#" class="nav-item" data-section="api-access">
+                        <i data-lucide="code" class="icon"></i>
+                        API Access
+                    </a>
+                    <a href="#" class="nav-item" data-section="integration">
+                        <i data-lucide="plug" class="icon"></i>
+                        Integration
+                    </a>
+                </div>
+
+                <!-- Support -->
+                <div class="nav-section">
+                    <div class="nav-section-title">Support</div>
+                    <a href="#" class="nav-item" data-section="help">
+                        <i data-lucide="help-circle" class="icon"></i>
+                        Help & Support
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Page Header -->
+            <header class="page-header">
+                <div>
+                    <h1 class="page-title" id="page-title">Protocol Overview</h1>
+                    <p class="page-subtitle" id="page-subtitle">Real-time monitoring of Mento Protocol stablecoins and reserves</p>
+                </div>
+                <div class="header-actions">
+                    <div class="status-indicator status-healthy">
+                        <span class="status-dot"></span>
+                        Block: Loading...
+                    </div>
+                    <button class="btn btn-secondary" onclick="refreshData()">
+                        <i data-lucide="refresh-cw" class="btn-icon"></i>
+                        Refresh
+                    </button>
+                    <button class="btn btn-primary" onclick="mentoAuth.showAuthModal()">
+                        <i data-lucide="user" class="btn-icon"></i>
+                        Sign In
+                    </button>
+                    <!-- Debug button -->
+                    <button class="btn btn-secondary" onclick="console.log('Debug: mentoAuth object:', window.mentoAuth); window.mentoAuth && window.mentoAuth.showAuthModal();" style="margin-left: 8px;">
+                        Debug Auth
+                    </button>
+                </div>
+            </header>
+
+            <!-- Overview Section -->
+            <div id="overview-section" class="content-section">
+                <!-- Key Metrics -->
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-label">TOTAL PROTOCOL VALUE</span>
+                            <i data-lucide="dollar-sign" class="metric-icon"></i>
+                        </div>
+                        <div class="metric-value" id="total-protocol-value">$24.7M</div>
+                        <div class="metric-change positive">
+                            <i data-lucide="trending-up" class="icon"></i>
+                            <span id="protocol-value-change">+2.3% (24h)</span>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-label">RESERVE HOLDINGS</span>
+                            <i data-lucide="shield" class="metric-icon"></i>
+                        </div>
+                        <div class="metric-value" id="reserve-value">$71.6M</div>
+                        <div class="metric-change positive">
+                            <i data-lucide="trending-up" class="icon"></i>
+                            <span id="reserve-change">+1.8% (24h)</span>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-label">COLLATERAL RATIO</span>
+                            <i data-lucide="percent" class="metric-icon"></i>
+                        </div>
+                        <div class="metric-value" id="collateral-ratio">289%</div>
+                        <div class="badge badge-success">Healthy</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-label">ACTIVE STABLECOINS</span>
+                            <i data-lucide="coins" class="metric-icon"></i>
+                        </div>
+                        <div class="metric-value" id="active-stablecoins">5</div>
+                        <div class="status-indicator status-healthy">
+                            <span class="status-dot"></span>
+                            Multi-currency
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Protocol Value Trend Chart -->
+                <div class="chart-container">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="card-title">Protocol Value Trend</h3>
+                            <p class="card-subtitle">24h • 7d • 30d</p>
+                        </div>
+                        <div class="header-actions">
+                            <button class="btn btn-secondary btn-sm" data-period="24h">24H</button>
+                            <button class="btn btn-secondary btn-sm" data-period="7d">7D</button>
+                            <button class="btn btn-primary btn-sm" data-period="30d">30D</button>
+                        </div>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="protocol-value-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stablecoins Section -->
+            <div id="stablecoins-section" class="content-section hidden">
+                <h2 class="section-title">Stablecoin Analytics</h2>
+                <p style="color: var(--neutral-600); margin-bottom: var(--space-6);">Comprehensive analysis of all Mento Protocol stablecoins</p>
+
+                <!-- Stablecoin Metrics -->
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-label">TOTAL MARKET CAP</span>
+                            <i data-lucide="trending-up" class="metric-icon"></i>
+                        </div>
+                        <div class="metric-value" id="total-market-cap">$24.7M</div>
+                        <div class="metric-change positive">
+                            <i data-lucide="trending-up" class="icon"></i>
+                            <span>+1.2% (24h)</span>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-label">24H TRADING VOLUME</span>
+                            <i data-lucide="activity" class="metric-icon"></i>
+                        </div>
+                        <div class="metric-value" id="trading-volume">$20.1M</div>
+                        <div class="metric-change positive">
+                            <i data-lucide="trending-up" class="icon"></i>
+                            <span>+5.8% (24h)</span>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-label">AVERAGE PEG HEALTH</span>
+                            <i data-lucide="target" class="metric-icon"></i>
+                        </div>
+                        <div class="metric-value" id="peg-health">99.7%</div>
+                        <div class="badge badge-success">Excellent</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-label">ACTIVE MARKETS</span>
+                            <i data-lucide="globe" class="metric-icon"></i>
+                        </div>
+                        <div class="metric-value" id="active-markets">18</div>
+                        <div class="status-indicator status-healthy">
+                            <span class="status-dot"></span>
+                            CEX + DEX
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stablecoins Table -->
+                <div class="table-container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Stablecoin</th>
+                                <th>Supply</th>
+                                <th>Market Cap</th>
+                                <th>Peg Health</th>
+                                <th>24h Volume</th>
+                                <th>Markets</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="stablecoins-table-body">
+                            <tr>
+                                <td>
+                                    <div style="display: flex; align-items: center; gap: var(--space-3);">
+                                        <div style="width: 32px; height: 32px; background: linear-gradient(135deg, #059669, #047857); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 12px;">cUSD</div>
+                                        <div>
+                                            <div style="font-weight: 500;">Celo Dollar</div>
+                                            <div style="font-size: var(--text-xs); color: var(--neutral-500);">USD</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td id="cusd-supply">Loading...</td>
+                                <td id="cusd-market-cap">Loading...</td>
+                                <td id="cusd-peg-health"><span class="badge badge-error">UNDEFINED%</span></td>
+                                <td id="cusd-volume">Loading...</td>
+                                <td id="cusd-markets">8</td>
+                                <td><button class="btn btn-secondary btn-sm">View Details</button></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="display: flex; align-items: center; gap: var(--space-3);">
+                                        <div style="width: 32px; height: 32px; background: linear-gradient(135deg, #2563EB, #1d4ed8); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 12px;">cEUR</div>
+                                        <div>
+                                            <div style="font-weight: 500;">Celo Euro</div>
+                                            <div style="font-size: var(--text-xs); color: var(--neutral-500);">EUR</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td id="ceur-supply">Loading...</td>
+                                <td id="ceur-market-cap">Loading...</td>
+                                <td id="ceur-peg-health"><span class="badge badge-error">UNDEFINED%</span></td>
+                                <td id="ceur-volume">Loading...</td>
+                                <td id="ceur-markets">5</td>
+                                <td><button class="btn btn-secondary btn-sm">View Details</button></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="display: flex; align-items: center; gap: var(--space-3);">
+                                        <div style="width: 32px; height: 32px; background: linear-gradient(135deg, #059669, #047857); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 10px;">cREAL</div>
+                                        <div>
+                                            <div style="font-weight: 500;">Celo Brazilian Real</div>
+                                            <div style="font-size: var(--text-xs); color: var(--neutral-500);">BRL</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td id="creal-supply">Loading...</td>
+                                <td id="creal-market-cap">Loading...</td>
+                                <td id="creal-peg-health"><span class="badge badge-error">UNDEFINED%</span></td>
+                                <td id="creal-volume">Loading...</td>
+                                <td id="creal-markets">3</td>
+                                <td><button class="btn btn-secondary btn-sm">View Details</button></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="display: flex; align-items: center; gap: var(--space-3);">
+                                        <div style="width: 32px; height: 32px; background: linear-gradient(135deg, #D97706, #b45309); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 11px;">eXOF</div>
+                                        <div>
+                                            <div style="font-weight: 500;">CFA Franc</div>
+                                            <div style="font-size: var(--text-xs); color: var(--neutral-500);">XOF</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td id="exof-supply">Loading...</td>
+                                <td id="exof-market-cap">Loading...</td>
+                                <td id="exof-peg-health"><span class="badge badge-error">UNDEFINED%</span></td>
+                                <td id="exof-volume">Loading...</td>
+                                <td id="exof-markets">2</td>
+                                <td><button class="btn btn-secondary btn-sm">View Details</button></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="display: flex; align-items: center; gap: var(--space-3);">
+                                        <div style="width: 32px; height: 32px; background: linear-gradient(135deg, #059669, #047857); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 11px;">cKES</div>
+                                        <div>
+                                            <div style="font-weight: 500;">Celo Kenyan Shilling</div>
+                                            <div style="font-size: var(--text-xs); color: var(--neutral-500);">KES</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td id="ckes-supply">Loading...</td>
+                                <td id="ckes-market-cap">Loading...</td>
+                                <td id="ckes-peg-health"><span class="badge badge-error">UNDEFINED%</span></td>
+                                <td id="ckes-volume">Loading...</td>
+                                <td id="ckes-markets">2</td>
+                                <td><button class="btn btn-secondary btn-sm">View Details</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Peg Health Monitor Chart -->
+                <div class="chart-container">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="card-title">Peg Health Monitor</h3>
+                            <p class="card-subtitle">REAL-TIME</p>
+                        </div>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="peg-health-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other sections will be shown/hidden as needed -->
+            <div id="reserves-section" class="content-section hidden">
+                <h2 class="section-title">Reserve Analysis</h2>
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    Loading reserve data...
+                </div>
+            </div>
+
+            <div id="analytics-section" class="content-section hidden">
+                <h2 class="section-title">Advanced Analytics</h2>
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    Loading analytics...
+                </div>
+            </div>
+
+            <div id="alerts-section" class="content-section hidden">
+                <h2 class="section-title">Alert Management</h2>
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    Loading alerts...
+                </div>
+            </div>
+
+            <div id="reports-section" class="content-section hidden">
+                <h2 class="section-title">Reports</h2>
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    Loading reports...
+                </div>
+            </div>
+
+            <div id="settings-section" class="content-section hidden">
+                <h2 class="section-title">Settings</h2>
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    Loading settings...
+                </div>
+            </div>
+
+            <div id="api-access-section" class="content-section hidden">
+                <h2 class="section-title">API Access</h2>
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    Loading API configuration...
+                </div>
+            </div>
+
+            <div id="integration-section" class="content-section hidden">
+                <h2 class="section-title">Integration</h2>
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    Loading integration options...
+                </div>
+            </div>
+
+            <div id="help-section" class="content-section hidden">
+                <h2 class="section-title">Help & Support</h2>
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    Loading help resources...
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Global variables for data and charts
+        let dashboardData = null;
+        let charts = {};
+
+        // Initialize Lucide icons
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+
+            // Load initial data
+            loadDashboardData();
+
+            // Set up navigation
+            setupNavigation();
+
+            // Set up periodic data refresh
+            setInterval(loadDashboardData, 30000); // Refresh every 30 seconds
+        });
+
+        // Load dashboard data from JSON file
+        async function loadDashboardData() {
+            try {
+                const response = await fetch('./mento_dashboard_data.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                dashboardData = await response.json();
+                updateDashboard();
+                console.log('Dashboard data loaded successfully:', dashboardData);
+            } catch (error) {
+                console.error('Error loading dashboard data:', error);
+                showErrorMessage('Failed to load dashboard data. Please refresh the page.');
+            }
+        }
+
+        // Update dashboard with loaded data
+        function updateDashboard() {
+            if (!dashboardData) {
+                console.warn('No dashboard data available');
+                return;
+            }
+
+            updateOverviewMetrics();
+            updateStablecoinData();
+            updateCharts();
+            updateStatusIndicators();
+        }
+
+        // Update overview metrics
+        function updateOverviewMetrics() {
+            const summary = dashboardData.summary;
+
+            // Total Protocol Value
+            const protocolValueEl = document.getElementById('total-protocol-value');
+            if (protocolValueEl) {
+                protocolValueEl.textContent = formatCurrency(summary.total_protocol_value_usd || 0);
+            }
+
+            // Reserve Holdings
+            const reserveValueEl = document.getElementById('reserve-value');
+            if (reserveValueEl) {
+                reserveValueEl.textContent = formatCurrency(summary.reserve_value_usd || 0);
+            }
+
+            // Collateral Ratio
+            const collateralRatioEl = document.getElementById('collateral-ratio');
+            if (collateralRatioEl) {
+                collateralRatioEl.textContent = (summary.collateral_ratio || 0).toFixed(1) + '%';
+            }
+
+            // Active Stablecoins
+            const stablecoinsEl = document.getElementById('active-stablecoins');
+            if (stablecoinsEl) {
+                stablecoinsEl.textContent = summary.active_stablecoins || 0;
+            }
+        }
+
+        // Update stablecoin data in table
+        function updateStablecoinData() {
+            if (!dashboardData.stablecoins) {
+                console.warn('No stablecoin data available');
+                return;
+            }
+
+            dashboardData.stablecoins.forEach(coin => {
+                const symbol = coin.symbol.toLowerCase();
+
+                // Supply
+                const supplyEl = document.getElementById(`${symbol}-supply`);
+                if (supplyEl) {
+                    supplyEl.textContent = formatNumber(coin.supply_formatted || 0);
+                }
+
+                // Market Cap
+                const marketCapEl = document.getElementById(`${symbol}-market-cap`);
+                if (marketCapEl) {
+                    marketCapEl.textContent = formatCurrency(coin.market_cap || 0);
+                }
+
+                // Peg Health
+                const pegHealthEl = document.getElementById(`${symbol}-peg-health`);
+                if (pegHealthEl) {
+                    const health = coin.peg_health || 0;
+                    const badgeClass = health > 99.5 ? 'badge-success' : health > 99 ? 'badge-warning' : 'badge-error';
+                    pegHealthEl.innerHTML = `<span class="badge ${badgeClass}">${health.toFixed(2)}%</span>`;
+                }
+
+                // Volume
+                const volumeEl = document.getElementById(`${symbol}-volume`);
+                if (volumeEl) {
+                    volumeEl.textContent = formatCurrency(coin.volume_24h || 0);
+                }
+            });
+        }
+
+        // Update charts with proper sizing
+        function updateCharts() {
+            // Protocol Value Trend Chart
+            updateProtocolValueChart();
+
+            // Peg Health Chart
+            updatePegHealthChart();
+        }
+
+        // Update protocol value chart with FIXED sizing
+        function updateProtocolValueChart() {
+            const ctx = document.getElementById('protocol-value-chart');
+            if (!ctx) return;
+
+            // Destroy existing chart
+            if (charts.protocolValue) {
+                charts.protocolValue.destroy();
+            }
+
+            const historicalData = dashboardData.historical_data?.protocol_value_24h || [];
+
+            charts.protocolValue = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: historicalData.map(point => new Date(point.timestamp).toLocaleTimeString()),
+                    datasets: [{
+                        label: 'Protocol Value (USD)',
+                        data: historicalData.map(point => point.value),
+                        borderColor: '#7C3AED',
+                        backgroundColor: 'rgba(124, 58, 237, 0.1)',
+                        borderWidth: 2,
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false, // CRITICAL: Allow custom sizing
+                    scales: {
+                        y: {
+                            beginAtZero: false,
+                            ticks: {
+                                callback: function(value) {
+                                    return formatCurrency(value);
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        }
+
+        // Update peg health chart with FIXED sizing
+        function updatePegHealthChart() {
+            const ctx = document.getElementById('peg-health-chart');
+            if (!ctx) return;
+
+            // Destroy existing chart
+            if (charts.pegHealth) {
+                charts.pegHealth.destroy();
+            }
+
+            const stablecoins = dashboardData.stablecoins || [];
+
+            charts.pegHealth = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: stablecoins.map(coin => coin.symbol),
+                    datasets: [{
+                        label: 'Peg Health (%)',
+                        data: stablecoins.map(coin => coin.peg_health || 0),
+                        backgroundColor: stablecoins.map(coin => {
+                            const health = coin.peg_health || 0;
+                            return health > 99.5 ? '#059669' : health > 99 ? '#D97706' : '#DC2626';
+                        }),
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false, // CRITICAL: Allow custom sizing
+                    scales: {
+                        y: {
+                            min: 99,
+                            max: 100,
+                            ticks: {
+                                callback: function(value) {
+                                    return value.toFixed(1) + '%';
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        }
+
+        // Update status indicators
+        function updateStatusIndicators() {
+            const statusEl = document.querySelector('.status-indicator');
+            if (statusEl && dashboardData.metadata) {
+                statusEl.innerHTML = `
+                    <span class="status-dot"></span>
+                    Block: ${dashboardData.metadata.block_number || 'Unknown'}
+                `;
+            }
+        }
+
+        // Navigation setup
+        function setupNavigation() {
+            const navItems = document.querySelectorAll('.nav-item');
+
+            navItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    // Check if this is a partnership link (has href but no data-section)
+                    const href = item.getAttribute('href');
+                    const section = item.dataset.section;
+
+                    if (href && href !== '#' && (!section || section === '')) {
+                        // This is a partnership link - allow default navigation
+                        console.log('Partnership link detected:', href);
+                        return;
+                    }
+
+                    // For internal sections, prevent default and handle internally
+                    e.preventDefault();
+
+                    // Remove active class from all nav items
+                    navItems.forEach(nav => nav.classList.remove('active'));
+
+                    // Add active class to clicked item
+                    item.classList.add('active');
+
+                    // Get section to show
+                    showSection(section);
+                });
+            });
+        }
+
+        // Show specific section
+        function showSection(sectionName) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.add('hidden'));
+
+            // Show requested section
+            const targetSection = document.getElementById(`${sectionName}-section`);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+            }
+
+            // Update page title
+            updatePageTitle(sectionName);
+        }
+
+        // Update page title based on section
+        function updatePageTitle(sectionName) {
+            const titles = {
+                'overview': 'Protocol Overview',
+                'stablecoins': 'Stablecoin Analytics',
+                'reserves': 'Reserve Analysis',
+                'analytics': 'Advanced Analytics',
+                'alerts': 'Alert Management',
+                'reports': 'Reports',
+                'settings': 'Settings',
+                'api-access': 'API Access',
+                'integration': 'Integration',
+                'help': 'Help & Support'
+            };
+
+            const subtitles = {
+                'overview': 'Real-time monitoring of Mento Protocol stablecoins and reserves',
+                'stablecoins': 'Comprehensive analysis of all Mento Protocol stablecoins',
+                'reserves': 'Monitor reserve composition and collateralization',
+                'analytics': 'Deep insights and predictive analytics',
+                'alerts': 'Configure and manage monitoring alerts',
+                'reports': 'Generate and export detailed reports',
+                'settings': 'Configure dashboard preferences',
+                'api-access': 'Manage API keys and access',
+                'integration': 'Connect external services and webhooks',
+                'help': 'Documentation and support resources'
+            };
+
+            const titleEl = document.getElementById('page-title');
+            const subtitleEl = document.getElementById('page-subtitle');
+
+            if (titleEl) titleEl.textContent = titles[sectionName] || 'Dashboard';
+            if (subtitleEl) subtitleEl.textContent = subtitles[sectionName] || '';
+        }
+
+        // Utility functions
+        function formatCurrency(value) {
+            if (value >= 1e9) return '$' + (value / 1e9).toFixed(1) + 'B';
+            if (value >= 1e6) return '$' + (value / 1e6).toFixed(1) + 'M';
+            if (value >= 1e3) return '$' + (value / 1e3).toFixed(1) + 'K';
+            return '$' + value.toFixed(2);
+        }
+
+        function formatNumber(value) {
+            if (value >= 1e9) return (value / 1e9).toFixed(1) + 'B';
+            if (value >= 1e6) return (value / 1e6).toFixed(1) + 'M';
+            if (value >= 1e3) return (value / 1e3).toFixed(1) + 'K';
+            return value.toLocaleString();
+        }
+
+        function showErrorMessage(message) {
+            console.error(message);
+            // You could implement a toast notification here
+        }
+
+        // Data refresh function
+        function refreshData() {
+            loadDashboardData();
+        }
+
+        // Note: Authentication is now handled by MentoAuthManager in mento_auth_integration.js
+    </script>
+
+    <!-- Internet Identity Integration -->
+    <script type="module">
+        // Load Internet Identity Auth Client
+        import { AuthClient } from 'https://cdn.jsdelivr.net/npm/@dfinity/auth-client@0.19.3/lib/index.js';
+        window.AuthClient = AuthClient;
+    </script>
+
+    <!-- Mento Integration Service -->
+    <script src="./mento_integration_service.js"></script>
+
+    <!-- Mento Data Service -->
+    <script src="./mento_data_service.js"></script>
+
+    <!-- Mento Authentication Integration -->
+    <script src="./mento_auth_integration.js"></script>
+
+    <!-- Verify authentication is loaded -->
+    <script>
+        window.addEventListener('load', function() {
+            console.log('Page loaded. Checking authentication system...');
+            console.log('mentoAuth available:', !!window.mentoAuth);
+            console.log('showAuthModal available:', !!window.showAuthModal);
+
+            // Add click listener as backup
+            const signInBtn = document.querySelector('.btn-primary[onclick="mentoAuth.showAuthModal()"]');
+            if (signInBtn) {
+                console.log('Sign in button found, adding backup click handler');
+                signInBtn.addEventListener('click', function(e) {
+                    console.log('Sign in button clicked (backup handler)');
+                    if (window.mentoAuth && window.mentoAuth.showAuthModal) {
+                        window.mentoAuth.showAuthModal();
+                    } else {
+                        console.error('mentoAuth not available yet');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Nuru AI Design System Colors */
+    --background: 225 50% 3%;     /* #0a0a0a - Nuru dark background */
+    --foreground: 210 40% 98%;    /* #f8fafc - Light text */
+    --card: 225 39% 11%;          /* #1a1a2e - Card background */
+    --card-foreground: 210 40% 98%;
+    --popover: 225 39% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 162 100% 47%;      /* #00ff88 - Nuru green */
+    --primary-foreground: 225 50% 3%;
+    --secondary: 194 100% 50%;    /* #00d4ff - Nuru blue */
+    --secondary-foreground: 225 50% 3%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 270 100% 70%;       /* #b366ff - Purple accent */
+    --accent-foreground: 225 50% 3%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 162 100% 47%;
+    --radius: 0.5rem;
+
+    /* Additional unified design system variables */
+    --success: 142 71% 45%;
+    --success-foreground: 210 40% 98%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 225 50% 3%;
+    --info: 199 89% 48%;
+    --info-foreground: 210 40% 98%;
+  }
+}
+
+@layer base {
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .dashboard-container {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, hsl(var(--background)), hsl(var(--background)), hsl(var(--card)));
+  }
+
+  .card-hover {
+    transition: all 0.2s;
+  }
+
+  .card-hover:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 255, 136, 0.05);
+    transform: translateY(-0.25rem);
+  }
+
+  .metric-card {
+    background: linear-gradient(to bottom right, hsl(var(--card)), hsl(var(--card) / 0.8));
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  .status-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .glow-text {
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(to right, hsl(var(--primary)), hsl(var(--secondary)));
+  }
+}
+
+@layer utilities {
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 3s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted)) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--muted));
+    border-radius: 2px;
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "mento-live-api",
+  "version": "1.0.0",
+  "description": "Mento Protocol Live API with Chainlink Oracle Integration",
+  "main": "chainlink_oracle_service.js",
+  "scripts": {
+    "test": "node chainlink_live_demo.js",
+    "start": "node chainlink_oracle_service.js"
+  },
+  "dependencies": {
+    "ethers": "^5.7.2",
+    "node-cache": "^5.1.2",
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  },
+  "keywords": ["mento", "chainlink", "oracle", "blockchain", "celo"],
+  "author": "Nuru AI",
+  "license": "MIT"
+}
