@@ -162,12 +162,21 @@ def test_custom_agent_wrapping():
     class MyAgent:
         def execute(self, data):
             return {"processed": data}
+<<<<<<< HEAD
 
     agent = MyAgent()
     wrapper = ZKTrustWrapper(agent)
 
     result = wrapper.verified_execute("test_data")
 
+=======
+    
+    agent = MyAgent()
+    wrapper = ZKTrustWrapper(agent)
+    
+    result = wrapper.verified_execute("test_data")
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     assert result.verified is True
     assert result.result["processed"] == "test_data"
     assert result.proof.success is True
@@ -183,12 +192,21 @@ async def test_async_agent():
         async def execute(self, data):
             await asyncio.sleep(0.1)
             return {"async_result": data}
+<<<<<<< HEAD
 
     agent = AsyncAgent()
     wrapper = ZKTrustWrapper(agent)
 
     result = await wrapper.verified_execute_async("test")
 
+=======
+    
+    agent = AsyncAgent()
+    wrapper = ZKTrustWrapper(agent)
+    
+    result = await wrapper.verified_execute_async("test")
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     assert result.proof.execution_time >= 100  # At least 100ms
 ```
 
@@ -199,9 +217,15 @@ async def test_async_agent():
 async def test_blockchain_verification():
     """Test blockchain proof verification"""
     wrapper = ZKTrustWrapper(agent, enable_blockchain=True)
+<<<<<<< HEAD
 
     result = await wrapper.verified_execute_with_blockchain(data)
 
+=======
+    
+    result = await wrapper.verified_execute_with_blockchain(data)
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     assert result.blockchain_proof is not None
     assert result.blockchain_proof["status"] == "confirmed"
 ```
@@ -304,4 +328,8 @@ When adding new features:
 4. Update this README if needed
 5. Run full test suite before committing
 
+<<<<<<< HEAD
 Happy Testing! 🧪✨
+=======
+Happy Testing! 🧪✨
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752

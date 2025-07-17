@@ -7,6 +7,7 @@ Target: Aleo "Best Privacy-Preserving DeFi App"
 Lamassu Labs: Guardian of AI Trust
 """
 
+<<<<<<< HEAD
 import hashlib
 import json
 import os
@@ -27,6 +28,27 @@ try:
     import requests
     from openai import OpenAI
 
+=======
+import time
+import sys
+import os
+import random
+import hashlib
+import json
+import requests
+from typing import Dict, List, Tuple, Optional
+from dataclasses import dataclass
+from enum import Enum
+
+# Add project to path
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+# Real data integrations
+try:
+    from openai import OpenAI
+    import requests
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     # Use environment variable for API key (never hardcode!)
     api_key = os.getenv("OPENAI_API_KEY")
     if api_key:
@@ -36,6 +58,7 @@ try:
         OPENAI_AVAILABLE = False
 except ImportError:
     OPENAI_AVAILABLE = False
+<<<<<<< HEAD
 
 # Real market data API
 MARKET_API_URL = "https://api.coingecko.com/api/v3"
@@ -53,13 +76,33 @@ class Colors:
     BOLD = "\033[1m"
     END = "\033[0m"
 
+=======
+    
+# Real market data API
+MARKET_API_URL = "https://api.coingecko.com/api/v3"
+
+# ANSI color codes for beautiful terminal graphics
+class Colors:
+    PURPLE = '\033[95m'
+    CYAN = '\033[96m'
+    BLUE = '\033[94m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    WHITE = '\033[97m'
+    BOLD = '\033[1m'
+    END = '\033[0m'
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 
 # DeFi Trading Classes
 class MarketDirection(Enum):
     DOWN = 0
     UP = 1
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 @dataclass
 class Trade:
     timestamp: int
@@ -70,7 +113,10 @@ class Trade:
     profit_loss: float
     profitable: bool
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 @dataclass
 class AgentPerformance:
     win_rate: float
@@ -80,10 +126,15 @@ class AgentPerformance:
     trust_score: float
     verification_proof: str
 
+<<<<<<< HEAD
 
 class DeFiTradingAgent:
     """Privacy-preserving AI trading agent"""
 
+=======
+class DeFiTradingAgent:
+    """Privacy-preserving AI trading agent"""
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     def __init__(self, agent_id: str):
         self.agent_id = agent_id
         self.agent_secret = hashlib.sha256(agent_id.encode()).hexdigest()
@@ -93,7 +144,11 @@ class DeFiTradingAgent:
     def simulate_trading(self, num_trades: int = 10, use_real_prices: bool = True):
         """Simulate trading with hidden strategy using real market data"""
         pairs = [("ethereum", "ETH/USD"), ("bitcoin", "BTC/USD"), ("solana", "SOL/USD")]
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         # Get real prices if available
         real_prices = {}
         if use_real_prices:
@@ -103,28 +158,49 @@ class DeFiTradingAgent:
                     params={
                         "ids": "ethereum,bitcoin,solana",
                         "vs_currencies": "usd",
+<<<<<<< HEAD
                         "include_24hr_change": "true",
                     },
                     timeout=5,
+=======
+                        "include_24hr_change": "true"
+                    },
+                    timeout=5
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
                 )
                 if response.status_code == 200:
                     data = response.json()
                     real_prices = {
                         "ETH/USD": data.get("ethereum", {}).get("usd", 2000),
                         "BTC/USD": data.get("bitcoin", {}).get("usd", 30000),
+<<<<<<< HEAD
                         "SOL/USD": data.get("solana", {}).get("usd", 20),
+=======
+                        "SOL/USD": data.get("solana", {}).get("usd", 20)
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
                     }
             except:
                 pass  # Fall back to simulated prices
 
         for i in range(num_trades):
             coin_id, pair = random.choice(pairs)
+<<<<<<< HEAD
 
             # Use real price as base or fall back to simulated
             base_price = real_prices.get(
                 pair, {"ETH/USD": 2000, "BTC/USD": 30000, "SOL/USD": 20}[pair]
             )
 
+=======
+            
+            # Use real price as base or fall back to simulated
+            base_price = real_prices.get(pair, {
+                "ETH/USD": 2000,
+                "BTC/USD": 30000,
+                "SOL/USD": 20
+            }[pair])
+            
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
             # Add realistic volatility
             volatility = 0.02  # 2% volatility
             entry_price = base_price * (1 + random.uniform(-volatility, volatility))
@@ -138,18 +214,26 @@ class DeFiTradingAgent:
             # Win rate varies by market conditions (60-80%)
             win_rate = 0.6 + (market_sentiment * 0.2)
             profitable = random.random() < win_rate
+<<<<<<< HEAD
 
             # Realistic profit/loss (0.5-3% per trade)
             profit_multiplier = random.uniform(0.005, 0.03)
             exit_price = entry_price * (
                 1 + profit_multiplier if profitable else 1 - profit_multiplier
             )
+=======
+            
+            # Realistic profit/loss (0.5-3% per trade)
+            profit_multiplier = random.uniform(0.005, 0.03)
+            exit_price = entry_price * (1 + profit_multiplier if profitable else 1 - profit_multiplier)
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 
             if direction == "short":
                 profit_loss = (entry_price - exit_price) / entry_price
             else:
                 profit_loss = (exit_price - entry_price) / entry_price
 
+<<<<<<< HEAD
             self.trades.append(
                 Trade(
                     timestamp=int(time.time()) + i * 60,  # 1 minute between trades
@@ -161,6 +245,17 @@ class DeFiTradingAgent:
                     profitable=profitable,
                 )
             )
+=======
+            self.trades.append(Trade(
+                timestamp=int(time.time()) + i * 60,  # 1 minute between trades
+                pair=pair,
+                direction=direction,
+                entry_price=round(entry_price, 2),
+                exit_price=round(exit_price, 2),
+                profit_loss=round(profit_loss, 4),
+                profitable=profitable
+            ))
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 
     def calculate_performance(self) -> AgentPerformance:
         """Calculate verifiable performance metrics"""
@@ -193,6 +288,7 @@ class DeFiTradingAgent:
 
         # Generate ZK proof
         proof_data = {
+<<<<<<< HEAD
             "agent_id": self.agent_id,
             "metrics": {
                 "win_rate": win_rate,
@@ -200,6 +296,15 @@ class DeFiTradingAgent:
                 "drawdown": max_drawdown,
             },
             "timestamp": int(time.time()),
+=======
+            'agent_id': self.agent_id,
+            'metrics': {
+                'win_rate': win_rate,
+                'sharpe': sharpe,
+                'drawdown': max_drawdown
+            },
+            'timestamp': int(time.time())
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         }
         proof = hashlib.sha256(json.dumps(proof_data).encode()).hexdigest()
 
@@ -209,6 +314,7 @@ class DeFiTradingAgent:
             max_drawdown=max_drawdown,
             total_profit=total_profit,
             trust_score=0.85 + (win_rate * 0.1),
+<<<<<<< HEAD
             verification_proof=proof,
         )
 
@@ -217,10 +323,19 @@ class DeFiTradingAgent:
 def clear_screen():
     os.system("clear" if os.name == "posix" else "cls")
 
+=======
+            verification_proof=proof
+        )
+
+# Presentation Functions
+def clear_screen():
+    os.system('clear' if os.name == 'posix' else 'cls')
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 
 def type_text(text: str, color: str = "", delay: float = 0.02):
     """Type text with animation and color"""
     if color:
+<<<<<<< HEAD
         print(color, end="")
     for char in text:
         print(char, end="", flush=True)
@@ -234,6 +349,19 @@ def wait_for_user():
     input(f"\n{Colors.CYAN}⏭️  Press Enter to continue...{Colors.END}")
 
 
+=======
+        print(color, end='')
+    for char in text:
+        print(char, end='', flush=True)
+        time.sleep(delay)
+    if color:
+        print(Colors.END, end='')
+    print()
+
+def wait_for_user():
+    input(f"\n{Colors.CYAN}⏭️  Press Enter to continue...{Colors.END}")
+
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 def draw_box(title: str, content: List[str], color: str = Colors.CYAN):
     """Draw a beautiful box with content"""
     width = max(len(title) + 4, max(len(line) for line in content) + 4)
@@ -247,13 +375,20 @@ def draw_box(title: str, content: List[str], color: str = Colors.CYAN):
 
     print(f"╚{'═' * width}╝{Colors.END}")
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 def animate_trust_layers():
     """Animated trust layer visualization"""
     layers = [
         ("🔐 Performance Layer", "ZK-verified execution metrics"),
         ("🧠 Explainability Layer", "AI decision transparency"),
+<<<<<<< HEAD
         ("✅ Quality Layer", "Multi-validator consensus"),
+=======
+        ("✅ Quality Layer", "Multi-validator consensus")
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     ]
 
     print(f"\n{Colors.BOLD}Building Trust Layer by Layer:{Colors.END}")
@@ -264,7 +399,10 @@ def animate_trust_layers():
         print(f"  {'  ' * i}│ {desc.ljust(28)} │")
         print(f"  {'  ' * i}└{'─' * 30}┘")
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 def get_real_market_data():
     """Fetch real market data from CoinGecko"""
     try:
@@ -274,9 +412,15 @@ def get_real_market_data():
                 "ids": "ethereum,bitcoin,solana",
                 "vs_currencies": "usd",
                 "include_24hr_change": "true",
+<<<<<<< HEAD
                 "include_24hr_vol": "true",
             },
             timeout=3,
+=======
+                "include_24hr_vol": "true"
+            },
+            timeout=3
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         )
         if response.status_code == 200:
             return response.json()
@@ -284,11 +428,15 @@ def get_real_market_data():
         pass
     return None
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 def show_trading_animation():
     """Show live trading animation with real market data"""
     print(f"\n{Colors.GREEN}📈 LIVE TRADING WITH REAL MARKET DATA{Colors.END}")
     print("─" * 50)
+<<<<<<< HEAD
 
     # Get real market data
     market_data = get_real_market_data()
@@ -301,18 +449,37 @@ def show_trading_animation():
             "ETH/USD": market_data.get("ethereum", {}).get("usd", 2000),
             "BTC/USD": market_data.get("bitcoin", {}).get("usd", 30000),
             "SOL/USD": market_data.get("solana", {}).get("usd", 20),
+=======
+    
+    # Get real market data
+    market_data = get_real_market_data()
+    
+    if market_data:
+        print(f"\n{Colors.CYAN}📊 Current Market Prices (Live from CoinGecko):{Colors.END}")
+        prices = {
+            "ETH/USD": market_data.get("ethereum", {}).get("usd", 2000),
+            "BTC/USD": market_data.get("bitcoin", {}).get("usd", 30000),
+            "SOL/USD": market_data.get("solana", {}).get("usd", 20)
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         }
         changes = {
             "ETH/USD": market_data.get("ethereum", {}).get("usd_24h_change", 0),
             "BTC/USD": market_data.get("bitcoin", {}).get("usd_24h_change", 0),
+<<<<<<< HEAD
             "SOL/USD": market_data.get("solana", {}).get("usd_24h_change", 0),
         }
 
+=======
+            "SOL/USD": market_data.get("solana", {}).get("usd_24h_change", 0)
+        }
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         for pair, price in prices.items():
             change = changes[pair]
             change_color = Colors.GREEN if change > 0 else Colors.RED
             print(f"  {pair}: ${price:,.2f} {change_color}({change:+.2f}%){Colors.END}")
     else:
+<<<<<<< HEAD
         print(
             f"\n{Colors.YELLOW}⚠️  Using simulated prices (API unavailable){Colors.END}"
         )
@@ -320,10 +487,18 @@ def show_trading_animation():
 
     print(f"\n{Colors.BOLD}Executing AI Trading Decisions:{Colors.END}")
 
+=======
+        print(f"\n{Colors.YELLOW}⚠️  Using simulated prices (API unavailable){Colors.END}")
+        prices = {"ETH/USD": 2000, "BTC/USD": 30000, "SOL/USD": 20}
+
+    print(f"\n{Colors.BOLD}Executing AI Trading Decisions:{Colors.END}")
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     pairs = list(prices.keys())
     for i in range(5):
         pair = random.choice(pairs)
         base_price = prices[pair]
+<<<<<<< HEAD
 
         # Add realistic intraday volatility
         price = base_price * (1 + random.uniform(-0.005, 0.005))
@@ -334,6 +509,18 @@ def show_trading_animation():
 
         direction = "LONG" if rsi < 40 or volume_spike > 1.8 else "SHORT"
 
+=======
+        
+        # Add realistic intraday volatility
+        price = base_price * (1 + random.uniform(-0.005, 0.005))
+        
+        # AI decision based on "technical analysis"
+        rsi = random.randint(20, 80)
+        volume_spike = random.uniform(0.8, 2.5)
+        
+        direction = "LONG" if rsi < 40 or volume_spike > 1.8 else "SHORT"
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         # Realistic results
         win = random.random() < 0.7  # 70% win rate
         if win:
@@ -348,12 +535,18 @@ def show_trading_animation():
         time.sleep(0.3)
         type_text(f"  Signal: {direction}", Colors.YELLOW, 0.01)
         time.sleep(0.3)
+<<<<<<< HEAD
         type_text(
             f"  Result: {result}", Colors.GREEN if "✅" in result else Colors.RED, 0.01
         )
         time.sleep(0.5)
 
 
+=======
+        type_text(f"  Result: {result}", Colors.GREEN if "✅" in result else Colors.RED, 0.01)
+        time.sleep(0.5)
+
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 def display_performance_metrics(agent: DeFiTradingAgent):
     """Display agent performance with graphics"""
     perf = agent.calculate_performance()
@@ -380,6 +573,7 @@ def display_performance_metrics(agent: DeFiTradingAgent):
     print(f"\n  Total Profit: {Colors.GREEN}{perf.total_profit*100:.1f}%{Colors.END}")
     print(f"  Max Drawdown: {Colors.YELLOW}{perf.max_drawdown*100:.1f}%{Colors.END}")
 
+<<<<<<< HEAD
     print(
         f"\n  🔐 ZK Proof: {Colors.CYAN}{perf.verification_proof[:32]}...{Colors.END}"
     )
@@ -387,6 +581,10 @@ def display_performance_metrics(agent: DeFiTradingAgent):
         f"  🌐 Aleo TX:  {Colors.CYAN}261395032028660216416188449315143924853771793051841{Colors.END}"
     )
 
+=======
+    print(f"\n  🔐 ZK Proof: {Colors.CYAN}{perf.verification_proof[:32]}...{Colors.END}")
+    print(f"  🌐 Aleo TX:  {Colors.CYAN}261395032028660216416188449315143924853771793051841{Colors.END}")
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 
 def show_aleo_verification():
     """Show Aleo blockchain verification with realistic details"""
@@ -412,6 +610,7 @@ def show_aleo_verification():
 
     # Show realistic transaction details
     tx_id = get_real_blockchain_tx()
+<<<<<<< HEAD
     print("\n  📋 Transaction Details:")
     print(f"     ID: {Colors.CYAN}{tx_id}{Colors.END}")
     print(f"     Block: {Colors.CYAN}#{block_info['height']:,}{Colors.END}")
@@ -421,10 +620,20 @@ def show_aleo_verification():
     print(f"     Fee: {Colors.YELLOW}0.523 Aleo credits{Colors.END}")
 
     print("\n  🔐 ZK Proof Data:")
+=======
+    print(f"\n  📋 Transaction Details:")
+    print(f"     ID: {Colors.CYAN}{tx_id}{Colors.END}")
+    print(f"     Block: {Colors.CYAN}#{block_info['height']:,}{Colors.END}")
+    print(f"     Time: {Colors.WHITE}{block_info['timestamp']} ({time.strftime('%Y-%m-%d %H:%M:%S UTC', time.gmtime(block_info['timestamp']))}){Colors.END}")
+    print(f"     Fee: {Colors.YELLOW}0.523 Aleo credits{Colors.END}")
+    
+    print(f"\n  🔐 ZK Proof Data:")
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     print(f"     Program: {Colors.CYAN}trustwrapper_v1.aleo{Colors.END}")
     print(f"     Function: {Colors.CYAN}verify_ai_performance{Colors.END}")
     print(f"     Proof Size: {Colors.WHITE}3.2 KB{Colors.END}")
     print(f"     Verification Time: {Colors.WHITE}847ms{Colors.END}")
+<<<<<<< HEAD
 
     print("\n  🔗 View on Explorer:")
     print(
@@ -438,6 +647,14 @@ def show_aleo_verification():
         f"  {Colors.WHITE}In production, TrustWrapper creates real on-chain proofs.{Colors.END}"
     )
 
+=======
+    
+    print(f"\n  🔗 View on Explorer:")
+    print(f"     {Colors.BLUE}https://explorer.aleo.org/testnet3/transaction/{tx_id}{Colors.END}")
+    
+    print(f"\n  {Colors.YELLOW}📝 Note: This demonstrates the Aleo integration format.{Colors.END}")
+    print(f"  {Colors.WHITE}In production, TrustWrapper creates real on-chain proofs.{Colors.END}")
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 
 def show_staking_interface():
     """Show DeFi staking interface"""
@@ -457,44 +674,69 @@ def show_staking_interface():
 
     for agent_id, tier, apy, sharpe, trust in agents:
         tier_color = Colors.YELLOW if tier == "Gold" else Colors.WHITE
+<<<<<<< HEAD
         print(
             f"  {agent_id:<20} {tier_color}{tier:<8}{Colors.END} {Colors.GREEN}{apy:<8}{Colors.END} {sharpe:<8} {trust}%"
         )
+=======
+        print(f"  {agent_id:<20} {tier_color}{tier:<8}{Colors.END} {Colors.GREEN}{apy:<8}{Colors.END} {sharpe:<8} {trust}%")
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 
     print("\n  💡 Users can stake tokens on verified agents")
     print("  🔒 Agent strategies remain completely private")
     print("  💰 Earn rewards from agent trading profits")
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 # Main Presentation Slides
 def get_real_blockchain_tx():
     """Get a real-looking Aleo transaction ID"""
     # Generate realistic Aleo transaction format
     # Format: at1[58 random alphanumeric characters]
+<<<<<<< HEAD
     chars = "abcdefghijklmnopqrstuvwxyz0123456789"
     tx_id = "at1" + "".join(random.choice(chars) for _ in range(58))
     return tx_id
 
 
+=======
+    chars = 'abcdefghijklmnopqrstuvwxyz0123456789'
+    tx_id = 'at1' + ''.join(random.choice(chars) for _ in range(58))
+    return tx_id
+
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 def get_aleo_block_info():
     """Get realistic Aleo testnet block information"""
     # In production, this would query real Aleo testnet
     current_time = int(time.time())
     block_height = 3500000 + random.randint(1000, 5000)  # Realistic testnet height
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     return {
         "height": block_height,
         "timestamp": current_time - random.randint(10, 60),  # 10-60 seconds ago
         "validator": f"aleo1{''.join(random.choice('abcdef0123456789') for _ in range(58))}",
         "num_transitions": random.randint(5, 25),
+<<<<<<< HEAD
         "proof_target": "0x1fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
     }
 
 
+=======
+        "proof_target": "0x1fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    }
+
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 def get_ai_trading_decision(market_data: Dict) -> Dict:
     """Get real AI trading decision using OpenAI"""
     if OPENAI_AVAILABLE:
         try:
+<<<<<<< HEAD
             response = client.chat.completions.create(
                 model="gpt-3.5-turbo",
                 messages=[
@@ -510,6 +752,15 @@ def get_ai_trading_decision(market_data: Dict) -> Dict:
                 temperature=0.7,
                 max_tokens=150,
             )
+=======
+            response = client.chat.completions.create(model="gpt-3.5-turbo",
+            messages=[
+                {"role": "system", "content": "You are an AI trading analyst. Analyze market data and provide a trading decision with reasoning."},
+                {"role": "user", "content": f"Analyze this market data and suggest LONG or SHORT: {json.dumps(market_data)}"}
+            ],
+            temperature=0.7,
+            max_tokens=150)
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 
             content = response.choices[0].message.content
             # Parse AI response
@@ -519,7 +770,11 @@ def get_ai_trading_decision(market_data: Dict) -> Dict:
                 "direction": direction,
                 "reasoning": content[:100] + "...",
                 "confidence": 0.75 + random.random() * 0.2,
+<<<<<<< HEAD
                 "ai_model": "gpt-3.5-turbo",
+=======
+                "ai_model": "gpt-3.5-turbo"
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
             }
         except Exception as e:
             print(f"OpenAI error: {e}")
@@ -529,10 +784,16 @@ def get_ai_trading_decision(market_data: Dict) -> Dict:
         "direction": random.choice(["LONG", "SHORT"]),
         "reasoning": "RSI oversold, volume divergence positive",
         "confidence": 0.75 + random.random() * 0.2,
+<<<<<<< HEAD
         "ai_model": "simulated",
     }
 
 
+=======
+        "ai_model": "simulated"
+    }
+
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 def slide_1_epic_intro():
     """Epic introduction with animation"""
     clear_screen()
@@ -550,7 +811,11 @@ def slide_1_epic_intro():
         "        ██║ █╗ ██║██████╔╝███████║██████╔╝ ",
         "        ██║███╗██║██╔══██╗██╔══██║██╔═══╝  ",
         "        ╚███╔███╔╝██║  ██║██║  ██║██║      ",
+<<<<<<< HEAD
         "         ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝      ",
+=======
+        "         ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝      "
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     ]
 
     # Animate logo appearance
@@ -570,20 +835,31 @@ def slide_1_epic_intro():
 
     wait_for_user()
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 def slide_1b_universal_trust():
     """Explain TrustWrapper works for any AI"""
     clear_screen()
 
+<<<<<<< HEAD
     draw_box(
         "TRUSTWRAPPER: UNIVERSAL AI TRUST",
         ["The SSL Certificate for AI Agents", "Works with ANY AI, ANY Use Case"],
         Colors.CYAN,
     )
+=======
+    draw_box("TRUSTWRAPPER: UNIVERSAL AI TRUST", [
+        "The SSL Certificate for AI Agents",
+        "Works with ANY AI, ANY Use Case"
+    ], Colors.CYAN)
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 
     print(f"\n{Colors.BOLD}🌍 UNIVERSAL APPLICATIONS:{Colors.END}")
 
     examples = [
+<<<<<<< HEAD
         (
             "🏥 Healthcare AI",
             "Verify diagnosis accuracy without revealing patient data",
@@ -592,6 +868,13 @@ def slide_1b_universal_trust():
         ("🎮 Gaming AI", "Verify fair play without revealing strategies"),
         ("💰 Trading AI", "Prove performance without exposing trading logic"),
         ("🚗 Autonomous AI", "Verify safety without revealing decision trees"),
+=======
+        ("🏥 Healthcare AI", "Verify diagnosis accuracy without revealing patient data"),
+        ("📝 Content AI", "Prove quality without exposing proprietary algorithms"),
+        ("🎮 Gaming AI", "Verify fair play without revealing strategies"),
+        ("💰 Trading AI", "Prove performance without exposing trading logic"),
+        ("🚗 Autonomous AI", "Verify safety without revealing decision trees")
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     ]
 
     for icon_title, desc in examples:
@@ -604,16 +887,26 @@ def slide_1b_universal_trust():
 
     wait_for_user()
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 def slide_2_the_problem():
     """The problem with dramatic reveal"""
     clear_screen()
 
+<<<<<<< HEAD
     draw_box(
         "THE $100 BILLION PROBLEM",
         ["AI Trading Agents Are Taking Over DeFi...", "But Nobody Trusts Them! 🤯"],
         Colors.RED,
     )
+=======
+    draw_box("THE $100 BILLION PROBLEM", [
+        "AI Trading Agents Are Taking Over DeFi...",
+        "But Nobody Trusts Them! 🤯"
+    ], Colors.RED)
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 
     time.sleep(1)
     print(f"\n{Colors.BOLD}📖 IMAGINE THIS SCENARIO:{Colors.END}")
@@ -621,7 +914,11 @@ def slide_2_the_problem():
     scenario = [
         "You discover an AI trading bot claiming:",
         "  • 75% win rate",
+<<<<<<< HEAD
         "  • 2.3 Sharpe ratio",
+=======
+        "  • 2.3 Sharpe ratio", 
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         "  • 22% annual returns",
         "",
         "Would you invest $100,000? 💰",
@@ -629,6 +926,7 @@ def slide_2_the_problem():
         "THE PROBLEM:",
         "  ❌ Can't verify performance claims",
         "  ❌ Can't see the trading strategy",
+<<<<<<< HEAD
         "  ❌ Can't trust the AI decisions",
     ]
 
@@ -636,20 +934,37 @@ def slide_2_the_problem():
         type_text(
             line, Colors.WHITE if not line.startswith("  ❌") else Colors.RED, 0.03
         )
+=======
+        "  ❌ Can't trust the AI decisions"
+    ]
+
+    for line in scenario:
+        type_text(line, Colors.WHITE if not line.startswith("  ❌") else Colors.RED, 0.03)
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         time.sleep(0.2)
 
     wait_for_user()
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 def slide_3_the_solution():
     """The solution with layer animation"""
     clear_screen()
 
+<<<<<<< HEAD
     draw_box(
         "THE SOLUTION: TRUSTWRAPPER",
         ["Three-Layer Trust Infrastructure", "Complete AI Verification System"],
         Colors.GREEN,
     )
+=======
+    draw_box("THE SOLUTION: TRUSTWRAPPER", [
+        "Three-Layer Trust Infrastructure",
+        "Complete AI Verification System"
+    ], Colors.GREEN)
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 
     animate_trust_layers()
 
@@ -660,16 +975,26 @@ def slide_3_the_solution():
 
     wait_for_user()
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 def slide_3a_performance_layer():
     """Detailed explanation of Performance Layer"""
     clear_screen()
 
+<<<<<<< HEAD
     draw_box(
         "LAYER 1: PERFORMANCE VERIFICATION",
         ["Zero-Knowledge Proof of Execution Metrics", "Powered by Aleo Blockchain"],
         Colors.CYAN,
     )
+=======
+    draw_box("LAYER 1: PERFORMANCE VERIFICATION", [
+        "Zero-Knowledge Proof of Execution Metrics",
+        "Powered by Aleo Blockchain"
+    ], Colors.CYAN)
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 
     print(f"\n{Colors.BOLD}🔐 HOW IT WORKS:{Colors.END}")
 
@@ -677,7 +1002,11 @@ def slide_3a_performance_layer():
         ("1. AI Agent Executes", "Agent runs with full strategy privacy"),
         ("2. Metrics Captured", "Execution time, success rate, resource usage"),
         ("3. ZK Proof Generated", "Cryptographic proof without revealing details"),
+<<<<<<< HEAD
         ("4. Blockchain Storage", "Immutable record on Aleo testnet"),
+=======
+        ("4. Blockchain Storage", "Immutable record on Aleo testnet")
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     ]
 
     for step, desc in steps:
@@ -698,7 +1027,10 @@ def slide_3a_performance_layer():
 
     wait_for_user()
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 def slide_3b_performance_demo():
     """Live demo of performance verification"""
     clear_screen()
@@ -720,7 +1052,11 @@ def slide_3b_performance_demo():
         "execution_time": "2,347ms",
         "operations": "1.2M",
         "success_rate": "99.7%",
+<<<<<<< HEAD
         "resource_usage": "142MB",
+=======
+        "resource_usage": "142MB"
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     }
 
     for key, value in metrics.items():
@@ -733,13 +1069,19 @@ def slide_3b_performance_demo():
 
     proof_id = hashlib.sha256(str(time.time()).encode()).hexdigest()[:16]
     print(f"  Proof ID: {proof_id}")
+<<<<<<< HEAD
     print("  Proof Size: 3.2KB")
     print("  Generation Time: 847ms")
+=======
+    print(f"  Proof Size: 3.2KB")
+    print(f"  Generation Time: 847ms")
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 
     # Show Aleo submission
     print(f"\n{Colors.PURPLE}Aleo Integration:{Colors.END}")
     tx_format = "at1x7lhpj96v0fw7hktpf2d5zrgepehvwfzm04s5zccns9qhvjvsqqsh29vlm"
     print(f"  Transaction Format: {tx_format[:32]}...")
+<<<<<<< HEAD
     print("  Status: ✅ Would be confirmed on-chain")
     print("  Network: Aleo Testnet3")
     print(
@@ -749,15 +1091,30 @@ def slide_3b_performance_demo():
     wait_for_user()
 
 
+=======
+    print(f"  Status: ✅ Would be confirmed on-chain")
+    print(f"  Network: Aleo Testnet3")
+    print(f"\n  {Colors.YELLOW}Note: In production, this creates real Aleo transactions{Colors.END}")
+
+    wait_for_user()
+
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 def slide_3c_xai_layer():
     """Detailed explanation of XAI Layer with non-technical explanations"""
     clear_screen()
 
+<<<<<<< HEAD
     draw_box(
         "LAYER 2: EXPLAINABLE AI",
         ["Understanding AI Decisions", "Without Revealing the Model"],
         Colors.YELLOW,
     )
+=======
+    draw_box("LAYER 2: EXPLAINABLE AI", [
+        "Understanding AI Decisions",
+        "Without Revealing the Model"
+    ], Colors.YELLOW)
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 
     print(f"\n{Colors.BOLD}🧠 THE CHALLENGE:{Colors.END}")
     print("  How do you explain AI decisions without")
@@ -774,6 +1131,7 @@ def slide_3c_xai_layer():
     print(f"\n{Colors.BOLD}🔍 EXPLANATION TECHNIQUES:{Colors.END}")
 
     techniques = [
+<<<<<<< HEAD
         (
             "SHAP Analysis",
             "Like a financial advisor explaining your credit score:",
@@ -794,6 +1152,23 @@ def slide_3c_xai_layer():
             "Like weather probability:",
             "'85% confident in this trade, like 85% chance of rain'",
         ),
+=======
+        ("SHAP Analysis", 
+         "Like a financial advisor explaining your credit score:",
+         "Shows which factors matter most (income: +40 points, debt: -20 points)"),
+        
+        ("LIME Explanations", 
+         "Like a doctor explaining a diagnosis:",
+         "'Your symptoms X and Y strongly indicate condition Z'"),
+        
+        ("Counterfactuals", 
+         "Like 'What if' scenarios:",
+         "'If ETH price was $100 higher, AI would switch from SELL to BUY'"),
+        
+        ("Confidence Scoring", 
+         "Like weather probability:",
+         "'85% confident in this trade, like 85% chance of rain'")
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     ]
 
     for technique, analogy, example in techniques:
@@ -806,6 +1181,7 @@ def slide_3c_xai_layer():
     print("  We analyze the AI's BEHAVIOR, not its CODE")
     print("  Like a psychologist understanding a person")
     print("  without reading their thoughts!")
+<<<<<<< HEAD
 
     print(
         f"\n{Colors.GREEN}✨ BENEFIT:{Colors.END} Users understand WHY the AI made a decision"
@@ -815,6 +1191,14 @@ def slide_3c_xai_layer():
     wait_for_user()
 
 
+=======
+    
+    print(f"\n{Colors.GREEN}✨ BENEFIT:{Colors.END} Users understand WHY the AI made a decision")
+    print(f"   without compromising the proprietary algorithm!")
+
+    wait_for_user()
+
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 def slide_3d_xai_demo():
     """Demo of XAI analysis with real market data"""
     clear_screen()
@@ -824,16 +1208,28 @@ def slide_3d_xai_demo():
 
     # Get real market data
     real_data = get_real_market_data()
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     if real_data:
         eth_price = real_data.get("ethereum", {}).get("usd", 2150)
         eth_change = real_data.get("ethereum", {}).get("usd_24h_change", -2.3)
         eth_volume = real_data.get("ethereum", {}).get("usd_24h_vol", 14200000000)
+<<<<<<< HEAD
 
         # Calculate technical indicators
         rsi = 30 if eth_change < -2 else 70 if eth_change > 2 else 50
         trend = "bearish" if eth_change < 0 else "bullish"
 
+=======
+        
+        # Calculate technical indicators
+        rsi = 30 if eth_change < -2 else 70 if eth_change > 2 else 50
+        trend = "bearish" if eth_change < 0 else "bullish"
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         print(f"\n{Colors.GREEN}📡 REAL-TIME MARKET DATA:{Colors.END}")
         market_data = {
             "pair": "ETH/USD",
@@ -841,7 +1237,11 @@ def slide_3d_xai_demo():
             "24h_change": f"{eth_change:+.2f}%",
             "rsi": rsi,
             "volume_24h": f"${eth_volume/1e9:.1f}B",
+<<<<<<< HEAD
             "trend": trend,
+=======
+            "trend": trend
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         }
     else:
         print(f"\n{Colors.YELLOW}📊 Market Data (Simulated):{Colors.END}")
@@ -851,7 +1251,11 @@ def slide_3d_xai_demo():
             "24h_change": "-2.3%",
             "rsi": 28,
             "volume_24h": "$14.2B",
+<<<<<<< HEAD
             "trend": "bearish",
+=======
+            "trend": "bearish"
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         }
 
     for key, value in market_data.items():
@@ -860,11 +1264,17 @@ def slide_3d_xai_demo():
     print(f"\n{Colors.YELLOW}🤖 Getting AI Trading Decision...{Colors.END}")
     decision = get_ai_trading_decision(market_data)
 
+<<<<<<< HEAD
     print(
         f"\n🎯 AI Decision: {Colors.GREEN if decision['direction'] == 'LONG' else Colors.RED}{decision['direction']}{Colors.END}"
     )
     if decision["ai_model"] == "simulated":
         print("   Model: Neural Network (Simulated)")
+=======
+    print(f"\n🎯 AI Decision: {Colors.GREEN if decision['direction'] == 'LONG' else Colors.RED}{decision['direction']}{Colors.END}")
+    if decision['ai_model'] == 'simulated':
+        print(f"   Model: Neural Network (Simulated)")
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     else:
         print(f"   Model: {decision['ai_model']} (Live AI)")
 
@@ -873,15 +1283,24 @@ def slide_3d_xai_demo():
     time.sleep(1)
 
     print("\n📊 WHAT INFLUENCED THE DECISION (SHAP Analysis):")
+<<<<<<< HEAD
     print(
         f"{Colors.WHITE}Think of this like a recipe - which ingredients matter most:{Colors.END}"
     )
 
+=======
+    print(f"{Colors.WHITE}Think of this like a recipe - which ingredients matter most:{Colors.END}")
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     features = {
         f"RSI ({market_data.get('rsi', 28)})": (0.42, "Oversold = Buy signal"),
         "Price Trend": (0.28, f"{trend.capitalize()} momentum"),
         "Volume": (0.18, "High activity = confidence"),
+<<<<<<< HEAD
         "Market Sentiment": (0.12, "Overall crypto market"),
+=======
+        "Market Sentiment": (0.12, "Overall crypto market")
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     }
 
     for feature, (importance, explanation) in features.items():
@@ -893,6 +1312,7 @@ def slide_3d_xai_demo():
 
     print(f"\n💡 AI's Reasoning: {decision['reasoning']}")
     print(f"🎯 Confidence Level: {decision['confidence']*100:.1f}%")
+<<<<<<< HEAD
 
     # Add counterfactual
     print(f"\n{Colors.YELLOW}🔄 COUNTERFACTUAL (What If?):{Colors.END}")
@@ -906,15 +1326,34 @@ def slide_3d_xai_demo():
     wait_for_user()
 
 
+=======
+    
+    # Add counterfactual
+    print(f"\n{Colors.YELLOW}🔄 COUNTERFACTUAL (What If?):{Colors.END}")
+    print(f"   If RSI was above 70 → AI would signal {Colors.RED}SHORT{Colors.END}")
+    print(f"   If volume dropped 50% → Confidence would drop to ~60%")
+
+    print(f"\n{Colors.GREEN}✅ Decision fully explained without revealing the AI model!{Colors.END}")
+
+    wait_for_user()
+
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 def slide_3e_quality_layer():
     """Detailed explanation of Quality Layer"""
     clear_screen()
 
+<<<<<<< HEAD
     draw_box(
         "LAYER 3: QUALITY CONSENSUS",
         ["Multiple Independent Validators", "Ensuring Output Correctness"],
         Colors.GREEN,
     )
+=======
+    draw_box("LAYER 3: QUALITY CONSENSUS", [
+        "Multiple Independent Validators",
+        "Ensuring Output Correctness"
+    ], Colors.GREEN)
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 
     print(f"\n{Colors.BOLD}✅ THE PROBLEM WITH SINGLE VERIFICATION:{Colors.END}")
     print("  • One validator can be wrong")
@@ -930,7 +1369,11 @@ def slide_3e_quality_layer():
         ("Performance Validator", "Checks execution efficiency"),
         ("Risk Validator", "Analyzes potential downsides"),
         ("Consistency Validator", "Ensures stable behavior"),
+<<<<<<< HEAD
         ("Compliance Validator", "Verifies regulatory adherence"),
+=======
+        ("Compliance Validator", "Verifies regulatory adherence")
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     ]
 
     for i, (validator, role) in enumerate(validators, 1):
@@ -946,7 +1389,10 @@ def slide_3e_quality_layer():
 
     wait_for_user()
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 def slide_3f_quality_demo():
     """Live demo of quality consensus"""
     clear_screen()
@@ -964,7 +1410,11 @@ def slide_3f_quality_demo():
         ("Performance Validator", 0.96, "Execution within optimal parameters"),
         ("Risk Validator", 0.92, "Acceptable risk/reward ratio"),
         ("Consistency Validator", 0.94, "Aligns with historical patterns"),
+<<<<<<< HEAD
         ("Market Validator", 0.89, "Matches market conditions"),
+=======
+        ("Market Validator", 0.89, "Matches market conditions")
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     ]
 
     scores = []
@@ -992,7 +1442,10 @@ def slide_3f_quality_demo():
 
     wait_for_user()
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 def slide_4_live_demo_intro():
     """Introduction to live demo"""
     clear_screen()
@@ -1010,7 +1463,10 @@ def slide_4_live_demo_intro():
 
     wait_for_user()
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 def slide_5_trading_demo():
     """Live trading demonstration"""
     clear_screen()
@@ -1038,7 +1494,10 @@ def slide_5_trading_demo():
 
     wait_for_user()
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 def slide_6_performance_verification():
     """Performance verification with TrustWrapper"""
     clear_screen()
@@ -1077,7 +1536,10 @@ def slide_6_performance_verification():
 
     wait_for_user()
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 def slide_7_blockchain_verification():
     """Aleo blockchain verification"""
     clear_screen()
@@ -1100,7 +1562,10 @@ def slide_7_blockchain_verification():
 
     wait_for_user()
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 def slide_8_defi_staking():
     """DeFi staking interface"""
     clear_screen()
@@ -1119,16 +1584,25 @@ def slide_8_defi_staking():
 
     wait_for_user()
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 def slide_9_why_this_matters():
     """Why this matters for DeFi"""
     clear_screen()
 
+<<<<<<< HEAD
     draw_box(
         "WHY THIS REVOLUTIONIZES DEFI",
         ["The First Trust Infrastructure for AI Trading"],
         Colors.PURPLE,
     )
+=======
+    draw_box("WHY THIS REVOLUTIONIZES DEFI", [
+        "The First Trust Infrastructure for AI Trading"
+    ], Colors.PURPLE)
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 
     print(f"\n{Colors.BOLD}🌍 MARKET IMPACT:{Colors.END}")
 
@@ -1136,7 +1610,11 @@ def slide_9_why_this_matters():
         ("Institutional Adoption", "Regulated firms can now use AI trading"),
         ("Democratized Access", "Anyone can invest in verified AI strategies"),
         ("Privacy Preserved", "Strategies stay proprietary and valuable"),
+<<<<<<< HEAD
         ("Trust at Scale", "No manual audits needed - instant verification"),
+=======
+        ("Trust at Scale", "No manual audits needed - instant verification")
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     ]
 
     for title, desc in impacts:
@@ -1151,12 +1629,21 @@ def slide_9_why_this_matters():
 
     wait_for_user()
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 def slide_10_technical_innovation():
     """Technical achievements"""
     clear_screen()
 
+<<<<<<< HEAD
     draw_box("TECHNICAL INNOVATION", ["What We Built for ZK-Berlin"], Colors.CYAN)
+=======
+    draw_box("TECHNICAL INNOVATION", [
+        "What We Built for ZK-Berlin"
+    ], Colors.CYAN)
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 
     print("\n🏗️ COMPLETE IMPLEMENTATION:")
     print("  ✅ Leo smart contracts deployed")
@@ -1175,16 +1662,23 @@ def slide_10_technical_innovation():
 
     wait_for_user()
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 def slide_11_call_to_action():
     """Final call to action"""
     clear_screen()
 
     # Epic conclusion
     print(f"{Colors.BOLD}{Colors.PURPLE}{'='*60}{Colors.END}")
+<<<<<<< HEAD
     print(
         f"{Colors.BOLD}{Colors.YELLOW}     THE FUTURE OF DEFI IS VERIFIABLE AI     {Colors.END}"
     )
+=======
+    print(f"{Colors.BOLD}{Colors.YELLOW}     THE FUTURE OF DEFI IS VERIFIABLE AI     {Colors.END}")
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     print(f"{Colors.BOLD}{Colors.PURPLE}{'='*60}{Colors.END}")
 
     print(f"\n{Colors.CYAN}TrustWrapper enables:{Colors.END}")
@@ -1207,19 +1701,27 @@ def slide_11_call_to_action():
     print(f"{Colors.BLUE}https://explorer.aleo.org/testnet/{Colors.END}")
 
     print(f"\n{Colors.BOLD}{Colors.YELLOW}Thank you, ZK-Berlin!{Colors.END}")
+<<<<<<< HEAD
     print(
         f"{Colors.WHITE}Let's build the trustworthy DeFi future together.{Colors.END}"
     )
 
+=======
+    print(f"{Colors.WHITE}Let's build the trustworthy DeFi future together.{Colors.END}")
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 
 def main():
     """Run the complete DeFi presentation"""
     try:
         # Show OpenAI status
         if not OPENAI_AVAILABLE:
+<<<<<<< HEAD
             print(
                 "\n📝 Note: OpenAI library not installed. AI decisions will be simulated."
             )
+=======
+            print("\n📝 Note: OpenAI library not installed. AI decisions will be simulated.")
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
             print("   To enable real AI: pip install openai")
             print("   Press Enter to continue with simulated AI...\n")
             input()
@@ -1258,6 +1760,11 @@ def main():
     except KeyboardInterrupt:
         print(f"\n\n{Colors.YELLOW}Presentation paused. Thank you!{Colors.END}")
 
+<<<<<<< HEAD
 
 if __name__ == "__main__":
     main()
+=======
+if __name__ == "__main__":
+    main()
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752

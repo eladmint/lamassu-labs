@@ -68,4 +68,8 @@ python tools/examples/quick_demo.py
 
 ## Security Note
 
+<<<<<<< HEAD
 Deployment scripts use testnet by default. Production deployments require additional configuration.
+=======
+Deployment scripts use testnet by default. Production deployments require additional configuration.
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752

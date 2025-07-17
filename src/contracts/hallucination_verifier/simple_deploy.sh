@@ -75,4 +75,8 @@ echo "3. Deployment status"
 echo ""
 echo "You can verify deployment at:"
 echo "https://aleo.tools/"
+<<<<<<< HEAD
 echo "https://aleoscan.io/"
+=======
+echo "https://aleoscan.io/"
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752

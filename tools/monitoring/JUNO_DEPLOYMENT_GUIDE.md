@@ -4,7 +4,11 @@
 
 This guide explains how to deploy the Lamassu Labs contract monitoring dashboard to a Juno satellite on the Internet Computer Protocol (ICP).
 
+<<<<<<< HEAD
 **Satellite ID**: `bvxuo-uaaaa-aaaal-asgua-cai`
+=======
+**Satellite ID**: `bvxuo-uaaaa-aaaal-asgua-cai`  
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 **Live URL**: https://bvxuo-uaaaa-aaaal-asgua-cai.icp0.io
 
 ## Prerequisites
@@ -262,4 +266,8 @@ For issues specific to the monitoring dashboard:
 
 ---
 
+<<<<<<< HEAD
 **Note**: This dashboard is designed to work with the Lamassu Labs TrustWrapper infrastructure for monitoring AI agent contracts on various blockchains through ICP.
+=======
+**Note**: This dashboard is designed to work with the Lamassu Labs TrustWrapper infrastructure for monitoring AI agent contracts on various blockchains through ICP.
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752

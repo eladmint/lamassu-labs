@@ -5,6 +5,7 @@ This will add web endpoints to serve the monitoring dashboard
 """
 
 import asyncio
+<<<<<<< HEAD
 import sys
 from pathlib import Path
 from typing import Any, Dict
@@ -13,12 +14,23 @@ from typing import Any, Dict
 sys.path.append(
     str(Path(__file__).parent.parent.parent / "agent_forge" / "ziggurat-intelligence")
 )
+=======
+import json
+import sys
+import os
+from pathlib import Path
+from typing import Dict, Any
+
+# Add parent directories to path for imports
+sys.path.append(str(Path(__file__).parent.parent.parent / "agent_forge" / "ziggurat-intelligence"))
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 
 from integrations.icp_client import ICPClient
 
 
 class ZigguratWebInterface:
     """Custom web interface builder for Ziggurat satellite."""
+<<<<<<< HEAD
 
     def __init__(self, satellite_id: str = "bvxuo-uaaaa-aaaal-asgua-cai"):
         self.satellite_id = satellite_id
@@ -71,11 +83,60 @@ class ZigguratWebInterface:
                     }
                 )
 
+=======
+    
+    def __init__(self, satellite_id: str = "bvxuo-uaaaa-aaaal-asgua-cai"):
+        self.satellite_id = satellite_id
+        self.web_routes = {}
+        
+    async def create_web_endpoints(self):
+        """Create web endpoints on the Ziggurat satellite."""
+        
+        print("🌐 Creating custom web interface on Ziggurat satellite...")
+        print(f"Satellite ID: {self.satellite_id}")
+        
+        try:
+            async with ICPClient(satellite_id=self.satellite_id) as client:
+                
+                # Test connectivity
+                health = await client.query_satellite_health()
+                print(f"✅ Satellite status: {health.status}")
+                
+                # Create web interface configuration
+                web_config = await self._create_web_configuration()
+                
+                # Store web configuration on satellite
+                config_result = await client.store_data({
+                    "type": "web_interface_config",
+                    "config": web_config,
+                    "version": "1.0.0",
+                    "timestamp": int(asyncio.get_event_loop().time())
+                })
+                
+                if config_result["success"]:
+                    print(f"✅ Web configuration stored: {config_result['storage_id']}")
+                else:
+                    print(f"❌ Failed to store web configuration: {config_result.get('error')}")
+                    return False
+                
+                # Create index page that serves the monitoring dashboard
+                index_html = await self._create_index_page()
+                
+                index_result = await client.store_data({
+                    "type": "web_page",
+                    "route": "/",
+                    "content": index_html,
+                    "content_type": "text/html",
+                    "version": "1.0.0"
+                })
+                
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
                 if index_result["success"]:
                     print(f"✅ Index page stored: {index_result['storage_id']}")
                 else:
                     print(f"❌ Failed to store index page: {index_result.get('error')}")
                     return False
+<<<<<<< HEAD
 
                 # Create monitoring API endpoint
                 api_endpoint = await self._create_monitoring_api()
@@ -90,11 +151,26 @@ class ZigguratWebInterface:
                     }
                 )
 
+=======
+                
+                # Create monitoring API endpoint
+                api_endpoint = await self._create_monitoring_api()
+                
+                api_result = await client.store_data({
+                    "type": "api_endpoint",
+                    "route": "/api/monitoring",
+                    "handler": api_endpoint,
+                    "method": "GET",
+                    "version": "1.0.0"
+                })
+                
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
                 if api_result["success"]:
                     print(f"✅ API endpoint stored: {api_result['storage_id']}")
                 else:
                     print(f"❌ Failed to store API endpoint: {api_result.get('error')}")
                     return False
+<<<<<<< HEAD
 
                 # Create dashboard route
                 dashboard_route = await self._create_dashboard_route()
@@ -119,10 +195,31 @@ class ZigguratWebInterface:
                     )
                     return False
 
+=======
+                
+                # Create dashboard route
+                dashboard_route = await self._create_dashboard_route()
+                
+                dashboard_result = await client.store_data({
+                    "type": "web_page",
+                    "route": "/dashboard",
+                    "content": dashboard_route,
+                    "content_type": "text/html",
+                    "version": "1.0.0"
+                })
+                
+                if dashboard_result["success"]:
+                    print(f"✅ Dashboard route stored: {dashboard_result['storage_id']}")
+                else:
+                    print(f"❌ Failed to store dashboard route: {dashboard_result.get('error')}")
+                    return False
+                
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
                 # Store routing table
                 routing_table = {
                     "/": index_result["storage_id"],
                     "/dashboard": dashboard_result["storage_id"],
+<<<<<<< HEAD
                     "/api/monitoring": api_result["storage_id"],
                 }
 
@@ -157,10 +254,43 @@ class ZigguratWebInterface:
     async def _create_web_configuration(self) -> Dict[str, Any]:
         """Create web server configuration."""
 
+=======
+                    "/api/monitoring": api_result["storage_id"]
+                }
+                
+                routes_result = await client.store_data({
+                    "type": "routing_table",
+                    "routes": routing_table,
+                    "version": "1.0.0"
+                })
+                
+                if routes_result["success"]:
+                    print(f"✅ Routing table stored: {routes_result['storage_id']}")
+                else:
+                    print(f"❌ Failed to store routing table: {routes_result.get('error')}")
+                    return False
+                
+                print("\n🎉 Custom web interface created successfully!")
+                print(f"🌐 Access your monitoring dashboard at:")
+                print(f"   - https://{self.satellite_id}.icp0.io/")
+                print(f"   - https://{self.satellite_id}.icp0.io/dashboard")
+                print(f"   - https://{self.satellite_id}.raw.icp0.io/")
+                
+                return True
+                
+        except Exception as e:
+            print(f"❌ Failed to create web interface: {e}")
+            return False
+    
+    async def _create_web_configuration(self) -> Dict[str, Any]:
+        """Create web server configuration."""
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         return {
             "server": {
                 "name": "Lamassu Labs Monitoring Dashboard",
                 "version": "1.0.0",
+<<<<<<< HEAD
                 "description": "Real-time contract monitoring on ICP blockchain",
             },
             "routes": {
@@ -169,16 +299,36 @@ class ZigguratWebInterface:
                     "handler": "monitoring_dashboard",
                     "method": "GET",
                     "cache_ttl": 60,
+=======
+                "description": "Real-time contract monitoring on ICP blockchain"
+            },
+            "routes": {
+                "/": {
+                    "handler": "index_page",
+                    "method": "GET",
+                    "cache_ttl": 300
+                },
+                "/dashboard": {
+                    "handler": "monitoring_dashboard",
+                    "method": "GET",
+                    "cache_ttl": 60
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
                 },
                 "/api/monitoring": {
                     "handler": "monitoring_api",
                     "method": "GET",
+<<<<<<< HEAD
                     "cache_ttl": 30,
                 },
+=======
+                    "cache_ttl": 30
+                }
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
             },
             "cors": {
                 "allowed_origins": ["*"],
                 "allowed_methods": ["GET", "POST"],
+<<<<<<< HEAD
                 "allowed_headers": ["Content-Type", "Authorization"],
             },
             "security": {"rate_limit": 100, "timeout": 30},
@@ -188,6 +338,20 @@ class ZigguratWebInterface:
         """Create the main index page."""
 
         return """<!DOCTYPE html>
+=======
+                "allowed_headers": ["Content-Type", "Authorization"]
+            },
+            "security": {
+                "rate_limit": 100,
+                "timeout": 30
+            }
+        }
+    
+    async def _create_index_page(self) -> str:
+        """Create the main index page."""
+        
+        return '''<!DOCTYPE html>
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -199,7 +363,11 @@ class ZigguratWebInterface:
             padding: 0;
             box-sizing: border-box;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
@@ -209,7 +377,11 @@ class ZigguratWebInterface:
             align-items: center;
             justify-content: center;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         .container {
             max-width: 800px;
             text-align: center;
@@ -219,12 +391,20 @@ class ZigguratWebInterface:
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
             border: 1px solid #2a2a3e;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         .logo {
             font-size: 4em;
             margin-bottom: 20px;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         .title {
             font-size: 2.5em;
             margin-bottom: 15px;
@@ -233,14 +413,22 @@ class ZigguratWebInterface:
             -webkit-text-fill-color: transparent;
             font-weight: bold;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         .subtitle {
             font-size: 1.2em;
             color: #888;
             margin-bottom: 30px;
             line-height: 1.6;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         .btn {
             display: inline-block;
             background: linear-gradient(45deg, #00ff88, #00d4ff);
@@ -254,38 +442,62 @@ class ZigguratWebInterface:
             transition: all 0.3s;
             box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(0, 255, 136, 0.5);
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             margin-top: 40px;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         .info-card {
             background: #16213e;
             padding: 20px;
             border-radius: 12px;
             border: 1px solid #2a2a3e;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         .info-title {
             color: #00ff88;
             font-weight: bold;
             margin-bottom: 8px;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         .info-text {
             color: #ccc;
             font-size: 0.9em;
             line-height: 1.5;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         .status-indicator {
             display: inline-block;
             width: 12px;
@@ -295,13 +507,21 @@ class ZigguratWebInterface:
             margin-right: 8px;
             animation: pulse 2s infinite;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         @keyframes pulse {
             0% { opacity: 1; }
             50% { opacity: 0.5; }
             100% { opacity: 1; }
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         .powered-by {
             margin-top: 30px;
             padding-top: 20px;
@@ -320,12 +540,20 @@ class ZigguratWebInterface:
             Real-time monitoring of Aleo smart contracts<br>
             Powered by Ziggurat Intelligence on Internet Computer Protocol
         </p>
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         <div>
             <a href="/dashboard" class="btn">📊 View Dashboard</a>
             <a href="/api/monitoring" class="btn">🔧 API Endpoint</a>
         </div>
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         <div class="info-grid">
             <div class="info-card">
                 <div class="info-title">🌍 Network</div>
@@ -347,12 +575,20 @@ class ZigguratWebInterface:
                 <div class="info-text">Blockchain-verified data integrity</div>
             </div>
         </div>
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         <div class="powered-by">
             <strong>Powered by:</strong> Lamassu Labs TrustWrapper • Ziggurat Intelligence • Internet Computer Protocol
         </div>
     </div>
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     <script>
         // Auto-redirect to dashboard after 5 seconds if user doesn't click
         setTimeout(() => {
@@ -360,7 +596,11 @@ class ZigguratWebInterface:
                 window.location.href = '/dashboard';
             }
         }, 8000);
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         // Add some interactivity
         document.addEventListener('DOMContentLoaded', () => {
             const cards = document.querySelectorAll('.info-card');
@@ -377,6 +617,7 @@ class ZigguratWebInterface:
         });
     </script>
 </body>
+<<<<<<< HEAD
 </html>"""
 
     async def _create_dashboard_route(self) -> str:
@@ -408,12 +649,43 @@ class ZigguratWebInterface:
         else:
             # Fallback dashboard if original file not found
             return """<!DOCTYPE html>
+=======
+</html>'''
+    
+    async def _create_dashboard_route(self) -> str:
+        """Create the main monitoring dashboard route."""
+        
+        # Read the existing dashboard HTML
+        dashboard_path = Path(__file__).parent / "dashboard-juno.html"
+        
+        if dashboard_path.exists():
+            with open(dashboard_path, 'r') as f:
+                dashboard_content = f.read()
+            
+            # Modify the dashboard to work with Ziggurat satellite
+            modified_dashboard = dashboard_content.replace(
+                '<title>Aleo Contract Monitor Dashboard - ICP Integration</title>',
+                '<title>Lamassu Labs Contract Monitor - Ziggurat Intelligence</title>'
+            ).replace(
+                'ICP-Powered Aleo Contract Monitor',
+                'Lamassu Labs Contract Monitor'
+            ).replace(
+                'Powered by Internet Computer Protocol',
+                'Powered by Ziggurat Intelligence on ICP'
+            )
+            
+            return modified_dashboard
+        else:
+            # Fallback dashboard if original file not found
+            return '''<!DOCTYPE html>
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lamassu Labs Contract Monitor</title>
     <style>
+<<<<<<< HEAD
         body {
             font-family: Arial, sans-serif;
             background: #0a0a0a;
@@ -433,6 +705,27 @@ class ZigguratWebInterface:
             padding: 20px;
             border-radius: 10px;
             margin: 10px 0;
+=======
+        body { 
+            font-family: Arial, sans-serif; 
+            background: #0a0a0a; 
+            color: #e0e0e0; 
+            padding: 20px; 
+        }
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+        .header { 
+            text-align: center; 
+            margin-bottom: 30px; 
+        }
+        .status-card { 
+            background: #1a1a2e; 
+            padding: 20px; 
+            border-radius: 10px; 
+            margin: 10px 0; 
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         }
     </style>
 </head>
@@ -448,12 +741,21 @@ class ZigguratWebInterface:
         </div>
     </div>
 </body>
+<<<<<<< HEAD
 </html>"""
 
     async def _create_monitoring_api(self) -> str:
         """Create the monitoring API endpoint handler."""
 
         api_code = """
+=======
+</html>'''
+    
+    async def _create_monitoring_api(self) -> str:
+        """Create the monitoring API endpoint handler."""
+        
+        api_code = '''
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 async function handle_monitoring_api(request) {
     // This would be the actual API handler code for the Ziggurat satellite
     const monitoring_data = {
@@ -482,7 +784,11 @@ async function handle_monitoring_api(request) {
             "unhealthy_contracts": 0
         }
     };
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     return new Response(JSON.stringify(monitoring_data), {
         headers: {
             "Content-Type": "application/json",
@@ -490,18 +796,31 @@ async function handle_monitoring_api(request) {
         }
     });
 }
+<<<<<<< HEAD
 """
+=======
+'''
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         return api_code
 
 
 async def deploy_web_interface():
     """Deploy the custom web interface to Ziggurat satellite."""
+<<<<<<< HEAD
 
     print("🚀 Deploying custom web interface to Ziggurat satellite...")
 
     interface = ZigguratWebInterface()
     success = await interface.create_web_endpoints()
 
+=======
+    
+    print("🚀 Deploying custom web interface to Ziggurat satellite...")
+    
+    interface = ZigguratWebInterface()
+    success = await interface.create_web_endpoints()
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     if success:
         print("\n🎉 Custom web interface deployment complete!")
         print("\n🌐 Your monitoring dashboard is now accessible at:")
@@ -509,14 +828,22 @@ async def deploy_web_interface():
         print("   📍 Dashboard: https://bvxuo-uaaaa-aaaal-asgua-cai.icp0.io/dashboard")
         print("   📍 API: https://bvxuo-uaaaa-aaaal-asgua-cai.icp0.io/api/monitoring")
         print("   📍 Raw: https://bvxuo-uaaaa-aaaal-asgua-cai.raw.icp0.io/")
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         print("\n✨ Features:")
         print("   🎯 Professional landing page with auto-redirect")
         print("   📊 Full monitoring dashboard interface")
         print("   🔧 JSON API endpoint for monitoring data")
         print("   🔐 Blockchain-verified data integrity")
         print("   ⚡ Real-time contract health monitoring")
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         return True
     else:
         print("❌ Web interface deployment failed")
@@ -524,4 +851,8 @@ async def deploy_web_interface():
 
 
 if __name__ == "__main__":
+<<<<<<< HEAD
     asyncio.run(deploy_web_interface())
+=======
+    asyncio.run(deploy_web_interface())
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752

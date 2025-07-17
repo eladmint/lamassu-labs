@@ -46,7 +46,11 @@ if [ -f "src/contracts/agent_registry_v2.leo" ]; then
     echo "Testing agent_registry_v2 compilation..."
     mkdir -p build/agent_registry_v2
     cp src/contracts/agent_registry_v2.leo build/agent_registry_v2/main.leo
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     # Create program.json for agent registry
     cat > build/agent_registry_v2/program.json << EOF
 {
@@ -56,7 +60,11 @@ if [ -f "src/contracts/agent_registry_v2.leo" ]; then
     "license": "MIT"
 }
 EOF
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     cd build/agent_registry_v2
     if aleo build; then
         echo "✅ agent_registry_v2 compilation successful!"
@@ -71,7 +79,11 @@ if [ -f "src/contracts/trust_verifier_v2.leo" ]; then
     echo "Testing trust_verifier_v2 compilation..."
     mkdir -p build/trust_verifier_v2
     cp src/contracts/trust_verifier_v2.leo build/trust_verifier_v2/main.leo
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     # Create program.json for trust verifier
     cat > build/trust_verifier_v2/program.json << EOF
 {
@@ -81,7 +93,11 @@ if [ -f "src/contracts/trust_verifier_v2.leo" ]; then
     "license": "MIT"
 }
 EOF
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     cd build/trust_verifier_v2
     if aleo build; then
         echo "✅ trust_verifier_v2 compilation successful!"
@@ -97,4 +113,8 @@ echo ""
 echo "Next steps:"
 echo "1. Get testnet tokens: https://faucet.aleo.org"
 echo "2. Deploy contracts: ./scripts/deploy_contracts.sh"
+<<<<<<< HEAD
 echo "3. Run tests: python -m pytest tests/integration/"
+=======
+echo "3. Run tests: python -m pytest tests/integration/"
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752

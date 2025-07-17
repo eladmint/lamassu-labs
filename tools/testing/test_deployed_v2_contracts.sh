@@ -28,10 +28,17 @@ echo "3. trust_verifier_v2.aleo - TX: at1d3ukp45tuvkp0khq8tdt4qtd3y40lx5qz65kdg0
 test_contract() {
     local contract=$1
     echo -e "\n${BLUE}Checking $contract...${NC}"
+<<<<<<< HEAD
 
     # Query the program
     response=$(curl -s "$ENDPOINT/$NETWORK/program/$contract")
 
+=======
+    
+    # Query the program
+    response=$(curl -s "$ENDPOINT/$NETWORK/program/$contract")
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     if echo "$response" | grep -q "error"; then
         echo -e "${RED}❌ Contract not found on network${NC}"
         return 1
@@ -89,7 +96,11 @@ check_transaction() {
     echo -e "\n${BLUE}Checking $name transaction...${NC}"
     echo "TX: $tx_id"
     echo "View on AleoScan: https://testnet.aleoscan.io/transaction?id=$tx_id"
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     # Try to query transaction
     response=$(curl -s "$ENDPOINT/$NETWORK/transaction/$tx_id" 2>/dev/null || echo "API query failed")
     if [[ -n "$response" ]] && [[ "$response" != "API query failed" ]]; then
@@ -140,4 +151,8 @@ echo ""
 echo -e "${BLUE}View all contracts on AleoScan:${NC}"
 echo "https://testnet.aleoscan.io/"
 
+<<<<<<< HEAD
 echo -e "\n${BLUE}Done!${NC}"
+=======
+echo -e "\n${BLUE}Done!${NC}"
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752

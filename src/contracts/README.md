@@ -1,8 +1,8 @@
 # TrustWrapper Smart Contracts
 
-**Directory**: `src/contracts/`
-**Language**: Leo (Aleo blockchain)
-**Network**: Aleo testnet
+**Directory**: `src/contracts/`  
+**Language**: Leo (Aleo blockchain)  
+**Network**: Aleo testnet  
 **Status**: ✅ ALL CONTRACTS DEPLOYED (3/3)
 
 ## 📋 Contract Deployment Status
@@ -171,7 +171,7 @@ This contract is part of the TrustWrapper system for ZK-Berlin Hackathon 2025:
 ### **Innovation Highlights**
 - **🥇 First** ZK-verified AI hallucination detection on blockchain
 - **🔐 Privacy-Preserving**: Proves AI safety without revealing proprietary models
-- **⚡ Real Deployment**: Live on Aleo testnet with verified transactions
+- **⚡ Real Deployment**: Live on Aleo testnet with verified transactions  
 - **💰 DeFi Ready**: Enables privacy-preserving AI agent verification for trading
 
 ### **Technical Achievement**

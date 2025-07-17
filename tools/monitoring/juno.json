@@ -1,11 +1,17 @@
 {
   "satellite": {
+<<<<<<< HEAD
     "satelliteId": "j3smw-tiaaa-aaaal-ashdq-cai",
     "source": "dist"
+=======
+    "satelliteId": "cmhvu-6iaaa-aaaal-asg5q-cai",
+    "source": "./dist"
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
   },
   "hosting": {
     "headers": [
       {
+<<<<<<< HEAD
         "source": "**/*.css",
         "headers": [
           {
@@ -32,6 +38,8 @@
         ]
       },
       {
+=======
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         "source": "**/*",
         "headers": [
           {
@@ -51,7 +59,11 @@
     ],
     "rewrites": [
       {
+<<<<<<< HEAD
         "source": "!(assets/**|*.js|*.css|*.json|*.ico|*.png|*.jpg|*.gif|*.svg|*.html)",
+=======
+        "source": "**",
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         "destination": "/index.html"
       }
     ],
@@ -64,20 +76,29 @@
   "datastore": {
     "collections": [
       {
+<<<<<<< HEAD
         "collection": "ml_oracle_metrics",
+=======
+        "collection": "monitoring_data",
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         "read": "public",
         "write": "managed",
         "memory": "stable",
         "mutablePermissions": true
       },
       {
+<<<<<<< HEAD
         "collection": "prediction_data",
+=======
+        "collection": "contract_metrics",
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         "read": "public",
         "write": "managed",
         "memory": "stable",
         "mutablePermissions": true
       },
       {
+<<<<<<< HEAD
         "collection": "consensus_monitoring",
         "read": "public",
         "write": "managed",
@@ -86,6 +107,9 @@
       },
       {
         "collection": "oracle_marketplace",
+=======
+        "collection": "alerts",
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         "read": "public",
         "write": "managed",
         "memory": "stable",
@@ -93,4 +117,8 @@
       }
     ]
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752

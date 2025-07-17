@@ -1,6 +1,10 @@
 // The 'agent_registry' program for managing AI agent registration and performance tracking
 program agent_registry_v2.aleo {
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     // Agent registration record - stores agent details privately
     record AgentRecord {
         owner: address,
@@ -9,6 +13,7 @@ program agent_registry_v2.aleo {
         performance_score: u32,
         registration_height: u32,
     }
+<<<<<<< HEAD
 
     // Agent performance metrics
     struct AgentMetrics {
@@ -18,6 +23,17 @@ program agent_registry_v2.aleo {
         total_executions: u32,   // Total number of executions
     }
 
+=======
+    
+    // Agent performance metrics
+    struct AgentMetrics {
+        accuracy_rate: u32,      // Basis points (0-10000)
+        success_rate: u32,       // Basis points (0-10000)  
+        avg_latency_ms: u32,     // Milliseconds
+        total_executions: u32,   // Total number of executions
+    }
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     // Performance verification result
     struct PerformanceResult {
         agent_id: field,
@@ -25,13 +41,21 @@ program agent_registry_v2.aleo {
         verified: bool,
         timestamp: u32,
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     // Constants for validation
     const MIN_STAKE: u64 = 1000u64;           // Minimum stake amount
     const MAX_STAKE: u64 = 1000000000u64;     // Maximum stake amount (1B)
     const BASIS_POINTS: u32 = 10000u32;       // 100% in basis points
     const MAX_LATENCY: u32 = 10000u32;        // 10 seconds max latency
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     // Register a new AI agent with stake
     transition register_agent(
         agent_id: field,
@@ -42,15 +66,26 @@ program agent_registry_v2.aleo {
         // Validate stake amount
         assert(stake_amount >= MIN_STAKE);
         assert(stake_amount <= MAX_STAKE);
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         // Validate metrics
         assert(initial_metrics.accuracy_rate <= BASIS_POINTS);
         assert(initial_metrics.success_rate <= BASIS_POINTS);
         assert(initial_metrics.avg_latency_ms <= MAX_LATENCY);
+<<<<<<< HEAD
 
         // Calculate initial performance score
         let score: u32 = calc_performance_score(initial_metrics);
 
+=======
+        
+        // Calculate initial performance score
+        let score: u32 = calc_performance_score(initial_metrics);
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         // Create and return agent record
         return AgentRecord {
             owner: self.caller,
@@ -60,7 +95,11 @@ program agent_registry_v2.aleo {
             registration_height: registration_height,
         };
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     // Verify agent performance and update score
     transition verify_agent(
         agent: AgentRecord,
@@ -69,16 +108,27 @@ program agent_registry_v2.aleo {
     ) -> (AgentRecord, PerformanceResult) {
         // Ensure caller owns the agent
         assert_eq(agent.owner, self.caller);
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         // Validate new metrics
         assert(new_metrics.accuracy_rate <= BASIS_POINTS);
         assert(new_metrics.success_rate <= BASIS_POINTS);
         assert(new_metrics.avg_latency_ms <= MAX_LATENCY);
         assert(new_metrics.total_executions > 0u32);
+<<<<<<< HEAD
 
         // Calculate new performance score
         let new_score: u32 = calc_performance_score(new_metrics);
 
+=======
+        
+        // Calculate new performance score
+        let new_score: u32 = calc_performance_score(new_metrics);
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         // Create updated agent record
         let updated_agent: AgentRecord = AgentRecord {
             owner: agent.owner,
@@ -87,7 +137,11 @@ program agent_registry_v2.aleo {
             performance_score: new_score,
             registration_height: agent.registration_height,
         };
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         // Create performance result
         let result: PerformanceResult = PerformanceResult {
             agent_id: agent.agent_id,
@@ -95,10 +149,17 @@ program agent_registry_v2.aleo {
             verified: true,
             timestamp: current_height,
         };
+<<<<<<< HEAD
 
         return (updated_agent, result);
     }
 
+=======
+        
+        return (updated_agent, result);
+    }
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     // Update agent stake
     transition update_stake(
         agent: AgentRecord,
@@ -106,11 +167,19 @@ program agent_registry_v2.aleo {
     ) -> AgentRecord {
         // Ensure caller owns the agent
         assert_eq(agent.owner, self.caller);
+<<<<<<< HEAD
 
         // Validate new stake amount
         assert(new_stake_amount >= MIN_STAKE);
         assert(new_stake_amount <= MAX_STAKE);
 
+=======
+        
+        // Validate new stake amount
+        assert(new_stake_amount >= MIN_STAKE);
+        assert(new_stake_amount <= MAX_STAKE);
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         // Return updated agent record
         return AgentRecord {
             owner: agent.owner,
@@ -120,7 +189,11 @@ program agent_registry_v2.aleo {
             registration_height: agent.registration_height,
         };
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     // Transfer agent ownership
     transition transfer_agent(
         agent: AgentRecord,
@@ -128,7 +201,11 @@ program agent_registry_v2.aleo {
     ) -> AgentRecord {
         // Ensure caller owns the agent
         assert_eq(agent.owner, self.caller);
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         // Return agent with new owner
         return AgentRecord {
             owner: new_owner,
@@ -138,6 +215,7 @@ program agent_registry_v2.aleo {
             registration_height: agent.registration_height,
         };
     }
+<<<<<<< HEAD
 
     // Private helper function to calculate performance score
     function calc_performance_score(metrics: AgentMetrics) -> u32 {
@@ -150,6 +228,20 @@ program agent_registry_v2.aleo {
         // Success rate component (20% weight)
         let success_component: u32 = (metrics.success_rate * 2u32) / 10u32;
 
+=======
+    
+    // Private helper function to calculate performance score
+    function calc_performance_score(metrics: AgentMetrics) -> u32 {
+        // Weighted scoring with basis points: 
+        // 40% accuracy, 20% success rate, 20% latency, 20% experience
+        
+        // Accuracy component (40% weight)
+        let accuracy_component: u32 = (metrics.accuracy_rate * 4u32) / 10u32;
+        
+        // Success rate component (20% weight)
+        let success_component: u32 = (metrics.success_rate * 2u32) / 10u32;
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         // Latency component (20% weight) - inverse scoring
         let latency_score: u32 = 0u32;
         if (metrics.avg_latency_ms < 100u32) {
@@ -164,7 +256,11 @@ program agent_registry_v2.aleo {
             latency_score = 2000u32;
         }
         let latency_component: u32 = (latency_score * 2u32) / 10u32;
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         // Experience component (20% weight) - based on execution count
         let exp_score: u32 = 0u32;
         if (metrics.total_executions >= 10000u32) {
@@ -179,15 +275,29 @@ program agent_registry_v2.aleo {
             exp_score = 2000u32;
         }
         let exp_component: u32 = (exp_score * 2u32) / 10u32;
+<<<<<<< HEAD
 
         // Calculate total score
         let total_score: u32 = accuracy_component + success_component + latency_component + exp_component;
 
+=======
+        
+        // Calculate total score
+        let total_score: u32 = accuracy_component + success_component + latency_component + exp_component;
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         // Ensure score doesn't exceed maximum
         if (total_score > BASIS_POINTS) {
             return BASIS_POINTS;
         }
+<<<<<<< HEAD
 
         return total_score;
     }
 }
+=======
+        
+        return total_score;
+    }
+}
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752

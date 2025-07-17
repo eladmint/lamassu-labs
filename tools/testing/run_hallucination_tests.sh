@@ -80,4 +80,8 @@ asyncio.run(test_performance_impact())
 esac
 
 echo ""
+<<<<<<< HEAD
 echo "✅ Test completed!"
+=======
+echo "✅ Test completed!"
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752

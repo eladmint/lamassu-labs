@@ -57,8 +57,12 @@ class LinkFinderAgent:
         self.logger = logger if logger else logging.getLogger(self.__class__.__name__)
         self.luma_optimization = luma_optimization
         self.logger.info(
+<<<<<<< HEAD
             "[%s] initialized framework-free agent with anti-bot evasion and lu.ma optimization",
             self.name,
+=======
+            "[%s] initialized framework-free agent with anti-bot evasion and lu.ma optimization", self.name
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         )
 
         # Initialize anti-bot evasion manager with advanced settings for calendar pages
@@ -261,6 +265,7 @@ class LinkFinderAgent:
                         "--disable-renderer-backgrounding",
                         "--disable-features=TranslateUI",
                         "--disable-ipc-flooding-protection",
+<<<<<<< HEAD
                         "--user-agent=" + evasion_session["fingerprint"]["user_agent"],
                     ],
                 }
@@ -279,27 +284,52 @@ class LinkFinderAgent:
                             "--aggressive-cache-discard",
                         ]
                     )
+=======
+                        "--user-agent=" + evasion_session["fingerprint"]["user_agent"]
+                    ]
+                }
+                
+                # Add lu.ma specific optimizations
+                if self.luma_optimization and "lu.ma" in main_list_url:
+                    self.logger.info(f"[{self.name}] Applying lu.ma platform optimizations")
+                    browser_args["args"].extend([
+                        "--page-load-strategy=none",  # Don't wait for full page load
+                        "--disable-extensions",
+                        "--disable-plugins",
+                        "--disable-images",  # Faster loading
+                        "--aggressive-cache-discard"
+                    ])
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
                 browser = await p.chromium.launch(**browser_args)
 
                 # Create context with enhanced anti-bot settings
                 context_args = {
                     "user_agent": evasion_session["fingerprint"]["user_agent"],
                     "viewport": evasion_session["fingerprint"]["viewport"],
+<<<<<<< HEAD
                     "extra_http_headers": evasion_session["fingerprint"]["headers"],
+=======
+                    "extra_http_headers": evasion_session["fingerprint"]["headers"]
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
                 }
                 context = await browser.new_context(**context_args)
                 page = await context.new_page()
 
                 # Apply additional anti-bot measures for calendar discovery
+<<<<<<< HEAD
                 await self.evasion_manager.apply_evasion_to_browser(
                     evasion_session, page
                 )
+=======
+                await self.evasion_manager.apply_evasion_to_browser(evasion_session, page)
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 
                 self.logger.debug(
                     f"[{self.name}] Navigating to {main_list_url} with evasion session: {evasion_session['session_id']}..."
                 )  # Use self.logger
 
                 # Navigate with extended timeout for lu.ma platform
+<<<<<<< HEAD
                 timeout_ms = (
                     900000 if "lu.ma" in main_list_url else 90000
                 )  # 15 min for lu.ma
@@ -330,6 +360,30 @@ class LinkFinderAgent:
                             self.logger.error(
                                 f"[{self.name}] Retry failed: {retry_error}"
                             )
+=======
+                timeout_ms = 900000 if "lu.ma" in main_list_url else 90000  # 15 min for lu.ma
+                self.logger.info(f"[{self.name}] Using {timeout_ms/1000}s timeout for navigation")
+                
+                try:
+                    response = await page.goto(
+                        main_list_url, 
+                        wait_until="domcontentloaded", 
+                        timeout=timeout_ms
+                    )
+                except Exception as nav_error:
+                    self.logger.warning(f"[{self.name}] Navigation timeout/error: {nav_error}")
+                    # Try with reduced requirements for lu.ma
+                    if "lu.ma" in main_list_url:
+                        try:
+                            self.logger.info(f"[{self.name}] Retrying with 'networkidle' for lu.ma...")
+                            response = await page.goto(
+                                main_list_url, 
+                                wait_until="networkidle", 
+                                timeout=timeout_ms
+                            )
+                        except Exception as retry_error:
+                            self.logger.error(f"[{self.name}] Retry failed: {retry_error}")
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
                             response = None
                     else:
                         response = None

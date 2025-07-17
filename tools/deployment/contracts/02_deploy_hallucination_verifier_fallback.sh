@@ -27,7 +27,11 @@ if [ $? -ne 0 ]; then
     echo ""
     echo "Attempt 1 failed. Trying with testnet3 endpoint..."
     echo ""
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     # Try with testnet3 specific endpoint
     leo deploy \
       --private-key "$PRIVATE_KEY" \
@@ -42,7 +46,11 @@ if [ $? -ne 0 ]; then
     echo ""
     echo "Alternative: Deploy without broadcast (offline mode)..."
     echo ""
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     # Try offline deployment first
     leo deploy \
       --private-key "$PRIVATE_KEY" \
@@ -50,7 +58,11 @@ if [ $? -ne 0 ]; then
       --save ./deployment_output \
       --offline \
       --yes
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     if [ $? -eq 0 ]; then
         echo "✅ Deployment transaction created successfully!"
         echo "📁 Transaction saved to: ./deployment_output"
@@ -63,4 +75,8 @@ if [ $? -ne 0 ]; then
 fi
 
 echo ""
+<<<<<<< HEAD
 echo "Deployment attempts completed!"
+=======
+echo "Deployment attempts completed!"
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752

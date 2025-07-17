@@ -46,4 +46,8 @@ case $choice in
         echo "Invalid choice. Please run the script again."
         exit 1
         ;;
+<<<<<<< HEAD
 esac
+=======
+esac
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752

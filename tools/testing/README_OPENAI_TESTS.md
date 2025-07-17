@@ -199,4 +199,8 @@ export PYTHONPATH=$PWD:$PYTHONPATH
 
 ---
 
+<<<<<<< HEAD
 **Remember**: These tests use real OpenAI API calls and incur costs. Start with the quick test to ensure everything works before running the full suite.
+=======
+**Remember**: These tests use real OpenAI API calls and incur costs. Start with the quick test to ensure everything works before running the full suite.
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752

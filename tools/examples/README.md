@@ -27,11 +27,19 @@ python demo/ultimate_defi_presentation.py
 **TrustWrapper is the first comprehensive trust infrastructure for AI agents**, solving all three trust problems:
 
 1. **Performance Trust** → ZK proofs on Aleo
+<<<<<<< HEAD
 2. **Explainability Trust** → Ziggurat XAI integration
+=======
+2. **Explainability Trust** → Ziggurat XAI integration  
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 3. **Quality Trust** → Agent Forge consensus validation
 
 Universal wrapper that works with ANY existing agent - no code changes needed!
 
 ## Archived Demos
 
+<<<<<<< HEAD
 Previous demo files have been moved to `internal_docs/archived_demos/` for reference. The `ultimate_defi_presentation.py` provides the most comprehensive demonstration of all TrustWrapper capabilities in a single, engaging presentation.
+=======
+Previous demo files have been moved to `internal_docs/archived_demos/` for reference. The `ultimate_defi_presentation.py` provides the most comprehensive demonstration of all TrustWrapper capabilities in a single, engaging presentation.
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752

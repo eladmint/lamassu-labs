@@ -19,7 +19,7 @@ echo ""
 move_file() {
     local source=$1
     local dest=$2
-
+    
     if [ -f "$source" ]; then
         echo -e "${YELLOW}Moving: $source → $dest${NC}"
         mkdir -p "$(dirname "$dest")"
@@ -105,14 +105,14 @@ if [ -d "internal_docs/archive/deployment" ]; then
     if [ ! -d "docs" ]; then
         mkdir -p docs
     fi
-
+    
     files=(
         "ALEO_DEPLOYMENT_GUIDE.md"
         "ALEO_DEPLOYMENT_SUMMARY.md"
         "ALEO_SECURITY_AUDIT.md"
         "OPERATIONAL_RUNBOOKS.md"
     )
-
+    
     for file in "${files[@]}"; do
         if [ -f "internal_docs/archive/deployment/$file" ]; then
             move_file "internal_docs/archive/deployment/$file" "docs/$file"

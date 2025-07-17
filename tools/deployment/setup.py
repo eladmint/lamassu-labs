@@ -30,7 +30,11 @@ setup(
     package_dir={"": "src"},
     classifiers=[
         "Development Status :: 4 - Beta",
+<<<<<<< HEAD
         "Intended Audience :: Developers",
+=======
+        "Intended Audience :: Developers", 
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         "License :: OSI Approved :: Apache Software License",
         "Operating System :: OS Independent",
         "Programming Language :: Python :: 3",
@@ -45,4 +49,8 @@ setup(
     install_requires=requirements,
     license="Apache 2.0",
 )
+<<<<<<< HEAD
 EOF < /dev/null
+=======
+EOF < /dev/null
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752

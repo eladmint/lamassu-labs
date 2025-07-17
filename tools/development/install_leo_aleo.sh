@@ -106,7 +106,7 @@ if [ -z "$ALEO_PRIVATE_KEY" ]; then
     echo -e "${YELLOW}No ALEO_PRIVATE_KEY found in environment.${NC}"
     echo -e "${YELLOW}Would you like to create a new account? (y/n)${NC}"
     read -r create_account
-
+    
     if [[ $create_account == "y" || $create_account == "Y" ]]; then
         echo -e "\n${YELLOW}Creating new Aleo account...${NC}"
         snarkos account new

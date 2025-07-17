@@ -1,6 +1,10 @@
 # Live Aleo Dashboard Setup Guide
 
+<<<<<<< HEAD
 **Date**: June 23, 2025
+=======
+**Date**: June 23, 2025  
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
 **Purpose**: Connect monitoring dashboard to live Aleo blockchain data
 
 ## 🚀 Quick Start
@@ -185,4 +189,8 @@ cp aleo-live-data.js dist/
 3. **Verify Data**: Compare with AleoScan
 4. **Monitor Updates**: Watch countdown timer
 
+<<<<<<< HEAD
 The dashboard is now connected to live Aleo blockchain data! 🎉
+=======
+The dashboard is now connected to live Aleo blockchain data! 🎉
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752

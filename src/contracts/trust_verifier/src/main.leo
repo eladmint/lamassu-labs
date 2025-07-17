@@ -1,6 +1,10 @@
 // The 'trust_verifier' program for verifying AI agent execution trust
 program trust_verifier_v2.aleo {
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     // Execution result that needs verification
     struct ExecutionData {
         agent_id: field,
@@ -9,7 +13,11 @@ program trust_verifier_v2.aleo {
         confidence: u32,         // 0-10000 basis points
         timestamp: u32,
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     // Verified execution record - private proof of verification
     record VerifiedExecution {
         owner: address,
@@ -19,7 +27,11 @@ program trust_verifier_v2.aleo {
         verified_at: u32,
         proof_hash: field,
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     // Batch verification result
     struct BatchVerificationResult {
         batch_id: field,
@@ -27,12 +39,20 @@ program trust_verifier_v2.aleo {
         failed_count: u32,
         average_trust_score: u32,
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     // Constants
     const MIN_CONFIDENCE: u32 = 5000u32;      // 50% minimum confidence
     const MAX_BATCH_SIZE: u32 = 5u32;         // Maximum batch size
     const TRUST_THRESHOLD: u32 = 7000u32;     // 70% trust threshold
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     // Verify a single AI execution
     transition verify_execution(
         execution: ExecutionData,
@@ -42,6 +62,7 @@ program trust_verifier_v2.aleo {
         // Validate confidence level
         assert(execution.confidence >= MIN_CONFIDENCE);
         assert(execution.confidence <= 10000u32);
+<<<<<<< HEAD
 
         // Calculate trust score based on confidence and proof
         let trust_score: u32 = calculate_trust_score(execution.confidence, proof_data);
@@ -49,6 +70,15 @@ program trust_verifier_v2.aleo {
         // Generate proof hash
         let proof_hash: field = generate_proof_hash(execution.execution_id, proof_data, trust_score);
 
+=======
+        
+        // Calculate trust score based on confidence and proof
+        let trust_score: u32 = calculate_trust_score(execution.confidence, proof_data);
+        
+        // Generate proof hash
+        let proof_hash: field = generate_proof_hash(execution.execution_id, proof_data, trust_score);
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         // Return verified execution record
         return VerifiedExecution {
             owner: verifier,
@@ -59,7 +89,11 @@ program trust_verifier_v2.aleo {
             proof_hash: proof_hash,
         };
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     // Batch verify multiple executions - simplified version
     transition batch_verify(
         executions_hash: field,
@@ -71,6 +105,7 @@ program trust_verifier_v2.aleo {
         // Validate input
         assert(count > 0u32);
         assert(count <= MAX_BATCH_SIZE);
+<<<<<<< HEAD
 
         // Calculate average confidence
         let avg_confidence: u32 = total_confidence / count;
@@ -82,6 +117,19 @@ program trust_verifier_v2.aleo {
         let verified_count: u32 = 0u32;
         let failed_count: u32 = 0u32;
 
+=======
+        
+        // Calculate average confidence
+        let avg_confidence: u32 = total_confidence / count;
+        
+        // Calculate trust score for batch
+        let batch_trust_score: u32 = calculate_trust_score(avg_confidence, batch_proof);
+        
+        // Determine verified count based on trust score
+        let verified_count: u32 = 0u32;
+        let failed_count: u32 = 0u32;
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         if (batch_trust_score >= TRUST_THRESHOLD) {
             verified_count = count;
             failed_count = 0u32;
@@ -90,7 +138,11 @@ program trust_verifier_v2.aleo {
             verified_count = (count * batch_trust_score) / 10000u32;
             failed_count = count - verified_count;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         // Create batch result
         return BatchVerificationResult {
             batch_id: executions_hash,
@@ -99,7 +151,11 @@ program trust_verifier_v2.aleo {
             average_trust_score: batch_trust_score,
         };
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     // Prove execution integrity
     transition prove_execution(
         verified_exec: VerifiedExecution,
@@ -107,6 +163,7 @@ program trust_verifier_v2.aleo {
     ) -> field {
         // Ensure caller owns the verified execution
         assert_eq(verified_exec.owner, self.caller);
+<<<<<<< HEAD
 
         // Generate comprehensive proof
         let final_proof: field = combine_proofs(verified_exec.proof_hash, additional_proof);
@@ -114,24 +171,49 @@ program trust_verifier_v2.aleo {
         return final_proof;
     }
 
+=======
+        
+        // Generate comprehensive proof
+        let final_proof: field = combine_proofs(verified_exec.proof_hash, additional_proof);
+        
+        return final_proof;
+    }
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     // Calculate trust score based on confidence and proof
     inline calculate_trust_score(confidence: u32, proof: field) -> u32 {
         // Base trust is the confidence level
         let base_trust: u32 = confidence;
+<<<<<<< HEAD
 
         // Add bonus for strong proof (simplified - in real implementation would verify proof)
         let proof_bonus: u32 = 1000u32; // 10% bonus
 
         let total_trust: u32 = base_trust + proof_bonus;
 
+=======
+        
+        // Add bonus for strong proof (simplified - in real implementation would verify proof)
+        let proof_bonus: u32 = 1000u32; // 10% bonus
+        
+        let total_trust: u32 = base_trust + proof_bonus;
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         // Cap at maximum
         if (total_trust > 10000u32) {
             return 10000u32;
         }
+<<<<<<< HEAD
 
         return total_trust;
     }
 
+=======
+        
+        return total_trust;
+    }
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     // Generate proof hash combining execution ID, proof data, and trust score
     inline generate_proof_hash(execution_id: field, proof_data: field, trust_score: u32) -> field {
         // In a real implementation, this would use proper hashing
@@ -139,11 +221,19 @@ program trust_verifier_v2.aleo {
         let score_field: field = trust_score as field;
         return execution_id + proof_data + score_field;
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     // Combine two proofs into a final proof
     inline combine_proofs(proof1: field, proof2: field) -> field {
         // In a real implementation, this would use cryptographic combination
         // For now, simple field arithmetic
         return proof1 + proof2;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752

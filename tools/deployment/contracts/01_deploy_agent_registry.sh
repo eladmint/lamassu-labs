@@ -41,4 +41,8 @@ leo deploy --private-key "$PRIVATE_KEY" --broadcast --yes
 
 echo ""
 echo "✅ Deployment completed!"
+<<<<<<< HEAD
 echo "Check deployment status at: https://testnet.aleoscan.io/"
+=======
+echo "Check deployment status at: https://testnet.aleoscan.io/"
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752

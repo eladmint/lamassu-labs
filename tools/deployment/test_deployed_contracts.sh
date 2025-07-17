@@ -28,7 +28,11 @@ echo "Account: aleo176m09rv6qslzx0r7uyuerz3keq346lkdqhwtk2w8ffsk4rdsxyrqj9xx5m"
 test_contract() {
     local contract=$1
     echo -e "\n${BLUE}Testing $contract...${NC}"
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     # Query the program
     if curl -s "$ENDPOINT/$NETWORK/program/$contract" | grep -q "error"; then
         echo -e "${RED}❌ Contract not found on network yet${NC}"
@@ -67,7 +71,11 @@ leo run verify_execution 5555field 9999field 123456field 123456field 250u32 | gr
 # Test 3: On-chain execution (if contracts are available)
 if [ "$REGISTRY_AVAILABLE" = true ] && [ "$VERIFIER_AVAILABLE" = true ]; then
     echo -e "\n${BLUE}=== Phase 3: On-Chain Execution Tests ===${NC}"
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     echo -e "\n${BLUE}Executing register_agent on-chain...${NC}"
     cd ../agent_registry_simple
     leo execute register_agent 8888field 3000000u64 9000u32 400u32 300u32 \
@@ -75,7 +83,11 @@ if [ "$REGISTRY_AVAILABLE" = true ] && [ "$VERIFIER_AVAILABLE" = true ]; then
         --private-key $PRIVATE_KEY \
         --endpoint $ENDPOINT \
         --broadcast || echo -e "${RED}On-chain execution failed${NC}"
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     echo -e "\n${BLUE}Executing verify_execution on-chain...${NC}"
     cd ../trust_verifier_test
     leo execute verify_execution 6666field 8888field 999999field 999999field 350u32 \
@@ -99,4 +111,8 @@ else
     echo "This is normal - contracts typically take 10-30 minutes to propagate"
 fi
 
+<<<<<<< HEAD
 echo -e "\n${BLUE}Done!${NC}"
+=======
+echo -e "\n${BLUE}Done!${NC}"
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752

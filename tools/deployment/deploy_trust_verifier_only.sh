@@ -49,7 +49,11 @@ if [ ! -z "$TX_ID" ]; then
     echo "Transaction ID: $TX_ID"
     echo "View on AleoScan: https://testnet.aleoscan.io/transaction?id=$TX_ID"
     echo ""
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     # Save deployment info
     cd "$SCRIPT_DIR"
     echo "## trust_verifier_v2.aleo" >> LATEST_DEPLOYMENT.md
@@ -69,4 +73,8 @@ echo "   View: https://testnet.aleoscan.io/transaction?id=at1hyqa37uskww30l4trcw
 echo ""
 echo "⏳ trust_verifier_v2.aleo - Check transaction above"
 echo ""
+<<<<<<< HEAD
 echo "🏁 Done!"
+=======
+echo "🏁 Done!"
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752

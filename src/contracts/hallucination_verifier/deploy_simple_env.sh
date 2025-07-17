@@ -19,4 +19,8 @@ echo ""
 leo deploy --private-key "$PRIVATE_KEY" --broadcast --yes
 
 echo ""
+<<<<<<< HEAD
 echo "Deployment completed!"
+=======
+echo "Deployment completed!"
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752

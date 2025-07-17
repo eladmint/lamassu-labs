@@ -38,4 +38,8 @@ echo -e "\nYour contracts are deployed at:"
 echo "- agent_registry_simple.aleo"
 echo "- trust_verifier_test.aleo"
 echo ""
+<<<<<<< HEAD
 echo "View them at: https://explorer.aleo.org/"
+=======
+echo "View them at: https://explorer.aleo.org/"
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752

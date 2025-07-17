@@ -17,7 +17,11 @@ async function updateMonitoringData() {
 
         // Prepare monitoring data
         const timestamp = new Date().toISOString();
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         // Main monitoring summary
         const monitoringData = {
             timestamp: timestamp,
@@ -83,13 +87,21 @@ async function updateMonitoringData() {
 
         // Active alerts
         const alerts = [];
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         // Check for degraded contracts and create alerts
         contractMetrics.forEach(contract => {
             if (contract.data.health_status === 'degraded') {
                 const lastActivity = new Date(contract.data.last_activity);
                 const hoursAgo = (Date.now() - lastActivity.getTime()) / (1000 * 60 * 60);
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
                 if (hoursAgo > 6) {
                     alerts.push({
                         key: `alert_${contract.key}_inactivity`,
@@ -101,7 +113,11 @@ async function updateMonitoringData() {
                         }
                     });
                 }
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
                 if (contract.data.average_execution_time > 200) {
                     alerts.push({
                         key: `alert_${contract.key}_performance`,
@@ -167,4 +183,8 @@ async function updateMonitoringData() {
 updateMonitoringData();
 
 // Example: Schedule updates every 5 minutes
+<<<<<<< HEAD
 // setInterval(updateMonitoringData, 5 * 60 * 1000);
+=======
+// setInterval(updateMonitoringData, 5 * 60 * 1000);
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752

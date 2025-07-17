@@ -144,4 +144,8 @@ EOF
 
 echo "✅ Deployment information saved to LATEST_DEPLOYMENT.md"
 echo ""
+<<<<<<< HEAD
 echo "🏁 Deployment script completed!"
+=======
+echo "🏁 Deployment script completed!"
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752

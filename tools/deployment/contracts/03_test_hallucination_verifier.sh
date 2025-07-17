@@ -30,4 +30,8 @@ leo execute verify_response \
   --yes
 
 echo ""
+<<<<<<< HEAD
 echo "Test transaction completed!"
+=======
+echo "Test transaction completed!"
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752

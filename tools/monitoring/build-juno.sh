@@ -47,4 +47,8 @@ echo ""
 echo "Next steps:"
 echo "1. Install Juno CLI: npm install -g @junobuild/cli"
 echo "2. Deploy to Juno: juno deploy"
+<<<<<<< HEAD
 echo "3. Access your dashboard at: https://bvxuo-uaaaa-aaaal-asgua-cai.icp0.io"
+=======
+echo "3. Access your dashboard at: https://bvxuo-uaaaa-aaaal-asgua-cai.icp0.io"
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752

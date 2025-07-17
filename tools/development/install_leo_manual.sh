@@ -49,14 +49,22 @@ echo "URL: $DOWNLOAD_URL"
 cd /tmp
 curl -L -o leo.zip "$DOWNLOAD_URL" || {
     echo -e "${RED}❌ Download failed. Trying alternative method...${NC}"
+<<<<<<< HEAD
 
     # Method 2: Build from source
     echo -e "${YELLOW}Method 2: Building from source...${NC}"
 
+=======
+    
+    # Method 2: Build from source
+    echo -e "${YELLOW}Method 2: Building from source...${NC}"
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     # Clone repository
     if [ -d "leo" ]; then
         rm -rf leo
     fi
+<<<<<<< HEAD
 
     git clone https://github.com/AleoHQ/leo.git
     cd leo
@@ -71,6 +79,22 @@ curl -L -o leo.zip "$DOWNLOAD_URL" || {
     # Copy binary
     cp target/release/leo ~/.leo/bin/
 
+=======
+    
+    git clone https://github.com/AleoHQ/leo.git
+    cd leo
+    
+    # Checkout stable version
+    git checkout tags/${LEO_VERSION}
+    
+    # Build with cargo
+    echo -e "${YELLOW}Building Leo (this may take several minutes)...${NC}"
+    cargo build --release
+    
+    # Copy binary
+    cp target/release/leo ~/.leo/bin/
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     echo -e "${GREEN}✅ Built from source successfully${NC}"
 }
 
@@ -78,7 +102,11 @@ curl -L -o leo.zip "$DOWNLOAD_URL" || {
 if [ -f "/tmp/leo.zip" ]; then
     echo -e "${YELLOW}Extracting Leo...${NC}"
     unzip -o leo.zip
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     # Find and move the leo binary
     if [ -f "leo" ]; then
         chmod +x leo
@@ -113,6 +141,7 @@ echo -e "\n${YELLOW}Verifying installation...${NC}"
 
 if [ -f "$HOME/.leo/bin/leo" ]; then
     echo -e "${GREEN}✅ Leo binary found at: $HOME/.leo/bin/leo${NC}"
+<<<<<<< HEAD
 
     # Make it executable
     chmod +x "$HOME/.leo/bin/leo"
@@ -121,6 +150,16 @@ if [ -f "$HOME/.leo/bin/leo" ]; then
     if "$HOME/.leo/bin/leo" --help >/dev/null 2>&1; then
         echo -e "${GREEN}✅ Leo is working!${NC}"
 
+=======
+    
+    # Make it executable
+    chmod +x "$HOME/.leo/bin/leo"
+    
+    # Test execution
+    if "$HOME/.leo/bin/leo" --help >/dev/null 2>&1; then
+        echo -e "${GREEN}✅ Leo is working!${NC}"
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         # Show version
         echo -e "\n${GREEN}Leo installation complete!${NC}"
         echo -e "Version info:"
@@ -141,4 +180,8 @@ rm -f /tmp/leo.zip
 echo -e "\n${YELLOW}Next steps:${NC}"
 echo "1. Run: source ~/.zshrc"
 echo "2. Test: leo --help"
+<<<<<<< HEAD
 echo "3. If leo command not found, use full path: ~/.leo/bin/leo --help"
+=======
+echo "3. If leo command not found, use full path: ~/.leo/bin/leo --help"
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752

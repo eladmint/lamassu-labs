@@ -21,7 +21,11 @@ async function testEndpoint(endpoint, contractId) {
     return new Promise((resolve) => {
         const url = `${endpoint}/testnet3/program/${contractId}`;
         console.log(`\nTesting: ${url}`);
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         https.get(url, {
             headers: {
                 'Accept': 'application/json',
@@ -29,11 +33,19 @@ async function testEndpoint(endpoint, contractId) {
             }
         }, (res) => {
             let data = '';
+<<<<<<< HEAD
 
             res.on('data', (chunk) => {
                 data += chunk;
             });
 
+=======
+            
+            res.on('data', (chunk) => {
+                data += chunk;
+            });
+            
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
             res.on('end', () => {
                 if (res.statusCode === 200) {
                     try {
@@ -67,11 +79,19 @@ async function testTransactions(endpoint, contractId) {
         `/testnet3/transitions?program=${contractId}&limit=5`,
         `/testnet3/transactions?program=${contractId}&limit=5`
     ];
+<<<<<<< HEAD
 
     for (const path of paths) {
         const url = endpoint + path;
         console.log(`\nTesting transactions: ${url}`);
 
+=======
+    
+    for (const path of paths) {
+        const url = endpoint + path;
+        console.log(`\nTesting transactions: ${url}`);
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         const result = await new Promise((resolve) => {
             https.get(url, {
                 headers: {
@@ -80,18 +100,32 @@ async function testTransactions(endpoint, contractId) {
                 }
             }, (res) => {
                 let data = '';
+<<<<<<< HEAD
 
                 res.on('data', (chunk) => {
                     data += chunk;
                 });
 
+=======
+                
+                res.on('data', (chunk) => {
+                    data += chunk;
+                });
+                
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
                 res.on('end', () => {
                     if (res.statusCode === 200) {
                         try {
                             const json = JSON.parse(data);
+<<<<<<< HEAD
                             const txCount = json.transitions?.length || json.transactions?.length ||
                                           (Array.isArray(json) ? json.length : 0);
 
+=======
+                            const txCount = json.transitions?.length || json.transactions?.length || 
+                                          (Array.isArray(json) ? json.length : 0);
+                            
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
                             if (txCount > 0) {
                                 console.log(`✅ Found ${txCount} transactions`);
                                 resolve({ success: true, count: txCount });
@@ -113,12 +147,20 @@ async function testTransactions(endpoint, contractId) {
                 resolve({ success: false });
             });
         });
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         if (result.success) {
             return result;
         }
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     return { success: false };
 }
 
@@ -126,6 +168,7 @@ async function runTests() {
     console.log('=== Aleo API Connection Test ===\n');
     console.log('Testing connection to Aleo blockchain APIs...');
     console.log(`Contracts to test: ${contracts.join(', ')}`);
+<<<<<<< HEAD
 
     const results = [];
 
@@ -137,33 +180,65 @@ async function runTests() {
             const result = await testEndpoint(endpoint, contract);
             results.push(result);
 
+=======
+    
+    const results = [];
+    
+    // Test each endpoint with each contract
+    for (const endpoint of endpoints) {
+        console.log(`\n--- Testing endpoint: ${endpoint} ---`);
+        
+        for (const contract of contracts) {
+            const result = await testEndpoint(endpoint, contract);
+            results.push(result);
+            
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
             if (result.success) {
                 // Also test transaction fetching
                 await testTransactions(endpoint, contract);
             }
         }
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
     // Summary
     console.log('\n=== Summary ===');
     const successful = results.filter(r => r.success);
     console.log(`\nTotal tests: ${results.length}`);
     console.log(`Successful: ${successful.length}`);
     console.log(`Failed: ${results.length - successful.length}`);
+<<<<<<< HEAD
 
     if (successful.length > 0) {
         console.log('\n✅ At least one endpoint is working!');
         console.log('The dashboard should be able to fetch live data.');
 
+=======
+    
+    if (successful.length > 0) {
+        console.log('\n✅ At least one endpoint is working!');
+        console.log('The dashboard should be able to fetch live data.');
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         // Find best endpoint
         const endpointSuccess = {};
         successful.forEach(r => {
             endpointSuccess[r.endpoint] = (endpointSuccess[r.endpoint] || 0) + 1;
         });
+<<<<<<< HEAD
 
         const bestEndpoint = Object.entries(endpointSuccess)
             .sort((a, b) => b[1] - a[1])[0];
 
+=======
+        
+        const bestEndpoint = Object.entries(endpointSuccess)
+            .sort((a, b) => b[1] - a[1])[0];
+        
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
         console.log(`\nRecommended endpoint: ${bestEndpoint[0]} (${bestEndpoint[1]}/3 contracts working)`);
     } else {
         console.log('\n❌ All tests failed. Check your internet connection or try again later.');
@@ -171,4 +246,8 @@ async function runTests() {
 }
 
 // Run the tests
+<<<<<<< HEAD
 runTests().catch(console.error);
+=======
+runTests().catch(console.error);
+>>>>>>> 175afbc51eef8fe475bbc42703bff3cf5a864752
