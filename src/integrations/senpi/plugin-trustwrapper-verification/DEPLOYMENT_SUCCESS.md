@@ -139,7 +139,7 @@ export const TrustWrapperSenpiPlugin = {
 ## 🔗 Access Information
 
 ### Demo Dashboard
-- **URL**: `file:///Users/eladm/Projects/token/tokenhunter/lamassu-labs/src/integrations/senpi/plugin-trustwrapper-verification/demo/trustwrapper_senpi_dashboard.html`
+- **URL**: `file:///Users/eladm/Projects/Nuru-AI/lamassu-labs/src/integrations/senpi/plugin-trustwrapper-verification/demo/trustwrapper_senpi_dashboard.html`
 - **Launch Command**: `node run_demo.js` from demo directory
 - **Available**: 24/7 for partnership presentations
 
