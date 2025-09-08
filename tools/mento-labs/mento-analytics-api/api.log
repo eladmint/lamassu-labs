@@ -1,0 +1,33 @@
+
+> mento-analytics-api@1.0.0 start /Users/eladm/Projects/token/tokenhunter/partnerships/mento-labs/testnet/mento-analytics-api
+> nest start
+
+node:internal/modules/cjs/loader:1408
+  throw err;
+  ^
+
+Error: Cannot find module '/Users/eladm/Projects/token/tokenhunter/partnerships/mento-labs/testnet/mento-analytics-api/node_modules/.pnpm/@sentry+profiling-node@8.47.0/node_modules/@sentry/profiling-node/lib/sentry_cpu_profiler-darwin-arm64-131.node'
+Require stack:
+- /Users/eladm/Projects/token/tokenhunter/partnerships/mento-labs/testnet/mento-analytics-api/node_modules/.pnpm/@sentry+profiling-node@8.47.0/node_modules/@sentry/profiling-node/lib/cjs/index.js
+- /Users/eladm/Projects/token/tokenhunter/partnerships/mento-labs/testnet/mento-analytics-api/dist/instrument.js
+- /Users/eladm/Projects/token/tokenhunter/partnerships/mento-labs/testnet/mento-analytics-api/dist/main.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1405:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at importCppBindingsModule (/Users/eladm/Projects/token/tokenhunter/partnerships/mento-labs/testnet/mento-analytics-api/node_modules/.pnpm/@sentry+profiling-node@8.47.0/node_modules/@sentry/profiling-node/lib/cjs/index.js:166:10)
+    at Object.<anonymous> (/Users/eladm/Projects/token/tokenhunter/partnerships/mento-labs/testnet/mento-analytics-api/node_modules/.pnpm/@sentry+profiling-node@8.47.0/node_modules/@sentry/profiling-node/lib/cjs/index.js:169:36) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/eladm/Projects/token/tokenhunter/partnerships/mento-labs/testnet/mento-analytics-api/node_modules/.pnpm/@sentry+profiling-node@8.47.0/node_modules/@sentry/profiling-node/lib/cjs/index.js',
+    '/Users/eladm/Projects/token/tokenhunter/partnerships/mento-labs/testnet/mento-analytics-api/dist/instrument.js',
+    '/Users/eladm/Projects/token/tokenhunter/partnerships/mento-labs/testnet/mento-analytics-api/dist/main.js'
+  ]
+}
+
+Node.js v23.11.0
+ ELIFECYCLE  Command failed with exit code 1.

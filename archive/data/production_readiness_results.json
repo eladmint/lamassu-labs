@@ -1,0 +1,172 @@
+{
+  "test_results": [
+    {
+      "test_name": "high_throughput_verification",
+      "success": false,
+      "latency_ms": 28.169590493907098,
+      "throughput": 1216.8689799234073,
+      "error_rate": 0.08,
+      "details": {
+        "total_requests": 50,
+        "successful_requests": 46,
+        "total_time_seconds": 0.04108905792236328,
+        "peak_latency_ms": 40.86470603942871,
+        "errors": [
+          "Simulated verification failure for request 7",
+          "Simulated verification failure for request 20",
+          "Simulated verification failure for request 28",
+          "Simulated verification failure for request 45"
+        ]
+      }
+    },
+    {
+      "test_name": "oracle_consensus_simulation",
+      "success": true,
+      "latency_ms": 0.017881393432617188,
+      "throughput": 223696.21333333335,
+      "error_rate": 0.25,
+      "details": {
+        "scenarios_tested": 4,
+        "successful_consensus": 3,
+        "consensus_tests": [
+          {
+            "scenario": "normal_conditions",
+            "consensus_achieved": true,
+            "avg_price": 67780.14877314495,
+            "max_deviation": 0.004368528291530178,
+            "sources": 4
+          },
+          {
+            "scenario": "high_volatility",
+            "consensus_achieved": false,
+            "avg_price": 69590.98398556694,
+            "max_deviation": 0.028644605968561533,
+            "sources": 3
+          },
+          {
+            "scenario": "oracle_failure",
+            "consensus_achieved": true,
+            "avg_price": 68134.31408738106,
+            "max_deviation": 0.0021009444819708417,
+            "sources": 2
+          },
+          {
+            "scenario": "perfect_consensus",
+            "consensus_achieved": true,
+            "avg_price": 67495.52742404123,
+            "max_deviation": 0.0006267101858207018,
+            "sources": 5
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "aleo_contract_simulation",
+      "success": true,
+      "latency_ms": 821.8622207641602,
+      "throughput": 1.2167426036172406,
+      "error_rate": 0.0,
+      "details": {
+        "total_operations": 4,
+        "successful_operations": 4,
+        "total_gas_cost": 0.085,
+        "contract_operations": [
+          {
+            "operation_id": 0,
+            "contract": "hallucination_verifier",
+            "function": "verify_response",
+            "success": true,
+            "latency_ms": 552.2251129150391,
+            "gas_cost": 0.01,
+            "zk_proof_generated": true
+          },
+          {
+            "operation_id": 1,
+            "contract": "trust_verifier",
+            "function": "verify_execution",
+            "success": true,
+            "latency_ms": 1681.9028854370117,
+            "gas_cost": 0.02,
+            "zk_proof_generated": true
+          },
+          {
+            "operation_id": 2,
+            "contract": "agent_registry",
+            "function": "register_agent",
+            "success": true,
+            "latency_ms": 202.85701751708984,
+            "gas_cost": 0.005,
+            "zk_proof_generated": true
+          },
+          {
+            "operation_id": 3,
+            "contract": "hallucination_verifier",
+            "function": "batch_verify_responses",
+            "success": true,
+            "latency_ms": 850.4638671875,
+            "gas_cost": 0.05,
+            "zk_proof_generated": true
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "stress_conditions",
+      "success": true,
+      "latency_ms": 1051.8150329589844,
+      "throughput": 3.80295001940325,
+      "error_rate": 0.25,
+      "details": {
+        "scenarios_tested": 4,
+        "successful_scenarios": 3,
+        "stress_results": [
+          {
+            "scenario": "high_load",
+            "success": true,
+            "success_rate": 0.92,
+            "duration_ms": 49.66592788696289,
+            "requests_processed": 46
+          },
+          {
+            "scenario": "memory_pressure",
+            "success": true,
+            "success_rate": 0.95,
+            "duration_ms": 501.04498863220215,
+            "requests_processed": 19
+          },
+          {
+            "scenario": "network_latency",
+            "success": true,
+            "success_rate": 0.8,
+            "duration_ms": 501.09100341796875,
+            "requests_processed": 8
+          },
+          {
+            "scenario": "oracle_failures",
+            "success": false,
+            "success_rate": 0.7333333333333333,
+            "duration_ms": 0.0016689300537109375,
+            "requests_processed": 11
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "successful_tests": 3,
+    "total_tests": 4,
+    "success_rate": 0.75,
+    "status": "near_ready",
+    "avg_latency_ms": 475.4661814026211,
+    "avg_throughput": 56229.52550146994,
+    "avg_error_rate": 0.145,
+    "production_ready": false,
+    "timestamp": 1750882060.812315
+  },
+  "recommendations": [
+    "\u26a0\ufe0f  Address failed tests before production deployment",
+    "\ud83d\ude80 Optimize verification pipeline for higher throughput",
+    "\u26a1 Optimize latency for 2 high-latency operations",
+    "\ud83c\udfaf Reduce error rates for 2 operations"
+  ]
+}

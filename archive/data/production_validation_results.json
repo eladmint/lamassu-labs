@@ -1,0 +1,103 @@
+{
+  "test_results": [
+    {
+      "component": "Oracle Integration",
+      "success": true,
+      "latency_ms": 653.1908512115479,
+      "real_data_used": true,
+      "details": {
+        "sources_count": 3,
+        "avg_btc_price": 107654.7,
+        "oracle_data": {
+          "coingecko": {
+            "btc_usd": 107659,
+            "eth_usd": 2432.33,
+            "source": "coingecko",
+            "timestamp": 1750882638.017828
+          },
+          "coinbase": {
+            "btc_usd": 107685.1,
+            "source": "coinbase",
+            "timestamp": 1750882638.178525
+          },
+          "binance": {
+            "btc_usd": 107620.0,
+            "source": "binance",
+            "timestamp": 1750882638.4784262
+          }
+        }
+      }
+    },
+    {
+      "component": "Local Verification Engine",
+      "success": true,
+      "latency_ms": 9.840011596679688,
+      "real_data_used": true,
+      "details": {
+        "verification_time_ms": 0.0400543212890625,
+        "verification_result": {
+          "valid": true,
+          "confidence": 1.0,
+          "violations": [],
+          "risk_score": 0.0,
+          "details": {
+            "trade_valid": true,
+            "bot_id": "",
+            "validation_checks": 4
+          },
+          "audit_trail": true,
+          "data_integrity": true,
+          "verification_time": 0.03910064697265625,
+          "from_cache": false,
+          "sub_10ms": true
+        },
+        "target_met": true
+      }
+    },
+    {
+      "component": "Aleo Contract Integration",
+      "success": true,
+      "latency_ms": 36.1328125,
+      "real_data_used": true,
+      "details": {
+        "contracts_prepared": 2,
+        "total_gas_estimate": 0.03,
+        "btc_price_used": 107656,
+        "trust_score": 85,
+        "contract_calls": {
+          "hallucination_verifier": {
+            "function": "verify_response",
+            "parameters": {
+              "response_text": "31234943990808536127618171372347932654field",
+              "ai_model_hash": "134285294547761692837110710753693461933field",
+              "trust_score": 85,
+              "verification_method": 3,
+              "evidence_count": 1,
+              "verifier_address": "aleo1trustwrapper000000000000000000000000000000000000000000"
+            },
+            "estimated_gas": 0.01
+          },
+          "trust_verifier": {
+            "function": "verify_execution",
+            "parameters": {
+              "execution_id": "158066622482582127503913064806586466158field",
+              "confidence": 8500,
+              "timestamp": 1750882638
+            },
+            "estimated_gas": 0.02
+          }
+        }
+      }
+    }
+  ],
+  "summary": {
+    "successful_tests": 3,
+    "total_tests": 3,
+    "success_rate": 1.0,
+    "status": "production_ready",
+    "avg_latency_ms": 233.05455843607584,
+    "real_data_integrated": true,
+    "production_ready": true,
+    "timestamp": 1750882638.5244648
+  }
+}

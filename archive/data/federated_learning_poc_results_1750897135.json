@@ -1,0 +1,114 @@
+{
+  "federated_learning_cycle": {
+    "rounds": [
+      {
+        "round": 1,
+        "avg_accuracy": 0.3114,
+        "privacy_loss": 0.9904476345469415,
+        "insights_count": 3,
+        "round_time_ms": 406.6882133483887
+      },
+      {
+        "round": 2,
+        "avg_accuracy": 0.3114,
+        "privacy_loss": 2.391152112143577,
+        "insights_count": 3,
+        "round_time_ms": 403.95116806030273
+      },
+      {
+        "round": 3,
+        "avg_accuracy": 0.3114,
+        "privacy_loss": 4.106657737415292,
+        "insights_count": 3,
+        "round_time_ms": 387.6669406890869
+      },
+      {
+        "round": 4,
+        "avg_accuracy": 0.3114,
+        "privacy_loss": 6.087553006509175,
+        "insights_count": 3,
+        "round_time_ms": 430.7889938354492
+      },
+      {
+        "round": 5,
+        "avg_accuracy": 0.3114,
+        "privacy_loss": 8.302261245510005,
+        "insights_count": 3,
+        "round_time_ms": 412.5242233276367
+      }
+    ],
+    "final_metrics": {
+      "final_accuracy": 0.3114,
+      "total_privacy_loss": 8.302261245510005,
+      "convergence_rounds": 5,
+      "privacy_preserved": "False",
+      "accuracy_threshold_met": "False",
+      "avg_round_time_ms": 408.32390785217285
+    },
+    "privacy_metrics": {}
+  },
+  "cross_agent_insights": {
+    "insights_generated": 3,
+    "privacy_score": 0.75,
+    "privacy_preserved": false,
+    "insights": [
+      {
+        "pattern_type": "risk_preferences",
+        "confidence": 0.8,
+        "contributing_agents": 10,
+        "privacy_preserved": true,
+        "insight_value": {
+          "collective_risk_profile": "aggressive",
+          "risk_diversity": "nan",
+          "risk_score": "nan"
+        }
+      },
+      {
+        "pattern_type": "accuracy_trends",
+        "confidence": 0.9,
+        "contributing_agents": 10,
+        "privacy_preserved": true,
+        "insight_value": {
+          "average_accuracy": "0.311",
+          "high_performers": "0/10",
+          "performance_spread": "0.166"
+        }
+      },
+      {
+        "pattern_type": "strategy_effectiveness",
+        "confidence": 0.75,
+        "contributing_agents": 10,
+        "privacy_preserved": true,
+        "insight_value": {
+          "top_strategy_accuracy": "0.507",
+          "strategy_clusters": 10,
+          "dominant_cluster_size": "1/10"
+        }
+      }
+    ],
+    "privacy_tests": {
+      "membership_inference_resistant": 1.0,
+      "strategy_disclosure_protected": 1.0,
+      "differential_privacy_guaranteed": 0.0,
+      "data_reconstruction_prevented": 1.0
+    }
+  },
+  "privacy_guarantees": {
+    "privacy_tests": {
+      "differential_privacy": 0.29814239699997197,
+      "membership_inference": 0.96,
+      "gradient_inversion": 0.8000000000000002,
+      "secure_aggregation": 0.9166666666666666
+    },
+    "overall_privacy_score": 0.7437022659166597,
+    "privacy_guaranteed": "False"
+  },
+  "overall_assessment": {
+    "accuracy_score": 0.3114,
+    "privacy_score": 0.7437022659166597,
+    "insights_score": 0.75,
+    "performance_score": 0.5916760921478271,
+    "weighted_score": 0.6000685155814466,
+    "recommendation": "INVESTIGATE"
+  }
+}

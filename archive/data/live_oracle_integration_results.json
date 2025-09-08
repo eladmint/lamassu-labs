@@ -1,0 +1,25 @@
+{
+  "chainlink": {
+    "success": false,
+    "error": "Cannot connect to host api.coindesk.com:443 ssl:default [nodename nor servname provided, or not known]"
+  },
+  "band_protocol": {
+    "success": false,
+    "error": "Cannot connect to host api.coingecko.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')]"
+  },
+  "compound": {
+    "success": false,
+    "error": "Cannot connect to host api.compound.finance:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')]"
+  },
+  "consensus": {
+    "success": false,
+    "error": "insufficient_oracle_data"
+  },
+  "summary": {
+    "successful_oracles": 0,
+    "total_oracles": 4,
+    "success_rate": 0.0,
+    "status": "failed",
+    "timestamp": 1750881636.9417322
+  }
+}

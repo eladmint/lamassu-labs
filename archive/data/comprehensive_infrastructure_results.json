@@ -1,0 +1,147 @@
+{
+  "mock_demo_tests": {
+    "api_health": {
+      "success": true,
+      "status_code": 200,
+      "response_time_ms": 4.602
+    },
+    "web_interface": {
+      "success": true,
+      "content_size": 10447,
+      "has_trustwrapper": true
+    },
+    "api_endpoints": {
+      "/demo/metrics": {
+        "success": true,
+        "response_time_ms": 1.056
+      },
+      "/demo/oracle/status": {
+        "success": true,
+        "response_time_ms": 0.9079999999999999
+      },
+      "/demo/verify/trade": {
+        "success": true,
+        "response_time_ms": 6.0889999999999995
+      }
+    }
+  },
+  "real_infrastructure_tests": {},
+  "integration_tests": {},
+  "deployment_validation": {
+    "file_structure": {
+      "success": false,
+      "existing_files": [
+        "demo_web/index.html",
+        "src/trustwrapper/core/verification_engine.py",
+        "internal_docs/SENPI_AI_INTEGRATION_PROPOSAL.md"
+      ],
+      "file_sizes": {
+        "demo_web/index.html": 10447,
+        "src/trustwrapper/core/verification_engine.py": 24524,
+        "internal_docs/SENPI_AI_INTEGRATION_PROPOSAL.md": 6566
+      },
+      "compliance_rate": 0.75
+    },
+    "security_assessment": {
+      "success": true,
+      "checks": {
+        "no_hardcoded_secrets": true,
+        "proper_error_handling": true,
+        "input_validation": true,
+        "cors_configured": true
+      },
+      "security_score": 1.0
+    },
+    "performance_benchmarks": {
+      "success": true,
+      "targets": {
+        "api_response_time": {
+          "target": 100,
+          "unit": "ms"
+        },
+        "verification_latency": {
+          "target": 50,
+          "unit": "ms"
+        },
+        "throughput": {
+          "target": 1000,
+          "unit": "req/min"
+        },
+        "uptime": {
+          "target": 99.9,
+          "unit": "%"
+        }
+      },
+      "current": {
+        "api_response_time": 15,
+        "verification_latency": 8,
+        "throughput": 1800,
+        "uptime": 100.0
+      },
+      "targets_met": {
+        "api_response_time": true,
+        "verification_latency": true,
+        "throughput": true,
+        "uptime": true
+      }
+    },
+    "documentation_completeness": {
+      "success": false,
+      "categories": {
+        "api_documentation": false,
+        "technical_architecture": false,
+        "deployment_guides": false,
+        "partnership_materials": true
+      },
+      "completeness_score": 0.25
+    }
+  },
+  "testnet_integration_tests": {
+    "testnet_configs": {
+      "success": true,
+      "available_configs": [
+        "src/contracts/hallucination_verifier",
+        "src/contracts/trust_verifier",
+        "src/contracts/agent_registry"
+      ],
+      "total_configs": 3
+    },
+    "simulated_blockchain": {
+      "success": true,
+      "operations": {
+        "contract_calls": 3,
+        "verification_proofs": 2,
+        "oracle_queries": 4
+      },
+      "results": {
+        "contracts_deployed": true,
+        "verifications_processed": true,
+        "gas_costs_reasonable": true
+      }
+    },
+    "oracle_readiness": {
+      "success": true,
+      "oracle_sources": {
+        "chainlink": {
+          "configured": true,
+          "test_endpoint": "/health"
+        },
+        "band_protocol": {
+          "configured": true,
+          "test_endpoint": "/status"
+        },
+        "compound": {
+          "configured": true,
+          "test_endpoint": "/api/v2/market_history"
+        }
+      },
+      "ready_for_testnet": true
+    }
+  },
+  "summary": {
+    "total_tests": 12,
+    "total_passed": 8,
+    "success_rate": 0.6666666666666666,
+    "timestamp": 1750881244.803936
+  }
+}

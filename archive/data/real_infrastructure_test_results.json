@@ -1,0 +1,8 @@
+{
+  "infrastructure_tests": {
+    "setup": false
+  },
+  "real_verification_tests": {},
+  "performance_tests": {},
+  "integration_tests": {}
+}

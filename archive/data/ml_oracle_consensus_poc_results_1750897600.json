@@ -1,0 +1,307 @@
+{
+  "consensus_accuracy": {
+    "traditional_consensus": [
+      {
+        "case": "normal_market_1",
+        "price": 49910.890417637194,
+        "error": 0.0017821916472561133,
+        "time_ms": 0.0021457672119140625
+      },
+      {
+        "case": "normal_market_2",
+        "price": 49823.45939381441,
+        "error": 0.003530812123711803,
+        "time_ms": 0.0021457672119140625
+      },
+      {
+        "case": "normal_market_3",
+        "price": 49948.12208043571,
+        "error": 0.0010375583912858564,
+        "time_ms": 0.0021457672119140625
+      },
+      {
+        "case": "normal_market_4",
+        "price": 50090.50825931288,
+        "error": 0.0018101651862576546,
+        "time_ms": 0.00095367431640625
+      },
+      {
+        "case": "normal_market_5",
+        "price": 50098.574298277534,
+        "error": 0.0019714859655506735,
+        "time_ms": 0.0019073486328125
+      },
+      {
+        "case": "price_manipulation_1",
+        "price": 50057.948063804,
+        "error": 0.0011589612760799354,
+        "time_ms": 0.0016689300537109375
+      },
+      {
+        "case": "price_manipulation_2",
+        "price": 50493.44194380533,
+        "error": 0.009868838876106602,
+        "time_ms": 0.00095367431640625
+      },
+      {
+        "case": "price_manipulation_3",
+        "price": 50038.01129872333,
+        "error": 0.0007602259744665935,
+        "time_ms": 0.0016689300537109375
+      },
+      {
+        "case": "exchange_outage_1",
+        "price": 49999.482874967114,
+        "error": 1.0342500657716301e-05,
+        "time_ms": 0.00095367431640625
+      },
+      {
+        "case": "exchange_outage_2",
+        "price": 49990.45295075752,
+        "error": 0.00019094098484958522,
+        "time_ms": 0.00095367431640625
+      },
+      {
+        "case": "flash_crash",
+        "price": 48085.11890700145,
+        "error": 0.0685581979333656,
+        "time_ms": 0.0011920928955078125
+      }
+    ],
+    "ml_enhanced_consensus": [
+      {
+        "case": "normal_market_1",
+        "price": 49907.388294247714,
+        "error": 0.0018522341150457213,
+        "time_ms": 4.117012023925781,
+        "confidence": 0.01,
+        "outliers": 15,
+        "quality_score": 0.0
+      },
+      {
+        "case": "normal_market_2",
+        "price": 49828.573289324246,
+        "error": 0.003428534213515086,
+        "time_ms": 0.2288818359375,
+        "confidence": 0.01,
+        "outliers": 15,
+        "quality_score": 0.0
+      },
+      {
+        "case": "normal_market_3",
+        "price": 49941.557400634425,
+        "error": 0.0011688519873115002,
+        "time_ms": 0.19884109497070312,
+        "confidence": 0.01,
+        "outliers": 15,
+        "quality_score": 0.0
+      },
+      {
+        "case": "normal_market_4",
+        "price": 50069.387936612664,
+        "error": 0.0013877587322532782,
+        "time_ms": 0.22029876708984375,
+        "confidence": 0.01,
+        "outliers": 15,
+        "quality_score": 0.0
+      },
+      {
+        "case": "normal_market_5",
+        "price": 50075.639760927515,
+        "error": 0.001512795218550309,
+        "time_ms": 0.17189979553222656,
+        "confidence": 0.01,
+        "outliers": 15,
+        "quality_score": 0.0
+      },
+      {
+        "case": "price_manipulation_1",
+        "price": 49930.29365753061,
+        "error": 0.0013941268493878306,
+        "time_ms": 0.26226043701171875,
+        "confidence": 0.01,
+        "outliers": 15,
+        "quality_score": 0.0
+      },
+      {
+        "case": "price_manipulation_2",
+        "price": 50169.30597325275,
+        "error": 0.003386119465054944,
+        "time_ms": 0.16427040100097656,
+        "confidence": 0.01,
+        "outliers": 15,
+        "quality_score": 0.0
+      },
+      {
+        "case": "price_manipulation_3",
+        "price": 49814.23527242101,
+        "error": 0.003715294551579864,
+        "time_ms": 0.15306472778320312,
+        "confidence": 0.01,
+        "outliers": 15,
+        "quality_score": 0.0
+      },
+      {
+        "case": "exchange_outage_1",
+        "price": 49997.62597681219,
+        "error": 4.748046375621925e-05,
+        "time_ms": 0.1380443572998047,
+        "confidence": 0.01,
+        "outliers": 12,
+        "quality_score": 0.0
+      },
+      {
+        "case": "exchange_outage_2",
+        "price": 49973.459657064974,
+        "error": 0.0005308068587005255,
+        "time_ms": 0.1590251922607422,
+        "confidence": 0.08972370964417295,
+        "outliers": 9,
+        "quality_score": 0.012235051315114494
+      },
+      {
+        "case": "flash_crash",
+        "price": 50011.31235583371,
+        "error": 0.11136249679630467,
+        "time_ms": 0.1499652862548828,
+        "confidence": 0.01,
+        "outliers": 15,
+        "quality_score": 0.0
+      }
+    ],
+    "accuracy_improvement": -0.4312626684463024,
+    "speed_improvement": -356.3285714285714,
+    "test_details": [],
+    "summary": {
+      "avg_traditional_error": 0.008243610987235285,
+      "avg_ml_error": 0.011798772659223631,
+      "avg_traditional_time_ms": 0.001517209139737216,
+      "avg_ml_time_ms": 0.5421421744606711,
+      "accuracy_improvement_pct": -43.12626684463024,
+      "speed_improvement_pct": -35632.857142857145
+    }
+  },
+  "anomaly_detection": {
+    "detection_accuracy": 0.25,
+    "avg_detection_time_ms": 0.030040740966796875,
+    "meets_accuracy_target": false,
+    "meets_speed_target": "True",
+    "detailed_results": [
+      {
+        "scenario": "normal",
+        "expected_anomaly": false,
+        "detected_anomaly": false,
+        "expected_type": null,
+        "detected_type": null,
+        "correct_detection": true,
+        "correct_type": true,
+        "confidence": 0.0,
+        "detection_time_ms": 0.03504753112792969,
+        "affected_sources": 0,
+        "recommended_action": "continue_normal_operation"
+      },
+      {
+        "scenario": "manipulation",
+        "expected_anomaly": true,
+        "detected_anomaly": false,
+        "expected_type": "price_manipulation",
+        "detected_type": null,
+        "correct_detection": false,
+        "correct_type": false,
+        "confidence": 0.0,
+        "detection_time_ms": 0.03504753112792969,
+        "affected_sources": 0,
+        "recommended_action": "continue_normal_operation"
+      },
+      {
+        "scenario": "outage",
+        "expected_anomaly": true,
+        "detected_anomaly": false,
+        "expected_type": "exchange_outage",
+        "detected_type": null,
+        "correct_detection": false,
+        "correct_type": false,
+        "confidence": 0.0,
+        "detection_time_ms": 0.021219253540039062,
+        "affected_sources": 0,
+        "recommended_action": "continue_normal_operation"
+      },
+      {
+        "scenario": "flash_crash",
+        "expected_anomaly": true,
+        "detected_anomaly": false,
+        "expected_type": "flash_crash",
+        "detected_type": null,
+        "correct_detection": false,
+        "correct_type": false,
+        "confidence": 0.0,
+        "detection_time_ms": 0.028848648071289062,
+        "affected_sources": 0,
+        "recommended_action": "continue_normal_operation"
+      }
+    ]
+  },
+  "scalability": {
+    "scalability_results": [
+      {
+        "num_sources": 5,
+        "consensus_time_ms": 0.10895729064941406,
+        "anomaly_time_ms": 0.015020370483398438,
+        "total_time_ms": 0.1239776611328125,
+        "quality_score": 0.0,
+        "meets_target": true
+      },
+      {
+        "num_sources": 10,
+        "consensus_time_ms": 0.14901161193847656,
+        "anomaly_time_ms": 0.016927719116210938,
+        "total_time_ms": 0.1659393310546875,
+        "quality_score": 0.13499716531473263,
+        "meets_target": true
+      },
+      {
+        "num_sources": 15,
+        "consensus_time_ms": 0.1728534698486328,
+        "anomaly_time_ms": 0.01811981201171875,
+        "total_time_ms": 0.19097328186035156,
+        "quality_score": 0.06221922072199758,
+        "meets_target": true
+      },
+      {
+        "num_sources": 20,
+        "consensus_time_ms": 0.15020370483398438,
+        "anomaly_time_ms": 0.0171661376953125,
+        "total_time_ms": 0.16736984252929688,
+        "quality_score": 0.0,
+        "meets_target": true
+      },
+      {
+        "num_sources": 30,
+        "consensus_time_ms": 0.14901161193847656,
+        "anomaly_time_ms": 0.018835067749023438,
+        "total_time_ms": 0.1678466796875,
+        "quality_score": 0.0,
+        "meets_target": true
+      },
+      {
+        "num_sources": 50,
+        "consensus_time_ms": 0.15020370483398438,
+        "anomaly_time_ms": 0.017881393432617188,
+        "total_time_ms": 0.16808509826660156,
+        "quality_score": 0.0,
+        "meets_target": true
+      }
+    ],
+    "scaling_factor_ms_per_source": 0.00045508146286010834,
+    "linear_scaling": "True",
+    "all_meet_target": true
+  },
+  "overall_assessment": {
+    "accuracy_score": 0.0687373315536976,
+    "anomaly_score": 0.25,
+    "speed_score": 1.0,
+    "scale_score": 1.0,
+    "weighted_score": 0.40249493262147906,
+    "recommendation": "OPTIMIZE"
+  }
+}

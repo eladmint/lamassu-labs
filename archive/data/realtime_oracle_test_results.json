@@ -1,0 +1,181 @@
+{
+  "test_results": [
+    {
+      "test_name": "oracle_engine_startup",
+      "success": true,
+      "latency_ms": 2000.9491443634033,
+      "details": {
+        "running": true,
+        "active_sources": [
+          "binance",
+          "kraken",
+          "coinbase",
+          "coingecko"
+        ],
+        "fresh_prices": 12,
+        "total_cache_entries": 12,
+        "websocket_status": {},
+        "last_consensus_update": 1750883773.031114,
+        "uptime_seconds": 0.0
+      }
+    },
+    {
+      "test_name": "real_time_price_feeds",
+      "success": true,
+      "latency_ms": 8001.3391971588135,
+      "details": {
+        "symbols_tested": [
+          "BTC/USD",
+          "ETH/USD",
+          "SOL/USD"
+        ],
+        "prices_received": 3,
+        "total_symbols": 3
+      }
+    },
+    {
+      "test_name": "consensus_calculation",
+      "success": true,
+      "latency_ms": 10001.326084136963,
+      "details": {
+        "consensus_count": 2,
+        "avg_confidence": 0.9160425464520142,
+        "consensus_data": [
+          {
+            "symbol": "BTC/USD",
+            "consensus_price": 107785.72125,
+            "price_deviation": 0.0006375728547625443,
+            "source_count": 4,
+            "confidence_score": 0.916224854290475,
+            "timestamp": 1750883791.033893,
+            "sources": [
+              "coingecko",
+              "coinbase",
+              "binance",
+              "kraken"
+            ],
+            "price_range": {
+              "min": 107717.0,
+              "max": 107829.1,
+              "median": 107817.095,
+              "average": 107785.72125
+            },
+            "volume_weighted_price": null
+          },
+          {
+            "symbol": "ETH/USD",
+            "consensus_price": 2431.75625,
+            "price_deviation": 0.0008198806932232994,
+            "source_count": 4,
+            "confidence_score": 0.9158602386135535,
+            "timestamp": 1750883791.0339148,
+            "sources": [
+              "coingecko",
+              "coinbase",
+              "binance",
+              "kraken"
+            ],
+            "price_range": {
+              "min": 2429.91,
+              "max": 2433.75,
+              "median": 2432.34,
+              "average": 2431.75625
+            },
+            "volume_weighted_price": null
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "trustwrapper_integration",
+      "success": false,
+      "latency_ms": 0.3330707550048828,
+      "details": {
+        "market_summary": {
+          "timestamp": 1750883793.0350232,
+          "symbols": {},
+          "overall_market_health": "healthy"
+        },
+        "symbol_count": 0,
+        "market_health": "healthy"
+      }
+    },
+    {
+      "test_name": "oracle_enhanced_verification",
+      "success": true,
+      "latency_ms": 0.5578994750976562,
+      "details": {
+        "verified": false,
+        "confidence": 0.0,
+        "risk_score": 1.0,
+        "ai_decision": {
+          "action": "buy",
+          "predicted_price": 109941.435675,
+          "confidence": 0.85,
+          "reasoning": "Technical analysis indicates bullish momentum with strong support levels.",
+          "timestamp": 1750883793.03508
+        },
+        "verification_result": {
+          "verified": false,
+          "confidence": 0.0,
+          "risk_score": 1.0,
+          "market_context": {
+            "error": "Unable to build oracle context for BTC/USD"
+          },
+          "oracle_consensus": null,
+          "anomalies_detected": [
+            "verification_error: Unable to build oracle context for BTC/USD"
+          ],
+          "verification_time_ms": 0.4360675811767578,
+          "xai_explanation": null
+        }
+      }
+    },
+    {
+      "test_name": "xai_explanations",
+      "success": false,
+      "latency_ms": 0.0030994415283203125,
+      "details": {
+        "xai_available": false,
+        "xai_explanation": null
+      }
+    },
+    {
+      "test_name": "market_condition_detection",
+      "success": false,
+      "latency_ms": 0.0050067901611328125,
+      "details": {
+        "conditions_detected": [],
+        "market_health": "healthy",
+        "avg_volatility": 0,
+        "market_summary": {
+          "timestamp": 1750883793.035688,
+          "symbols": {},
+          "overall_market_health": "healthy"
+        }
+      }
+    },
+    {
+      "test_name": "performance_benchmarks",
+      "success": false,
+      "latency_ms": 0.01811981201171875,
+      "details": {
+        "avg_verification_latency": 0.5578994750976562,
+        "avg_oracle_latency": 5001.144170761108,
+        "verification_target_met": true,
+        "oracle_target_met": false,
+        "verification_target": 1000,
+        "oracle_target": 5000
+      }
+    }
+  ],
+  "summary": {
+    "successful_tests": 4,
+    "total_tests": 8,
+    "success_rate": 0.5,
+    "status": "not_ready",
+    "avg_latency_ms": 2500.566452741623,
+    "production_ready": false,
+    "timestamp": 1750883793.080734
+  }
+}

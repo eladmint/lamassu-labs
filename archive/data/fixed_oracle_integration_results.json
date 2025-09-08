@@ -1,0 +1,111 @@
+{
+  "nownodes": {
+    "success": false,
+    "error": "HTTP 405"
+  },
+  "coingecko": {
+    "success": true,
+    "service": "coingecko",
+    "oracle_prices": {
+      "BTC/USD": {
+        "price": 107656,
+        "source": "coingecko",
+        "confidence": 0.95,
+        "last_updated": 1750882233
+      },
+      "ETH/USD": {
+        "price": 2433.26,
+        "source": "coingecko",
+        "confidence": 0.95,
+        "last_updated": 1750882234
+      }
+    },
+    "response_time_ms": 136.25693321228027,
+    "status_code": 200
+  },
+  "coinbase": {
+    "success": true,
+    "service": "coinbase",
+    "oracle_prices": {
+      "BTC/USD": {
+        "price": 107754.215,
+        "source": "coinbase",
+        "confidence": 0.98,
+        "currency": "BTC"
+      }
+    },
+    "response_time_ms": 123.92210960388184,
+    "status_code": 200,
+    "total_rates": 544
+  },
+  "binance": {
+    "success": true,
+    "service": "binance",
+    "oracle_prices": {
+      "BTC/USD": {
+        "price": 107581.94,
+        "source": "binance",
+        "confidence": 0.97
+      },
+      "ETH/USD": {
+        "price": 2429.58,
+        "source": "binance",
+        "confidence": 0.97
+      }
+    },
+    "response_time_ms": 327.3599147796631,
+    "status_code": 200
+  },
+  "consensus": {
+    "success": true,
+    "successful_sources": [
+      "coingecko",
+      "coinbase",
+      "binance"
+    ],
+    "sources_count": 3,
+    "btc_consensus": {
+      "consensus_price": 107664.05166666668,
+      "max_deviation": 0.0008374506804970139,
+      "consensus_achieved": true,
+      "sources": [
+        "coingecko",
+        "coinbase",
+        "binance"
+      ],
+      "individual_prices": {
+        "coingecko": 107656,
+        "coinbase": 107754.215,
+        "binance": 107581.94
+      }
+    },
+    "eth_consensus": {
+      "consensus_price": 2431.42,
+      "max_deviation": 0.0007567594245338714,
+      "consensus_achieved": true,
+      "sources": [
+        "coingecko",
+        "binance"
+      ],
+      "individual_prices": {
+        "coingecko": 2433.26,
+        "binance": 2429.58
+      }
+    },
+    "response_time_ms": 255.2201747894287
+  },
+  "summary": {
+    "successful_oracles": 3,
+    "total_oracles": 4,
+    "consensus_working": true,
+    "overall_success": 4,
+    "total_tests": 5,
+    "success_rate": 0.8,
+    "status": "operational",
+    "credentials_available": {
+      "nownodes": true,
+      "ssl_fix_applied": true
+    },
+    "timestamp": 1750882342.8814049
+  }
+}

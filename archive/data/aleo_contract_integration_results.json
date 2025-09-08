@@ -1,0 +1,190 @@
+{
+  "contract_deployments": {
+    "hallucination_verifier_files": {
+      "success": true,
+      "leo_file": "src/contracts/hallucination_verifier/src/main.leo",
+      "aleo_file": "src/contracts/hallucination_verifier/build/main.aleo",
+      "leo_size": 4252,
+      "aleo_size": 2316
+    },
+    "trust_verifier_files": {
+      "success": true,
+      "leo_file": "src/contracts/trust_verifier/src/main.leo",
+      "aleo_file": "src/contracts/trust_verifier/build/main.aleo",
+      "leo_size": 5189,
+      "aleo_size": 2008
+    },
+    "agent_registry_files": {
+      "success": true,
+      "leo_file": "src/contracts/agent_registry/src/main.leo",
+      "aleo_file": "src/contracts/agent_registry/build/main.aleo",
+      "leo_size": 6821,
+      "aleo_size": 3577
+    },
+    "leo_cli": {
+      "success": true,
+      "version": "leo 2.7.1",
+      "available": true
+    },
+    "hallucination_verifier_build": {
+      "success": false,
+      "error": "Error [ECLI0377034]: Failed to get a private key.\n     |\n     = Either make sure you have a `.env` file in current project directory with a `PRIVATE_KEY` variable set, or set the `--private-key` flag "
+    },
+    "trust_verifier_build": {
+      "success": false,
+      "error": "Error [ECLI0377034]: Failed to get a private key.\n     |\n     = Either make sure you have a `.env` file in current project directory with a `PRIVATE_KEY` variable set, or set the `--private-key` flag "
+    },
+    "agent_registry_build": {
+      "success": false,
+      "error": "Error [ECLI0377027]: Invalid network name: testnet3\n     |\n     = Valid network names are `testnet`, `mainnet`, and `canary`.\n"
+    }
+  },
+  "contract_interfaces": {
+    "hallucination_verifier_interface": {
+      "success": true,
+      "contract_call": {
+        "function": "verify_response",
+        "parameters": {
+          "response_text": "227911439065854510172039577639671281383field",
+          "ai_model_hash": "96962567478672665554742399709369033178field",
+          "trust_score": 85,
+          "verification_method": 2,
+          "evidence_count": 3,
+          "verifier_address": "aleo1test00000000000000000000000000000000000000000000000000"
+        }
+      },
+      "parameter_validation": true,
+      "estimated_gas": "0.01 credits"
+    },
+    "trust_verifier_interface": {
+      "success": true,
+      "contract_call": {
+        "function": "verify_execution",
+        "parameters": {
+          "execution": {
+            "agent_id": "246524720847451885444063295768767555268field",
+            "execution_id": "104478146967262676167739091999112432140field",
+            "result_hash": "232222130529825340343331442082913245239field",
+            "confidence": 7500,
+            "timestamp": 1750881965
+          },
+          "proof_data": "41462333462430278857892367594252719421field",
+          "verifier": "aleo1test00000000000000000000000000000000000000000000000000"
+        }
+      },
+      "parameter_validation": true,
+      "estimated_gas": "0.02 credits"
+    },
+    "agent_registry_interface": {
+      "success": true,
+      "contract_call": {
+        "function": "register_agent",
+        "parameters": {
+          "agent_id": "147386242099674316855303606542399206216field",
+          "stake_amount": 10000,
+          "initial_metrics": {
+            "accuracy_rate": 8500,
+            "success_rate": 9200,
+            "avg_latency_ms": 150,
+            "total_executions": 1000
+          },
+          "registration_height": 100000
+        }
+      },
+      "parameter_validation": true,
+      "estimated_gas": "0.03 credits"
+    }
+  },
+  "trustwrapper_integration": {
+    "zk_proof_integration": {
+      "success": true,
+      "verification_data": {
+        "ai_response": "This is a test AI response",
+        "trust_score": 87,
+        "verification_method": "multi_oracle",
+        "oracle_sources": [
+          "chainlink",
+          "band_protocol"
+        ],
+        "confidence_level": 0.92
+      },
+      "proof_params": {
+        "response_hash": "90933598400429628871570342084698259609field",
+        "trust_score_field": 87,
+        "verification_method_field": 2,
+        "evidence_count": 2
+      },
+      "workflow_steps": [
+        "Generate response hash",
+        "Validate trust score",
+        "Map verification method",
+        "Count evidence sources",
+        "Prepare contract call"
+      ]
+    },
+    "oracle_contract_integration": {
+      "success": true,
+      "oracle_data": {
+        "price_feeds": {
+          "BTC/USD": 67500.0,
+          "ETH/USD": 2450.0
+        },
+        "consensus_achieved": true,
+        "max_deviation": 0.015,
+        "source_count": 3,
+        "health_score": 0.98
+      },
+      "contract_evidence": {
+        "evidence_type": 1,
+        "confidence": 98,
+        "detection_method": 4,
+        "evidence_data": "305093662219061507946934749613561217060field"
+      },
+      "consensus_achieved": true
+    },
+    "e2e_workflow": {
+      "success": true,
+      "trustwrapper_result": {
+        "verification_id": "tw_001",
+        "ai_response": "AI prediction: BTC will reach $70,000",
+        "trust_score": 0.89,
+        "oracle_verification": true,
+        "risk_assessment": "LOW"
+      },
+      "contract_calls": [
+        {
+          "contract": "hallucination_verifier",
+          "function": "verify_response",
+          "params": {
+            "response_text": "133775099109221080275587780277450359029field",
+            "trust_score": 89,
+            "verification_method": 3
+          }
+        },
+        {
+          "contract": "trust_verifier",
+          "function": "verify_execution",
+          "params": {
+            "execution_id": "30124227372369526880801226863945147713field",
+            "confidence": 8900
+          }
+        }
+      ],
+      "workflow_steps": [
+        "TrustWrapper verification complete",
+        "Hallucination verification prepared",
+        "Trust verification prepared"
+      ],
+      "total_gas_estimate": "0.05 credits"
+    }
+  },
+  "summary": {
+    "successful_tests": 10,
+    "total_tests": 13,
+    "success_rate": 0.7692307692307693,
+    "status": "degraded",
+    "timestamp": 1750881965.9662862,
+    "contracts_found": 3,
+    "ready_for_deployment": false
+  }
+}

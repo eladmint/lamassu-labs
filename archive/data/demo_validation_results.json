@@ -1,0 +1,26 @@
+{
+  "api_tests": {
+    "health": true,
+    "endpoints": true,
+    "trade_verification": true,
+    "performance_verification": true,
+    "oracle_status": true,
+    "metrics": true
+  },
+  "web_tests": {
+    "loading": true
+  },
+  "performance_tests": {
+    "latency": true
+  },
+  "integration_tests": {
+    "files_exist": true,
+    "full_workflow": true
+  },
+  "summary": {
+    "total_tests": 10,
+    "passed": 10,
+    "success_rate": 1.0,
+    "timestamp": 1750880545.7219882
+  }
+}

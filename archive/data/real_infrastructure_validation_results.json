@@ -1,0 +1,77 @@
+{
+  "real_components": {
+    "component_imports": {
+      "success": true,
+      "message": "All components imported successfully"
+    },
+    "component_initialization": {
+      "success": true,
+      "message": "All components initialized with proper config",
+      "components": [
+        "VerificationEngine",
+        "LocalVerificationEngine",
+        "OracleRiskManager"
+      ]
+    },
+    "local_verification": {
+      "success": true,
+      "verification_time_ms": 0.492095947265625,
+      "result": {
+        "valid": false,
+        "confidence": 0.94,
+        "violations": [
+          "performance_mismatch"
+        ],
+        "risk_score": 0.06,
+        "details": {
+          "roi_deviation": 0.2,
+          "win_rate_deviation": 0.040000000000000036,
+          "claimed_roi": 0.15,
+          "actual_roi": 0.12
+        },
+        "audit_trail": true,
+        "data_integrity": true,
+        "verification_time": 0.48089027404785156,
+        "from_cache": false,
+        "sub_10ms": true
+      },
+      "sub_10ms": true
+    },
+    "trading_verification": {
+      "success": true,
+      "verification_time_ms": 391.7369842529297,
+      "status": "failed",
+      "confidence": 0.0,
+      "risk_level": "critical",
+      "local_time_ms": 391.7109966278076
+    },
+    "performance_verification": {
+      "success": true,
+      "verification_time_ms": 0.08797645568847656,
+      "status": "failed",
+      "confidence": 0.9369999999999999,
+      "violations": [
+        "performance_mismatch"
+      ],
+      "risk_score": 0.15
+    },
+    "health_checks": {
+      "success": true,
+      "local_verifier_status": "healthy",
+      "engine_status": "degraded",
+      "engine_metrics": {
+        "total_verifications": 1,
+        "success_rate": 0.0,
+        "average_latency_ms": 0.01,
+        "oracle_health_score": 1.0,
+        "cache_size": 1
+      }
+    }
+  },
+  "end_to_end_workflow": {
+    "success": false,
+    "error": "'timeout'"
+  },
+  "timestamp": 1750881459.598179,
+  "test_type": "REAL_INFRASTRUCTURE"
+}

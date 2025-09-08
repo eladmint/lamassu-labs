@@ -1,0 +1,426 @@
+{
+  "benchmark_results": [
+    {
+      "circuit_name": "simple_verification",
+      "proof_system": "groth16",
+      "setup_time_ms": 8.73708724975586,
+      "avg_prove_time_ms": 158.8817596435547,
+      "min_prove_time_ms": 156.23879432678223,
+      "max_prove_time_ms": 160.14909744262695,
+      "verify_time_ms": 0.1838207244873047,
+      "proof_size_bytes": 125,
+      "meets_target": false,
+      "test_iterations": 10
+    },
+    {
+      "circuit_name": "standard_verification",
+      "proof_system": "groth16",
+      "setup_time_ms": 21.188020706176758,
+      "avg_prove_time_ms": 173.7457513809204,
+      "min_prove_time_ms": 170.61901092529297,
+      "max_prove_time_ms": 175.33183097839355,
+      "verify_time_ms": 0.17380714416503906,
+      "proof_size_bytes": 124,
+      "meets_target": false,
+      "test_iterations": 10
+    },
+    {
+      "circuit_name": "complex_verification",
+      "proof_system": "groth16",
+      "setup_time_ms": 38.94495964050293,
+      "avg_prove_time_ms": 203.5940170288086,
+      "min_prove_time_ms": 200.9289264678955,
+      "max_prove_time_ms": 206.02107048034668,
+      "verify_time_ms": 0.1678466796875,
+      "proof_size_bytes": 124,
+      "meets_target": false,
+      "test_iterations": 10
+    },
+    {
+      "circuit_name": "batch_verification",
+      "proof_system": "groth16",
+      "setup_time_ms": 79.49590682983398,
+      "avg_prove_time_ms": 254.60748672485352,
+      "min_prove_time_ms": 251.1138916015625,
+      "max_prove_time_ms": 257.0159435272217,
+      "verify_time_ms": 0.16808509826660156,
+      "proof_size_bytes": 125,
+      "meets_target": false,
+      "test_iterations": 10
+    },
+    {
+      "circuit_name": "enterprise_verification",
+      "proof_system": "groth16",
+      "setup_time_ms": 153.07283401489258,
+      "avg_prove_time_ms": 357.3341131210327,
+      "min_prove_time_ms": 355.4098606109619,
+      "max_prove_time_ms": 360.03994941711426,
+      "verify_time_ms": 0.16617774963378906,
+      "proof_size_bytes": 125,
+      "meets_target": false,
+      "test_iterations": 10
+    },
+    {
+      "circuit_name": "simple_verification",
+      "proof_system": "plonk",
+      "setup_time_ms": 10.653257369995117,
+      "avg_prove_time_ms": 85.66334247589111,
+      "min_prove_time_ms": 83.06694030761719,
+      "max_prove_time_ms": 88.1187915802002,
+      "verify_time_ms": 0.5512237548828125,
+      "proof_size_bytes": 342,
+      "meets_target": false,
+      "test_iterations": 10
+    },
+    {
+      "circuit_name": "standard_verification",
+      "proof_system": "plonk",
+      "setup_time_ms": 20.34306526184082,
+      "avg_prove_time_ms": 94.53580379486084,
+      "min_prove_time_ms": 92.33427047729492,
+      "max_prove_time_ms": 96.41313552856445,
+      "verify_time_ms": 0.4432201385498047,
+      "proof_size_bytes": 343,
+      "meets_target": false,
+      "test_iterations": 10
+    },
+    {
+      "circuit_name": "complex_verification",
+      "proof_system": "plonk",
+      "setup_time_ms": 41.67604446411133,
+      "avg_prove_time_ms": 111.34295463562012,
+      "min_prove_time_ms": 107.62405395507812,
+      "max_prove_time_ms": 122.48897552490234,
+      "verify_time_ms": 0.45490264892578125,
+      "proof_size_bytes": 343,
+      "meets_target": false,
+      "test_iterations": 10
+    },
+    {
+      "circuit_name": "batch_verification",
+      "proof_system": "plonk",
+      "setup_time_ms": 75.45304298400879,
+      "avg_prove_time_ms": 137.89832592010498,
+      "min_prove_time_ms": 134.62185859680176,
+      "max_prove_time_ms": 140.89393615722656,
+      "verify_time_ms": 0.45990943908691406,
+      "proof_size_bytes": 341,
+      "meets_target": false,
+      "test_iterations": 10
+    },
+    {
+      "circuit_name": "enterprise_verification",
+      "proof_system": "plonk",
+      "setup_time_ms": 150.4218578338623,
+      "avg_prove_time_ms": 193.3504819869995,
+      "min_prove_time_ms": 188.72618675231934,
+      "max_prove_time_ms": 196.24829292297363,
+      "verify_time_ms": 0.44798851013183594,
+      "proof_size_bytes": 345,
+      "meets_target": false,
+      "test_iterations": 10
+    },
+    {
+      "circuit_name": "simple_verification",
+      "proof_system": "plonky2",
+      "setup_time_ms": 10.664224624633789,
+      "avg_prove_time_ms": 6.657171249389648,
+      "min_prove_time_ms": 5.721092224121094,
+      "max_prove_time_ms": 7.04193115234375,
+      "verify_time_ms": 0.24700164794921875,
+      "proof_size_bytes": 188,
+      "meets_target": true,
+      "test_iterations": 10
+    },
+    {
+      "circuit_name": "standard_verification",
+      "proof_system": "plonky2",
+      "setup_time_ms": 20.010948181152344,
+      "avg_prove_time_ms": 8.336019515991211,
+      "min_prove_time_ms": 7.637977600097656,
+      "max_prove_time_ms": 9.238004684448242,
+      "verify_time_ms": 0.23889541625976562,
+      "proof_size_bytes": 188,
+      "meets_target": true,
+      "test_iterations": 10
+    },
+    {
+      "circuit_name": "complex_verification",
+      "proof_system": "plonky2",
+      "setup_time_ms": 40.660858154296875,
+      "avg_prove_time_ms": 13.373208045959473,
+      "min_prove_time_ms": 11.95383071899414,
+      "max_prove_time_ms": 13.944625854492188,
+      "verify_time_ms": 0.24890899658203125,
+      "proof_size_bytes": 188,
+      "meets_target": false,
+      "test_iterations": 10
+    },
+    {
+      "circuit_name": "batch_verification",
+      "proof_system": "plonky2",
+      "setup_time_ms": 77.60214805603027,
+      "avg_prove_time_ms": 19.379472732543945,
+      "min_prove_time_ms": 18.249034881591797,
+      "max_prove_time_ms": 21.05998992919922,
+      "verify_time_ms": 0.2391338348388672,
+      "proof_size_bytes": 187,
+      "meets_target": false,
+      "test_iterations": 10
+    },
+    {
+      "circuit_name": "enterprise_verification",
+      "proof_system": "plonky2",
+      "setup_time_ms": 151.1988639831543,
+      "avg_prove_time_ms": 32.43155479431152,
+      "min_prove_time_ms": 29.65688705444336,
+      "max_prove_time_ms": 33.96010398864746,
+      "verify_time_ms": 0.2560615539550781,
+      "proof_size_bytes": 187,
+      "meets_target": false,
+      "test_iterations": 10
+    },
+    {
+      "circuit_name": "simple_verification",
+      "proof_system": "groth16_gpu",
+      "setup_time_ms": 0,
+      "avg_prove_time_ms": Infinity,
+      "min_prove_time_ms": Infinity,
+      "max_prove_time_ms": Infinity,
+      "verify_time_ms": 0,
+      "proof_size_bytes": 0,
+      "meets_target": false,
+      "test_iterations": 0
+    },
+    {
+      "circuit_name": "standard_verification",
+      "proof_system": "groth16_gpu",
+      "setup_time_ms": 0,
+      "avg_prove_time_ms": Infinity,
+      "min_prove_time_ms": Infinity,
+      "max_prove_time_ms": Infinity,
+      "verify_time_ms": 0,
+      "proof_size_bytes": 0,
+      "meets_target": false,
+      "test_iterations": 0
+    },
+    {
+      "circuit_name": "complex_verification",
+      "proof_system": "groth16_gpu",
+      "setup_time_ms": 0,
+      "avg_prove_time_ms": Infinity,
+      "min_prove_time_ms": Infinity,
+      "max_prove_time_ms": Infinity,
+      "verify_time_ms": 0,
+      "proof_size_bytes": 0,
+      "meets_target": false,
+      "test_iterations": 0
+    },
+    {
+      "circuit_name": "batch_verification",
+      "proof_system": "groth16_gpu",
+      "setup_time_ms": 0,
+      "avg_prove_time_ms": Infinity,
+      "min_prove_time_ms": Infinity,
+      "max_prove_time_ms": Infinity,
+      "verify_time_ms": 0,
+      "proof_size_bytes": 0,
+      "meets_target": false,
+      "test_iterations": 0
+    },
+    {
+      "circuit_name": "enterprise_verification",
+      "proof_system": "groth16_gpu",
+      "setup_time_ms": 0,
+      "avg_prove_time_ms": Infinity,
+      "min_prove_time_ms": Infinity,
+      "max_prove_time_ms": Infinity,
+      "verify_time_ms": 0,
+      "proof_size_bytes": 0,
+      "meets_target": false,
+      "test_iterations": 0
+    },
+    {
+      "circuit_name": "simple_verification",
+      "proof_system": "plonk_gpu",
+      "setup_time_ms": 0,
+      "avg_prove_time_ms": Infinity,
+      "min_prove_time_ms": Infinity,
+      "max_prove_time_ms": Infinity,
+      "verify_time_ms": 0,
+      "proof_size_bytes": 0,
+      "meets_target": false,
+      "test_iterations": 0
+    },
+    {
+      "circuit_name": "standard_verification",
+      "proof_system": "plonk_gpu",
+      "setup_time_ms": 0,
+      "avg_prove_time_ms": Infinity,
+      "min_prove_time_ms": Infinity,
+      "max_prove_time_ms": Infinity,
+      "verify_time_ms": 0,
+      "proof_size_bytes": 0,
+      "meets_target": false,
+      "test_iterations": 0
+    },
+    {
+      "circuit_name": "complex_verification",
+      "proof_system": "plonk_gpu",
+      "setup_time_ms": 0,
+      "avg_prove_time_ms": Infinity,
+      "min_prove_time_ms": Infinity,
+      "max_prove_time_ms": Infinity,
+      "verify_time_ms": 0,
+      "proof_size_bytes": 0,
+      "meets_target": false,
+      "test_iterations": 0
+    },
+    {
+      "circuit_name": "batch_verification",
+      "proof_system": "plonk_gpu",
+      "setup_time_ms": 0,
+      "avg_prove_time_ms": Infinity,
+      "min_prove_time_ms": Infinity,
+      "max_prove_time_ms": Infinity,
+      "verify_time_ms": 0,
+      "proof_size_bytes": 0,
+      "meets_target": false,
+      "test_iterations": 0
+    },
+    {
+      "circuit_name": "enterprise_verification",
+      "proof_system": "plonk_gpu",
+      "setup_time_ms": 0,
+      "avg_prove_time_ms": Infinity,
+      "min_prove_time_ms": Infinity,
+      "max_prove_time_ms": Infinity,
+      "verify_time_ms": 0,
+      "proof_size_bytes": 0,
+      "meets_target": false,
+      "test_iterations": 0
+    },
+    {
+      "circuit_name": "simple_verification",
+      "proof_system": "plonky2_gpu",
+      "setup_time_ms": 0,
+      "avg_prove_time_ms": Infinity,
+      "min_prove_time_ms": Infinity,
+      "max_prove_time_ms": Infinity,
+      "verify_time_ms": 0,
+      "proof_size_bytes": 0,
+      "meets_target": false,
+      "test_iterations": 0
+    },
+    {
+      "circuit_name": "standard_verification",
+      "proof_system": "plonky2_gpu",
+      "setup_time_ms": 0,
+      "avg_prove_time_ms": Infinity,
+      "min_prove_time_ms": Infinity,
+      "max_prove_time_ms": Infinity,
+      "verify_time_ms": 0,
+      "proof_size_bytes": 0,
+      "meets_target": false,
+      "test_iterations": 0
+    },
+    {
+      "circuit_name": "complex_verification",
+      "proof_system": "plonky2_gpu",
+      "setup_time_ms": 0,
+      "avg_prove_time_ms": Infinity,
+      "min_prove_time_ms": Infinity,
+      "max_prove_time_ms": Infinity,
+      "verify_time_ms": 0,
+      "proof_size_bytes": 0,
+      "meets_target": false,
+      "test_iterations": 0
+    },
+    {
+      "circuit_name": "batch_verification",
+      "proof_system": "plonky2_gpu",
+      "setup_time_ms": 0,
+      "avg_prove_time_ms": Infinity,
+      "min_prove_time_ms": Infinity,
+      "max_prove_time_ms": Infinity,
+      "verify_time_ms": 0,
+      "proof_size_bytes": 0,
+      "meets_target": false,
+      "test_iterations": 0
+    },
+    {
+      "circuit_name": "enterprise_verification",
+      "proof_system": "plonky2_gpu",
+      "setup_time_ms": 0,
+      "avg_prove_time_ms": Infinity,
+      "min_prove_time_ms": Infinity,
+      "max_prove_time_ms": Infinity,
+      "verify_time_ms": 0,
+      "proof_size_bytes": 0,
+      "meets_target": false,
+      "test_iterations": 0
+    }
+  ],
+  "system_analysis": [
+    {
+      "system_name": "groth16",
+      "avg_prove_time_ms": 229.63262557983398,
+      "avg_proof_size_bytes": 124.6,
+      "target_compliance_rate": 0.0,
+      "recommended": false,
+      "strengths": [
+        "Compact proof size"
+      ],
+      "weaknesses": [
+        "Slow proof generation",
+        "Inconsistent performance"
+      ]
+    },
+    {
+      "system_name": "plonk",
+      "avg_prove_time_ms": 124.55818176269531,
+      "avg_proof_size_bytes": 342.8,
+      "target_compliance_rate": 0.0,
+      "recommended": false,
+      "strengths": [
+        "Compact proof size"
+      ],
+      "weaknesses": [
+        "Slow proof generation",
+        "Inconsistent performance"
+      ]
+    },
+    {
+      "system_name": "plonky2",
+      "avg_prove_time_ms": 16.03548526763916,
+      "avg_proof_size_bytes": 187.6,
+      "target_compliance_rate": 0.4,
+      "recommended": false,
+      "strengths": [
+        "Fast proof generation",
+        "Compact proof size"
+      ],
+      "weaknesses": [
+        "Inconsistent performance"
+      ]
+    }
+  ],
+  "recommendations": {
+    "primary_recommendation": "INVESTIGATE alternative approaches - no systems meet targets",
+    "fallback_options": [],
+    "optimization_strategies": [
+      "Explore newer proof systems (STARK, Nova)",
+      "Implement hybrid verification (simple proofs + trust)",
+      "Consider relaxing latency requirements for complex verifications"
+    ],
+    "implementation_notes": [
+      "Implement proof system as pluggable interface for easy swapping",
+      "Use proof aggregation for batch processing",
+      "Cache proving keys and common proof patterns",
+      "Monitor proof generation performance in production"
+    ],
+    "risk_assessment": "high"
+  },
+  "benchmark_duration_ms": 22188.218116760254,
+  "target_prove_time_ms": 10.0
+}

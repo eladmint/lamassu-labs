@@ -1,0 +1,123 @@
+{
+  "test_results": [
+    {
+      "test_name": "trustwrapper_real_oracle",
+      "success": false,
+      "latency_ms": 868.7899112701416,
+      "components_tested": [
+        "oracle_data_fetch",
+        "trustwrapper_imports"
+      ],
+      "real_data_used": true,
+      "details": {
+        "error": "TrustWrapper import failed: 'timeout'"
+      }
+    },
+    {
+      "test_name": "aleo_contract_preparation",
+      "success": true,
+      "latency_ms": 339.9012088775635,
+      "components_tested": [
+        "oracle_data_fetch",
+        "hallucination_contract_prep",
+        "trust_contract_prep",
+        "parameter_validation",
+        "deployment_readiness"
+      ],
+      "real_data_used": true,
+      "details": {
+        "hallucination_contract": {
+          "contract": "hallucination_verifier",
+          "function": "verify_response",
+          "parameters": {
+            "response_text": "88170485060550591105921210302414997275field",
+            "ai_model_hash": "134285294547761692837110710753693461933field",
+            "trust_score": 95,
+            "verification_method": 3,
+            "evidence_count": 3,
+            "verifier_address": "aleo1trustwrapper000000000000000000000000000000000000000000"
+          },
+          "estimated_gas": 0.01,
+          "real_data_basis": {
+            "oracle_sources": 3,
+            "price_consensus": true,
+            "trust_score_calculation": "Base 85 + consensus bonus = 95"
+          }
+        },
+        "trust_contract": {
+          "contract": "trust_verifier",
+          "function": "verify_execution",
+          "parameters": {
+            "execution": {
+              "agent_id": "55958479783924859446644809454588803793field",
+              "execution_id": "198686461538897390253439066593016239423field",
+              "result_hash": "88170485060550591105921210302414997275field",
+              "confidence": 9500,
+              "timestamp": 1750882548
+            },
+            "proof_data": "207477664321962786631718581520563090251field",
+            "verifier": "aleo1trustwrapper000000000000000000000000000000000000000000"
+          },
+          "estimated_gas": 0.02,
+          "real_data_basis": {
+            "confidence_source": "real_oracle_consensus",
+            "execution_timestamp": 1750882548
+          }
+        },
+        "validation_checks": {
+          "hallucination_params_valid": true,
+          "trust_params_valid": true,
+          "gas_estimates_reasonable": true
+        },
+        "deployment_readiness": {
+          "contracts_prepared": 2,
+          "parameters_validated": true,
+          "real_data_integrated": true,
+          "estimated_total_gas": 0.03,
+          "deployment_order": [
+            "hallucination_verifier",
+            "trust_verifier"
+          ]
+        },
+        "oracle_data_summary": {
+          "sources": 3,
+          "avg_btc_price": 107673.98166666667,
+          "price_deviation": 0.00014389115265836172
+        }
+      }
+    },
+    {
+      "test_name": "complete_e2e_workflow",
+      "success": false,
+      "latency_ms": 813.7891292572021,
+      "components_tested": [
+        "oracle_integration",
+        "trustwrapper_processing"
+      ],
+      "real_data_used": true,
+      "details": {
+        "error": "TrustWrapper processing failed"
+      }
+    }
+  ],
+  "summary": {
+    "successful_tests": 1,
+    "total_tests": 3,
+    "success_rate": 0.3333333333333333,
+    "status": "not_ready",
+    "avg_latency_ms": 674.1600831349691,
+    "components_tested": [
+      "oracle_data_fetch",
+      "trustwrapper_imports",
+      "trust_contract_prep",
+      "oracle_integration",
+      "hallucination_contract_prep",
+      "trustwrapper_processing",
+      "parameter_validation",
+      "deployment_readiness"
+    ],
+    "real_data_throughout": true,
+    "production_ready": false,
+    "timestamp": 1750882549.323704
+  }
+}
