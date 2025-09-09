@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  development:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - ..:/workspace:cached
+      # Persist bash history
+      - devcontainer-bashhistory:/commandhistory
+      # Keep VS Code server data
+      - vscode-server:/home/vscode/.vscode-server
+    command: sleep infinity
+    networks:
+      - trustwrapper-dev
+    environment:
+      - PYTHONPATH=/workspace
+      - TRUSTWRAPPER_ENV=development
+
+  # Optional: Add database service for development
+  postgres:
+    image: postgres:15-alpine
+    restart: unless-stopped
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: development
+      POSTGRES_USER: trustwrapper
+      POSTGRES_DB: trustwrapper_dev
+    networks:
+      - trustwrapper-dev
+    ports:
+      - "5432:5432"
+
+  # Optional: Add Redis for caching
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    volumes:
+      - redis-data:/data
+    networks:
+      - trustwrapper-dev
+    ports:
+      - "6379:6379"
+
+volumes:
+  devcontainer-bashhistory:
+  vscode-server:
+  postgres-data:
+  redis-data:
+
+networks:
+  trustwrapper-dev:
+    driver: bridge
