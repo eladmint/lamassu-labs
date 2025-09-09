@@ -14,8 +14,8 @@ This is the comprehensive documentation for TrustWrapper - covering technical im
 
 ### **For Business Users**
 - **[🏢 Company Overview](business/COMPANY_OVERVIEW.md)** - Business strategy and positioning
-- **[📊 Market Research](market_research/)** - Market analysis and competitive intelligence
-- **[🤝 Partnership Program](partnerships/)** - Partnership opportunities and strategies
+- **[📊 Market Research](business/research/)** - Market analysis and competitive intelligence
+- **[🤝 Partnership Program](business/partnerships/)** - Partnership opportunities and strategies
 
 ### **For Operations**
 - **[⚙️ Deployment Guides](deployment/)** - Production deployment documentation
@@ -31,9 +31,17 @@ docs/
 ├── 📘 api/                   # API documentation and OpenAPI specs
 ├── 🏛️ architecture/          # System architecture and design decisions
 ├── 🚀 deployment/            # Deployment guides and operations
-├── 🏢 business/              # Business strategy and partnerships
-├── 📊 market_research/       # Market analysis and research
-└── 🤝 partnerships/          # Partnership documentation and integrations
+├── 🏢 business/              # Business strategy, partnerships, and research
+│   ├── partnerships/         # Partnership documentation and integrations
+│   ├── research/             # Market analysis and research
+│   └── products/             # Product documentation
+├── 🔒 compliance/            # Standards, legal, and audit reports
+├── 📊 reports/               # Project reports and analysis (markdown only)
+├── 📋 adrs/                  # Architectural Decision Records
+├── 🎨 ux/                    # User experience and design documentation
+├── 🔐 security/             # Security documentation
+├── 🔗 integration/          # Integration guides and examples
+└── ⚙️ operations/           # Infrastructure and deployment operations
 ```
 
 ## 🎯 By Use Case
@@ -55,8 +63,8 @@ docs/
 
 ### **"I want to understand the business..."**
 1. [Company Overview](business/COMPANY_OVERVIEW.md) (5 min)
-2. [Market Research](market_research/) (15 min)
-3. [Partnership Strategy](partnerships/) (10 min)
+2. [Market Research](business/research/) (15 min)
+3. [Partnership Strategy](business/partnerships/) (10 min)
 
 ## 🔧 Core Components
 
